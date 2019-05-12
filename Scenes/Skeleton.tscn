@@ -1,0 +1,94 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/Skeleton.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Esquelet/esquelet_l1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Esquelet/esquelet_l2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Esquelet/esquelet_l3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Esquelet/esquelet_r1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Esquelet/esquelet_r2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Esquelet/esquelet_r3.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Esquelet/esquelet_t1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Esquelet/esquelet_t2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Esquelet/esquelet_t3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Esquelet/esquelet_b1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Esquelet/esquelet_b2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Esquelet/esquelet_b3.png" type="Texture" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "left",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "right",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "top",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "bottom",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 8.291
+height = 28.6785
+
+[node name="Skeleton" type="PathFollow2D" index="0"]
+
+position = Vector2( 0.647064, 0.323524 )
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = false
+loop = true
+lookahead = 4.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+HP = 4
+speed = 50
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+scale = Vector2( 0.5, 1 )
+frames = SubResource( 1 )
+animation = "right"
+frame = 3
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 0.531513, 3.94334 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+

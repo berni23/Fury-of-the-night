@@ -1,11 +1,13 @@
 extends PathFollow2D
 
+export(int) var HP
+
 export(int) var speed
 var old_position = Vector2(0,0)
 
 func _process(delta):
 	# Move along the path
-	self.offset +=speed*delta
+	self.offset += speed*delta
 	# Detect direction
 	var alpha = rad2deg((self.position - old_position).angle())
 	var new_animation

@@ -1,62 +1,34 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/TileMap.tres" type="TileSet" id=1]
-[ext_resource path="res://PathFollow2D.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Esquelet/esquelet_l1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Esquelet/esquelet_l2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Esquelet/esquelet_l3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Esquelet/esquelet_r1.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Esquelet/esquelet_r2.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Esquelet/esquelet_r3.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Esquelet/esquelet_t1.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Esquelet/esquelet_t2.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Esquelet/esquelet_t3.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Esquelet/esquelet_b1.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Esquelet/esquelet_b2.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Esquelet/esquelet_b3.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Assets/TileMap.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/torra.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Tower.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Arrow.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0.0208559, 103.319, 0, 0, 0, 0, 361.462, 112.039, 0, 0, 0, 0, 360.803, 323.319, 0, 0, 0, 0, 52.747, 334.173, 0, 0, 0, 0, 52.747, 516.222, 0, 0, 0, 0, 392.828, 517.893, 0, 0, 0, 0, 396.13, 464.447, 0, 0, 0, 0, 471.245, 461.107, 0, 0, 0, 0, 475.922, 210.593, 0, 0, 0, 0, 514.168, 207.239, 0, 0, 0, 0, 514.012, 207.319 )
+"points": PoolVector2Array( 0, 0, 0, 0, -13.8174, 105.319, 0, 0, 0, 0, 365.746, 105.319, 0, 0, 0, 0, 365.746, 329.319, 0, 0, 0, 0, 49.4431, 329.319, 0, 0, 0, 0, 49.4431, 521.319, 0, 0, 0, 0, 397.376, 521.319, 0, 0, 0, 0, 397.376, 457.319, 0, 0, 0, 0, 476.451, 457.319, 0, 0, 0, 0, 476.451, 201.319, 0, 0, 0, 0, 539.712, 201.319 )
 }
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
-animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "top",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "bottom",
-"speed": 5.0
-} ]
-_sections_unfolded = [ "Resource" ]
+custom_solver_bias = 0.0
+radius = 500.0
 
-[node name="GameMaster" type="Node" index="0"]
+[node name="GameMaster" type="Node"]
 
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
-[node name="Cami" type="TileMap" parent="." index="0"]
+[node name="Pathway" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 5
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -77,10 +49,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Deco" type="TileMap" parent="." index="1"]
+[node name="Decoration" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -108,29 +80,52 @@ position = Vector2( -20.0422, 6.68073 )
 scale = Vector2( 2.02338, 1 )
 curve = SubResource( 1 )
 _sections_unfolded = [ "Material", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+[node name="Tower" type="Sprite" parent="." index="3"]
 
-position = Vector2( 15.6022, 102.018 )
-rotation = 0.0289639
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = false
-cubic_interp = true
-loop = true
-lookahead = 4.0
-script = ExtResource( 2 )
-speed = 50
+position = Vector2( 650, 140 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+bala = ExtResource( 5 )
 
-[node name="esquelet" type="AnimatedSprite" parent="Path2D/PathFollow2D" index="0"]
+[node name="TowerRange" type="Area2D" parent="Tower" index="0"]
 
-position = Vector2( 3.93389, -8.81635 )
-rotation = -0.0289639
-scale = Vector2( 0.494222, 1 )
-frames = SubResource( 2 )
-animation = "right"
-frame = 3
-playing = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/TowerRange" index="0"]
+
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ReloadTimer" type="Timer" parent="Tower" index="1"]
+
+process_mode = 1
+wait_time = 0.75
+one_shot = false
+autostart = true
+
+[connection signal="area_entered" from="Tower/TowerRange" to="Tower" method="_on_Area2D_area_entered"]
+
+[connection signal="area_exited" from="Tower/TowerRange" to="Tower" method="_on_Area2D_area_exited"]
+
+[connection signal="timeout" from="Tower/ReloadTimer" to="Tower" method="_on_Timer_timeout"]
 
 
