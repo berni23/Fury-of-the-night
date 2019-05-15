@@ -46,7 +46,6 @@ height = 28.6785
 
 [node name="Skeleton" type="PathFollow2D" index="0"]
 
-position = Vector2( 0.647064, 0.323524 )
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -55,24 +54,24 @@ cubic_interp = false
 loop = true
 lookahead = 4.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 HP = 4
-speed = 50
+speed = 100
 
-[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-scale = Vector2( 0.5, 1 )
+position = Vector2( 0, -6 )
 frames = SubResource( 1 )
 animation = "right"
 frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="." index="1"]
+[node name="Area2D" type="Area2D" parent="AnimatedSprite" index="0"]
 
-visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -83,12 +82,12 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D" index="0"]
 
 position = Vector2( 0.531513, 3.94334 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_area_entered"]
 
 
