@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/TileMap.tres" type="TileSet" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://Scripts/Tower.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Arrow.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/EndPath.gd" type="Script" id=6]
-[ext_resource path="res://seriffic.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scenes/PanelControl.gd" type="Script" id=7]
+[ext_resource path="res://seriffic.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -27,11 +28,11 @@ extents = Vector2( 10, 10 )
 
 [sub_resource type="DynamicFont" id=4]
 
-size = 10
+size = 20
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 7 )
-_sections_unfolded = [ "Font", "Settings" ]
+font_data = ExtResource( 8 )
+_sections_unfolded = [ "Settings" ]
 
 [node name="GameMaster" type="Node" index="0"]
 
@@ -154,7 +155,7 @@ script = ExtResource( 6 )
 scale = Vector2( 1.73077, 3.69231 )
 shape = SubResource( 3 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." index="5"]
+[node name="PanelControl" type="HBoxContainer" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -171,11 +172,12 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Button" type="Button" parent="HBoxContainer" index="0"]
+[node name="Button" type="Button" parent="PanelControl" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -183,6 +185,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 88.0
 margin_bottom = 63.0
+rect_min_size = Vector2( 88, 63 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -191,16 +194,17 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.667969, 0.0652313, 0.0652313, 1 )
+custom_colors/font_color_hover = Color( 0.211118, 0.632812, 0.108765, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "Tower"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
-__meta__ = {
-"_edit_lock_": true
-}
+_sections_unfolded = [ "Anchor", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
 [connection signal="area_entered" from="Tower/TowerRange" to="Tower" method="_on_Area2D_area_entered"]
 
@@ -209,5 +213,7 @@ __meta__ = {
 [connection signal="timeout" from="Tower/ReloadTimer" to="Tower" method="_on_Timer_timeout"]
 
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
+
+[connection signal="pressed" from="PanelControl/Button" to="PanelControl" method="_on_Button_pressed"]
 
 
