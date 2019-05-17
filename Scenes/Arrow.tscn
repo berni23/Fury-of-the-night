@@ -11,7 +11,7 @@ extents = Vector2( 10, 34.9016 )
 [node name="Arrow" type="Area2D"]
 
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.310012, 0.562244 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

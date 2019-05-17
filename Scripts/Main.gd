@@ -30,4 +30,4 @@ func _rafaga(Enemy,N_ene,t_ene,N_ole,t_ole):
 func _ready():
 	
 	var skeleton = preload("res://Scenes/Skeleton.tscn")
-	_rafaga(skeleton,5,1,2,6)
+	_rafaga(skeleton,1,1,1,1)

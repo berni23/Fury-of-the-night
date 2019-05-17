@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Skeleton.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Esquelet/esquelet_l1.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Esquelet/esquelet_b1.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Esquelet/esquelet_b2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Esquelet/esquelet_b3.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Area2D.gd" type="Script" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -44,7 +45,7 @@ custom_solver_bias = 0.0
 radius = 8.291
 height = 28.6785
 
-[node name="Skeleton" type="PathFollow2D" index="0"]
+[node name="Skeleton" type="PathFollow2D"]
 
 position = Vector2( 0.647064, 0.323524 )
 offset = 0.0
@@ -59,20 +60,19 @@ __meta__ = {
 "_edit_group_": true
 }
 HP = 4
-speed = 500
+speed = 50
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
 scale = Vector2( 0.5, 1 )
 frames = SubResource( 1 )
 animation = "right"
-frame = 1
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
-visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -81,6 +81,7 @@ angular_damp = 1.0
 collision_layer = 2
 audio_bus_override = false
 audio_bus_name = "Master"
+script = ExtResource( 14 )
 _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
