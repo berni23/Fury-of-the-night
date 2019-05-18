@@ -1,12 +1,12 @@
 extends Area2D
 
 export(PackedScene) var bala
-var speed_bala = 1400
+var speed_bala = 1200
 var reload = true
 var enemy_range = []
 
 func _ready():
-	self.position = get_global_mouse_position()
+	add_to_group(Groups.Towers)
 	
 func _on_TowerBasic_area_entered(area):
 	if area.get_parent().is_in_group(Groups.Enemies):
@@ -29,6 +29,8 @@ func shoot(enemy):
 	Nbala.t_life= $CollisionShape2D.shape.radius/speed_bala
 	self.add_child(Nbala)	
 	reload = false
+	$ReloadTimer.start()
 
 func _on_ReloadTimer_timeout():
 	reload = true
+	$ReloadTimer.stop()

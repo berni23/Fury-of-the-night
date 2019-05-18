@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Groups="*res://Scripts/AutoLoad/Groups.gd"
+MyColors="*res://Scripts/AutoLoad/MyColors.gd"
 
 [display]
 
@@ -25,6 +26,13 @@ window/size/height=672
 [global]
 
 grid=false
+
+[input]
+
+left_click=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+right_click=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
 
 [rendering]
 

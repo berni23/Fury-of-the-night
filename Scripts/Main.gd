@@ -1,5 +1,14 @@
 extends Node
 
+""" Recordatori de les collision layers
+Enemics Layer2 Mask1
+Torres Mask2
+Bales Layer1
+
+IconaTorres Layer3
+RajolaTorres Mask3
+"""
+
 func _rafaga(Enemy,N_ene,t_ene,N_ole,t_ole):
 	"""
 	Retorna  N_ole conjunts de Enemy, amb N_ene unitats
@@ -23,3 +32,7 @@ func _rafaga(Enemy,N_ene,t_ene,N_ole,t_ole):
 func _ready():
 	var skeleton = preload("res://Scenes/Skeleton.tscn")
 	_rafaga(skeleton,3,1,1,1)
+
+
+func _on_TowerSpot_area_entered(area):
+	pass # replace with function body
