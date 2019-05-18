@@ -22,6 +22,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+damage = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -34,5 +35,14 @@ position = Vector2( 0.653808, -53.3086 )
 scale = Vector2( 1.23243, 0.834758 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="LifeTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="LifeTimer" to="." method="queue_free"]
 
 

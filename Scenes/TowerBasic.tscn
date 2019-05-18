@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/TowerBasic.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/TowerBasic.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Arrow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/torra.png" type="Texture" id=3]
 
@@ -10,7 +10,7 @@ custom_solver_bias = 0.0
 radius = 500.0
 _sections_unfolded = [ "Resource" ]
 
-[node name="TowerBasic" type="Area2D" index="0"]
+[node name="TowerBasic" type="Area2D"]
 
 scale = Vector2( 0.4, 0.4 )
 input_pickable = true
