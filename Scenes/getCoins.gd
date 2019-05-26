@@ -27,8 +27,8 @@ func _on_Area2D_area_entered(area):
 	if area.is_in_group("Money"):
 		
 		sound_coin.play()
-	
 		area.queue_free()
+		self.get_parent().get_node("Control").NumCoins +=1
 	
 	
 	
