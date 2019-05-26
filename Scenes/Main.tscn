@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/TileMap.tres" type="TileSet" id=2]
@@ -27,6 +27,14 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 7 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="GameMaster" type="Node" index="0"]
 
@@ -346,8 +354,76 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
 
+[node name="HoverCoins" type="Button" parent="PanelControl" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 92.0
+margin_right = 205.0
+margin_bottom = 63.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.921875, 0.882263, 0.882263, 1 )
+custom_colors/font_color_hover = Color( 0.15686, 0.894531, 0.0943451, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Get Coins"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Control" type="Control" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 501.0
+margin_top = 614.0
+margin_right = 607.0
+margin_bottom = 674.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Label" type="Label" parent="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 40, 15 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
+
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
 
 [connection signal="pressed" from="PanelControl/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
+
+[connection signal="pressed" from="PanelControl/HoverCoins" to="PanelControl" method="_on_HoverCoins_pressed"]
 
 

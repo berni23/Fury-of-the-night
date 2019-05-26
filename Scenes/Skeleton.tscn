@@ -55,7 +55,7 @@ loop = true
 lookahead = 4.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-HP = 4
+HP = 10
 speed = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
@@ -63,7 +63,7 @@ speed = 100
 position = Vector2( 0, -6 )
 frames = SubResource( 1 )
 animation = "right"
-frame = 2
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
