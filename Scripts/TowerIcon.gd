@@ -16,14 +16,15 @@ func _process(delta):
 	global_position = grid.map_to_world(target_pos)
 	
 func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT:
+	
+		if Input.is_action_pressed("left_click"):
+			
 			if can_build:
 				var NewTower = towerScene.instance()
 				NewTower.global_position = global_position
 				get_parent().get_node("Towers").add_child(NewTower)
 				self.queue_free()
-		else:
+		elif Input.is_action_pressed("right_click"):
 			self.queue_free()
 		
 func able_to_build(flag):

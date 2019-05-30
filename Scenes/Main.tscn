@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/TileMap.tres" type="TileSet" id=2]
@@ -7,9 +7,10 @@
 [ext_resource path="res://Scripts/PanelControl.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/TowerIcon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://seriffic.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://Scenes/Sprite.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/Control.gd" type="Script" id=10]
+[ext_resource path="res://Assets/bombIcon.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Sprite.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Control.gd" type="Script" id=11]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -55,7 +56,7 @@ use_filter = true
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="GameMaster" type="Node" index="0"]
+[node name="GameMaster" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -326,10 +327,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 41.0
+margin_left = 40.0
 margin_top = 607.0
-margin_right = 384.0
-margin_bottom = 670.0
+margin_right = 383.0
+margin_bottom = 677.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -338,6 +339,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 script = ExtResource( 5 )
+_sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -350,7 +352,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 88.0
-margin_bottom = 63.0
+margin_bottom = 70.0
 rect_min_size = Vector2( 88, 63 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -380,7 +382,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 92.0
 margin_right = 205.0
-margin_bottom = 63.0
+margin_bottom = 70.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -399,12 +401,38 @@ group = null
 text = "Get Coins"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Bomb" type="Button" parent="PanelControl" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 209.0
+margin_right = 250.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 41, 41 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 8 )
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
 
 [node name="Alternativ Hbar" type="Sprite" parent="." index="7"]
 
 position = Vector2( 748.634, 21.9089 )
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Status" type="VBoxContainer" parent="." index="8"]
@@ -453,7 +481,7 @@ value = 100.0
 exp_edit = false
 rounded = false
 percent_visible = true
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Grow Direction", "Material", "Percent", "Visibility", "custom_colors" ]
 
 [node name="Counter" type="Control" parent="." index="9"]
@@ -473,7 +501,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -534,5 +562,7 @@ _sections_unfolded = [ "custom_fonts" ]
 [connection signal="pressed" from="PanelControl/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
 
 [connection signal="pressed" from="PanelControl/HoverCoins" to="PanelControl" method="_on_HoverCoins_pressed"]
+
+[connection signal="pressed" from="PanelControl/Bomb" to="PanelControl" method="_on_Bomb_pressed"]
 
 

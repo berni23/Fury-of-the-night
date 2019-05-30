@@ -9,8 +9,10 @@ extends Area2D
 var sound_coin = AudioStreamPlayer2D.new()
 
 func _ready():
+	
 	self.add_child(sound_coin)
-	sound_coin.stream = preload ("res://sound_coin.wav")
+	sound_coin.stream = preload ("res://Sounds/sound_coin.wav")
+	self.add_to_group(Groups.Icons)
 
 func _process(delta):
 	

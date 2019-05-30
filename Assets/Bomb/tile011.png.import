@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/trees_plants_rocks.png-069e5922b4560debe556105f34df495d.stex"
+path="res://.import/tile011.png-3f18d7023329ec79d55535d34075a7ca.stex"
 
 [deps]
 
-source_file="res://trees_plants_rocks.png"
-dest_files=[ "res://.import/trees_plants_rocks.png-069e5922b4560debe556105f34df495d.stex" ]
+source_file="res://Assets/Bomb/tile011.png"
+dest_files=[ "res://.import/tile011.png-3f18d7023329ec79d55535d34075a7ca.stex" ]
 
 [params]
 

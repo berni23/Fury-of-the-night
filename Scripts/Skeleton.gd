@@ -10,6 +10,13 @@ func _ready():
 
 func _process(delta):
 	
+	if HP <=0:
+			var nCoin = preload('res://Scenes/Coin1.tscn').instance()
+			nCoin.global_position =Vector2(self.global_position.x,self.global_position.y)
+			self.get_parent().get_parent().get_node("Towers").add_child(nCoin)
+			
+			self.queue_free()
+	
 	""" Function que mou els enemics al llarg del camí """
 	
 	# Move along the path
@@ -38,12 +45,7 @@ func _process(delta):
 func _hit_by_bullet(bullet):
 	if bullet.is_in_group(Groups.Bullets):
 		HP = HP - bullet.damage
-		if HP <=0:
-			var nCoin = preload('res://Scenes/Coin1.tscn').instance()
-			nCoin.global_position =Vector2(self.global_position.x,self.global_position.y)
-			self.get_parent().get_parent().get_node("Towers").add_child(nCoin)
-			
-			self.queue_free()
+		
 			
 		bullet.queue_free()
 	

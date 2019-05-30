@@ -2,6 +2,7 @@ extends Node
 
 #var lifeBar = 70
 var Coins 
+
 #var lifeBar_ini = 70
 
 """ Recordatori de les collision layers

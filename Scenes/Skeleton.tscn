@@ -63,7 +63,7 @@ speed = 100
 position = Vector2( 0, -6 )
 frames = SubResource( 1 )
 animation = "right"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
