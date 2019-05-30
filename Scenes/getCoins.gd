@@ -28,7 +28,7 @@ func _on_Area2D_area_entered(area):
 		
 		sound_coin.play()
 		area.queue_free()
-		self.get_parent().get_node("Control").NumCoins +=1
+		self.get_parent().get_node("Counter").NumCoins +=1
 	
 	
 	

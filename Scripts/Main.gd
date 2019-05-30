@@ -1,7 +1,8 @@
 extends Node
 
-var lifeBar 
+#var lifeBar = 70
 var Coins 
+#var lifeBar_ini = 70
 
 """ Recordatori de les collision layers
 Enemics Layer2 Mask1
@@ -33,7 +34,7 @@ func _rafaga(Enemy,N_ene,t_ene,N_ole,t_ole):
 		yield(get_tree().create_timer(t_ole),"timeout")
 
 func _ready():
-	lifeBar = 10
+	
 	var skeleton = preload("res://Scenes/Skeleton.tscn")
 	_rafaga(skeleton,5,1,1,1)
 
