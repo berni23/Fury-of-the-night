@@ -18,19 +18,19 @@
 [ext_resource path="res://Scenes/AnimatedSprite.gd" type="Script" id=16]
 [ext_resource path="res://Sounds/bomb.wav" type="AudioStream" id=17]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1.93281, -427.57, 0, 0, 0, 0, 2.41603, -5.96046e-08 )
 }
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
@@ -44,14 +44,14 @@ animations = [ {
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 position = Vector2( -7.8042, -0.672089 )
 scale = Vector2( 3.45651, 1 )
-curve = SubResource( 3 )
+curve = SubResource( 1 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." index="0"]
 
-position = Vector2( 0.0569649, -363.429 )
-rotation = 1.5708
+position = Vector2( 1.93358, -426.891 )
+rotation = 1.56967
 offset = 1.0
 h_offset = 0.0
 v_offset = 0.0
@@ -81,7 +81,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D" index="0"]
 
 rotation = 0.0321058
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
@@ -89,17 +89,16 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PathFollow2D/Area2D" index="1"]
 
-position = Vector2( -10, 2 )
+position = Vector2( 2.63878, 0.432439 )
 rotation = 1.5708
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.194876, 0.3 )
 z_as_relative = false
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "default"
 script = ExtResource( 16 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="Timer" type="Timer" parent="PathFollow2D" index="1"]
@@ -111,7 +110,6 @@ autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="1"]
 
-scale = Vector2( 1, 1 )
 stream = ExtResource( 17 )
 volume_db = 0.0
 pitch_scale = 1.0

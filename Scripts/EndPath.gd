@@ -1,14 +1,11 @@
 extends Area2D
 
-func _on_EndPath_area_entered(enemy):
+func _on_EndPath_area_entered(area):
 	
-	""" Function que elimina els enemics si 
-	finalitzen el recorregut"""
-#
-#	if enemy.is_in_group(Groups.Enemies):
+	if area.get_parent().is_in_group(Groups.Enemies):
+	
 		
-	
-	enemy.get_parent().queue_free()
+		area.get_parent().queue_free()
 	
 
 		

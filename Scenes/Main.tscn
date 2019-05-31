@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/TileMap.tres" type="TileSet" id=2]
@@ -8,9 +8,10 @@
 [ext_resource path="res://Scenes/TowerIcon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://seriffic.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Assets/bombIcon.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/Sprite.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=10]
-[ext_resource path="res://Scenes/Control.gd" type="Script" id=11]
+[ext_resource path="res://Assets/MudIcon.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Sprite.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Control.gd" type="Script" id=12]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -329,8 +330,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 40.0
 margin_top = 607.0
-margin_right = 383.0
-margin_bottom = 677.0
+margin_right = 335.0
+margin_bottom = 670.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -429,10 +430,36 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
+[node name="Mud" type="Button" parent="PanelControl" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 254.0
+margin_right = 388.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 41, 41 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 9 )
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
 [node name="Alternativ Hbar" type="Sprite" parent="." index="7"]
 
 position = Vector2( 748.634, 21.9089 )
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Status" type="VBoxContainer" parent="." index="8"]
@@ -481,7 +508,7 @@ value = 100.0
 exp_edit = false
 rounded = false
 percent_visible = true
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Grow Direction", "Material", "Percent", "Visibility", "custom_colors" ]
 
 [node name="Counter" type="Control" parent="." index="9"]
@@ -501,7 +528,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -564,5 +591,7 @@ _sections_unfolded = [ "custom_fonts" ]
 [connection signal="pressed" from="PanelControl/HoverCoins" to="PanelControl" method="_on_HoverCoins_pressed"]
 
 [connection signal="pressed" from="PanelControl/Bomb" to="PanelControl" method="_on_Bomb_pressed"]
+
+[connection signal="pressed" from="PanelControl/Mud" to="PanelControl" method="_on_Mud_pressed"]
 
 
