@@ -23,5 +23,7 @@ func _input(event):
 				var BombScene = Bomb.instance()
 				get_parent().get_node("Towers").add_child(BombScene)
 				self.queue_free()
+				
+			
 			
 			

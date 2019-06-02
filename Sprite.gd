@@ -20,7 +20,8 @@ func _input(event):
 			self.queue_free()
 			
 		if Input.is_action_pressed("left_click"):
-
+			
+			
 				var MudScene = Mud.instance()
 				get_parent().get_node("Towers").add_child(MudScene)
 				self.queue_free()

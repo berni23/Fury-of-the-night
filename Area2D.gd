@@ -19,6 +19,7 @@ func _on_Area2D_area_entered(area):
 			$AnimatedSprite.play()
 			
 		enemy_slow.append(area.get_parent())
+		self.get_node("AudioStreamPlayer2D").play()
 		area.get_parent().speed = area.get_parent().speed/2
 	
 		count+=1
