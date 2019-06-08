@@ -57,7 +57,7 @@ use_filter = true
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="GameMaster" type="Node" index="0"]
+[node name="GameMaster" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -583,9 +583,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[connection signal="area_entered" from="EndPath" to="Status/Life" method="_on_EndPath_area_entered"]
-
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
+
+[connection signal="area_entered" from="EndPath" to="Status/Life" method="_on_EndPath_area_entered"]
 
 [connection signal="pressed" from="PanelControl/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
 
