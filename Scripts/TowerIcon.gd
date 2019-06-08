@@ -11,22 +11,27 @@ func _ready():
 	
 func _process(delta):
 	# Follow the mouse snapping to grid
-	var target_pos = get_global_mouse_position()
-	target_pos = grid.world_to_map(target_pos)
-	global_position = grid.map_to_world(target_pos)
+	position = get_global_mouse_position().snapped(Vector2(32,32))
 	
 func _input(event):
-	
-		if Input.is_action_pressed("left_click"):
-			
-			if can_build:
-				var NewTower = towerScene.instance()
-				NewTower.global_position = global_position
-				get_parent().get_node("Towers").add_child(NewTower)
-				self.queue_free()
-		elif Input.is_action_pressed("right_click"):
-			self.queue_free()
+	if Input.is_action_pressed("left_click"):
+		if not can_build:
+			return
+		# Else, create a new tower
+		var NewTower = towerScene.instance()
+		NewTower.global_position = global_position
+		get_parent().get_node("YSortObjects").add_child(NewTower)
+		# aditionally, one should delete the tower spot
+		for spot in get_parent().get_node("TowerSpots").get_children():
+			print(self.global_position)
+			print(spot.global_position)
+			if (spot.global_position-self.global_position).length()<1:
+				spot.queue_free(); break
+		self.queue_free()
 		
+	elif Input.is_action_pressed("right_click"):
+		self.queue_free()
+
 func able_to_build(flag):
 	if flag:
 		$Sprite.self_modulate = MyColors.TowerGreen

@@ -6,7 +6,7 @@
 [ext_resource path="res://Scripts/EndPath.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/PanelControl.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/TowerIcon.tscn" type="PackedScene" id=6]
-[ext_resource path="res://seriffic.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/seriffic.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Assets/bombIcon.png" type="Texture" id=8]
 [ext_resource path="res://Assets/MudIcon.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Sprite.gd" type="Script" id=10]
@@ -57,7 +57,7 @@ use_filter = true
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="GameMaster" type="Node"]
+[node name="GameMaster" type="Node" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -112,7 +112,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Towers" type="YSort" parent="." index="2"]
+[node name="YSortObjects" type="YSort" parent="." index="2"]
 
 sort_enabled = true
 
@@ -186,7 +186,7 @@ position = Vector2( 576, 192 )
 
 [node name="TowerSpot16" parent="TowerSpots" index="15" instance=ExtResource( 3 )]
 
-position = Vector2( 576, 254.149 )
+position = Vector2( 576, 256 )
 
 [node name="TowerSpot17" parent="TowerSpots" index="16" instance=ExtResource( 3 )]
 
@@ -307,6 +307,7 @@ __meta__ = {
 
 [node name="EndPath" type="Area2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 1072, 208 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -582,9 +583,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
-
 [connection signal="area_entered" from="EndPath" to="Status/Life" method="_on_EndPath_area_entered"]
+
+[connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
 
 [connection signal="pressed" from="PanelControl/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
 
