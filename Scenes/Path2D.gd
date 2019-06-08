@@ -23,8 +23,9 @@ func _on_Area2D_area_exited(area):
 	if area.get_parent().is_in_group(Groups.Enemies):
 		explosion_range.erase(area.get_parent())
 
-func _on_AnimatedSprite_animation_finished():
-	
+func _on_TimerExplosion_timeout():
 	for enemy in explosion_range:
 		enemy.HP = enemy.HP-self.damage
+
+func _on_AnimatedSprite_animation_finished():
 	self.queue_free()

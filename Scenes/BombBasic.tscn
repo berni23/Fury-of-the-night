@@ -124,6 +124,13 @@ wait_time = 2.8
 one_shot = true
 autostart = true
 
+[node name="TimerExplosion" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = true
+
 [connection signal="area_entered" from="PathFollow2D/Area2D" to="." method="_on_Area2D_area_entered"]
 
 [connection signal="area_exited" from="PathFollow2D/Area2D" to="." method="_on_Area2D_area_exited"]
@@ -131,5 +138,7 @@ autostart = true
 [connection signal="animation_finished" from="PathFollow2D/Area2D/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 
 [connection signal="timeout" from="TimerAudio" to="." method="_on_TimerAudio_timeout"]
+
+[connection signal="timeout" from="TimerExplosion" to="." method="_on_TimerExplosion_timeout"]
 
 
