@@ -13,7 +13,7 @@ func _process(delta):
 	if HP <=0:
 			var nCoin = preload('res://Scenes/Coin1.tscn').instance()
 			nCoin.global_position =Vector2(self.global_position.x,self.global_position.y)
-			self.get_parent().get_parent().get_node("Towers").add_child(nCoin)
+			self.get_parent().get_parent().get_node("YSortObjects").add_child(nCoin)
 			
 			self.queue_free()
 	

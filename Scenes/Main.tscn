@@ -6,7 +6,7 @@
 [ext_resource path="res://Scripts/EndPath.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Sprite.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=6]
-[ext_resource path="res://seriffic.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/seriffic.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scenes/CoinsLabel.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/HBoxContainer.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/TowerIcon.tscn" type="PackedScene" id=10]
@@ -25,7 +25,7 @@ _data = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 
 size = 10
 use_mipmaps = false
@@ -33,7 +33,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 
 size = 8
 use_mipmaps = false
@@ -41,7 +41,7 @@ use_filter = true
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 
 size = 20
 use_mipmaps = false
@@ -49,7 +49,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 
 size = 20
 use_mipmaps = false
@@ -112,7 +112,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Towers" type="YSort" parent="." index="2"]
+[node name="YSortObjects" type="YSort" parent="." index="2"]
 
 sort_enabled = true
 
@@ -186,7 +186,7 @@ position = Vector2( 576, 192 )
 
 [node name="TowerSpot16" parent="TowerSpots" index="15" instance=ExtResource( 3 )]
 
-position = Vector2( 576, 254.149 )
+position = Vector2( 576, 256 )
 
 [node name="TowerSpot17" parent="TowerSpots" index="16" instance=ExtResource( 3 )]
 
@@ -307,6 +307,7 @@ __meta__ = {
 
 [node name="EndPath" type="Area2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 1072, 208 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -437,7 +438,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.929688, 0.876348, 0.0762634, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "HI"
@@ -467,7 +468,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.953125, 0.897278, 0.897278, 1 )
 custom_colors/font_color_shadow = Color( 0.953125, 0.897278, 0.897278, 1 )
 custom_constants/shadow_offset_x = 0
@@ -510,7 +511,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 134.0
-margin_bottom = 70.0
+margin_bottom = 90.0
 rect_min_size = Vector2( 134, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -541,7 +542,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.667969, 0.0652313, 0.0652313, 1 )
 custom_colors/font_color_hover = Color( 0.211118, 0.632812, 0.108765, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -566,7 +567,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 138.0
 margin_right = 272.0
-margin_bottom = 70.0
+margin_bottom = 90.0
 rect_min_size = Vector2( 134, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -596,7 +597,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.921875, 0.882263, 0.882263, 1 )
 custom_colors/font_color_hover = Color( 0.15686, 0.894531, 0.0943451, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -617,7 +618,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 276.0
 margin_right = 410.0
-margin_bottom = 70.0
+margin_bottom = 90.0
 rect_min_size = Vector2( 134, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

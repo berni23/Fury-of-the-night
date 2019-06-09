@@ -21,7 +21,7 @@ func _input(event):
 		if Input.is_action_pressed("left_click"):
 
 				var BombScene = Bomb.instance()
-				get_parent().get_node("Towers").add_child(BombScene)
+				get_parent().get_node("YSortObjects").add_child(BombScene)
 				self.queue_free()
 				
 			
