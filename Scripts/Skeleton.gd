@@ -45,7 +45,5 @@ func _process(delta):
 func _hit_by_bullet(bullet):
 	if bullet.is_in_group(Groups.Bullets):
 		HP = HP - bullet.damage
-		
-			
 		bullet.queue_free()
 	
