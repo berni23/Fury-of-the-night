@@ -1,5 +1,4 @@
 
-
 Readme Per controlar els To do's.
 
 
@@ -19,20 +18,20 @@ Readme Per controlar els To do's.
 2 . Enemic nou 
 
 
-    Responsable:
+    Responsable: ?
     Fet : false
     Commit : false
     
     
 2. Enemic que destrueixi torres
 
-    Responsable:
+    Responsable: ?
     Fet : false
     Commit : false
 
 
 3. Nova torra 
 
-    Responsable:
-    Fet : false
+    Responsable: ?
+    Fet : false 
     Commit : false
