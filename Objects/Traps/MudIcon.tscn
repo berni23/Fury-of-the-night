@@ -3,9 +3,6 @@
 [ext_resource path="res://Objects/Traps/MudIcon.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/mud/tile006.png" type="Texture" id=2]
 
-
-
-
 [node name="MudIcon" type="Area2D"]
 
 input_pickable = true

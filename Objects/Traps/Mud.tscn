@@ -8,11 +8,6 @@
 [ext_resource path="res://Assets/Images/mud/tile025.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sounds/sound_mud.wav" type="AudioStream" id=7]
 
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -28,7 +23,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
