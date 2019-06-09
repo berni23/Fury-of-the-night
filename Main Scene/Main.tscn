@@ -60,7 +60,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="GameMaster" type="Node" index="0"]
+[node name="GameMaster" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -482,7 +482,6 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custo
 
 [node name="PanelControl" type="HBoxContainer" parent="." index="7"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -707,9 +706,9 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[connection signal="area_entered" from="EndPath" to="Status/VBoxContainer/Life" method="_on_EndPath_area_entered"]
-
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
+
+[connection signal="area_entered" from="EndPath" to="Status/VBoxContainer/Life" method="_on_EndPath_area_entered"]
 
 [connection signal="pressed" from="PanelControl/Towers/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
 

@@ -10,8 +10,6 @@
 [ext_resource path="res://Assets/Images/coins/coin_7.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Images/coins/coin_8.png" type="Texture" id=9]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -33,7 +31,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -56,17 +54,25 @@ shape = SubResource( 1 )
 position = Vector2( 4.30058, 5.00161 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Timer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 6.0
+wait_time = 10.0
 one_shot = true
-autostart = false
+autostart = true
+
+[node name="Timer2" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 15.0
+one_shot = true
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 
 
