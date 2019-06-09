@@ -1,4 +1,3 @@
-
 Readme Per controlar els To do's.
 
 
@@ -23,14 +22,14 @@ Readme Per controlar els To do's.
     Commit : false
     
     
-2. Enemic que destrueixi torres
+3 . Enemic que destrueixi torres
 
     Responsable: ?
     Fet : false
     Commit : false
 
 
-3. Nova torra 
+4 . Nova torra 
 
     Responsable: ?
     Fet : false 
