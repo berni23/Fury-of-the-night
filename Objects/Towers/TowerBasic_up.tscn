@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Objects/Towers/TowerBasic.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Towers/Arrow.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Images/torra.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/tower_upgrade.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -10,7 +10,7 @@ custom_solver_bias = 0.0
 radius = 200.0
 _sections_unfolded = [ "Resource" ]
 
-[node name="TowerBasic" type="Area2D"]
+[node name="TowerBasic_up" type="Area2D"]
 
 input_pickable = true
 gravity_point = true
@@ -39,7 +39,7 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 [node name="ReloadTimer" type="Timer" parent="." index="1"]
 
 process_mode = 1
-wait_time = 0.75
+wait_time = 0.7
 one_shot = true
 autostart = false
 

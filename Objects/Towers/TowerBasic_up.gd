@@ -20,8 +20,12 @@ func  _process(delta):
 	# If there is an enemy and tower is reloaded shoot
 	if reload and len(enemy_range) != 0:
 		self.shoot(enemy_range[0])
-
-
+		
+		if len(enemy_range)>1:
+			
+			self.shoot(enemy_range[1])
+		
+	
 func shoot(enemy):
 	# Crear una nova bala i assignar-li totes les propietats
 	var Nbala = bala.instance()
@@ -35,3 +39,7 @@ func shoot(enemy):
 func _on_ReloadTimer_timeout():
 	reload = true
 	$ReloadTimer.stop()
+
+
+
+

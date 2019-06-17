@@ -14,8 +14,6 @@
 [ext_resource path="res://Assets/Images/Esquelet/esquelet_b2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Images/Esquelet/esquelet_b3.png" type="Texture" id=13]
 
-
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
@@ -27,7 +25,7 @@ animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "right",
-"speed": 7.0
+"speed": 1.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ) ],
 "loop": true,
@@ -46,7 +44,7 @@ custom_solver_bias = 0.0
 radius = 8.20363
 height = 26.3246
 
-[node name="Skeleton" type="PathFollow2D"]
+[node name="Skeleton" type="PathFollow2D" index="0"]
 
 offset = 0.0
 h_offset = 0.0
@@ -65,7 +63,7 @@ speed = 100
 position = Vector2( 0, -6 )
 frames = SubResource( 1 )
 animation = "right"
-frame = 1
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 

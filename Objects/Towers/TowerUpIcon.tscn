@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Objects/Towers/TowerIcon.gd" type="Script" id=1]
-[ext_resource path="res://Objects/Towers/TowerBasic.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Images/torra.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Towers/TowerUpIcon.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Images/tower_upgrade.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12, 12 )
 
-[node name="TowerIcon" type="Area2D"]
+[node name="TowerUpIcon" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

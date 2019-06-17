@@ -31,7 +31,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Area2D" type="Area2D" index="0"]
+[node name="Area2D" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -54,6 +54,7 @@ shape = SubResource( 1 )
 position = Vector2( 4.30058, 5.00161 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 6
 playing = true
 _sections_unfolded = [ "Transform" ]
 
