@@ -12,7 +12,7 @@ func _ready():
 	
 	self.global_position = get_global_mouse_position()
 	
-	self.translate(Vector2(20,-100))
+	self.translate(Vector2(50,-100))
 
 func _process(delta):
 	

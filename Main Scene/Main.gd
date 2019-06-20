@@ -1,5 +1,5 @@
 extends Node
-var Coins = 7
+var Coins = 100
 export (PackedScene) var skeleton
 
 """ Recordatori de les collision layers
