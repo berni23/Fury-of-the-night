@@ -1,9 +1,11 @@
 extends Area2D
 
 export(PackedScene) var bala
+export(PackedScene) var upgrade
 var speed_bala = 1200
 var reload = true
 var enemy_range = []
+var MenuUpgrade  = false
 
 func _ready():
 	add_to_group(Groups.Towers)
@@ -20,7 +22,7 @@ func  _process(delta):
 	# If there is an enemy and tower is reloaded shoot
 	if reload and len(enemy_range) != 0:
 		self.shoot(enemy_range[0])
-
+		
 
 func shoot(enemy):
 	# Crear una nova bala i assignar-li totes les propietats
@@ -35,3 +37,14 @@ func shoot(enemy):
 func _on_ReloadTimer_timeout():
 	reload = true
 	$ReloadTimer.stop()
+
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	
+	
+	if event is InputEventMouseMotion:
+	
+		if Input.is_action_pressed("left_click") and MenuUpgrade==false:
+		
+			self.add_child(upgrade.instance())
+			MenuUpgrade =true
+

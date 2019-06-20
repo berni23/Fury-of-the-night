@@ -1,23 +1,25 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Images/TileMap.tres" type="TileSet" id=3]
 [ext_resource path="res://Objects/Towers/TowerSpot.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Main Scene/EndPath.gd" type="Script" id=5]
-[ext_resource path="res://Objects/Status/HP_Bar.gd" type="Script" id=6]
+[ext_resource path="res://Main Scene/Status.gd" type="Script" id=6]
 [ext_resource path="res://Assets/seriffic.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://Objects/Status/CoinsLabel.gd" type="Script" id=8]
-[ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=9]
-[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Images/MudIcon.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Images/bombIcon.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=18]
+[ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=8]
+[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Images/torra_unblocked.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Images/MudIcon.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Images/bombIcon.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=20]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -71,7 +73,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="GameMaster" type="Node" index="0"]
+[node name="GameMaster" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -337,7 +339,6 @@ shape = SubResource( 2 )
 
 [node name="Status" type="Container" parent="." index="6"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -352,10 +353,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 6 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Status" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -402,7 +403,6 @@ value = 100.0
 exp_edit = false
 rounded = false
 percent_visible = true
-script = ExtResource( 6 )
 _sections_unfolded = [ "Grow Direction", "Material", "Percent", "Visibility", "custom_colors" ]
 __meta__ = {
 "_edit_lock_": true
@@ -410,7 +410,6 @@ __meta__ = {
 
 [node name="Counters" type="Container" parent="Status" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -452,7 +451,6 @@ text = "HI"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_colors", "custom_fonts" ]
 __meta__ = {
 "_edit_lock_": true
@@ -494,10 +492,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 30.0
-margin_top = 600.0
-margin_right = 750.0
-margin_bottom = 670.0
+margin_left = 31.0
+margin_top = 599.0
+margin_right = 751.0
+margin_bottom = 669.0
 rect_min_size = Vector2( 720, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -506,14 +504,15 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Rect" ]
-towerIcon = ExtResource( 10 )
-getCoins = ExtResource( 11 )
-BombIcon = ExtResource( 12 )
-MudIcon = ExtResource( 13 )
-TowerUp = ExtResource( 14 )
-towerUpIcon = ExtResource( 15 )
+towerIcon = ExtResource( 9 )
+getCoins = ExtResource( 10 )
+BombIcon = ExtResource( 11 )
+MudIcon = ExtResource( 12 )
+TowerUp = ExtResource( 13 )
+towerUpIcon = ExtResource( 14 )
+TowerStepsIcon = ExtResource( 15 )
 
 [node name="Towers" type="Container" parent="PanelControl" index="0"]
 
@@ -541,9 +540,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 144.0
+margin_right = 72.0
 margin_bottom = 70.0
-rect_min_size = Vector2( 144, 70 )
+rect_min_size = Vector2( 72, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -559,7 +558,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Tower"
+icon = ExtResource( 16 )
 flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
@@ -567,8 +566,37 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Create TowerStep" type="Button" parent="PanelControl/Towers" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 144.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 17 )
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Traps" type="Container" parent="PanelControl" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -608,13 +636,14 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 16 )
+icon = ExtResource( 18 )
 flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
 [node name="Projectiles" type="Container" parent="PanelControl" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -654,7 +683,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 17 )
+icon = ExtResource( 19 )
 flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
@@ -738,7 +767,7 @@ _sections_unfolded = [ "Grow Direction", "Rect", "custom_fonts" ]
 
 [node name="TowerUp_sound" type="AudioStreamPlayer2D" parent="PanelControl/Extras/Upgrade" index="0"]
 
-stream = ExtResource( 18 )
+stream = ExtResource( 20 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -747,11 +776,13 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
+[connection signal="area_entered" from="EndPath" to="Status" method="_on_EndPath_area_entered"]
 
 [connection signal="area_entered" from="EndPath" to="Status/VBoxContainer/Life" method="_on_EndPath_area_entered"]
 
 [connection signal="pressed" from="PanelControl/Towers/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
+
+[connection signal="pressed" from="PanelControl/Towers/Create TowerStep" to="PanelControl" method="_on_Create_TowerStep_pressed"]
 
 [connection signal="pressed" from="PanelControl/Traps/Mud" to="PanelControl" method="_on_Mud_pressed"]
 

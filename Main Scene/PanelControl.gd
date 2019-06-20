@@ -6,6 +6,8 @@ export (PackedScene) var BombIcon
 export (PackedScene) var MudIcon
 export (PackedScene) var TowerUp
 export (PackedScene) var towerUpIcon
+export (PackedScene) var TowerStepsIcon
+
 var upgrade =0
 	
 func delete_existing_icons():
@@ -15,9 +17,10 @@ func _on_CreateTower_pressed():
 
 	delete_existing_icons()
 	if upgrade==0:
-		
-		get_parent().add_child(towerIcon.instance())
-		
+
+			get_parent().add_child(towerIcon.instance())
+			
+		 
 	elif upgrade ==1:
 		get_parent().add_child(towerUpIcon.instance())
 	
@@ -52,3 +55,10 @@ func _on_Upgrade_pressed():
 
 			self.get_parent().get_node("YSortObjects").add_child(NewObj)
 
+
+func _on_Create_TowerStep_pressed():
+	delete_existing_icons()
+	self.get_parent().add_child(TowerStepsIcon.instance())
+	
+
+	

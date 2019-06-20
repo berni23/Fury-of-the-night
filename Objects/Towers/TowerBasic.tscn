@@ -1,14 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objects/Towers/TowerBasic.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Towers/Arrow.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Images/torra.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Towers/optionUpgrade.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Images/torra.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 200.0
 _sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 20.6746, 15.3023 )
 
 [node name="TowerBasic" type="Area2D"]
 
@@ -24,17 +30,22 @@ collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform" ]
+_sections_unfolded = [ "Collision", "Material", "Visibility" ]
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 bala = ExtResource( 2 )
+upgrade = ExtResource( 3 )
 
 [node name="Tower" type="Sprite" parent="." index="0"]
 
 scale = Vector2( 0.45, 0.45 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ReloadTimer" type="Timer" parent="." index="1"]
 
@@ -46,15 +57,33 @@ autostart = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( -2.03713, 0.793169 )
+scale = Vector2( 1.46527, 3.53346 )
+shape = SubResource( 2 )
 
 [connection signal="area_entered" from="." to="." method="_on_TowerBasic_area_entered"]
 
 [connection signal="area_exited" from="." to="." method="_on_TowerBasic_area_exited"]
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 
 

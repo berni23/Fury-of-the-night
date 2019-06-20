@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 12, 12 )
 
-[node name="TowerUpIcon" type="Area2D"]
+[node name="TowerUpIcon" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

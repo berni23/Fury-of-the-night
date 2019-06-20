@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Objects/Towers/optionUpgrade.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/tower_up_unblocked.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/tower_final_unblocked.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/tower_up_blocked.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/tower_final_blocked.png" type="Texture" id=5]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=6]
+
+[node name="Control" type="Node2D"]
+
+position = Vector2( -41.9003, -143.343 )
+script = ExtResource( 1 )
+TowerUpUnblocked = ExtResource( 2 )
+TowerFinUnblocked = ExtResource( 3 )
+TowerUpblocked = ExtResource( 4 )
+TowerFinblocked = ExtResource( 5 )
+TowerUp = ExtResource( 6 )
+
+[node name="ButtonUp" type="Button" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 25.0
+margin_right = 50.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 50, 71 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 4 )
+flat = true
+align = 1
+_sections_unfolded = [ "Focus", "Mouse", "Rect" ]
+
+[node name="ButtonFinal" type="Button" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 25.0
+margin_right = 100.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 50, 71 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 5 )
+flat = true
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 161.0
+margin_right = 201.0
+margin_bottom = 183.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+
+[connection signal="pressed" from="ButtonUp" to="." method="_on_ButtonUp_pressed"]
+
+

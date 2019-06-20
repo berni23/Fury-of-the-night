@@ -14,6 +14,7 @@ func _ready():
 	var vect_speed = speed.normalized()
 	var beta = vect_speed.angle()
 	self.rotate(beta)
+	#$fu.play()
 
 func _process(delta):
 	# Move according to speed
