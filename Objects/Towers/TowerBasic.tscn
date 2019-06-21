@@ -74,8 +74,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( -2.03713, 0.793169 )
-scale = Vector2( 1.46527, 3.53346 )
+position = Vector2( 2.694, -0.833116 )
+scale = Vector2( 1.79344, 3.51605 )
 shape = SubResource( 2 )
 
 [connection signal="area_entered" from="." to="." method="_on_TowerBasic_area_entered"]

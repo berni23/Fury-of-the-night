@@ -8,6 +8,7 @@ var old_position = Vector2(0,0)
 
 func _ready():
 	self.add_to_group(Groups.Enemies)
+	self.add_to_group(Groups.Fly)
 	
 	
 
@@ -39,6 +40,7 @@ func _process(delta):
 		new_animation = "left"
 	# Change the animation if needed
 	if $AnimatedSprite.animation != new_animation:
+		$Roar.play()
 		
 		$AnimatedSprite.animation = new_animation
 		

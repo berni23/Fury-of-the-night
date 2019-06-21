@@ -14,12 +14,14 @@ var final = preload('res://Assets/Images/TowerSteps/TowerFinal.png')
 var Steps = [step2,step3,step4,step5,step6,step7,step8,step9,final]
 var s =0
 
+
 export(PackedScene) var bala
 var speed_bala = 1200
 var reload = true
 var enemy_range = []
 var MenuUpgrade  = false
 var build = false
+var Up =[false,false]
 
 func _ready():
 	add_to_group(Groups.Towers)

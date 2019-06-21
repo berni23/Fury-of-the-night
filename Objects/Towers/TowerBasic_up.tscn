@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objects/Towers/TowerBasic_up.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Towers/Arrow.tscn" type="PackedScene" id=2]
@@ -9,6 +9,11 @@
 custom_solver_bias = 0.0
 radius = 200.0
 _sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="TowerBasic_up" type="Area2D"]
 
@@ -29,12 +34,16 @@ __meta__ = {
 "_edit_group_": true
 }
 bala = ExtResource( 2 )
+upgrade2 = null
 
 [node name="Tower" type="Sprite" parent="." index="0"]
 
 scale = Vector2( 0.45, 0.45 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ReloadTimer" type="Timer" parent="." index="1"]
 
@@ -51,10 +60,30 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+position = Vector2( -1.0063, -2.63614 )
+scale = Vector2( 0.777447, 1.55489 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 1.64739, -11.446 )
+scale = Vector2( 2.42404, 1.6439 )
+shape = SubResource( 2 )
+
 [connection signal="area_entered" from="." to="." method="_on_TowerBasic_area_entered"]
 
 [connection signal="area_exited" from="." to="." method="_on_TowerBasic_area_exited"]
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 
 

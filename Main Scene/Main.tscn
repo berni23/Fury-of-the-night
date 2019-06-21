@@ -1,25 +1,26 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Images/TileMap.tres" type="TileSet" id=3]
-[ext_resource path="res://Objects/Towers/TowerSpot.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Main Scene/EndPath.gd" type="Script" id=5]
-[ext_resource path="res://Main Scene/Status.gd" type="Script" id=6]
-[ext_resource path="res://Assets/seriffic.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=8]
-[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Images/torra_unblocked.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Images/MudIcon.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Images/bombIcon.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=20]
+[ext_resource path="res://Objects/Enemies/dragon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Images/TileMap.tres" type="TileSet" id=4]
+[ext_resource path="res://Objects/Towers/TowerSpot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Main Scene/EndPath.gd" type="Script" id=6]
+[ext_resource path="res://Main Scene/Status.gd" type="Script" id=7]
+[ext_resource path="res://Assets/seriffic.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=9]
+[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Images/torra_unblocked.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Images/MudIcon.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Images/bombIcon.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=21]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -38,7 +39,7 @@ extents = Vector2( 10, 10 )
 size = 10
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Settings" ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -46,7 +47,7 @@ _sections_unfolded = [ "Settings" ]
 size = 8
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -54,7 +55,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Settings" ]
 
 [sub_resource type="DynamicFont" id=6]
@@ -62,7 +63,7 @@ _sections_unfolded = [ "Settings" ]
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=7]
@@ -70,7 +71,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="GameMaster" type="Node"]
@@ -80,11 +81,12 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 skeleton = ExtResource( 2 )
+dragon = ExtResource( 3 )
 
 [node name="Pathway" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 5
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -108,7 +110,7 @@ __meta__ = {
 [node name="Decoration" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -138,175 +140,175 @@ sort_enabled = true
 editor/display_folded = true
 visible = false
 
-[node name="TowerSpot4" parent="TowerSpots" index="0" instance=ExtResource( 4 )]
+[node name="TowerSpot4" parent="TowerSpots" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 64, 192 )
 
-[node name="TowerSpot" parent="TowerSpots" index="1" instance=ExtResource( 4 )]
+[node name="TowerSpot" parent="TowerSpots" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 64, 256 )
 
-[node name="TowerSpot5" parent="TowerSpots" index="2" instance=ExtResource( 4 )]
+[node name="TowerSpot5" parent="TowerSpots" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 192, 192 )
 
-[node name="TowerSpot2" parent="TowerSpots" index="3" instance=ExtResource( 4 )]
+[node name="TowerSpot2" parent="TowerSpots" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 192, 256 )
 
-[node name="TowerSpot3" parent="TowerSpots" index="4" instance=ExtResource( 4 )]
+[node name="TowerSpot3" parent="TowerSpots" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 256, 192 )
 
-[node name="TowerSpot6" parent="TowerSpots" index="5" instance=ExtResource( 4 )]
+[node name="TowerSpot6" parent="TowerSpots" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 256, 256 )
 
-[node name="TowerSpot7" parent="TowerSpots" index="6" instance=ExtResource( 4 )]
+[node name="TowerSpot7" parent="TowerSpots" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 320, 192 )
 
-[node name="TowerSpot8" parent="TowerSpots" index="7" instance=ExtResource( 4 )]
+[node name="TowerSpot8" parent="TowerSpots" index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 320, 256 )
 
-[node name="TowerSpot9" parent="TowerSpots" index="8" instance=ExtResource( 4 )]
+[node name="TowerSpot9" parent="TowerSpots" index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 384, 192 )
 
-[node name="TowerSpot10" parent="TowerSpots" index="9" instance=ExtResource( 4 )]
+[node name="TowerSpot10" parent="TowerSpots" index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 384, 256 )
 
-[node name="TowerSpot11" parent="TowerSpots" index="10" instance=ExtResource( 4 )]
+[node name="TowerSpot11" parent="TowerSpots" index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 448, 192 )
 
-[node name="TowerSpot12" parent="TowerSpots" index="11" instance=ExtResource( 4 )]
+[node name="TowerSpot12" parent="TowerSpots" index="11" instance=ExtResource( 5 )]
 
 position = Vector2( 448, 256 )
 
-[node name="TowerSpot13" parent="TowerSpots" index="12" instance=ExtResource( 4 )]
+[node name="TowerSpot13" parent="TowerSpots" index="12" instance=ExtResource( 5 )]
 
 position = Vector2( 512, 192 )
 
-[node name="TowerSpot14" parent="TowerSpots" index="13" instance=ExtResource( 4 )]
+[node name="TowerSpot14" parent="TowerSpots" index="13" instance=ExtResource( 5 )]
 
 position = Vector2( 512, 256 )
 
-[node name="TowerSpot15" parent="TowerSpots" index="14" instance=ExtResource( 4 )]
+[node name="TowerSpot15" parent="TowerSpots" index="14" instance=ExtResource( 5 )]
 
 position = Vector2( 576, 192 )
 
-[node name="TowerSpot16" parent="TowerSpots" index="15" instance=ExtResource( 4 )]
+[node name="TowerSpot16" parent="TowerSpots" index="15" instance=ExtResource( 5 )]
 
 position = Vector2( 576, 256 )
 
-[node name="TowerSpot17" parent="TowerSpots" index="16" instance=ExtResource( 4 )]
+[node name="TowerSpot17" parent="TowerSpots" index="16" instance=ExtResource( 5 )]
 
 position = Vector2( 640, 192 )
 
-[node name="TowerSpot18" parent="TowerSpots" index="17" instance=ExtResource( 4 )]
+[node name="TowerSpot18" parent="TowerSpots" index="17" instance=ExtResource( 5 )]
 
 position = Vector2( 800, 128 )
 
-[node name="TowerSpot19" parent="TowerSpots" index="18" instance=ExtResource( 4 )]
+[node name="TowerSpot19" parent="TowerSpots" index="18" instance=ExtResource( 5 )]
 
 position = Vector2( 864, 128 )
 
-[node name="TowerSpot20" parent="TowerSpots" index="19" instance=ExtResource( 4 )]
+[node name="TowerSpot20" parent="TowerSpots" index="19" instance=ExtResource( 5 )]
 
 position = Vector2( 928, 128 )
 
-[node name="TowerSpot21" parent="TowerSpots" index="20" instance=ExtResource( 4 )]
+[node name="TowerSpot21" parent="TowerSpots" index="20" instance=ExtResource( 5 )]
 
 position = Vector2( 992, 128 )
 
-[node name="TowerSpot22" parent="TowerSpots" index="21" instance=ExtResource( 4 )]
+[node name="TowerSpot22" parent="TowerSpots" index="21" instance=ExtResource( 5 )]
 
 position = Vector2( 800, 224 )
 
-[node name="TowerSpot23" parent="TowerSpots" index="22" instance=ExtResource( 4 )]
+[node name="TowerSpot23" parent="TowerSpots" index="22" instance=ExtResource( 5 )]
 
 position = Vector2( 864, 192 )
 
-[node name="TowerSpot24" parent="TowerSpots" index="23" instance=ExtResource( 4 )]
+[node name="TowerSpot24" parent="TowerSpots" index="23" instance=ExtResource( 5 )]
 
 position = Vector2( 864, 256 )
 
-[node name="TowerSpot26" parent="TowerSpots" index="24" instance=ExtResource( 4 )]
+[node name="TowerSpot26" parent="TowerSpots" index="24" instance=ExtResource( 5 )]
 
 position = Vector2( 800, 320 )
 
-[node name="TowerSpot25" parent="TowerSpots" index="25" instance=ExtResource( 4 )]
+[node name="TowerSpot25" parent="TowerSpots" index="25" instance=ExtResource( 5 )]
 
 position = Vector2( 864, 320 )
 
-[node name="TowerSpot27" parent="TowerSpots" index="26" instance=ExtResource( 4 )]
+[node name="TowerSpot27" parent="TowerSpots" index="26" instance=ExtResource( 5 )]
 
 position = Vector2( 160, 416 )
 
-[node name="TowerSpot28" parent="TowerSpots" index="27" instance=ExtResource( 4 )]
+[node name="TowerSpot28" parent="TowerSpots" index="27" instance=ExtResource( 5 )]
 
 position = Vector2( 224, 416 )
 
-[node name="TowerSpot29" parent="TowerSpots" index="28" instance=ExtResource( 4 )]
+[node name="TowerSpot29" parent="TowerSpots" index="28" instance=ExtResource( 5 )]
 
 position = Vector2( 288, 416 )
 
-[node name="TowerSpot30" parent="TowerSpots" index="29" instance=ExtResource( 4 )]
+[node name="TowerSpot30" parent="TowerSpots" index="29" instance=ExtResource( 5 )]
 
 position = Vector2( 352, 416 )
 
-[node name="TowerSpot31" parent="TowerSpots" index="30" instance=ExtResource( 4 )]
+[node name="TowerSpot31" parent="TowerSpots" index="30" instance=ExtResource( 5 )]
 
 position = Vector2( 416, 416 )
 
-[node name="TowerSpot32" parent="TowerSpots" index="31" instance=ExtResource( 4 )]
+[node name="TowerSpot32" parent="TowerSpots" index="31" instance=ExtResource( 5 )]
 
 position = Vector2( 480, 416 )
 
-[node name="TowerSpot33" parent="TowerSpots" index="32" instance=ExtResource( 4 )]
+[node name="TowerSpot33" parent="TowerSpots" index="32" instance=ExtResource( 5 )]
 
 position = Vector2( 544, 416 )
 
-[node name="TowerSpot34" parent="TowerSpots" index="33" instance=ExtResource( 4 )]
+[node name="TowerSpot34" parent="TowerSpots" index="33" instance=ExtResource( 5 )]
 
 position = Vector2( 608, 416 )
 
-[node name="TowerSpot35" parent="TowerSpots" index="34" instance=ExtResource( 4 )]
+[node name="TowerSpot35" parent="TowerSpots" index="34" instance=ExtResource( 5 )]
 
 position = Vector2( 704, 448 )
 
-[node name="TowerSpot43" parent="TowerSpots" index="35" instance=ExtResource( 4 )]
+[node name="TowerSpot43" parent="TowerSpots" index="35" instance=ExtResource( 5 )]
 
 position = Vector2( 768, 384 )
 
-[node name="TowerSpot36" parent="TowerSpots" index="36" instance=ExtResource( 4 )]
+[node name="TowerSpot36" parent="TowerSpots" index="36" instance=ExtResource( 5 )]
 
 position = Vector2( 512, 608 )
 
-[node name="TowerSpot38" parent="TowerSpots" index="37" instance=ExtResource( 4 )]
+[node name="TowerSpot38" parent="TowerSpots" index="37" instance=ExtResource( 5 )]
 
 position = Vector2( 576, 608 )
 
-[node name="TowerSpot37" parent="TowerSpots" index="38" instance=ExtResource( 4 )]
+[node name="TowerSpot37" parent="TowerSpots" index="38" instance=ExtResource( 5 )]
 
 position = Vector2( 640, 608 )
 
-[node name="TowerSpot39" parent="TowerSpots" index="39" instance=ExtResource( 4 )]
+[node name="TowerSpot39" parent="TowerSpots" index="39" instance=ExtResource( 5 )]
 
 position = Vector2( 768, 608 )
 
-[node name="TowerSpot40" parent="TowerSpots" index="40" instance=ExtResource( 4 )]
+[node name="TowerSpot40" parent="TowerSpots" index="40" instance=ExtResource( 5 )]
 
 position = Vector2( 896, 544 )
 
-[node name="TowerSpot41" parent="TowerSpots" index="41" instance=ExtResource( 4 )]
+[node name="TowerSpot41" parent="TowerSpots" index="41" instance=ExtResource( 5 )]
 
 position = Vector2( 960, 544 )
 
-[node name="TowerSpot42" parent="TowerSpots" index="42" instance=ExtResource( 4 )]
+[node name="TowerSpot42" parent="TowerSpots" index="42" instance=ExtResource( 5 )]
 
 position = Vector2( 416, 608 )
 
@@ -321,7 +323,6 @@ __meta__ = {
 
 [node name="EndPath" type="Area2D" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( 1072, 208 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -330,7 +331,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndPath" index="0"]
 
@@ -353,7 +354,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Status" index="0"]
 
@@ -504,15 +505,15 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "Rect" ]
-towerIcon = ExtResource( 9 )
-getCoins = ExtResource( 10 )
-BombIcon = ExtResource( 11 )
-MudIcon = ExtResource( 12 )
-TowerUp = ExtResource( 13 )
-towerUpIcon = ExtResource( 14 )
-TowerStepsIcon = ExtResource( 15 )
+towerIcon = ExtResource( 10 )
+getCoins = ExtResource( 11 )
+BombIcon = ExtResource( 12 )
+MudIcon = ExtResource( 13 )
+TowerUp = ExtResource( 14 )
+towerUpIcon = ExtResource( 15 )
+TowerStepsIcon = ExtResource( 16 )
 
 [node name="Towers" type="Container" parent="PanelControl" index="0"]
 
@@ -558,7 +559,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 16 )
+icon = ExtResource( 17 )
 flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
@@ -586,7 +587,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 17 )
+icon = ExtResource( 18 )
 flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
@@ -636,7 +637,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 18 )
+icon = ExtResource( 19 )
 flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
@@ -683,7 +684,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 19 )
+icon = ExtResource( 20 )
 flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
@@ -767,7 +768,7 @@ _sections_unfolded = [ "Grow Direction", "Rect", "custom_fonts" ]
 
 [node name="TowerUp_sound" type="AudioStreamPlayer2D" parent="PanelControl/Extras/Upgrade" index="0"]
 
-stream = ExtResource( 20 )
+stream = ExtResource( 21 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -776,9 +777,9 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[connection signal="area_entered" from="EndPath" to="Status" method="_on_EndPath_area_entered"]
+[connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
 
-[connection signal="area_entered" from="EndPath" to="Status/VBoxContainer/Life" method="_on_EndPath_area_entered"]
+[connection signal="area_entered" from="EndPath" to="Status" method="_on_EndPath_area_entered"]
 
 [connection signal="pressed" from="PanelControl/Towers/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
 

@@ -5,5 +5,6 @@ const Towers = "Towers"
 const Enemies = "Enemies"
 const Icons = "Icons"
 const Money = "Money"
+const Fly = "Fly"
 
 

@@ -5,12 +5,14 @@ var enemies_affected = 3
 var count = 0
 
 func _on_Area2D_area_entered(area):
-	
-	if count ==enemies_affected:
+	if area.get_parent().is_in_group(Groups.Fly):
+		return
+		
+	elif count ==enemies_affected:
 		
 		return
-	
-	if area.get_parent().is_in_group(Groups.Enemies):
+
+	elif area.get_parent().is_in_group(Groups.Enemies):
 		if count ==0:
 			$AnimatedSprite.play()
 			

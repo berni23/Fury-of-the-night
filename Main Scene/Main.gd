@@ -1,6 +1,7 @@
 extends Node
 var Coins = 100
 export (PackedScene) var skeleton
+export (PackedScene) var dragon
 
 """ Recordatori de les collision layers
 Enemics Layer2 Mask1
@@ -34,6 +35,7 @@ func _rafaga(Enemy,N_ene,t_ene,N_ole,t_ole):
 func _ready():
 
 #	_rafaga(skeleton,40,0.9,2,0.1)
-	_rafaga(skeleton,5,1,5,2)
+	_rafaga(skeleton,3,1,2,2)
+	_rafaga(dragon,1,1,1,1)
 
 

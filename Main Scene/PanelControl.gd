@@ -8,6 +8,8 @@ export (PackedScene) var TowerUp
 export (PackedScene) var towerUpIcon
 export (PackedScene) var TowerStepsIcon
 
+var Arr_up=[TowerUp]
+
 var upgrade =0
 	
 func delete_existing_icons():
@@ -46,14 +48,15 @@ func _on_Upgrade_pressed():
 		$Extras/Upgrade/TowerUp_sound.play()
 		
 		if N.is_in_group(Groups.Towers):
-
+			
+			if N.Up[0] == true:
+				
+				var NewObj = TowerUp.instance()
+				var TowerPos = N.global_position
+				N.queue_free()
+				NewObj.global_position =TowerPos
 	
-			var NewObj = TowerUp.instance()
-			var TowerPos = N.global_position
-			N.queue_free()
-			NewObj.global_position =TowerPos
-
-			self.get_parent().get_node("YSortObjects").add_child(NewObj)
+				self.get_parent().get_node("YSortObjects").add_child(NewObj)
 
 
 func _on_Create_TowerStep_pressed():

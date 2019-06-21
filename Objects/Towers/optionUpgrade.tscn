@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/Towers/optionUpgrade.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/tower_up_unblocked.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Images/tower_up_blocked.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/tower_final_blocked.png" type="Texture" id=5]
 [ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Towers/TowerBasic_final.tscn" type="PackedScene" id=7]
 
 [node name="Control" type="Node2D"]
 
@@ -16,6 +17,7 @@ TowerFinUnblocked = ExtResource( 3 )
 TowerUpblocked = ExtResource( 4 )
 TowerFinblocked = ExtResource( 5 )
 TowerUp = ExtResource( 6 )
+TowerFin = ExtResource( 7 )
 
 [node name="ButtonUp" type="Button" parent="." index="0"]
 
@@ -99,5 +101,7 @@ selection_enabled = false
 override_selected_font_color = false
 
 [connection signal="pressed" from="ButtonUp" to="." method="_on_ButtonUp_pressed"]
+
+[connection signal="pressed" from="ButtonFinal" to="." method="_on_ButtonFinal_pressed"]
 
 
