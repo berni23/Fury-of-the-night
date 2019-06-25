@@ -17,7 +17,7 @@ Readme Per controlar els To do's.
 2 . Enemic nou 
 
 
-    Responsable: ?
+    Responsable: Marc
     Fet : false
     Commit : false
     
@@ -31,6 +31,8 @@ Readme Per controlar els To do's.
 
 4 . Nova torra 
 
-    Responsable: ?
-    Fet : false 
-    Commit : false
+    Responsable: Bernat
+    Fet : True
+    Commit : True
+    
+    
