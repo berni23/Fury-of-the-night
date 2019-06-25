@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Area2D.gd" type="Script" id=1]
-[ext_resource path="res://Objects/Towers/Arrow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Towers/Arrow_fire.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Images/TowerSteps/TowerStep1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sounds/hammer.wav" type="AudioStream" id=4]
 
@@ -58,7 +58,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="ReloadTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
-wait_time = 0.75
+wait_time = 1.0
 one_shot = false
 autostart = false
 

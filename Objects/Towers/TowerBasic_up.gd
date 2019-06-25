@@ -20,8 +20,6 @@ func  _process(delta):
 			
 			self.shoot(enemy_range[1])
 		
-		
-	
 func shoot(enemy):
 	# Crear una nova bala i assignar-li totes les propietats
 	var Nbala = bala.instance()

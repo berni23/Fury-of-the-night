@@ -16,7 +16,7 @@ var s =0
 
 
 export(PackedScene) var bala
-var speed_bala = 1200
+var speed_bala = 400
 var reload = true
 var enemy_range = []
 var MenuUpgrade  = false

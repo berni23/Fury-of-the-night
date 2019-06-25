@@ -45,7 +45,7 @@ custom_solver_bias = 0.0
 radius = 8.20363
 height = 26.3246
 
-[node name="Dragon" type="PathFollow2D" index="0"]
+[node name="Dragon" type="PathFollow2D"]
 
 offset = 0.0
 h_offset = 0.0
@@ -64,7 +64,6 @@ speed = 100
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 1 )
 animation = "right"
-frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 

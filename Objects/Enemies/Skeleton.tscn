@@ -25,17 +25,17 @@ animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "right",
-"speed": 1.0
+"speed": 7.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "top",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ) ],
-"loop": true,
+"loop": false,
 "name": "bottom",
-"speed": 5.0
+"speed": 7.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -44,7 +44,7 @@ custom_solver_bias = 0.0
 radius = 8.20363
 height = 26.3246
 
-[node name="Skeleton" type="PathFollow2D" index="0"]
+[node name="Skeleton" type="PathFollow2D"]
 
 offset = 0.0
 h_offset = 0.0
@@ -56,14 +56,14 @@ lookahead = 4.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 HP = 10
-speed = 100
+speed = 60
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 position = Vector2( 0, -6 )
 frames = SubResource( 1 )
 animation = "right"
-frame = 3
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 

@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objects/Towers/TowerBasic_final.gd" type="Script" id=1]
-[ext_resource path="res://Objects/Towers/Arrow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Towers/Arrow_fire.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Images/tower_final.png" type="Texture" id=3]
+
+
 
 [sub_resource type="CircleShape2D" id=1]
 
