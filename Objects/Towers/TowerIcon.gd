@@ -27,7 +27,7 @@ func _input(event):
 				if (spot.global_position-self.global_position).length()<1:
 					spot.queue_free(); break
 		
-			get_parent().Coins -=2
+			get_parent().add_Coins(-2)
 			self.queue_free()
 		
 	elif Input.is_action_pressed("right_click"):

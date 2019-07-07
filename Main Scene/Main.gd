@@ -1,7 +1,9 @@
 extends Node
-var Coins = 100
+var Coins = 0
 export (PackedScene) var skeleton
 export (PackedScene) var dragon
+
+signal Coins_changed
 
 """ Recordatori de les collision layers
 Enemics Layer2 Mask1
@@ -33,9 +35,18 @@ func _rafaga(Enemy,N_ene,t_ene,N_ole,t_ole):
 		yield(get_tree().create_timer(t_ole),"timeout")
 
 func _ready():
+	self.add_Coins(100)
 
 	_rafaga(skeleton,40,0.9,2,0.1)
 #	_rafaga(skeleton,3,1,2,2)
 	_rafaga(dragon,1,1,1,1)
 
+func add_Coins(val):
+	# Aquesta funció canvia el valor de les monedes i emet un senyal
+	# D'aquesta manera, cada cop que els diners canviin, els botons
+	# icones i altres poden reaccionar de forma corresponent.
+	# A partir d'ara, qualsevol canvi en les monedes s'ha de fer 
+	# a traves d'aquesta funció i mai canviar Main.Coins manualment.
+	self.Coins += val
+	emit_signal("Coins_changed",self.Coins)
 

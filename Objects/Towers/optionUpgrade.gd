@@ -8,45 +8,41 @@ export (PackedScene) var TowerUp
 export (PackedScene) var TowerFin
 
 
-# Make tower black: gimp-> colorize  Hue : 295 / Saturation : 1 / Brightness : -55
+# Make tower black: 
+# gimp-> colorize  Hue : 295 / Saturation : 1 / Brightness : -55
 	
 
-var treshCoins1 =[true,5]
-var treshCoins2 = [true,7]
+var treshCoins1 = 5
+var treshCoins2 = 7
 var NewTower 
+
 
 func _ready():
 	
 	self.global_position = get_global_mouse_position()
 	
 	self.translate(Vector2(50,-100))
+	
+	# Connect to changes in money, which will update the colors of the menu
+	get_node("/root/GameMaster").connect("coins_Changed",self,"_on_Main_Coins_changed")
+	# Call it once, to get the initial colors
+	self._on_Main_Coins_changed(get_node("/root/GameMaster").Coins)
 
-func _process(delta):
+
+func _on_Main_Coins_changed(coins):
 	
-	# We should redo the function with "emit signal" instead of processing delta
 	if self.get_parent().Up[1]==1:
-	
-		if self.get_parent().get_parent().get_parent().Coins >=treshCoins1[1] and treshCoins1[0]==true:
-	
+		if coins >= treshCoins1:
 			self.get_node("ButtonUp").set_button_icon(TowerUpUnblocked)
-			treshCoins1[0] = false
-		
-		elif self.get_parent().get_parent().get_parent().Coins <treshCoins1[1] and treshCoins1[0] == false:
-		
+		else:
 			self.get_node("ButtonUp").set_button_icon(TowerUpblocked)
-			treshCoins1[0] =true
 		
 	elif self.get_parent().Up[1]==2:
-
-		if self.get_parent().get_parent().get_parent().Coins >=treshCoins2[1] and treshCoins2[0] == true:
-
+		if coins >= treshCoins2:
 			self.get_node("ButtonFinal").set_button_icon(TowerFinUnblocked)
-			treshCoins2[0] =true
-
-		elif self.get_parent().get_parent().get_parent().Coins <treshCoins2[1] and treshCoins2[0] == false:
-
+		else:
 			self.get_node("ButtonFinal").set_button_icon(TowerFinblocked)
-			treshCoins2[0] =true
+
 
 func _input(event):
 	
@@ -57,25 +53,20 @@ func _input(event):
 
 func _on_ButtonUp_pressed():
 	
-	if treshCoins1[0] == false and get_parent().Up[0] ==true and get_parent().Up[1]==1 :
-			
-			
-			NewTower =TowerUp.instance()
-			NewTower.global_position = self.get_parent().global_position
-			get_parent().get_parent().get_parent().Coins -=treshCoins1[1]
-			get_parent().get_parent().add_child(NewTower)
-			get_parent().queue_free()
+	if get_node("/root/GameMaster").Coins >= treshCoins1 and get_parent().Up[0] == true and get_parent().Up[1]==1 :
+		NewTower = TowerUp.instance()
+		NewTower.global_position = self.get_parent().global_position
+		get_node("/root/GameMaster").add_Coins(-treshCoins1)
+		get_parent().get_parent().add_child(NewTower)
+		get_parent().queue_free()
 
 
 func _on_ButtonFinal_pressed():
 	
-	
-		if treshCoins2[0] == false and get_parent().Up[0] ==true and get_parent().Up[1]==2 :
-			
-			
-			NewTower = TowerFin.instance()	
-			NewTower.global_position = self.get_parent().global_position
-			get_parent().get_parent().get_parent().Coins -=treshCoins2[1]
-			get_parent().get_parent().add_child(NewTower)
-			get_parent().queue_free()
+	if get_node("/root/GameMaster").Coins >= treshCoins2 and get_parent().Up[0] == true and get_parent().Up[1]==2 :
+		NewTower = TowerFin.instance()
+		NewTower.global_position = self.get_parent().global_position
+		get_node("/root/GameMaster").add_Coins(-treshCoins2)
+		get_parent().get_parent().add_child(NewTower)
+		get_parent().queue_free()
 	

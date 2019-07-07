@@ -24,4 +24,4 @@ func _on_Area2D_area_entered(area):
 		
 		sound_coin.play()
 		area.queue_free()
-		self.get_parent().Coins +=1
+		self.get_parent().add_Coins(1)
