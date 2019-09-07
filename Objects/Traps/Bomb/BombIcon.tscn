@@ -3,9 +3,6 @@
 [ext_resource path="res://Assets/Images/bombIcon.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Traps/Bomb/BombIcon.gd" type="Script" id=2]
 
-
-
-
 [node name="Sprite" type="Sprite"]
 
 texture = ExtResource( 1 )

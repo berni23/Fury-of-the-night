@@ -1,0 +1,96 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Objects/Enemies/Skeleton.gd" type="Script" id=1]
+[ext_resource path="res://Assets/warrior/Warrior_l1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/warrior/Warrior_l2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/warrior/Warrior_l4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/warrior/Warrior_l3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/warrior/Warrior_r1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/warrior/Warrior_r2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/warrior/Warrior_r3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/warrior/Warrior_r4.png" type="Texture" id=9]
+[ext_resource path="res://Assets/warrior/Warrior_t1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/warrior/Warrior_t2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/warrior/Warrior_t3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/warrior/Warrior_t4.png" type="Texture" id=13]
+[ext_resource path="res://Assets/warrior/Warrior_b1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/warrior/Warrior_b3.png" type="Texture" id=15]
+[ext_resource path="res://Assets/warrior/Warrior_b4.png" type="Texture" id=16]
+[ext_resource path="res://Assets/warrior/Warrior_b2.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "top",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "bottom",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 8.20363
+height = 26.3246
+
+[node name="Skeleton" type="PathFollow2D" index="0"]
+
+position = Vector2( -0.916656, -2.45529 )
+scale = Vector2( 1.02865, 0.923272 )
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = false
+loop = true
+lookahead = 4.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+HP = 10
+Speed = 100
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( 0, -6 )
+frames = SubResource( 1 )
+animation = "bottom"
+frame = 3
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 1.60698, -3.22643 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="area_entered" from="Area2D" to="." method="_hit_by_bullet"]
+
+
