@@ -48,7 +48,7 @@ custom_solver_bias = 0.0
 radius = 8.20363
 height = 26.3246
 
-[node name="Skeleton" type="PathFollow2D" index="0"]
+[node name="Warrior" type="PathFollow2D"]
 
 position = Vector2( -0.916656, -2.45529 )
 scale = Vector2( 1.02865, 0.923272 )

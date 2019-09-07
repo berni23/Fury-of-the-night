@@ -32,11 +32,30 @@ func _on_HoverCoins_pressed():
 
 func _on_Bomb_pressed():
 	delete_existing_icons()
-	self.get_parent().add_child(BombIcon.instance())
+
+	if self.get_parent().Coins>=5:
+		
+		self.get_parent().add_Bombs(1)
+		self.get_parent().add_Coins(-5)
+
+		
+func _input(event):
+	
+	if event is InputEventKey and event.pressed:
+		if event.scancode == KEY_B and self.get_parent().Bombs>0:
+		
+			self.get_parent().add_child(BombIcon.instance())
+			
+		if event.scancode == KEY_M and self.get_parent().Mud>0:
+			
+			self.get_parent().add_child(MudIcon.instance())
+	
 
 func _on_Mud_pressed():
 	delete_existing_icons()
-	self.get_parent().add_child(MudIcon.instance())
+	if self.get_parent().Coins>=1:
+			self.get_parent().add_Mud(1)
+			self.get_parent().add_Coins(-1)
 
 
 func _on_Upgrade_pressed():

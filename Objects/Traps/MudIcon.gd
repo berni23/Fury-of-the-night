@@ -13,10 +13,10 @@ func _process(delta):
 									Vector2(32,32),Vector2(16,16))
 	
 func _input(event):
-	if Input.is_action_pressed("right_click"):
+	if Input.is_action_just_pressed("right_click"):
 		self.queue_free()
 			
-	if Input.is_action_pressed("left_click"):
+	if Input.is_action_just_pressed("left_click"):
 		# If it is far form the path, don't do anything
 		if CustomFunc.distance_to_path(position,path) > 0:
 			return
@@ -24,4 +24,4 @@ func _input(event):
 		var MudScene = Mud.instance()
 		get_parent().get_node("YSortObjects").add_child(MudScene)
 		MudScene.global_position = self.global_position
-		self.queue_free()
+#		self.queue_free()
