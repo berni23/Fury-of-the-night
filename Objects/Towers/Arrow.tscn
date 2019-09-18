@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 34.9016 )
 
-[node name="Arrow" type="Area2D"]
+[node name="Arrow" type="Area2D" index="0"]
 
 rotation = 1.5708
 scale = Vector2( 0.2, 0.2 )
@@ -23,7 +23,6 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
-damage = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

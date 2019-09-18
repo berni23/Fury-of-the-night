@@ -1,49 +1,54 @@
-extends Area2D
+extends "res://Scripts/Towers.gd"
+#export(PackedScene) var bala
+#export(PackedScene) var upgrade2
+#var speed_bala = 1200
+#var reload = true
+#var enemy_range = []
+export (Image) var TowerUpUnblocked
+export (Image) var TowerUpblocked
+var treshCoin = 7
 
-export(PackedScene) var bala
-export(PackedScene) var upgrade2
-var speed_bala = 1200
-var reload = true
-var enemy_range = []
-var Up =[false,2]
-var MenuUpgrade = false
+#var MenuUpgrade = false
+
 
 func _ready():
+	
+	Up =true
 	add_to_group(Groups.Towers)
 
-func  _process(delta):
-	# If there is an enemy and tower is reloaded shoot
-	if reload and len(enemy_range) != 0:
-		self.shoot(enemy_range[0])
-		
-		if len(enemy_range)>1:
-			
-			self.shoot(enemy_range[1])
-		
-func shoot(enemy):
-	# Crear una nova bala i assignar-li totes les propietats
-	var Nbala = bala.instance()
-	var vector_bala = (enemy.global_position-self.global_position).normalized()
-	Nbala.speed = vector_bala*speed_bala
-	Nbala.t_life= $CollisionShape2D.shape.radius/speed_bala
-	self.add_child(Nbala)	
-	reload = false
-	$ReloadTimer.start()
-
-func _on_ReloadTimer_timeout():
-	reload = true
-	$ReloadTimer.stop()
-
-
-func _on_TowerBasic_area_entered(area):
-		if area.get_parent().is_in_group(Groups.Enemies):
-			enemy_range.append(area.get_parent())
-
-
-func _on_TowerBasic_area_exited(area):
-		if area.get_parent().is_in_group(Groups.Enemies):
-			enemy_range.erase(area.get_parent())
-
+#func  _process(delta):
+#	# If there is an enemy and tower is reloaded shoot
+#	if reload and len(enemy_range) != 0:
+#		self.shoot(enemy_range[0])
+#
+#		if len(enemy_range)>1:
+#
+#			self.shoot(enemy_range[1])
+#
+#func shoot(enemy):
+#	# Crear una nova bala i assignar-li totes les propietats
+#	var Nbala = bala.instance()
+#	var vector_bala = (enemy.global_position-self.global_position).normalized()
+#	Nbala.speed = vector_bala*speed_bala
+#	Nbala.t_life= $CollisionShape2D.shape.radius/speed_bala
+#	self.add_child(Nbala)	
+#	reload = false
+#	$ReloadTimer.start()
+#
+#func _on_ReloadTimer_timeout():
+#	reload = true
+#	$ReloadTimer.stop()
+#
+#
+#func _on_TowerBasic_area_entered(area):
+#		if area.get_parent().is_in_group(Groups.Enemies):
+#			enemy_range.append(area.get_parent())
+#
+#
+#func _on_TowerBasic_area_exited(area):
+#		if area.get_parent().is_in_group(Groups.Enemies):
+#			enemy_range.erase(area.get_parent())
+#
 
 # Commented code : TowerBasic_up does not work if optionupgrade scene is
 #included

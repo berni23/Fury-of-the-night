@@ -1,29 +1,34 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Enemies/dragon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Enemies/Warrior.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Images/TileMap.tres" type="TileSet" id=5]
-[ext_resource path="res://Objects/Towers/TowerSpot.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Main Scene/EndPath.gd" type="Script" id=7]
-[ext_resource path="res://Main Scene/Status.gd" type="Script" id=8]
-[ext_resource path="res://Assets/seriffic.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Assets/Images/Bomb/tile001.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Images/coins/coin_1.png" type="Texture" id=11]
-[ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=12]
-[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Assets/Images/torra_unblocked.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Images/MudButton.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Images/Bomb2.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=24]
+[ext_resource path="res://Objects/Enemies/Spider.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Images/TileMap.tres" type="TileSet" id=6]
+[ext_resource path="res://Objects/Towers/TowerSpot.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Main Scene/EndPath.gd" type="Script" id=8]
+[ext_resource path="res://Main Scene/Status.gd" type="Script" id=9]
+[ext_resource path="res://Assets/seriffic.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Assets/Images/Bomb/tile001.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Images/coins/coin_1.png" type="Texture" id=12]
+[ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=13]
+[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Objects/Traps/thunder.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Objects/Traps/thunderIcon.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/Images/torra_unblocked.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Images/Bomb2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Images/MudButton.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=28]
+[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=29]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -42,7 +47,7 @@ extents = Vector2( 10, 10 )
 size = 10
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 9 )
+font_data = ExtResource( 10 )
 _sections_unfolded = [ "Settings" ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -50,7 +55,7 @@ _sections_unfolded = [ "Settings" ]
 size = 8
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 9 )
+font_data = ExtResource( 10 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -58,26 +63,32 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 9 )
+font_data = ExtResource( 10 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFontData" id=6]
 
-size = 20
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 9 )
-_sections_unfolded = [ "Font", "Settings" ]
+hinting = 0
+font_path = "res://Assets/seriffic.ttf"
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="DynamicFont" id=7]
 
-size = 20
+size = 11
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 9 )
-_sections_unfolded = [ "Font", "Settings" ]
+font_data = SubResource( 6 )
+_sections_unfolded = [ "Font" ]
 
-[node name="GameMaster" type="Node"]
+[sub_resource type="DynamicFont" id=8]
+
+size = 12
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 10 )
+_sections_unfolded = [ "Settings" ]
+
+[node name="GameMaster" type="Node" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -86,11 +97,12 @@ __meta__ = {
 skeleton = ExtResource( 2 )
 dragon = ExtResource( 3 )
 Warrior = ExtResource( 4 )
+Spider = ExtResource( 5 )
 
 [node name="Pathway" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 5
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -114,7 +126,7 @@ __meta__ = {
 [node name="Decoration" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -144,175 +156,175 @@ sort_enabled = true
 editor/display_folded = true
 visible = false
 
-[node name="TowerSpot4" parent="TowerSpots" index="0" instance=ExtResource( 6 )]
+[node name="TowerSpot4" parent="TowerSpots" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 64, 192 )
 
-[node name="TowerSpot" parent="TowerSpots" index="1" instance=ExtResource( 6 )]
+[node name="TowerSpot" parent="TowerSpots" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 64, 256 )
 
-[node name="TowerSpot5" parent="TowerSpots" index="2" instance=ExtResource( 6 )]
+[node name="TowerSpot5" parent="TowerSpots" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 192, 192 )
 
-[node name="TowerSpot2" parent="TowerSpots" index="3" instance=ExtResource( 6 )]
+[node name="TowerSpot2" parent="TowerSpots" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 192, 256 )
 
-[node name="TowerSpot3" parent="TowerSpots" index="4" instance=ExtResource( 6 )]
+[node name="TowerSpot3" parent="TowerSpots" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 256, 192 )
 
-[node name="TowerSpot6" parent="TowerSpots" index="5" instance=ExtResource( 6 )]
+[node name="TowerSpot6" parent="TowerSpots" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 256, 256 )
 
-[node name="TowerSpot7" parent="TowerSpots" index="6" instance=ExtResource( 6 )]
+[node name="TowerSpot7" parent="TowerSpots" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 320, 192 )
 
-[node name="TowerSpot8" parent="TowerSpots" index="7" instance=ExtResource( 6 )]
+[node name="TowerSpot8" parent="TowerSpots" index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 320, 256 )
 
-[node name="TowerSpot9" parent="TowerSpots" index="8" instance=ExtResource( 6 )]
+[node name="TowerSpot9" parent="TowerSpots" index="8" instance=ExtResource( 7 )]
 
 position = Vector2( 384, 192 )
 
-[node name="TowerSpot10" parent="TowerSpots" index="9" instance=ExtResource( 6 )]
+[node name="TowerSpot10" parent="TowerSpots" index="9" instance=ExtResource( 7 )]
 
 position = Vector2( 384, 256 )
 
-[node name="TowerSpot11" parent="TowerSpots" index="10" instance=ExtResource( 6 )]
+[node name="TowerSpot11" parent="TowerSpots" index="10" instance=ExtResource( 7 )]
 
 position = Vector2( 448, 192 )
 
-[node name="TowerSpot12" parent="TowerSpots" index="11" instance=ExtResource( 6 )]
+[node name="TowerSpot12" parent="TowerSpots" index="11" instance=ExtResource( 7 )]
 
 position = Vector2( 448, 256 )
 
-[node name="TowerSpot13" parent="TowerSpots" index="12" instance=ExtResource( 6 )]
+[node name="TowerSpot13" parent="TowerSpots" index="12" instance=ExtResource( 7 )]
 
 position = Vector2( 512, 192 )
 
-[node name="TowerSpot14" parent="TowerSpots" index="13" instance=ExtResource( 6 )]
+[node name="TowerSpot14" parent="TowerSpots" index="13" instance=ExtResource( 7 )]
 
 position = Vector2( 512, 256 )
 
-[node name="TowerSpot15" parent="TowerSpots" index="14" instance=ExtResource( 6 )]
+[node name="TowerSpot15" parent="TowerSpots" index="14" instance=ExtResource( 7 )]
 
 position = Vector2( 576, 192 )
 
-[node name="TowerSpot16" parent="TowerSpots" index="15" instance=ExtResource( 6 )]
+[node name="TowerSpot16" parent="TowerSpots" index="15" instance=ExtResource( 7 )]
 
 position = Vector2( 576, 256 )
 
-[node name="TowerSpot17" parent="TowerSpots" index="16" instance=ExtResource( 6 )]
+[node name="TowerSpot17" parent="TowerSpots" index="16" instance=ExtResource( 7 )]
 
 position = Vector2( 640, 192 )
 
-[node name="TowerSpot18" parent="TowerSpots" index="17" instance=ExtResource( 6 )]
+[node name="TowerSpot18" parent="TowerSpots" index="17" instance=ExtResource( 7 )]
 
 position = Vector2( 800, 128 )
 
-[node name="TowerSpot19" parent="TowerSpots" index="18" instance=ExtResource( 6 )]
+[node name="TowerSpot19" parent="TowerSpots" index="18" instance=ExtResource( 7 )]
 
 position = Vector2( 864, 128 )
 
-[node name="TowerSpot20" parent="TowerSpots" index="19" instance=ExtResource( 6 )]
+[node name="TowerSpot20" parent="TowerSpots" index="19" instance=ExtResource( 7 )]
 
 position = Vector2( 928, 128 )
 
-[node name="TowerSpot21" parent="TowerSpots" index="20" instance=ExtResource( 6 )]
+[node name="TowerSpot21" parent="TowerSpots" index="20" instance=ExtResource( 7 )]
 
 position = Vector2( 992, 128 )
 
-[node name="TowerSpot22" parent="TowerSpots" index="21" instance=ExtResource( 6 )]
+[node name="TowerSpot22" parent="TowerSpots" index="21" instance=ExtResource( 7 )]
 
 position = Vector2( 800, 224 )
 
-[node name="TowerSpot23" parent="TowerSpots" index="22" instance=ExtResource( 6 )]
+[node name="TowerSpot23" parent="TowerSpots" index="22" instance=ExtResource( 7 )]
 
 position = Vector2( 864, 192 )
 
-[node name="TowerSpot24" parent="TowerSpots" index="23" instance=ExtResource( 6 )]
+[node name="TowerSpot24" parent="TowerSpots" index="23" instance=ExtResource( 7 )]
 
 position = Vector2( 864, 256 )
 
-[node name="TowerSpot26" parent="TowerSpots" index="24" instance=ExtResource( 6 )]
+[node name="TowerSpot26" parent="TowerSpots" index="24" instance=ExtResource( 7 )]
 
 position = Vector2( 800, 320 )
 
-[node name="TowerSpot25" parent="TowerSpots" index="25" instance=ExtResource( 6 )]
+[node name="TowerSpot25" parent="TowerSpots" index="25" instance=ExtResource( 7 )]
 
 position = Vector2( 864, 320 )
 
-[node name="TowerSpot27" parent="TowerSpots" index="26" instance=ExtResource( 6 )]
+[node name="TowerSpot27" parent="TowerSpots" index="26" instance=ExtResource( 7 )]
 
 position = Vector2( 160, 416 )
 
-[node name="TowerSpot28" parent="TowerSpots" index="27" instance=ExtResource( 6 )]
+[node name="TowerSpot28" parent="TowerSpots" index="27" instance=ExtResource( 7 )]
 
 position = Vector2( 224, 416 )
 
-[node name="TowerSpot29" parent="TowerSpots" index="28" instance=ExtResource( 6 )]
+[node name="TowerSpot29" parent="TowerSpots" index="28" instance=ExtResource( 7 )]
 
 position = Vector2( 288, 416 )
 
-[node name="TowerSpot30" parent="TowerSpots" index="29" instance=ExtResource( 6 )]
+[node name="TowerSpot30" parent="TowerSpots" index="29" instance=ExtResource( 7 )]
 
 position = Vector2( 352, 416 )
 
-[node name="TowerSpot31" parent="TowerSpots" index="30" instance=ExtResource( 6 )]
+[node name="TowerSpot31" parent="TowerSpots" index="30" instance=ExtResource( 7 )]
 
 position = Vector2( 416, 416 )
 
-[node name="TowerSpot32" parent="TowerSpots" index="31" instance=ExtResource( 6 )]
+[node name="TowerSpot32" parent="TowerSpots" index="31" instance=ExtResource( 7 )]
 
 position = Vector2( 480, 416 )
 
-[node name="TowerSpot33" parent="TowerSpots" index="32" instance=ExtResource( 6 )]
+[node name="TowerSpot33" parent="TowerSpots" index="32" instance=ExtResource( 7 )]
 
 position = Vector2( 544, 416 )
 
-[node name="TowerSpot34" parent="TowerSpots" index="33" instance=ExtResource( 6 )]
+[node name="TowerSpot34" parent="TowerSpots" index="33" instance=ExtResource( 7 )]
 
 position = Vector2( 608, 416 )
 
-[node name="TowerSpot35" parent="TowerSpots" index="34" instance=ExtResource( 6 )]
+[node name="TowerSpot35" parent="TowerSpots" index="34" instance=ExtResource( 7 )]
 
 position = Vector2( 704, 448 )
 
-[node name="TowerSpot43" parent="TowerSpots" index="35" instance=ExtResource( 6 )]
+[node name="TowerSpot43" parent="TowerSpots" index="35" instance=ExtResource( 7 )]
 
 position = Vector2( 768, 384 )
 
-[node name="TowerSpot36" parent="TowerSpots" index="36" instance=ExtResource( 6 )]
+[node name="TowerSpot36" parent="TowerSpots" index="36" instance=ExtResource( 7 )]
 
 position = Vector2( 512, 608 )
 
-[node name="TowerSpot38" parent="TowerSpots" index="37" instance=ExtResource( 6 )]
+[node name="TowerSpot38" parent="TowerSpots" index="37" instance=ExtResource( 7 )]
 
 position = Vector2( 576, 608 )
 
-[node name="TowerSpot37" parent="TowerSpots" index="38" instance=ExtResource( 6 )]
+[node name="TowerSpot37" parent="TowerSpots" index="38" instance=ExtResource( 7 )]
 
 position = Vector2( 640, 608 )
 
-[node name="TowerSpot39" parent="TowerSpots" index="39" instance=ExtResource( 6 )]
+[node name="TowerSpot39" parent="TowerSpots" index="39" instance=ExtResource( 7 )]
 
 position = Vector2( 768, 608 )
 
-[node name="TowerSpot40" parent="TowerSpots" index="40" instance=ExtResource( 6 )]
+[node name="TowerSpot40" parent="TowerSpots" index="40" instance=ExtResource( 7 )]
 
 position = Vector2( 896, 544 )
 
-[node name="TowerSpot41" parent="TowerSpots" index="41" instance=ExtResource( 6 )]
+[node name="TowerSpot41" parent="TowerSpots" index="41" instance=ExtResource( 7 )]
 
 position = Vector2( 960, 544 )
 
-[node name="TowerSpot42" parent="TowerSpots" index="42" instance=ExtResource( 6 )]
+[node name="TowerSpot42" parent="TowerSpots" index="42" instance=ExtResource( 7 )]
 
 position = Vector2( 416, 608 )
 
@@ -335,7 +347,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndPath" index="0"]
 
@@ -358,7 +370,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Status" index="0"]
 
@@ -485,13 +497,13 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_col
 
 position = Vector2( 23.499, 37.9779 )
 scale = Vector2( 0.945905, 0.49389 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="Coin" type="Sprite" parent="Status/Counters" index="3"]
 
 position = Vector2( 23.1314, 10.7795 )
 scale = Vector2( 0.693214, 0.574291 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="HpLabel" type="Label" parent="Status" index="2"]
 
@@ -529,9 +541,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 31.0
 margin_top = 599.0
-margin_right = 751.0
+margin_right = 740.0
 margin_bottom = 669.0
 rect_min_size = Vector2( 720, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -541,18 +552,20 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_lock_": true
 }
-towerIcon = ExtResource( 13 )
-getCoins = ExtResource( 14 )
-BombIcon = ExtResource( 15 )
-MudIcon = ExtResource( 16 )
-TowerUp = ExtResource( 17 )
-towerUpIcon = ExtResource( 18 )
-TowerStepsIcon = ExtResource( 19 )
+towerIcon = ExtResource( 14 )
+getCoins = ExtResource( 15 )
+BombIcon = ExtResource( 16 )
+MudIcon = ExtResource( 17 )
+TowerUp = ExtResource( 18 )
+towerUpIcon = ExtResource( 19 )
+TowerStepsIcon = ExtResource( 20 )
+thunder = ExtResource( 21 )
+thunderIcon = ExtResource( 22 )
 
 [node name="Towers" type="Container" parent="PanelControl" index="0"]
 
@@ -570,9 +583,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CreateTower" type="Button" parent="PanelControl/Towers" index="0"]
 
@@ -581,7 +591,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 72.0
-margin_bottom = 70.0
+margin_bottom = 74.0
 rect_min_size = Vector2( 72, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -598,13 +608,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 20 )
+icon = ExtResource( 23 )
 flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Create TowerStep" type="Button" parent="PanelControl/Towers" index="1"]
 
@@ -626,15 +633,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 21 )
+icon = ExtResource( 24 )
 flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="Traps" type="Container" parent="PanelControl" index="1"]
+[node name="Projectiles" type="Container" parent="PanelControl" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -642,52 +646,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 148.0
 margin_right = 292.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 144, 70 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Mud" type="Button" parent="PanelControl/Traps" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 72.0
-margin_bottom = 35.0
-rect_min_size = Vector2( 72, 35 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-icon = ExtResource( 22 )
-flat = false
-align = 1
-_sections_unfolded = [ "Rect" ]
-
-[node name="Projectiles" type="Container" parent="PanelControl" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 296.0
-margin_right = 440.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 144, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -721,14 +679,82 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 23 )
+icon = ExtResource( 25 )
 flat = false
 align = 1
 _sections_unfolded = [ "Grow Direction", "Rect" ]
 
+[node name="thunder" type="Button" parent="PanelControl/Projectiles" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 53.0
+margin_right = 101.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 26 )
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags" ]
+
+[node name="Traps" type="Container" parent="PanelControl" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 296.0
+margin_right = 440.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 144, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Mud" type="Button" parent="PanelControl/Traps" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 72.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 72, 35 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 27 )
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
 [node name="Extras" type="Container" parent="PanelControl" index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -744,48 +770,16 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="HoverCoins" type="Button" parent="PanelControl/Extras" index="0"]
+[node name="Upgrade" type="Button" parent="PanelControl/Extras" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 122.0
+margin_right = 72.0
 margin_bottom = 70.0
-rect_min_size = Vector2( 122, 70 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0.921875, 0.882263, 0.882263, 1 )
-custom_colors/font_color_hover = Color( 0.15686, 0.894531, 0.0943451, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Get Coins"
-flat = false
-align = 1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
-
-[node name="Upgrade" type="Button" parent="PanelControl/Extras" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 122.0
-margin_right = 244.0
-margin_bottom = 70.0
+rect_min_size = Vector2( 72, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -794,6 +788,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 7 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0.905569, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -801,11 +798,11 @@ group = null
 text = "Upgrade"
 flat = false
 align = 1
-_sections_unfolded = [ "Grow Direction", "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Grow Direction", "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="TowerUp_sound" type="AudioStreamPlayer2D" parent="PanelControl/Extras/Upgrade" index="0"]
 
-stream = ExtResource( 24 )
+stream = ExtResource( 28 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -813,6 +810,46 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="HoverCoins" type="Button" parent="PanelControl/Extras" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 144.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 72, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.15686, 0.894531, 0.0943451, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Hover"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Creep" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 29 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="Bombs_changed" from="." to="Status" method="_on_GameMaster_Bombs_changed"]
 
@@ -824,14 +861,18 @@ area_mask = 1
 
 [connection signal="pressed" from="PanelControl/Towers/Create TowerStep" to="PanelControl" method="_on_Create_TowerStep_pressed"]
 
-[connection signal="pressed" from="PanelControl/Traps/Mud" to="PanelControl" method="_on_Mud_pressed"]
-
 [connection signal="pressed" from="PanelControl/Projectiles/Bomb" to="PanelControl" method="_on_Bomb_pressed"]
 
-[connection signal="pressed" from="PanelControl/Extras/HoverCoins" to="PanelControl" method="_on_HoverCoins_pressed"]
+[connection signal="pressed" from="PanelControl/Projectiles/thunder" to="PanelControl" method="_on_thunder_pressed"]
+
+[connection signal="pressed" from="PanelControl/Traps/Mud" to="PanelControl" method="_on_Mud_pressed"]
 
 [connection signal="pressed" from="PanelControl/Extras/Upgrade" to="PanelControl" method="_on_Upgrade_pressed"]
 
 [connection signal="finished" from="PanelControl/Extras/Upgrade/TowerUp_sound" to="PanelControl" method="_on_TowerUp_sound_finished"]
+
+[connection signal="pressed" from="PanelControl/Extras/HoverCoins" to="PanelControl" method="_on_HoverCoins_pressed"]
+
+[connection signal="finished" from="Creep" to="." method="_on_Creep_finished"]
 
 

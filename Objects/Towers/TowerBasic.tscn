@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Towers/TowerBasic.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Towers/Arrow.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Objects/Towers/optionUpgrade.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Images/torra.png" type="Texture" id=4]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Towers/optionUpgrade.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Images/tower_up_unblocked.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/tower_up_blocked.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/torra.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -36,12 +39,15 @@ __meta__ = {
 "_edit_lock_": true
 }
 bala = ExtResource( 2 )
-upgrade = ExtResource( 3 )
+Tup = ExtResource( 3 )
+upgrade = ExtResource( 4 )
+TowerUpUnblocked = ExtResource( 5 )
+TowerUpblocked = ExtResource( 6 )
 
 [node name="Tower" type="Sprite" parent="." index="0"]
 
 scale = Vector2( 0.45, 0.45 )
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -74,9 +80,10 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( 2.694, -0.833116 )
+show_behind_parent = true
 scale = Vector2( 1.79344, 3.51605 )
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="area_entered" from="." to="." method="_on_TowerBasic_area_entered"]
 

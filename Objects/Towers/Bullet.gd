@@ -2,7 +2,7 @@ extends Area2D
 
 var speed 
 var t_life
-export (int) var damage
+var damage = 1
 
 func _ready():
 	# Assing itself to Bullets group

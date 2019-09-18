@@ -2,9 +2,12 @@ extends Node
 var Coins = 0
 var Bombs = 0
 var Mud = 0
+var Thunders = 0
 export (PackedScene) var skeleton
 export (PackedScene) var dragon
 export (PackedScene) var Warrior
+export (PackedScene) var Spider
+
 
 signal Coins_changed
 signal Bombs_changed
@@ -39,12 +42,24 @@ func _rafaga(Enemy,N_ene,t_ene,N_ole,t_ole):
 		yield(get_tree().create_timer(t_ole),"timeout")
 
 func _ready():
+	get_node('Creep').play()
 	self.add_Coins(100)
 	self.add_Bombs(5)
+		
+	_rafaga(Warrior,2,1,1,1)
+func _on_Creep_finished():
+	
+	_rafaga(skeleton,1,1,1,1)
+	_rafaga(dragon,1,1,1,1)
+#	_rafaga(Warrior,1,1,1,1)
+	_rafaga(skeleton,1,1,1,1)
+	_rafaga(skeleton,1,1,1,1)
+	_rafaga(skeleton,40,0.9,2,0.1)
+	
+	
+	
 	
 
-#_rafaga(skeleton,40,0.9,2,0.1)
-	_rafaga(Warrior,1,1,1,1)
 	
 func add_Mud(val):
 
@@ -65,5 +80,10 @@ func add_Bombs(val):
 	self.Bombs += val
 	emit_signal("Bombs_changed",self.Bombs)
 
+
+func add_Thunders(val):
+	
+	self.Thunders += val
+	emit_signal("Thunders_changed",self.Thunders)
 
 
