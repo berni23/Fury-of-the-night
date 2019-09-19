@@ -42,6 +42,7 @@ func _rafaga(Enemy,N_ene,t_ene,N_ole,t_ole):
 		yield(get_tree().create_timer(t_ole),"timeout")
 
 func _ready():
+	
 	get_node('Creep').play()
 	self.add_Coins(100)
 	self.add_Bombs(5)

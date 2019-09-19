@@ -4,6 +4,7 @@ var damage = 10
 
 func _ready():
 	
+	add_to_group(Groups.Projectiles)
 	self.position = self.get_global_mouse_position()	
 	self.get_node('BAaang').play()
 

@@ -6,5 +6,6 @@ const Enemies = "Enemies"
 const Icons = "Icons"
 const Money = "Money"
 const Fly = "Fly"
-
+const Projectiles = "Projectiles"
+const BrokenStuff = "BrokenStuff"
 

@@ -19,7 +19,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 20.6746, 15.3023 )
 
-[node name="TowerBasic" type="Area2D"]
+[node name="TowerBasic" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_point = true

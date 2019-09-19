@@ -8,6 +8,7 @@ func _ready():
 	
 	self.global_position = self.get_global_mouse_position()
 	self.get_node("PathFollow2D/Area2D/AnimatedSprite").play()
+	add_to_group(Groups.Projectiles)
 	
 func _on_TimerAudio_timeout():
 	
