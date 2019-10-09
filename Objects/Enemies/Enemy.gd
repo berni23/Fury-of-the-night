@@ -38,7 +38,7 @@ func _hit_by_bullet(bullet):
 	if bullet.is_in_group(Groups.Bullets):
 		HP = HP - bullet.damage
 		if HP <=0:
-			var Coin = preload("res://Scenes/Coin1.tscn")
+			var Coin = preload("res://Objects/Coins/Coin1.tscn")
 			self.get_parent().get_parent().get_node("Towers").add_child(Coin.instance())
 			
 			self.queue_free()

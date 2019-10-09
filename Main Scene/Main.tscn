@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=2]
@@ -13,27 +13,28 @@
 [ext_resource path="res://Assets/Images/Bomb/tile001.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Images/coins/coin_1.png" type="Texture" id=12]
 [ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=13]
-[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Objects/Traps/thunder.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Objects/Traps/thunderIcon.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Objects/Traps/ShredIcon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Objects/Traps/thunderIcon.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/Images/torra_unblocked.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Images/Bomb2.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Images/MudButton.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=28]
-[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=29]
-[ext_resource path="res://Main Scene/Area2D.gd" type="Script" id=30]
-[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=29]
+[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=30]
+[ext_resource path="res://Main Scene/Area2D.gd" type="Script" id=31]
+[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=35]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -101,14 +102,14 @@ extents = Vector2( 31.9749, 19.8138 )
 [sub_resource type="SpriteFrames" id=10]
 
 animations = [ {
-"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
+"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="GameMaster" type="Node" index="0"]
+[node name="GameMaster" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -577,15 +578,15 @@ _sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_lock_": true
 }
-towerIcon = ExtResource( 14 )
-getCoins = ExtResource( 15 )
-BombIcon = ExtResource( 16 )
-MudIcon = ExtResource( 17 )
-TowerUp = ExtResource( 18 )
-towerUpIcon = ExtResource( 19 )
-TowerStepsIcon = ExtResource( 20 )
-thunder = ExtResource( 21 )
-thunderIcon = ExtResource( 22 )
+ShredIcon = ExtResource( 14 )
+BombIcon = ExtResource( 15 )
+MudIcon = ExtResource( 16 )
+TowerUpIcon = ExtResource( 17 )
+TowerStepsIcon = ExtResource( 18 )
+ThunderIcon = ExtResource( 19 )
+TowerIcon = ExtResource( 20 )
+TowerUp = ExtResource( 21 )
+getCoins = ExtResource( 22 )
 
 [node name="Towers" type="Container" parent="PanelControl" index="0"]
 
@@ -704,7 +705,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Grow Direction", "Rect" ]
 
-[node name="thunder" type="Button" parent="PanelControl/Projectiles" index="1"]
+[node name="Thunder" type="Button" parent="PanelControl/Projectiles" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -773,6 +774,32 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
+[node name="Shred" type="Button" parent="PanelControl/Traps" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 144.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 72, 35 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 28 )
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
 [node name="Extras" type="Container" parent="PanelControl" index="3"]
 
 anchor_left = 0.0
@@ -822,7 +849,8 @@ _sections_unfolded = [ "Grow Direction", "Rect", "custom_colors", "custom_fonts"
 
 [node name="TowerUp_sound" type="AudioStreamPlayer2D" parent="PanelControl/Extras/Upgrade" index="0"]
 
-stream = ExtResource( 28 )
+position = Vector2( -3.05176e-05, 0 )
+stream = ExtResource( 29 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -864,7 +892,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Creep" type="AudioStreamPlayer" parent="." index="8"]
 
-stream = ExtResource( 29 )
+stream = ExtResource( 30 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -881,13 +909,13 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 30 )
+script = ExtResource( 31 )
 
 [node name="brokenTree" type="Sprite" parent="Area2D" index="0"]
 
 visible = false
 position = Vector2( 4.3197, -3.54242 )
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="1"]
 
@@ -904,9 +932,6 @@ visible = false
 position = Vector2( 4.09814, -3.30371 )
 frames = SubResource( 10 )
 animation = "default"
-frame = 2
-
-[connection signal="Bombs_changed" from="." to="Status" method="_on_GameMaster_Bombs_changed"]
 
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
 
@@ -918,9 +943,11 @@ frame = 2
 
 [connection signal="pressed" from="PanelControl/Projectiles/Bomb" to="PanelControl" method="_on_Bomb_pressed"]
 
-[connection signal="pressed" from="PanelControl/Projectiles/thunder" to="PanelControl" method="_on_thunder_pressed"]
+[connection signal="pressed" from="PanelControl/Projectiles/Thunder" to="PanelControl" method="_on_thunder_pressed"]
 
 [connection signal="pressed" from="PanelControl/Traps/Mud" to="PanelControl" method="_on_Mud_pressed"]
+
+[connection signal="pressed" from="PanelControl/Traps/Shred" to="PanelControl" method="_on_Shred_pressed"]
 
 [connection signal="pressed" from="PanelControl/Extras/Upgrade" to="PanelControl" method="_on_Upgrade_pressed"]
 

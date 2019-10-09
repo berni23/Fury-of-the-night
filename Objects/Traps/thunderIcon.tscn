@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Images/thunder/thunder2.png" type="Texture" id=1]
 [ext_resource path="res://thunderIcon.gd" type="Script" id=2]
-[ext_resource path="res://Objects/Traps/thunder.tscn" type="PackedScene" id=3]
 
 [node name="thunderIcon" type="Sprite"]
 
@@ -10,6 +9,5 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-Thunder = ExtResource( 3 )
 
 

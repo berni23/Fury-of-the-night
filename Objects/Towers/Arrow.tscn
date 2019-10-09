@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 34.9016 )
 
-[node name="Arrow" type="Area2D" index="0"]
+[node name="Arrow" type="Area2D"]
 
 rotation = 1.5708
 scale = Vector2( 0.2, 0.2 )

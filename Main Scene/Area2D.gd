@@ -1,12 +1,8 @@
 extends Area2D
-
-
 var broken = false
-
 func _ready():
 	
 	self.add_to_group(Groups.BrokenStuff)
-	
 
 func _on_Area2D_area_entered(area):
 		if area.get_parent().is_in_group(Groups.Projectiles) and broken ==false:
@@ -16,5 +12,6 @@ func _on_Area2D_area_entered(area):
 			get_node('fireTree').play()
 			yield(get_tree().create_timer(12),"timeout")
 			get_node("brokenTree").visible = true
-			get_node("fireTree").queue_free()
+			get_node("fireTree").stop()
+			get_node("fireTree").visible =false
 			broken =true

@@ -1,6 +1,10 @@
 extends Sprite
 
-var Mud = preload('res://Objects/Traps/Mud.tscn')
+export (PackedScene) var Scene
+ 
+#var Shred = preload('res://Objects/Traps/Shred.tscn')
+
+
 var path
 
 func _ready():
@@ -12,19 +16,19 @@ func _process(delta):
 	position = CustomFunc.snap_to_grid(get_global_mouse_position(),
 									Vector2(32,32),Vector2(16,16))
 	
+			
 func _input(event):
 	if Input.is_action_just_pressed("right_click"):
 		self.queue_free()
 			
 	if Input.is_action_just_pressed("left_click"):
 		
-		if self.get_parent().Mud >0:
+		if self.get_parent().Shred >0:
 		# If it is far form the path, don't do anything
 			if CustomFunc.distance_to_path(position,path) > 0:
 				return
-		# Else, create a Mud instance at current position and disappear
-			var MudScene = Mud.instance()
-			get_parent().get_node("YSortObjects").add_child(MudScene)
-			MudScene.global_position = self.global_position
-			get_parent().add_Mud(-1)
-	
+		# Else, create a shred instance at current position and disappear
+			var ShredScene = Scene.instance()
+			get_parent().get_node("YSortObjects").add_child(ShredScene)
+			ShredScene.global_position = self.global_position
+			get_parent().add_Shred(-1)
