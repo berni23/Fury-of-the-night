@@ -4,6 +4,7 @@ var Bomb = 0
 var Mud = 0
 var Thunder = 0
 var Shred= 0
+var Magnet = true
 export (PackedScene) var skeleton
 export (PackedScene) var dragon
 export (PackedScene) var Warrior
