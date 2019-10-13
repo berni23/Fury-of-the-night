@@ -109,7 +109,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="GameMaster" type="Node"]
+[node name="GameMaster" type="Node" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -934,6 +934,13 @@ position = Vector2( 4.09814, -3.30371 )
 frames = SubResource( 10 )
 animation = "default"
 
+[node name="MagnetDuration" type="Timer" parent="." index="10"]
+
+process_mode = 1
+wait_time = 15.0
+one_shot = true
+autostart = false
+
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
 
 [connection signal="area_entered" from="EndPath" to="Status" method="_on_EndPath_area_entered"]
@@ -959,5 +966,7 @@ animation = "default"
 [connection signal="finished" from="Creep" to="." method="_on_Creep_finished"]
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]
+
+[connection signal="timeout" from="MagnetDuration" to="." method="_on_MagnetDuration_timeout"]
 
 

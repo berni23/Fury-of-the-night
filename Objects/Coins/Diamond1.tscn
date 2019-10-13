@@ -1,15 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Objects/Coins/Coin1.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/coins/coin_1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Images/coins/coin_2.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Images/coins/coin_3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Images/coins/coin_4.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Images/coins/coin_5.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Images/coins/coin_6.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Images/coins/coin_7.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Images/coins/coin_8.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sounds/sound_coin.wav" type="AudioStream" id=10]
+[ext_resource path="res://Objects/Coins/Diamond1.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/coins/diamond/diamond3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/coins/diamond/diamond4.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/coins/diamond/diamond5.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/coins/diamond/diamond6.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sounds/diamond.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -18,21 +14,19 @@ extents = Vector2( 10, 10 )
 
 [sub_resource type="SpriteFrames" id=2]
 
-resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 2 ), null, ExtResource( 3 ), null, ExtResource( 4 ), null, ExtResource( 5 ), null, ExtResource( 6 ), null, ExtResource( 7 ), null, ExtResource( 8 ), null, ExtResource( 9 ), null ],
+"frames": [ ExtResource( 2 ), null, ExtResource( 3 ), null, ExtResource( 4 ), null, ExtResource( 5 ), null ],
 "loop": true,
 "name": "default2",
-"speed": 14.0
+"speed": 10.0
 } ]
-_sections_unfolded = [ "Resource" ]
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -46,23 +40,20 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0.802147, 4.75346 )
-scale = Vector2( 0.951346, 1.35709 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="SpriteCoin" type="AnimatedSprite" parent="." index="1"]
 
-position = Vector2( 4.30058, 5.00161 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 6
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Timer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 
@@ -75,7 +66,8 @@ autostart = true
 
 [node name="tirori" type="AudioStreamPlayer2D" parent="." index="4"]
 
-stream = ExtResource( 10 )
+position = Vector2( -1.47015, 2.20526 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

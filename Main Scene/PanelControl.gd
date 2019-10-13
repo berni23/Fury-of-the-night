@@ -108,5 +108,10 @@ func _input(event):
 			delete_existing_icons()
 	
 			self.get_parent().add_child(MudIcon.instance())
+			
+		
+		if event.scancode == KEY_H:
+			delete_existing_icons()
+			self.get_parent().add_child(getCoins.instance())
 	
 

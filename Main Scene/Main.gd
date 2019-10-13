@@ -4,7 +4,7 @@ var Bomb = 0
 var Mud = 0
 var Thunder = 0
 var Shred= 0
-var Magnet = true
+var Magnet = false
 export (PackedScene) var skeleton
 export (PackedScene) var dragon
 export (PackedScene) var Warrior
@@ -12,6 +12,8 @@ export (PackedScene) var Spider
 
 signal Coins_changed
 signal Bomb_changed
+signal Magnet_on
+
 """ Recordatori de les collision layers
 Enemics Layer2 Mask1
 Torres Mask2
@@ -51,11 +53,21 @@ func _rafaga(Enemy,N_ene,t_ene,N_wave,t_wave):
 
 func _ready():
 	
+	
 	get_node('Creep').play()
 	self.add_Coins(100)
 	self.add_Bomb(5)
 		
 	_rafaga(Warrior,2,1,1,1)
+	
+	#self.connect("Magnet_on",self,"_on_Main_Magnet_on")
+	
+
+func Magnet_on():
+	
+	self.Magnet = true
+	emit_signal("Magnet_on")
+	$MagnetDuration.start()
 	
 func _on_Creep_finished():
 	
@@ -94,6 +106,6 @@ func add_Coins(val):
 	self.Coins += val
 	emit_signal("Coins_changed",self.Coins)
 	
-	
 
-
+func _on_MagnetDuration_timeout():
+	self.Magnet=false

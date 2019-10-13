@@ -5,11 +5,15 @@ export(int) var HP = 10
 export(int) var Speed = 100
 var coin1 = preload("res://Objects/Coins/Coin1.tscn")
 var coin2 = preload("res://Objects/Coins/Coin2.tscn")
+var diamond1 = preload("res://Objects/Coins/Diamond1.tscn")
+var diamond2 = preload("res://Objects/Coins/Diamond2.tscn")
+var Magnet = preload("res://Objects/Coins/Magnet.tscn")
 var Old_position = Vector2(0,0)
 var Scream =null
 var nCoin
+var prob
 
-
+	
 func sound(scream):
 	
 	if scream == null:
@@ -23,22 +27,23 @@ func _process(delta):
 		
 		if get_parent().get_parent().Magnet==false:
 			
+			if prob>=4: nCoin = coin1.instance()
 		
-			nCoin = coin1.instance()
-		
+			elif prob >=2: nCoin = diamond1.instance()
+				
+			else : nCoin = Magnet.instance() #prob ==1
+
 		else:
+	
+			if prob>=3: nCoin = coin2.instance()
 			
-			nCoin = coin2.instance()
-			
+			else: nCoin = diamond2.instance()
+				
 		nCoin.global_position =Vector2(self.global_position.x,self.global_position.y)
 		self.get_parent().get_parent().get_node("YSortObjects").add_child(nCoin)
-		
 		self.queue_free()
-		
-		
-		
-	""" Function que mou els enemics al llarg del camí """
 
+	""" Function que mou els enemics al llarg del camí """
 	# Move along the path
 	self.offset += Speed*delta
 	# Detect direction to choose right animation
@@ -56,14 +61,10 @@ func _process(delta):
 		new_animation = "left"
 	# Change the animation if needed
 	if $AnimatedSprite.animation != new_animation:
-		
 		sound(Scream)
-
 		$AnimatedSprite.animation = new_animation
-
 	# Save current position
 	Old_position = self.position
-
 # The following function should be connected 
 # to area_entered signal from the Area2D child node
 func _hit_by_bullet(bullet):

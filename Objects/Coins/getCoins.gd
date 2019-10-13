@@ -4,9 +4,9 @@ var sound_coin = AudioStreamPlayer2D.new()
 
 func _ready():
 	
-	self.add_child(sound_coin)
-	sound_coin.stream = preload("res://Assets/Sounds/sound_coin.wav")
+
 	self.add_to_group(Groups.Icons)
+	self.add_to_group(Groups.Hover)
 
 func _process(delta):
 	
@@ -18,10 +18,4 @@ func _input(event):
 	
 			self.queue_free()
 	
-func _on_Area2D_area_entered(area):
-	
-	if area.is_in_group("Money"):
-		
-		sound_coin.play()
-		area.queue_free()
-		self.get_parent().add_Coins(1)
+

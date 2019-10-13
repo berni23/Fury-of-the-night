@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/magnet.wav-3cd5a449e9da4c80767e2880336c2d86.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/magnet.wav"
+dest_files=[ "res://.import/magnet.wav-3cd5a449e9da4c80767e2880336c2d86.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

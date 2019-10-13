@@ -8,4 +8,4 @@ const Money = "Money"
 const Fly = "Fly"
 const Projectiles = "Projectiles"
 const BrokenStuff = "BrokenStuff"
-
+const Hover = "Hover"

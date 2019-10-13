@@ -81,7 +81,8 @@ area_mask = 1
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
 
-editor/display_folded = true
+position = Vector2( 4.01979, 0.14526 )
+scale = Vector2( 2.37757, 1.00454 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -94,7 +95,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( 1.60698, -3.22643 )
+position = Vector2( -1.79399, 2.62775 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
