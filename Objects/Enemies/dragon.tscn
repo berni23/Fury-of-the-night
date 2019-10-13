@@ -53,7 +53,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 1 )
 animation = "right"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Roar" type="AudioStreamPlayer2D" parent="."]
@@ -69,6 +69,7 @@ position = Vector2( -1.79399, 2.62775 )
 shape = SubResource( 2 )
 
 [node name="HealthBar" type="TextureProgress" parent="."]
+visible = false
 margin_left = -19.1124
 margin_top = -61.7479
 margin_right = 20.8876
@@ -78,6 +79,9 @@ value = 30.0
 texture_under = ExtResource( 15 )
 texture_progress = ExtResource( 16 )
 tint_progress = Color( 0, 1, 0, 1 )
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="area_entered" from="Area2D" to="." method="_hit_by_bullet"]
 [connection signal="changed" from="HealthBar" to="." method="_on_HealthBar_changed"]
 [connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

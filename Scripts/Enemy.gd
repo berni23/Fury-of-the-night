@@ -84,7 +84,11 @@ func _hit_by_bullet(bullet):
 		bullet.queue_free()
 		
 func _on_HealthBar_value_changed(value):
-
+	
+	$Timer.start()
+	
+	$HealthBar.show()
+	
 	if value < caution*$HealthBar.max_value:
 		
 		$HealthBar.tint_progress = caution_color
@@ -93,4 +97,8 @@ func _on_HealthBar_value_changed(value):
 		
 		$HealthBar.tint_progress = danger_color
 
+func _on_Timer_timeout():
+	
+	$HealthBar.hide()
+	
 
