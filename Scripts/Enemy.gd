@@ -1,8 +1,17 @@
 
 extends PathFollow2D
 
-export(int) var HP = 10
+
+
+export(int) var HP 
 export(int) var Speed = 100
+var healthy_color = Color.green
+var caution_color = Color.yellow
+var danger_color = Color.red
+var caution = 0.5
+var danger = 0.2
+
+
 var coin1 = preload("res://Objects/Coins/Coin1.tscn")
 var coin2 = preload("res://Objects/Coins/Coin2.tscn")
 var diamond1 = preload("res://Objects/Coins/Diamond1.tscn")
@@ -23,7 +32,7 @@ func sound(scream):
 
 func _process(delta):
 
-	if HP <=0:
+	if $HealthBar.value <=0:
 		
 		if get_parent().get_parent().Magnet==false:
 			
@@ -68,6 +77,20 @@ func _process(delta):
 # The following function should be connected 
 # to area_entered signal from the Area2D child node
 func _hit_by_bullet(bullet):
+	
 	if bullet.is_in_group(Groups.Bullets):
-		HP = HP - bullet.damage
+		$HealthBar.value -=  bullet.damage
+		
 		bullet.queue_free()
+		
+func _on_HealthBar_value_changed(value):
+
+	if value < caution*$HealthBar.max_value:
+		
+		$HealthBar.tint_progress = caution_color
+	
+	elif value < danger*$HealthBar.max_value:
+		
+		$HealthBar.tint_progress = danger_color
+
+

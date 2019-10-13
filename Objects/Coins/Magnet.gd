@@ -2,7 +2,6 @@ extends Area2D
 
 
 var ShowMagnet = true
-signal Magnet_on
 #func _ready():
 
 func _on_Area2D_area_entered(area):

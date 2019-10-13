@@ -84,15 +84,13 @@ func _on_Create_TowerStep_pressed():
 	
 
 func _input(event):
-
-
 	if event is InputEventKey and event.pressed:
 	
 		if event.scancode == KEY_T:
 			delete_existing_icons()
 		
 			self.get_parent().add_child(ThunderIcon.instance())
-
+			
 		if event.scancode ==KEY_S:
 			
 			delete_existing_icons()
@@ -108,10 +106,7 @@ func _input(event):
 			delete_existing_icons()
 	
 			self.get_parent().add_child(MudIcon.instance())
-			
 		
 		if event.scancode == KEY_H:
 			delete_existing_icons()
 			self.get_parent().add_child(getCoins.instance())
-	
-

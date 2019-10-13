@@ -78,16 +78,12 @@ func _on_Creep_finished():
 	_rafaga(skeleton,1,1,1,1)
 	_rafaga(skeleton,40,0.9,2,0.1)
 
-
-
 func add_Thunder(val):	
 #With this function we modify the available amounts of traps and projectiles
 	self.Thunder+=val
 	
 func add_Mud(val):
-	
 	self.Mud+=val
-
 func add_Shred(val):
 	
 	self.Shred+=val
@@ -105,7 +101,7 @@ func add_Coins(val):
 	# a traves d'aquesta funció i mai canviar Main.Coins manualment.
 	self.Coins += val
 	emit_signal("Coins_changed",self.Coins)
-	
+
 
 func _on_MagnetDuration_timeout():
 	self.Magnet=false

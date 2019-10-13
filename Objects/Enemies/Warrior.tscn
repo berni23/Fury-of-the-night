@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Objects/Enemies/Skeleton.gd" type="Script" id=1]
 [ext_resource path="res://Assets/warrior/Warrior_l1.png" type="Texture" id=2]
@@ -17,9 +17,10 @@
 [ext_resource path="res://Assets/warrior/Warrior_b3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/warrior/Warrior_b4.png" type="Texture" id=16]
 [ext_resource path="res://Assets/warrior/Warrior_b2.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Images/lifebar/lifebar1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Images/lifebar/lifebar3..png" type="Texture" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
-
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
@@ -43,54 +44,39 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-
-custom_solver_bias = 0.0
 radius = 8.20363
 height = 26.3246
 
 [node name="Warrior" type="PathFollow2D"]
-
 position = Vector2( -0.916656, -2.45529 )
 scale = Vector2( 1.02865, 0.923272 )
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
 rotate = false
 cubic_interp = false
-loop = true
-lookahead = 4.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-HP = 10
-Speed = 100
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
-
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -6 )
 frames = SubResource( 1 )
 animation = "bottom"
-frame = 1
+frame = 2
 playing = true
-_sections_unfolded = [ "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="." index="1"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+[node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 1.60698, -3.22643 )
 shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = -17.3013
+margin_top = -67.8852
+margin_right = 22.6987
+margin_bottom = -27.8852
+max_value = 20.0
+value = 20.0
+texture_under = ExtResource( 18 )
+texture_progress = ExtResource( 19 )
+tint_progress = Color( 0, 1, 0, 1 )
 [connection signal="area_entered" from="Area2D" to="." method="_hit_by_bullet"]
-
-
+[connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]

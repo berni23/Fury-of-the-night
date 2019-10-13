@@ -18,12 +18,9 @@
 [ext_resource path="res://Assets/Sounds/trap_final.wav" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 12.4972, 18.8712 )
+extents = Vector2( 8.48095, 11.4584 )
 
 [sub_resource type="SpriteFrames" id=2]
-
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
@@ -36,66 +33,32 @@ animations = [ {
 "speed": 9.0
 } ]
 
-[node name="Area2D" type="Area2D" index="0"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
+[node name="Area2D" type="Area2D"]
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-
-position = Vector2( -4.67188, 3.10783 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.47799, 2.3134 )
 scale = Vector2( 4.06539, 1.3869 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
-
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "setting_up"
-frame = 2
 playing = true
 
-[node name="Sprite" type="Sprite" parent="." index="2"]
+[node name="Sprite" type="Sprite" parent="."]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="3"]
-
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 16 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
 
-[node name="finish" type="Timer" parent="." index="4"]
-
-process_mode = 1
+[node name="finish" type="Timer" parent="."]
 wait_time = 30.0
 one_shot = true
-autostart = false
 
-[node name="turn_damage" type="Timer" parent="." index="5"]
-
-process_mode = 1
+[node name="turn_damage" type="Timer" parent="."]
 wait_time = 0.6
-one_shot = false
-autostart = false
-
 [connection signal="area_entered" from="." to="." method="_on_Area2D_area_entered"]
-
 [connection signal="area_exited" from="." to="." method="_on_Area2D_area_exited"]
-
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
-
 [connection signal="timeout" from="finish" to="." method="_on_finish_timeout"]
-
 [connection signal="timeout" from="turn_damage" to="." method="_on_turn_damage_timeout"]
-
-

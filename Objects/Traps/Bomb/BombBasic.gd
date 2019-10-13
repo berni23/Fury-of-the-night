@@ -27,7 +27,7 @@ func _on_Area2D_area_exited(area):
 func _on_TimerExplosion_timeout():
 
 	for enemy in explosion_range:
-		enemy.HP = enemy.HP-self.damage
+		enemy.get_node('HealthBar').value -= self.damage
 
 func _on_AnimatedSprite_animation_finished():
 

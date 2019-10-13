@@ -15,7 +15,7 @@ func _on_AnimatedSprite_animation_finished():
 func _on_Area2D_area_entered(area):
 	
 	if area.get_parent().is_in_group(Groups.Enemies):
-      area.get_parent().HP  = area.get_parent().HP -self.damage
+		area.get_parent().get_node('HealthBar').value -= self.damage
 	
 
 func _on_BAaang_finished():

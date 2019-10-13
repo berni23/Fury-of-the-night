@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Objects/Enemies/dragon.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Gargola/tile011.png" type="Texture" id=2]
@@ -14,9 +14,10 @@
 [ext_resource path="res://Assets/Images/Gargola/tile007.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Images/Gargola/tile008.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Sounds/roar.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Images/lifebar/lifebar1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Images/lifebar/lifebar3..png" type="Texture" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
-
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
@@ -40,65 +41,43 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-
-custom_solver_bias = 0.0
 radius = 8.20363
 height = 26.3246
 
 [node name="Dragon" type="PathFollow2D"]
-
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
 rotate = false
 cubic_interp = false
-loop = true
-lookahead = 4.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-HP = 10
-Speed = 100
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
-
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 1 )
 animation = "right"
-frame = 2
+frame = 1
 playing = true
-_sections_unfolded = [ "Transform" ]
 
-[node name="Roar" type="AudioStreamPlayer2D" parent="." index="1"]
-
+[node name="Roar" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
 
-[node name="Area2D" type="Area2D" parent="." index="2"]
-
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 4.01979, 0.14526 )
 scale = Vector2( 2.37757, 1.00454 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 collision_layer = 2
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -1.79399, 2.62775 )
 shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = -19.1124
+margin_top = -61.7479
+margin_right = 20.8876
+margin_bottom = -21.7479
+max_value = 30.0
+value = 30.0
+texture_under = ExtResource( 15 )
+texture_progress = ExtResource( 16 )
+tint_progress = Color( 0, 1, 0, 1 )
 [connection signal="area_entered" from="Area2D" to="." method="_hit_by_bullet"]
-
-
+[connection signal="changed" from="HealthBar" to="." method="_on_HealthBar_changed"]
+[connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
