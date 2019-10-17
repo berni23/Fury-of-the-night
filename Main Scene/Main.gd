@@ -53,7 +53,6 @@ func _rafaga(Enemy,N_ene,t_ene,N_wave,t_wave):
 
 func _ready():
 	
-	
 	get_node('Creep').play()
 	self.add_Coins(100)
 	self.add_Bomb(5)

@@ -46,4 +46,4 @@ func _on_finish_timeout():
 func _on_turn_damage_timeout():
 	
 	for enemy in enemy_in:
-		enemy.get_node('HelthBar').value -= 1 
+		enemy.get_node('HealthBar').value -= 1 

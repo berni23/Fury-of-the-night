@@ -9,6 +9,7 @@ export (PackedScene) var ThunderIcon
 export (PackedScene) var TowerIcon
 export (PackedScene) var TowerUp
 export (PackedScene) var getCoins 
+export (PackedScene) var Friend
 var Arr_up=[TowerUp]
 
 var upgrade =0
@@ -110,3 +111,8 @@ func _input(event):
 		if event.scancode == KEY_H:
 			delete_existing_icons()
 			self.get_parent().add_child(getCoins.instance())
+			
+		
+
+func _on_Warrior_pressed():
+	get_parent().get_node('WarriorPath').add_child(Friend.instance())

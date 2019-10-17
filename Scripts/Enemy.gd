@@ -2,9 +2,11 @@
 extends PathFollow2D
 
 
-
-export(int) var HP 
+var stop = false
 export(int) var Speed = 100
+
+#HP features
+
 var healthy_color = Color.green
 var caution_color = Color.yellow
 var danger_color = Color.red
@@ -53,27 +55,29 @@ func _process(delta):
 		self.queue_free()
 
 	""" Function que mou els enemics al llarg del camí """
+	
+	if stop==false:
 	# Move along the path
-	self.offset += Speed*delta
+		self.offset += Speed*delta
 	# Detect direction to choose right animation
-	var alpha = rad2deg((self.position - Old_position).angle())
-	var new_animation
-	if alpha < -135:
-		new_animation = "left"
-	elif alpha < -45:
-		new_animation = "top"
-	elif alpha < 45:
-		new_animation = "right"
-	elif alpha <135:
-		new_animation = "bottom"
-	else:
-		new_animation = "left"
-	# Change the animation if needed
-	if $AnimatedSprite.animation != new_animation:
-		sound(Scream)
-		$AnimatedSprite.animation = new_animation
-	# Save current position
-	Old_position = self.position
+		var alpha = rad2deg((self.position - Old_position).angle())
+		var new_animation
+		if alpha < -135:
+			new_animation = "left"
+		elif alpha < -45:
+			new_animation = "top"
+		elif alpha < 45:
+			new_animation = "right"
+		elif alpha <135:
+			new_animation = "bottom"
+		else:
+			new_animation = "left"
+		# Change the animation if needed
+		if $AnimatedSprite.animation != new_animation:
+			sound(Scream)
+			$AnimatedSprite.animation = new_animation
+		# Save current position
+		Old_position = self.position
 # The following function should be connected 
 # to area_entered signal from the Area2D child node
 func _hit_by_bullet(bullet):
