@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=2]
@@ -27,15 +27,16 @@
 [ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Images/Bomb2.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Images/MudButton.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=30]
-[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=31]
-[ext_resource path="res://Main Scene/Area2D.gd" type="Script" id=32]
-[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Images/sword.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Images/MudButton.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=31]
+[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=32]
+[ext_resource path="res://Main Scene/Area2D.gd" type="Script" id=33]
+[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=37]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -74,7 +75,7 @@ extents = Vector2( 31.9749, 19.8138 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
+"frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -412,7 +413,8 @@ icon = ExtResource( 27 )
 [node name="Warrior" type="Button" parent="PanelControl/Projectiles"]
 margin_top = 37.0
 margin_right = 48.0
-margin_bottom = 72.0
+margin_bottom = 74.0
+icon = ExtResource( 28 )
 
 [node name="Traps" type="Container" parent="PanelControl"]
 margin_left = 296.0
@@ -424,14 +426,14 @@ rect_min_size = Vector2( 144, 70 )
 margin_right = 72.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 72, 35 )
-icon = ExtResource( 28 )
+icon = ExtResource( 29 )
 
 [node name="Shred" type="Button" parent="PanelControl/Traps"]
 margin_left = 72.0
 margin_right = 144.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 72, 35 )
-icon = ExtResource( 29 )
+icon = ExtResource( 30 )
 
 [node name="Extras" type="Container" parent="PanelControl"]
 margin_left = 444.0
@@ -451,7 +453,7 @@ text = "Upgrade"
 
 [node name="TowerUp_sound" type="AudioStreamPlayer2D" parent="PanelControl/Extras/Upgrade"]
 position = Vector2( -3.05176e-05, 0 )
-stream = ExtResource( 30 )
+stream = ExtResource( 31 )
 
 [node name="HoverCoins" type="Button" parent="PanelControl/Extras"]
 margin_left = 72.0
@@ -466,16 +468,16 @@ custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "Hover"
 
 [node name="Creep" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 31 )
+stream = ExtResource( 32 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 892.323, 385.957 )
-script = ExtResource( 32 )
+script = ExtResource( 33 )
 
 [node name="brokenTree" type="Sprite" parent="Area2D"]
 visible = false
 position = Vector2( 4.3197, -3.54242 )
-texture = ExtResource( 33 )
+texture = ExtResource( 34 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 5.99011, -2.47367 )
