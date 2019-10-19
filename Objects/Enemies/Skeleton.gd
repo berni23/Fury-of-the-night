@@ -1,7 +1,6 @@
 extends "res://Scripts/Enemy.gd"
 
 
-
 #onready var health_bar = $HealthBar
 
 func _ready():

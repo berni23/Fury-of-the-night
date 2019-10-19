@@ -58,7 +58,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -6 )
 frames = SubResource( 1 )
 animation = "bottom"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -81,6 +81,11 @@ texture_progress = ExtResource( 19 )
 tint_progress = Color( 0, 1, 0, 1 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.2
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_hit_by_bullet"]
 [connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

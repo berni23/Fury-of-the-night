@@ -82,7 +82,13 @@ func _on_Upgrade_pressed():
 func _on_Create_TowerStep_pressed():
 	delete_existing_icons()
 	self.get_parent().add_child(TowerStepsIcon.instance())
+
+func _on_Warrior_pressed():
+	delete_existing_icons()
 	
+	get_parent().get_node('WarriorPath').add_child(Friend.instance())
+	get_parent().add_Coins(-2)
+
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -112,7 +118,3 @@ func _input(event):
 			delete_existing_icons()
 			self.get_parent().add_child(getCoins.instance())
 			
-		
-
-func _on_Warrior_pressed():
-	get_parent().get_node('WarriorPath').add_child(Friend.instance())

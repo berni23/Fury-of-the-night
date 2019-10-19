@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Objects/Friend.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/mirror/Attackm1.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://Assets/Images/mirror/Walkm9.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Images/mirror/Walkm8.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Images/mirror/Walkm10.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Images/lifebar/lifebar1.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Images/lifebar/lifebar3..png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -41,7 +43,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 4
+frame = 6
 playing = true
 flip_h = true
 flip_v = true
@@ -53,7 +55,22 @@ position = Vector2( -30, 0 )
 scale = Vector2( 1.55848, 3.08645 )
 shape = SubResource( 2 )
 
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = -20.0
+margin_top = 40.0
+margin_right = 20.0
+margin_bottom = 80.0
+max_value = 10.0
+value = 10.0
+texture_under = ExtResource( 20 )
+texture_progress = ExtResource( 21 )
+tint_progress = Color( 0, 1, 0, 1 )
+
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

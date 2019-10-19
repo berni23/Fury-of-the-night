@@ -12,11 +12,13 @@ func _on_Main_Coins_changed(coins):
 
 func _on_EndPath_area_entered(area):
 	
-	get_node("VBoxContainer/Life").value -=1
+	if area.get_parent().is_in_group(Groups.Enemies):
 	
-	if get_node("VBoxContainer/Life").value <=0:
+		get_node("VBoxContainer/Life").value -=1
 		
-			print('GAME OVER')
+		if get_node("VBoxContainer/Life").value <=0:
+			
+				print('GAME OVER')
 
 func _on_Main_Bomb_changed(Bomb):
 	self.get_node("Counters/BombsLabel").text = str(Bomb)

@@ -1,7 +1,6 @@
 
 extends PathFollow2D
 
-
 var stop = false
 export(int) var Speed = 100
 
@@ -23,6 +22,9 @@ var Old_position = Vector2(0,0)
 var Scream =null
 var nCoin
 var prob
+var reload =false
+var Friend
+var damage = 1 # default value for damaging. To be adjusted in each enemy ready function respectively
 
 	
 func sound(scream):
@@ -78,15 +80,34 @@ func _process(delta):
 			$AnimatedSprite.animation = new_animation
 		# Save current position
 		Old_position = self.position
+		
+	
+	elif reload==true and stop==true:
+		
+		
+		if Friend.get_node('HealthBar').value <=1:
+			
+			stop = false
+			
+		Friend.get_node('HealthBar').value -= damage
+		reload=false
+		$Timer2.start()
+		
+
 # The following function should be connected 
 # to area_entered signal from the Area2D child node
-func _hit_by_bullet(bullet):
+#func _hit_by_bullet(bullet):
 	
-	if bullet.is_in_group(Groups.Bullets):
-		$HealthBar.value -=  bullet.damage
-		
-		bullet.queue_free()
-		
+func _on_Area2D_area_entered(area):
+	
+	if area.get_parent().is_in_group(Groups.Friends):	
+		Friend = area.get_parent()
+		reload = true
+	
+	if area.is_in_group(Groups.Bullets):
+		$HealthBar.value -=  area.damage	
+		area.queue_free()
+
 func _on_HealthBar_value_changed(value):
 	
 	$Timer.start()
@@ -105,4 +126,5 @@ func _on_Timer_timeout():
 	
 	$HealthBar.hide()
 	
-
+func _on_Timer2_timeout():
+	reload = true
