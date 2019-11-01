@@ -43,7 +43,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Walk"
-frame = 6
+frame = 8
 playing = true
 flip_h = true
 flip_v = true

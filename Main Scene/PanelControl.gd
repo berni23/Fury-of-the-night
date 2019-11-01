@@ -78,7 +78,6 @@ func _on_Upgrade_pressed():
 	
 				self.get_parent().get_node("YSortObjects").add_child(NewObj)
 
-
 func _on_Create_TowerStep_pressed():
 	delete_existing_icons()
 	self.get_parent().add_child(TowerStepsIcon.instance())

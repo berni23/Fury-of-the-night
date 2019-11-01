@@ -82,7 +82,9 @@ func add_Thunder(val):
 	self.Thunder+=val
 	
 func add_Mud(val):
+	
 	self.Mud+=val
+	
 func add_Shred(val):
 	
 	self.Shred+=val
@@ -90,6 +92,7 @@ func add_Shred(val):
 func add_Bomb(val):
 
 	self.Bomb+=val
+	
 	emit_signal("Bomb_changed",self.Bomb)
 		
 func add_Coins(val):
@@ -104,3 +107,4 @@ func add_Coins(val):
 
 func _on_MagnetDuration_timeout():
 	self.Magnet=false
+	

@@ -33,8 +33,6 @@ func _process(delta):
 		enemy_list[0].get_node('HealthBar').value -= 1
 		reload=false
 	
-	
-		
 func _on_Area2D_area_entered(area):
 	
 	if area.get_parent().is_in_group(Groups.Enemies):
