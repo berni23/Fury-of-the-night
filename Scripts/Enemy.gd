@@ -18,6 +18,8 @@ var coin2 = preload("res://Objects/Coins/Coin2.tscn")
 var diamond1 = preload("res://Objects/Coins/Diamond1.tscn")
 var diamond2 = preload("res://Objects/Coins/Diamond2.tscn")
 var Magnet = preload("res://Objects/Coins/Magnet.tscn")
+var heart1 = preload("res://Objects/Coins/heart.tscn")
+var heart2 = preload("res://Objects/Coins/heart2.tscn")
 var Old_position = Vector2(0,0)
 var Scream =null
 var nCoin
@@ -40,7 +42,7 @@ func _process(delta):
 		
 		if get_parent().get_parent().Magnet==false:
 			
-			if prob>=4: nCoin = coin1.instance()
+			if prob>=4: nCoin = heart1.instance()
 		
 			elif prob >=2: nCoin = diamond1.instance()
 				
@@ -48,7 +50,7 @@ func _process(delta):
 
 		else:
 	
-			if prob>=3: nCoin = coin2.instance()
+			if prob>=3: nCoin = heart2.instance()
 			
 			else: nCoin = diamond2.instance()
 				

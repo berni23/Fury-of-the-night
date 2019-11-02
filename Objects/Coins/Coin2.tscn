@@ -10,33 +10,19 @@
 [ext_resource path="res://Assets/Sounds/sound_coin.wav" type="AudioStream" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
-
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 7.0
 } ]
-_sections_unfolded = [ "Resource" ]
 
-[node name="Coin2Sprite" type="AnimatedSprite" index="0"]
-
+[node name="Coin2Sprite" type="AnimatedSprite"]
 frames = SubResource( 1 )
-animation = "default"
 frame = 3
 playing = true
 script = ExtResource( 7 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="tirori" type="AudioStreamPlayer" parent="." index="0"]
-
+[node name="tirori" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
 [connection signal="finished" from="tirori" to="." method="_on_tirori_finished"]
-
-

@@ -61,7 +61,6 @@ func _ready():
 	
 	#self.connect("Magnet_on",self,"_on_Main_Magnet_on")
 	
-
 func Magnet_on():
 	
 	self.Magnet = true
