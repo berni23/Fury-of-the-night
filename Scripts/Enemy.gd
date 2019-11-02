@@ -35,15 +35,12 @@ func _process(delta):
 		if get_parent().get_parent().Magnet==false:
 			
 			if prob>=4: nCoin = heart1.instance()
-		
-			elif prob >=2: nCoin = diamond1.instance()
-				
+			elif prob >=2: nCoin = diamond1.instance()	
 			else : nCoin = Magnet.instance() #prob ==1
 
 		else:
-	
-			if prob>=3: nCoin = heart2.instance()
 			
+			if prob>=3: nCoin = heart2.instance()
 			else: nCoin = diamond2.instance()
 				
 		nCoin.global_position =Vector2(self.global_position.x,self.global_position.y)

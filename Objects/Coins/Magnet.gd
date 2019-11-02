@@ -1,6 +1,5 @@
 extends Area2D
 
-
 var ShowMagnet = true
 #func _ready():
 

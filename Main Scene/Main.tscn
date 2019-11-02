@@ -254,8 +254,12 @@ __meta__ = {
 }
 
 [node name="EndPath" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1072, 208 )
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndPath"]
 scale = Vector2( 1.73077, 3.69231 )
@@ -269,6 +273,7 @@ margin_bottom = 47.0
 script = ExtResource( 9 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Status"]
+editor/display_folded = true
 margin_left = -2.0
 margin_top = -1.0
 margin_right = 269.0
@@ -292,6 +297,7 @@ __meta__ = {
 }
 
 [node name="Counters" type="Container" parent="Status"]
+editor/display_folded = true
 margin_left = 271.0
 margin_right = 311.0
 margin_bottom = 40.0
@@ -344,6 +350,7 @@ custom_constants/shadow_as_outline = 0
 text = "HP"
 
 [node name="PanelControl" type="HBoxContainer" parent="."]
+editor/display_folded = true
 margin_top = 599.0
 margin_right = 740.0
 margin_bottom = 669.0
@@ -468,6 +475,7 @@ text = "Hover"
 stream = ExtResource( 32 )
 
 [node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 892.323, 385.957 )
 script = ExtResource( 33 )
 

@@ -1,7 +1,5 @@
 extends "res://Scripts/CoinMoving.gd"
 
-
-
 func _ready():
 	Value=1
 	self.add_to_group(Groups.Money)

@@ -1,4 +1,5 @@
 extends Node
+
 var Coins = 0
 var Bomb = 0
 var Mud = 0
@@ -77,22 +78,24 @@ func _on_Creep_finished():
 	_rafaga(skeleton,1,1,1,1)
 	_rafaga(skeleton,40,0.9,2,0.1)
 
+func Master_add(value_type):
+	match value_type[1]:
+		"coins":	self.add_Coins(value_type[0])
+		"life":		self.add_Life(value_type[0])
+		_:			print("ERROR: Unnexpected value type!")
+
 func add_Thunder(val):	
-#With this function we modify the available amounts of traps and projectiles
+	#With this function we modify the available amounts of traps and projectiles
 	self.Thunder+=val
 	
 func add_Mud(val):
-	
 	self.Mud+=val
 	
 func add_Shred(val):
-	
 	self.Shred+=val
 	
 func add_Bomb(val):
-
 	self.Bomb+=val
-	
 	emit_signal("Bomb_changed",self.Bomb)
 		
 func add_Coins(val):
@@ -103,8 +106,11 @@ func add_Coins(val):
 	# a traves d'aquesta funció i mai canviar Main.Coins manualment.
 	self.Coins += val
 	emit_signal("Coins_changed",self.Coins)
-
+	
+func add_Life(val):
+	get_node("Status/VBoxContainer/Life").value += val
+	if get_node("Status/VBoxContainer/Life").value <=0:
+		print('GAME OVER')
 
 func _on_MagnetDuration_timeout():
 	self.Magnet=false
-	

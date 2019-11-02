@@ -24,7 +24,6 @@ shape = SubResource( 1 )
 
 [node name="MagnetSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="tirori" type="AudioStreamPlayer2D" parent="."]
