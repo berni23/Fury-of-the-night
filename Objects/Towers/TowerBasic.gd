@@ -7,4 +7,4 @@ var treshCoin = 5
 
 func _ready():
 	Up=true
-	add_to_group(Groups.Towers)
+

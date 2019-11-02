@@ -10,11 +10,9 @@ var treshCoin = 7
 
 #var MenuUpgrade = false
 
-
-func _ready():
-	
+func _ready():	
 	Up =true
-	add_to_group(Groups.Towers)
+
 
 #func  _process(delta):
 #	# If there is an enemy and tower is reloaded shoot

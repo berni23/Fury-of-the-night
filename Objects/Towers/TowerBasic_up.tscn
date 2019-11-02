@@ -9,31 +9,18 @@
 [ext_resource path="res://Assets/Images/tower_upgrade.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
 radius = 200.0
-_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 21, 37 )
 
 [node name="TowerBasic_up" type="Area2D"]
-
-input_pickable = true
 gravity_point = true
 gravity_vec = Vector2( 0, 0 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 priority = 1.0
 collision_layer = 0
 collision_mask = 2
-audio_bus_override = false
-audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -43,54 +30,28 @@ upgrade = ExtResource( 4 )
 TowerUpUnblocked = ExtResource( 5 )
 TowerUpblocked = ExtResource( 6 )
 
-[node name="Tower" type="Sprite" parent="." index="0"]
-
+[node name="Tower" type="Sprite" parent="."]
 scale = Vector2( 0.45, 0.45 )
 texture = ExtResource( 7 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ReloadTimer" type="Timer" parent="." index="1"]
-
-process_mode = 1
+[node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 0.7
 one_shot = true
-autostart = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Area2D" type="Area2D" parent="." index="3"]
+[node name="Area2D" type="Area2D" parent="."]
 
-position = Vector2( -1.0063, 32.8037 )
-scale = Vector2( 0.777447, 2.66238 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-
-position = Vector2( 1.64739, -11.446 )
-scale = Vector2( 2.42404, 1.6439 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
-
 [connection signal="area_entered" from="." to="." method="_on_TowerBasic_area_entered"]
-
 [connection signal="area_exited" from="." to="." method="_on_TowerBasic_area_exited"]
-
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]
-
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
-
-

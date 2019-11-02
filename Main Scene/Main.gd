@@ -78,7 +78,7 @@ func _on_Creep_finished():
 	_rafaga(skeleton,1,1,1,1)
 	_rafaga(skeleton,40,0.9,2,0.1)
 
-func Master_add(value_type):
+func add(value_type):
 	match value_type[1]:
 		"coins":	self.add_Coins(value_type[0])
 		"life":		self.add_Life(value_type[0])

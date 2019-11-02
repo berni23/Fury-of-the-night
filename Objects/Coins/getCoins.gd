@@ -4,7 +4,6 @@ var sound_coin = AudioStreamPlayer2D.new()
 
 func _ready():
 	
-
 	self.add_to_group(Groups.Icons)
 	self.add_to_group(Groups.Hover)
 

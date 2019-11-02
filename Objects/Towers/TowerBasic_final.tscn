@@ -5,85 +5,46 @@
 [ext_resource path="res://Assets/Images/tower_final.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
 radius = 200.0
-_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 21, 37 )
 
-custom_solver_bias = 0.0
-extents = Vector2( 20.6746, 15.3023 )
-
-[node name="TowerBasic" type="Area2D" index="0"]
-
-input_pickable = true
+[node name="TowerBasic" type="Area2D"]
 gravity_point = true
 gravity_vec = Vector2( 0, 0 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 priority = 1.0
 collision_layer = 0
 collision_mask = 2
-audio_bus_override = false
-audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Material", "Visibility" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 bala = ExtResource( 2 )
-Tup = null
-upgrade = null
 
-[node name="Tower" type="Sprite" parent="." index="0"]
-
+[node name="Tower" type="Sprite" parent="."]
 scale = Vector2( 0.45, 0.45 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ReloadTimer" type="Timer" parent="." index="1"]
-
-process_mode = 1
+[node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 0.75
 one_shot = true
-autostart = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Area2D" type="Area2D" parent="." index="3"]
+[node name="Area2D" type="Area2D" parent="."]
 
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-
-position = Vector2( 2.694, -0.833116 )
-scale = Vector2( 1.79344, 3.51605 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
-
 [connection signal="area_entered" from="." to="." method="_on_TowerBasic_area_entered"]
-
 [connection signal="area_exited" from="." to="." method="_on_TowerBasic_area_exited"]
-
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]
-
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
-
-

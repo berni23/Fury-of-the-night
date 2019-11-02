@@ -350,7 +350,6 @@ custom_constants/shadow_as_outline = 0
 text = "HP"
 
 [node name="PanelControl" type="HBoxContainer" parent="."]
-editor/display_folded = true
 margin_top = 599.0
 margin_right = 740.0
 margin_bottom = 669.0

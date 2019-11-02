@@ -12,14 +12,14 @@ func _ready():
 	self.translate(Vector2(50,-100))
 	
 	# Connect to changes in money, which will update the colors of the menu
-	get_node("/root/GameMaster").connect("coins_Changed",self,"_on_Main_Coins_changed")
+	get_node("/root/GameMaster").connect("Coins_changed",self,"_on_Main_Coins_changed")
 	# Call it once, to get the initial colors
 	self._on_Main_Coins_changed(get_node("/root/GameMaster").Coins)
 
 func _on_Main_Coins_changed(coins):
-	
-	if self.get_parent().Up==true:
+
 		if coins >= get_parent().treshCoin:
+			
 			self.get_node("ButtonUp").set_button_icon(get_parent().TowerUpUnblocked)
 		else:
 			self.get_node("ButtonUp").set_button_icon(get_parent().TowerUpblocked)
@@ -38,7 +38,6 @@ func _input(event):
 
 func _on_ButtonUp_pressed():
 	
-
 	if get_node("/root/GameMaster").Coins >= get_parent().treshCoin and get_parent().Up == true:
 		NewTower = get_parent().Tup.instance()
 		NewTower.global_position = self.get_parent().global_position

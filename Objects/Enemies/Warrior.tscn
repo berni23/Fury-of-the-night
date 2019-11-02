@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Objects/Enemies/Skeleton.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Enemies/Warrior.gd" type="Script" id=1]
 [ext_resource path="res://Assets/warrior/Warrior_l1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/warrior/Warrior_l2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/warrior/Warrior_l4.png" type="Texture" id=4]
@@ -58,7 +58,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -6 )
 frames = SubResource( 1 )
 animation = "bottom"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -84,8 +84,8 @@ tint_progress = Color( 0, 1, 0, 1 )
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 1.2
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_hit_by_bullet"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

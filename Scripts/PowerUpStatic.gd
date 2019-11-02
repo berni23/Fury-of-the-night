@@ -18,7 +18,7 @@ func _on_Area2D_area_entered(area):
 	if coin==true:
 		if area.is_in_group(Groups.Hover):
 			$tirori.play()
-			get_parent().get_parent().Master_add(value_type)
+			get_parent().get_parent().add(value_type)
 			coin = false
 			$SpriteCoin.hide()
 
