@@ -506,7 +506,6 @@ __meta__ = {
 "_edit_group_": true
 }
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
-[connection signal="area_entered" from="EndPath" to="Status" method="_on_EndPath_area_entered"]
 [connection signal="pressed" from="PanelControl/Towers/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
 [connection signal="pressed" from="PanelControl/Towers/Create TowerStep" to="PanelControl" method="_on_Create_TowerStep_pressed"]
 [connection signal="pressed" from="PanelControl/Projectiles/Bomb" to="PanelControl" method="_on_Bomb_pressed"]

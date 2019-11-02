@@ -26,6 +26,7 @@ var damage = 1 # default value for damaging. To be adjusted in each enemy ready 
 func _ready():
 	self.add_to_group(Groups.Enemies)
 	prob = randi()%100+1
+	$HealthBar.tint_progress = healthy_color
 
 func _process(delta):
 
@@ -40,9 +41,9 @@ func _process(delta):
 			
 		else:	# Quan ja hi ha magnet, no surten mes
 			
-			if prob>95:		 nCoin = heart1.instance()
-			elif prob>=85:	 nCoin = diamond1.instance()
-			else:			 nCoin = coin1.instance() # Rest probability are coins!
+			if prob>95:		 nCoin = heart2.instance()
+			elif prob>=85:	 nCoin = diamond2.instance()
+			else:			 nCoin = coin2.instance() # Rest probability are coins!
 				
 		nCoin.global_position =Vector2(self.global_position.x,self.global_position.y)
 		self.get_parent().get_parent().get_node("YSortObjects").add_child(nCoin)

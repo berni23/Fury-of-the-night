@@ -1,6 +1,5 @@
 extends AnimatedSprite
 
-export (PackedScene) var getCoins
 #var pos_final=get_parent().get_parent().get_node(
 #var pos_final= get_node("/root/GameMaster/Status/").get_position()
 var pos_final= Vector2(1000,0) # Momentani. Hauria de ser la posició de  Status/Counters/CoinsLabel
