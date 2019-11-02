@@ -21,20 +21,12 @@ var Magnet = preload("res://Objects/Coins/Magnet.tscn")
 var heart1 = preload("res://Objects/Coins/heart.tscn")
 var heart2 = preload("res://Objects/Coins/heart2.tscn")
 var Old_position = Vector2(0,0)
-var Scream =null
 var nCoin
 var prob
 var reload =false
 var Friend
 var damage = 1 # default value for damaging. To be adjusted in each enemy ready function respectively
 
-	
-func sound(scream):
-	
-	if scream == null:
-		return 
-	else : 
-		scream.play()
 
 func _process(delta):
 
@@ -78,7 +70,6 @@ func _process(delta):
 			new_animation = "left"
 		# Change the animation if needed
 		if $AnimatedSprite.animation != new_animation:
-			sound(Scream)
 			$AnimatedSprite.animation = new_animation
 		# Save current position
 		Old_position = self.position

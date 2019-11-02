@@ -57,7 +57,8 @@ func _ready():
 	self.add_Coins(100)
 	self.add_Bomb(5)
 		
-	_rafaga(Warrior,2,1,1,1)
+	#_rafaga(Warrior,2,1,1,1)
+	_rafaga(dragon,1,1,1,1)
 	
 	#self.connect("Magnet_on",self,"_on_Main_Magnet_on")
 	
