@@ -25,7 +25,6 @@ var PriceBomb =5
 var PriceShred =5
 var PriceFriend = 3
 
-
 func delete_existing_icons():
 	get_tree().call_group(Groups.Icons,"queue_free")
 
@@ -33,12 +32,9 @@ func _on_CreateTower_pressed():
 	delete_existing_icons()
 	
 	if upgrade==0:     get_parent().add_child(TowerIcon.instance())
-	
-	elif upgrade==1:   get_parent().add_child(TowerUpIcon.instance())
-		
+	elif upgrade==1:   get_parent().add_child(TowerUpIcon.instance())	
 	elif upgrade==2:   get_parent().add_child(TowerFinIcon.instance())
 	
-
 func _on_HoverCoins_pressed():
 	delete_existing_icons()
 	self.get_parent().add_child(getCoins.instance())
@@ -75,19 +71,17 @@ func _on_Upgrade_pressed():
 	if upgrade==0 and get_parent().Coins>=PriceUp1:
 		
 		get_parent().add([-PriceUp1,"coins"])
-		upgrade=1
 		$Extras/Upgrade.disabled=true
 		var wait = Cargando.instance()
 		self.get_node("Extras/Upgrade").add_child(wait)
-		wait.connect('animation_finished',self,'up',[upgrade])
+		wait.connect('animation_finished',self,'up',[1])
 
 	elif upgrade ==1 and get_parent().Coins>=PriceUp2:	
 		get_parent().add([-PriceUp2,"coins"])
-		upgrade = 2
 		$Extras/Upgrade.disabled=true
 		var wait = Cargando.instance()
 		self.get_node("Extras/Upgrade").add_child(wait)
-		wait.connect('animation_finished',self,'up',[upgrade])
+		wait.connect('animation_finished',self,'up',[2])
 
 func _on_Create_TowerStep_pressed():
 	delete_existing_icons()
@@ -105,33 +99,26 @@ func _input(event):
 	
 		if event.scancode == KEY_T:
 			delete_existing_icons()
-		
 			self.get_parent().add_child(ThunderIcon.instance())
 			
 		if event.scancode ==KEY_S:
-			
 			delete_existing_icons()
-		
 			self.get_parent().add_child(ShredIcon.instance())
 	
 		if event.scancode == KEY_B:
 			delete_existing_icons()
-		
 			self.get_parent().add_child(BombIcon.instance())
 			
 		if event.scancode == KEY_M:
 			delete_existing_icons()
-	
 			self.get_parent().add_child(MudIcon.instance())
 		
 		if event.scancode == KEY_H:
 			delete_existing_icons()
 			self.get_parent().add_child(getCoins.instance())
 			
-		
 func up(val):
 	var string
-	
 	if val==1:
 		string ='U'
 		$Towers/CreateTower.icon = ImageT1
@@ -143,6 +130,8 @@ func up(val):
 	for N in get_tree().get_nodes_in_group(Groups.Towers):
 		if  N.next==string:  N.Upgrade()
 	
+	upgrade = val
+	delete_existing_icons()
 	$Extras/Upgrade.disabled=false
 	$Extras/Upgrade/TowerUp_sound.play()
 	
