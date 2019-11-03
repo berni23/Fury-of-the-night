@@ -3,6 +3,7 @@ extends Area2D
 var grid
 var can_build = false
 export (PackedScene) var towerScene
+var towerPrice = 2
 
 func _ready():
 	add_to_group(Groups.Icons)
@@ -17,7 +18,7 @@ func _input(event):
 	if Input.is_action_pressed("left_click"):
 		if not can_build:
 			return
-		if get_parent().Coins >=2:
+		if get_parent().Coins >= towerPrice:
 		# Else, create a new tower
 			var NewTower = towerScene.instance()
 			NewTower.global_position = global_position
@@ -27,7 +28,7 @@ func _input(event):
 				if (spot.global_position-self.global_position).length()<1:
 					spot.queue_free(); break
 		
-			get_parent().add_Coins(-2)
+			get_parent().add_Coins(-towerPrice)
 			#self.queue_free()
 		
 	elif Input.is_action_pressed("right_click"):

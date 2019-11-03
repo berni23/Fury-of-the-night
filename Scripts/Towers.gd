@@ -2,14 +2,16 @@ extends Area2D
 
 export (PackedScene) var bala
 export (PackedScene) var Tup
-export (PackedScene) var upgrade
+export (PackedScene) var  optionUpgrade
 
+var TreshCoin 
 var speed_bala = 1200
 var reload = true
 var enemy_range = []
 var MenuUpgrade  = false
-var Up = false
-
+var next ='NO' # = U,F,NO stands for Up, Final, or No upgrade option
+var FirstClick=true
+	
 func _ready():
 	add_to_group(Groups.Towers)
 
@@ -42,11 +44,37 @@ func _on_ReloadTimer_timeout():
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	
-	if event is InputEventMouseButton and Up==true:
+	if FirstClick==true:
+		
+		FirstClick=false
+		return
+	
+	if event is InputEventMouseButton and next!='NO':
 
 		if Input.is_action_pressed("left_click") and MenuUpgrade==false:
 
-			self.add_child(upgrade.instance())
+			self.add_child(optionUpgrade.instance())
 			MenuUpgrade =true
 
+func Upgrade():
+	
+	
+		var NewTower = Tup.instance()
+		NewTower.global_position = self.global_position
+		get_parent().add_child(NewTower)
+		self.queue_free()
 
+	#if Up ==false:
+	
+		#return
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	

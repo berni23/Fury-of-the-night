@@ -6,12 +6,12 @@ extends "res://Scripts/Towers.gd"
 #var enemy_range = []
 export (Image) var TowerUpUnblocked
 export (Image) var TowerUpblocked
-var treshCoin = 7
 
 #var MenuUpgrade = false
 
 func _ready():	
-	Up =true
+	TreshCoin = 7
+	next='F'
 
 
 #func  _process(delta):

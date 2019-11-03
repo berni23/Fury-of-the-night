@@ -7,12 +7,20 @@ export (PackedScene) var TowerUpIcon
 export (PackedScene) var TowerStepsIcon
 export (PackedScene) var ThunderIcon
 export (PackedScene) var TowerIcon
+export (PackedScene) var TowerFinIcon
 export (PackedScene) var TowerUp
 export (PackedScene) var getCoins 
 export (PackedScene) var Friend
-var Arr_up=[TowerUp]
 
 var upgrade =0
+
+var PriceUp1 = 30
+var PriceUp2 = 60
+var PriceThunder =10
+var PriceMud =2
+var PriceBomb =5
+var PriceShred =5
+var PriceFriend = 3
 
 
 func delete_existing_icons():
@@ -21,62 +29,66 @@ func delete_existing_icons():
 func _on_CreateTower_pressed():
 
 	delete_existing_icons()
-	if upgrade==0:
-			get_parent().add_child(TowerIcon.instance())
-	elif upgrade ==1:
-		get_parent().add_child(TowerUpIcon.instance())
+	
+	if upgrade==0:     get_parent().add_child(TowerIcon.instance())
+	
+	elif upgrade==1:   get_parent().add_child(TowerUpIcon.instance())
+		
+	elif upgrade==2:   get_parent().add_child(TowerFinIcon.instance())
+	
 
 func _on_HoverCoins_pressed():
 	delete_existing_icons()
 	self.get_parent().add_child(getCoins.instance())
 
-
 func _on_thunder_pressed():
 	delete_existing_icons()
 
-	if self.get_parent().Coins>=5:
+	if self.get_parent().Coins>=PriceThunder:
 		
 		self.get_parent().add_Thunder(1)
-		self.get_parent().add_Coins(-5)
+		self.get_parent().add_Coins(-PriceThunder)
 
 func _on_Bomb_pressed():
 	delete_existing_icons()
-	if self.get_parent().Coins>=5:
+	if self.get_parent().Coins>=PriceBomb:
 		
 		self.get_parent().add_Bomb(1)
-		self.get_parent().add_Coins(-5)
+		self.get_parent().add_Coins(-PriceBomb)
 		
 func _on_Mud_pressed():
 	delete_existing_icons()
-	if self.get_parent().Coins>=1:
+	if self.get_parent().Coins>=PriceMud:
 			self.get_parent().add_Mud(1)
-			self.get_parent().add_Coins(-1)		
+			self.get_parent().add_Coins(-PriceMud)		
 
 func _on_Shred_pressed():
 		
-	if self.get_parent().Coins>=5:
+	if self.get_parent().Coins>=PriceShred:
 			self.get_parent().add_Shred(1)
-			self.get_parent().add_Coins(-5)
+			self.get_parent().add_(-PriceShred)
 	
-
 func _on_Upgrade_pressed():
 	delete_existing_icons()
-	upgrade=1
 	
-	for N in self.get_parent().get_node("YSortObjects").get_children():
-	
-		$Extras/Upgrade/TowerUp_sound.play()
+	if upgrade==0 and get_parent().Coins>=PriceUp1:
 		
-		if N.is_in_group(Groups.Towers):
-			
-			if N.Up==true:
-				
-				var NewObj = TowerUp.instance()
-				var TowerPos = N.global_position
-				N.queue_free()
-				NewObj.global_position =TowerPos
+		get_parent().add([-PriceUp1,"coins"])
+		upgrade=1
+		$Extras/Upgrade/TowerUp_sound.play()
 	
-				self.get_parent().get_node("YSortObjects").add_child(NewObj)
+		for N in get_tree().get_nodes_in_group(Groups.Towers):
+		
+			if  N.next=='U':  N.Upgrade()
+	
+	elif upgrade ==1 and get_parent().Coins>=PriceUp2:
+		
+		get_parent().add([-PriceUp2,"coins"])
+		upgrade = 2
+		$Extras/Upgrade/TowerUp_sound.play()
+		for N in get_tree().get_nodes_in_group(Groups.Towers):
+		
+			if  N.next=='F':  N.Upgrade()
 
 func _on_Create_TowerStep_pressed():
 	delete_existing_icons()
@@ -87,8 +99,7 @@ func _on_Warrior_pressed():
 	
 	if self.get_parent().Coins>=2:
 		get_parent().get_node('WarriorPath').add_child(Friend.instance())
-		get_parent().add([-2,"coins"])
-
+		get_parent().add([-PriceFriend,"coins"])
 
 func _input(event):
 	if event is InputEventKey and event.pressed:

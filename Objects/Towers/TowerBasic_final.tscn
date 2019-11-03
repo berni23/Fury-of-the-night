@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objects/Towers/TowerBasic_final.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Towers/Arrow_fire.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Images/tower_final.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Towers/optionUpgrade.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Images/tower_final.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 200.0
@@ -22,10 +23,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 bala = ExtResource( 2 )
+optionUpgrade = ExtResource( 3 )
 
 [node name="Tower" type="Sprite" parent="."]
 scale = Vector2( 0.45, 0.45 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }

@@ -27,7 +27,7 @@ __meta__ = {
 }
 bala = ExtResource( 2 )
 Tup = ExtResource( 3 )
-upgrade = ExtResource( 4 )
+optionUpgrade = ExtResource( 4 )
 TowerUpUnblocked = ExtResource( 5 )
 TowerUpblocked = ExtResource( 6 )
 
