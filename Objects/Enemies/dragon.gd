@@ -5,6 +5,7 @@ var old_animation
 func _ready():
 	self.add_to_group(Groups.Fly)
 	Speed = 150
+	damage = 5
 	# Variable to detect animation change for scream
 	old_animation = $AnimatedSprite.animation
 

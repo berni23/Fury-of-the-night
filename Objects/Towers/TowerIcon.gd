@@ -3,7 +3,7 @@ extends Area2D
 var grid
 var can_build = false
 export (PackedScene) var towerScene
-var towerPrice = 2
+var towerPrice = 7
 
 func _ready():
 	add_to_group(Groups.Icons)

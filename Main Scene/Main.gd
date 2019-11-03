@@ -58,7 +58,7 @@ func _ready():
 	self.add_Coins(100)
 	self.add_Bomb(5)
 		
-	#_rafaga(Warrior,2,1,1,1)
+	_rafaga(Warrior,2,1,1,1)
 	_rafaga(dragon,1,1,1,1)
 	
 	#self.connect("Magnet_on",self,"_on_Main_Magnet_on")
@@ -76,7 +76,7 @@ func _on_Creep_finished():
 #	_rafaga(Warrior,1,1,1,1)
 	_rafaga(skeleton,1,1,1,1)
 	_rafaga(skeleton,1,1,1,1)
-	_rafaga(skeleton,40,0.9,2,0.1)
+	_rafaga(skeleton,50,0.7,2,0.1)
 
 func add(value_type):
 	match value_type[1]:
