@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bomb_button.png-6c1105e25a7ab9fc5688d0120adf1096.stex"
+path="res://.import/Warrior_r2.png-c60873e6f8330d0e772c0e873d577fa8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sounds/Bomb_button.png"
-dest_files=[ "res://.import/Bomb_button.png-6c1105e25a7ab9fc5688d0120adf1096.stex" ]
+source_file="res://Assets/Images/warrior/Warrior_r2.png"
+dest_files=[ "res://.import/Warrior_r2.png-c60873e6f8330d0e772c0e873d577fa8.stex" ]
 
 [params]
 

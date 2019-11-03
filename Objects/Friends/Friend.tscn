@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Objects/Friend.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Friends/Friend.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/mirror/Walkm1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/mirror/Walkm2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/mirror/Walkm3.png" type="Texture" id=4]
