@@ -1,444 +1,339 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Images/Tilemaps/mountain_landscape.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Tilemaps/LPC_forest/forest_tiles.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Tilemaps/trees_plants_rocks.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/Tilemaps/sprite_tree2.png" type="Texture" id=4]
 
+[node name="Node" type="Node"]
 
-[node name="Node" type="Node" index="0"]
+[node name="montain_landscape" type="Node" parent="."]
+editor/display_folded = true
 
-[node name="montain_landscape" type="Node" parent="." index="0"]
-
-[node name="gespa" type="Sprite" parent="montain_landscape" index="0"]
-
+[node name="gespa" type="Sprite" parent="montain_landscape"]
 position = Vector2( 94.5297, 317.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 448, 128, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami1" type="Sprite" parent="montain_landscape" index="1"]
-
+[node name="cami1" type="Sprite" parent="montain_landscape"]
 position = Vector2( 96.5297, 395.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 320, 0, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami2" type="Sprite" parent="montain_landscape" index="2"]
-
+[node name="cami2" type="Sprite" parent="montain_landscape"]
 position = Vector2( 93.5297, 357.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 384, 0, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami3" type="Sprite" parent="montain_landscape" index="3"]
-
+[node name="cami3" type="Sprite" parent="montain_landscape"]
 position = Vector2( 131.53, 358.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 416, 0, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami4" type="Sprite" parent="montain_landscape" index="4"]
-
+[node name="cami4" type="Sprite" parent="montain_landscape"]
 position = Vector2( 133.53, 395.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 416, 32, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami5" type="Sprite" parent="montain_landscape" index="5"]
-
+[node name="cami5" type="Sprite" parent="montain_landscape"]
 position = Vector2( 137.53, 436.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 416, 64, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami6" type="Sprite" parent="montain_landscape" index="6"]
-
+[node name="cami6" type="Sprite" parent="montain_landscape"]
 position = Vector2( 92.5297, 434.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 384, 64, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami7" type="Sprite" parent="montain_landscape" index="7"]
-
+[node name="cami7" type="Sprite" parent="montain_landscape"]
 position = Vector2( 58.5297, 434.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 352, 64, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami8" type="Sprite" parent="montain_landscape" index="8"]
-
+[node name="cami8" type="Sprite" parent="montain_landscape"]
 position = Vector2( 55.5297, 391.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 352, 32, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami9" type="Sprite" parent="montain_landscape" index="9"]
-
+[node name="cami9" type="Sprite" parent="montain_landscape"]
 position = Vector2( 57.5297, 355.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 352, 0, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami10" type="Sprite" parent="montain_landscape" index="10"]
-
+[node name="cami10" type="Sprite" parent="montain_landscape"]
 position = Vector2( 112.53, 485.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 448, 192, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami11" type="Sprite" parent="montain_landscape" index="11"]
-
+[node name="cami11" type="Sprite" parent="montain_landscape"]
 position = Vector2( 149.53, 492.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 480, 192, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami12" type="Sprite" parent="montain_landscape" index="12"]
-
+[node name="cami12" type="Sprite" parent="montain_landscape"]
 position = Vector2( 98.5297, 527.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 448, 224, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cami13" type="Sprite" parent="montain_landscape" index="13"]
-
+[node name="cami13" type="Sprite" parent="montain_landscape"]
 position = Vector2( 142.53, 534.466 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 480, 224, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="LPC_Forest" type="Node" parent="." index="1"]
-
+[node name="LPC_Forest" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="gespa1" type="Sprite" parent="LPC_Forest" index="0"]
-
+[node name="gespa1" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 133.727, 43.3228 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="tronc1" type="Sprite" parent="LPC_Forest" index="1"]
-
+[node name="tronc1" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 93.0289, 102.109 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 224, 96, 64, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="bolets" type="Sprite" parent="LPC_Forest" index="2"]
-
+[node name="bolets" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 88.5069, 147.329 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 416, 0, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="gespa2" type="Sprite" parent="LPC_Forest" index="3"]
-
+[node name="gespa2" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 74.9408, 43.3228 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 64, 32, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="arbrefosc" type="Sprite" parent="LPC_Forest" index="4"]
-
+[node name="arbrefosc" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 403.541, 124.719 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 192, 64, 64 )
-_sections_unfolded = [ "Region" ]
 
-[node name="arbreclar" type="Sprite" parent="LPC_Forest" index="5"]
-
+[node name="arbreclar" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 39.2502, 122.37 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 256, 64, 64 )
-_sections_unfolded = [ "Region" ]
 
-[node name="x3fosc" type="Sprite" parent="LPC_Forest" index="6"]
-
+[node name="x3fosc" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 298.027, 120.197 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 64, 192, 64, 64 )
-_sections_unfolded = [ "Region" ]
 
-[node name="x3clar" type="Sprite" parent="LPC_Forest" index="7"]
-
+[node name="x3clar" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 285.968, 26.742 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 320, 64, 64 )
-_sections_unfolded = [ "Region" ]
 
-[node name="arbrellarg" type="Sprite" parent="LPC_Forest" index="8"]
-
+[node name="arbrellarg" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 495.489, 38.8008 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 320, 32, 32, 64 )
-_sections_unfolded = [ "Region" ]
 
-[node name="arbust1" type="Sprite" parent="LPC_Forest" index="9"]
-
+[node name="arbust1" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 557.29, 53.8741 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 64, 96, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="arbust2" type="Sprite" parent="LPC_Forest" index="10"]
-
+[node name="arbust2" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 637.179, 91.5576 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 32, 96, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="arbust3" type="Sprite" parent="LPC_Forest" index="11"]
-
+[node name="arbust3" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 431.775, 222.208 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 128, 96, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="arbust4" type="Sprite" parent="LPC_Forest" index="12"]
-
+[node name="arbust4" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 709.286, 105.195 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 416, 32, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="arbust5" type="Sprite" parent="LPC_Forest" index="13"]
-
+[node name="arbust5" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 515.708, 214.988 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 416, 64, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="pedra1" type="Sprite" parent="LPC_Forest" index="14"]
-
+[node name="pedra1" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 863.008, 114.718 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 352, 32, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="pedra2" type="Sprite" parent="LPC_Forest" index="15"]
-
+[node name="pedra2" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 307.23, 214.988 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 384, 32, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="pedrariu" type="Sprite" parent="LPC_Forest" index="16"]
-
+[node name="pedrariu" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 463.058, 110.637 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 384, 0, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="cabanya1" type="Sprite" parent="LPC_Forest" index="17"]
-
+[node name="cabanya1" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 580.05, 84.7897 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 384, 96, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="papallona" type="Sprite" parent="LPC_Forest" index="18"]
-
+[node name="papallona" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 763.701, 92.9519 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 352, 192, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riutleft" type="Sprite" parent="LPC_Forest" index="19"]
-
+[node name="riutleft" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 602.51, 160.056 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 224, 224, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riutright" type="Sprite" parent="LPC_Forest" index="20"]
-
+[node name="riutright" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 664.651, 159.953 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 288, 224, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riubleft" type="Sprite" parent="LPC_Forest" index="21"]
-
+[node name="riubleft" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 597.354, 233.161 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 224, 288, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riubright" type="Sprite" parent="LPC_Forest" index="22"]
-
+[node name="riubright" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 672.534, 232.536 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 288, 288, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riut" type="Sprite" parent="LPC_Forest" index="23"]
-
+[node name="riut" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 637.413, 160.042 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 256, 224, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riub" type="Sprite" parent="LPC_Forest" index="24"]
-
+[node name="riub" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 636.178, 227.877 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 256, 288, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="rium" type="Sprite" parent="LPC_Forest" index="25"]
-
+[node name="rium" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 634.186, 193.874 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 256, 256, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riul" type="Sprite" parent="LPC_Forest" index="26"]
-
+[node name="riul" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 602.264, 197.557 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 224, 256, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riur" type="Sprite" parent="LPC_Forest" index="27"]
-
+[node name="riur" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 666.285, 196.557 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 288, 256, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riugir1" type="Sprite" parent="LPC_Forest" index="28"]
-
+[node name="riugir1" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 311.512, 286.685 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 256, 320, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riugir2" type="Sprite" parent="LPC_Forest" index="29"]
-
+[node name="riugir2" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 344.653, 319.025 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 288, 352, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riugir3" type="Sprite" parent="LPC_Forest" index="30"]
-
+[node name="riugir3" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 312.055, 324.662 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 256, 352, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="riugir4" type="Sprite" parent="LPC_Forest" index="31"]
-
+[node name="riugir4" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 344.33, 285.487 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 288, 320, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="llac1" type="Sprite" parent="LPC_Forest" index="32"]
-
+[node name="llac1" type="Sprite" parent="LPC_Forest"]
 position = Vector2( 741.285, 168.557 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 320, 352, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="trees_plants_rocks" type="Node" parent="." index="2"]
-
+[node name="trees_plants_rocks" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="bolet" type="Sprite" parent="trees_plants_rocks" index="0"]
-
+[node name="bolet" type="Sprite" parent="trees_plants_rocks"]
 position = Vector2( 114.271, 224.462 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 384, 256, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="tomba1" type="Sprite" parent="trees_plants_rocks" index="1"]
-
+[node name="tomba1" type="Sprite" parent="trees_plants_rocks"]
 position = Vector2( 58.4961, 227.182 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 256, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="tomba2" type="Sprite" parent="trees_plants_rocks" index="2"]
-
+[node name="tomba2" type="Sprite" parent="trees_plants_rocks"]
 position = Vector2( 23.1264, 266.633 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 32, 256, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="tomba3" type="Sprite" parent="trees_plants_rocks" index="3"]
-
+[node name="tomba3" type="Sprite" parent="trees_plants_rocks"]
 position = Vector2( 100.668, 263.913 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 64, 256, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-[node name="pedra_gran" type="Sprite" parent="trees_plants_rocks" index="4"]
-
+[node name="pedra_gran" type="Sprite" parent="trees_plants_rocks"]
 position = Vector2( 167.326, 224.462 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 96, 256, 64, 64 )
-_sections_unfolded = [ "Region" ]
 
-[node name="pedra_petita" type="Sprite" parent="trees_plants_rocks" index="5"]
-
+[node name="pedra_petita" type="Sprite" parent="trees_plants_rocks"]
 position = Vector2( 152.362, 282.958 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 160, 288, 32, 32 )
-_sections_unfolded = [ "Region" ]
 
-
+[node name="ArbreBernat" type="Sprite" parent="."]
+position = Vector2( 949.367, 603.301 )
+texture = ExtResource( 4 )
