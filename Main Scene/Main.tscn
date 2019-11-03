@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=2]
@@ -24,22 +24,23 @@
 [ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Objects/Friend.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Assets/Images/tower_up_unblocked.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Images/tower_final_unblocked.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Images/torra_unblocked.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Images/Bomb2.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Images/sword.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Images/buttons/MudButton.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=34]
-[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=35]
-[ext_resource path="res://Main Scene/Area2D.gd" type="Script" id=36]
-[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=37]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=38]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=39]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=40]
+[ext_resource path="res://Objects/Status/cargando.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/Images/tower_up_unblocked.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Images/tower_final_unblocked.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Images/torra_unblocked.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Images/Bomb2.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Images/sword.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Images/buttons/MudButton.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=35]
+[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=36]
+[ext_resource path="res://Main Scene/Area2D.gd" type="Script" id=37]
+[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=41]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -78,7 +79,7 @@ extents = Vector2( 31.9749, 19.8138 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"frames": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -372,8 +373,9 @@ TowerFinIcon = ExtResource( 21 )
 TowerUp = ExtResource( 22 )
 getCoins = ExtResource( 23 )
 Friend = ExtResource( 24 )
-ImageT1 = ExtResource( 25 )
-ImageT2 = ExtResource( 26 )
+Cargando = ExtResource( 25 )
+ImageT1 = ExtResource( 26 )
+ImageT2 = ExtResource( 27 )
 
 [node name="Towers" type="Container" parent="PanelControl"]
 margin_right = 144.0
@@ -388,13 +390,13 @@ custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.667969, 0.0652313, 0.0652313, 1 )
 custom_colors/font_color_hover = Color( 0.211118, 0.632812, 0.108765, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-icon = ExtResource( 27 )
+icon = ExtResource( 28 )
 
 [node name="Create TowerStep" type="Button" parent="PanelControl/Towers"]
 margin_left = 72.0
 margin_right = 144.0
 margin_bottom = 70.0
-icon = ExtResource( 28 )
+icon = ExtResource( 29 )
 
 [node name="Projectiles" type="Container" parent="PanelControl"]
 margin_left = 148.0
@@ -407,7 +409,7 @@ margin_right = 48.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 48, 35 )
 rect_clip_content = true
-icon = ExtResource( 29 )
+icon = ExtResource( 30 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -417,13 +419,13 @@ margin_left = 53.0
 margin_right = 101.0
 margin_bottom = 35.0
 size_flags_stretch_ratio = 2.0
-icon = ExtResource( 30 )
+icon = ExtResource( 31 )
 
 [node name="Warrior" type="Button" parent="PanelControl/Projectiles"]
 margin_top = 37.0
 margin_right = 48.0
 margin_bottom = 74.0
-icon = ExtResource( 31 )
+icon = ExtResource( 32 )
 
 [node name="Traps" type="Container" parent="PanelControl"]
 margin_left = 296.0
@@ -435,14 +437,14 @@ rect_min_size = Vector2( 144, 70 )
 margin_right = 72.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 72, 35 )
-icon = ExtResource( 32 )
+icon = ExtResource( 33 )
 
 [node name="Shred" type="Button" parent="PanelControl/Traps"]
 margin_left = 72.0
 margin_right = 144.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 72, 35 )
-icon = ExtResource( 33 )
+icon = ExtResource( 34 )
 
 [node name="Extras" type="Container" parent="PanelControl"]
 margin_left = 444.0
@@ -462,7 +464,7 @@ text = "Upgrade"
 
 [node name="TowerUp_sound" type="AudioStreamPlayer2D" parent="PanelControl/Extras/Upgrade"]
 position = Vector2( -3.05176e-05, 0 )
-stream = ExtResource( 34 )
+stream = ExtResource( 35 )
 
 [node name="HoverCoins" type="Button" parent="PanelControl/Extras"]
 margin_left = 72.0
@@ -477,17 +479,17 @@ custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "Hover"
 
 [node name="Creep" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 35 )
+stream = ExtResource( 36 )
 
 [node name="Area2D" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 892.323, 385.957 )
-script = ExtResource( 36 )
+script = ExtResource( 37 )
 
 [node name="brokenTree" type="Sprite" parent="Area2D"]
 visible = false
 position = Vector2( 4.3197, -3.54242 )
-texture = ExtResource( 37 )
+texture = ExtResource( 38 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 5.99011, -2.47367 )
