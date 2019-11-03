@@ -54,7 +54,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -6 )
 frames = SubResource( 1 )
 animation = "right"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -71,7 +71,7 @@ margin_left = -19.0
 margin_top = -41.0
 margin_right = 21.0
 margin_bottom = -34.0
-max_value = 10.0
+max_value = 30.0
 value = 10.0
 texture_under = ExtResource( 14 )
 texture_progress = ExtResource( 15 )

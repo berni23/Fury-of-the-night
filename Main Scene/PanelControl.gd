@@ -12,6 +12,8 @@ export (PackedScene) var TowerUp
 export (PackedScene) var getCoins 
 export (PackedScene) var Friend
 
+export (Image) var ImageT1
+export (Image) var ImageT2
 var upgrade =0
 
 var PriceUp1 = 30
@@ -66,7 +68,7 @@ func _on_Shred_pressed():
 		
 	if self.get_parent().Coins>=PriceShred:
 			self.get_parent().add_Shred(1)
-			self.get_parent().add_(-PriceShred)
+			self.get_parent().add_Coins(-PriceShred)
 	
 func _on_Upgrade_pressed():
 	delete_existing_icons()
@@ -75,6 +77,7 @@ func _on_Upgrade_pressed():
 		
 		get_parent().add([-PriceUp1,"coins"])
 		upgrade=1
+		$Towers/CreateTower.icon = ImageT1
 		$Extras/Upgrade/TowerUp_sound.play()
 	
 		for N in get_tree().get_nodes_in_group(Groups.Towers):
@@ -85,6 +88,7 @@ func _on_Upgrade_pressed():
 		
 		get_parent().add([-PriceUp2,"coins"])
 		upgrade = 2
+		$Towers/CreateTower.icon = ImageT2
 		$Extras/Upgrade/TowerUp_sound.play()
 		for N in get_tree().get_nodes_in_group(Groups.Towers):
 		
