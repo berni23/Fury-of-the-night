@@ -17,7 +17,6 @@ func _on_Area2D_area_entered(area):
 			$AnimatedSprite.play()
 			
 		enemy_slow.append(area.get_parent())
-		print(len(enemy_slow))
 		self.get_node("AudioStreamPlayer2D").play()
 		area.get_parent().Speed = area.get_parent().Speed/2
 	
@@ -25,12 +24,9 @@ func _on_Area2D_area_entered(area):
 		
 func _on_Area2D_area_exited(area):
 	
-	
 	if area.get_parent() in enemy_slow:
 		area.get_parent().Speed = area.get_parent().Speed*2
 		enemy_slow.erase(area.get_parent())
-		
-	print(len(enemy_slow))	
 	
 	if len(enemy_slow)==0:
 		
@@ -39,6 +35,3 @@ func _on_Area2D_area_exited(area):
 		if count ==enemies_affected :
 		
 			self.queue_free()
-	
-	
-
