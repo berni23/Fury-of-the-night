@@ -12,7 +12,6 @@ var damage = 1
 var first = true
 var newEnemy
 
-
 func _ready():
 	self.add_to_group(Groups.Friends)	
 	

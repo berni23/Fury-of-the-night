@@ -70,8 +70,6 @@ func Magnet_on():
 	
 func _on_Creep_finished():
 	
-	
-	
 	#_rafaga(skeleton,10,10,1,1)
 	#_rafaga(dragon,1,1,1,1)
 	#_rafaga(Warrior,1,1,1,1)
