@@ -23,7 +23,7 @@ var PriceThunder =10
 var PriceMud =2
 var PriceBomb =5
 var PriceShred =5
-var PriceFriend = 3
+var PriceFriend = 7
 
 func delete_existing_icons():
 	get_tree().call_group(Groups.Icons,"queue_free")
@@ -43,7 +43,6 @@ func _on_thunder_pressed():
 	delete_existing_icons()
 
 	if self.get_parent().Coins>=PriceThunder:
-		
 		self.get_parent().add_Thunder(1)
 		self.get_parent().add_Coins(-PriceThunder)
 

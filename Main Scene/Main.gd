@@ -53,14 +53,13 @@ func _rafaga(Enemy,N_ene,t_ene,N_wave,t_wave):
 		yield(get_tree().create_timer(t_wave),"timeout")
 
 func _ready():
-	
 	get_node('Creep').play()
-	self.add_Coins(100)
+	self.add_Coins(1000)
 	self.add_Bomb(5)
-		
-	_rafaga(Warrior,2,1,1,1)
-	_rafaga(dragon,1,1,1,1)
-	
+	_rafaga(skeleton,3,0.00001,1,1)
+#	_rafaga(Warrior,2,1,1,1)
+#	_rafaga(dragon,1,1,1,1)
+#
 	#self.connect("Magnet_on",self,"_on_Main_Magnet_on")
 	
 func Magnet_on():
@@ -71,12 +70,14 @@ func Magnet_on():
 	
 func _on_Creep_finished():
 	
+	
+	
+	#_rafaga(skeleton,10,10,1,1)
+	#_rafaga(dragon,1,1,1,1)
+	#_rafaga(Warrior,1,1,1,1)
 	_rafaga(skeleton,1,1,1,1)
-	_rafaga(dragon,1,1,1,1)
-#	_rafaga(Warrior,1,1,1,1)
-	_rafaga(skeleton,1,1,1,1)
-	_rafaga(skeleton,1,1,1,1)
-	_rafaga(skeleton,50,0.7,2,0.1)
+#	_rafaga(skeleton,20,1,1,1)
+	##_rafaga(skeleton,50,0.7,2,0.1)
 
 func add(value_type):
 	match value_type[1]:

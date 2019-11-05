@@ -10,7 +10,7 @@ var reload = true
 var enemy_range = []
 var MenuUpgrade  = false
 var next ='NO' # = U,F,NO stands for Up, Final, or No upgrade option
-var FirstClick=true
+var firstClick=true
 	
 func _ready():
 	add_to_group(Groups.Towers)
@@ -43,22 +43,17 @@ func _on_ReloadTimer_timeout():
 	$ReloadTimer.stop()
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
-	
-	if FirstClick==true:
-		
-		FirstClick=false
+	#Volem evitar que el menu aparegui quan creem la torra
+	if firstClick==true:
+		firstClick=false
 		return
 	
 	if event is InputEventMouseButton and next!='NO':
-
 		if Input.is_action_pressed("left_click") and MenuUpgrade==false:
-
 			self.add_child(optionUpgrade.instance())
 			MenuUpgrade =true
 
 func Upgrade():
-	
-	
 		var NewTower = Tup.instance()
 		NewTower.global_position = self.global_position
 		get_parent().add_child(NewTower)

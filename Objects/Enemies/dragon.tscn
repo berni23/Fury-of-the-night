@@ -75,7 +75,7 @@ margin_top = -61.7479
 margin_right = 20.8876
 margin_bottom = -21.7479
 max_value = 50.0
-value = 30.0
+value = 50.0
 texture_under = ExtResource( 15 )
 texture_progress = ExtResource( 16 )
 tint_progress = Color( 0, 1, 0, 1 )
@@ -83,7 +83,9 @@ tint_progress = Color( 0, 1, 0, 1 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Timer2" type="Timer" parent="."]
+autostart = true
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="changed" from="HealthBar" to="." method="_on_HealthBar_changed"]
 [connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

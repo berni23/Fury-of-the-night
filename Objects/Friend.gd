@@ -1,75 +1,68 @@
 extends PathFollow2D
 
-export(int) var Speed = 100
-
-var enemy =false
+var speed = 100
 var enemy_list=[]
-var reload =true
 
-var healthy_color = Color.green
+#var healthy_color = Color.green
 var caution_color = Color.yellow
 var danger_color = Color.red
 var caution = 0.5
 var danger = 0.2
-
+var damage = 1
+var first = true
+var newEnemy
 
 
 func _ready():
-	
 	self.add_to_group(Groups.Friends)	
 	
 func _process(delta):
-	
-	if $HealthBar.value <1:
-		
-		self.queue_free()
-	
 	if len(enemy_list)==0:
-	
-		self.offset+=Speed*delta
-		
-	elif reload ==true:
-		
-		enemy_list[0].get_node('HealthBar').value -= 1
-		reload=false
+		self.offset+=speed*delta
 	
 func _on_Area2D_area_entered(area):
-	
 	if area.get_parent().is_in_group(Groups.Enemies):
 		if len(enemy_list)==0:
 			$AnimatedSprite.animation = "Attack"
-			enemy_list.append(area.get_parent())
-			$Timer.start()
-			enemy_list[0].stop=true
+			#$Timer2.start()
+		if area.get_parent().first==true:
+					newEnemy=area.get_parent()
+					self.connecting(newEnemy)
+					area.get_parent().first=false
+		enemy_list.append(area.get_parent())
 
 func _on_Area2D_area_exited(area):
-	
 	if area.get_parent().is_in_group(Groups.Enemies):
+		if area.get_parent()==enemy_list[0]:
+			if len(enemy_list)>1:	
+				newEnemy = enemy_list[1]
+				newEnemy.connecting(self)
+						
 		enemy_list.erase(area.get_parent())
-		
+	
 	if len(enemy_list)==0:
 		$AnimatedSprite.animation = "Walk"
-		
+		self.first = true
+		#$Timer2.stop()
 
-func _on_Timer_timeout():
-	
-	reload = true
-	
 func _on_HealthBar_value_changed(value):
-	
-	$Timer2.start()
-	
+	$Timer.start()
 	$HealthBar.show()
-	
 	if value < caution*$HealthBar.max_value:
-		
 		$HealthBar.tint_progress = caution_color
 	
 	elif value < danger*$HealthBar.max_value:
-		
 		$HealthBar.tint_progress = danger_color
 	
-func _on_Timer2_timeout():
+	if $HealthBar.value <=0:
+		self.queue_free()
 	
+func _on_Timer_timeout():
 	$HealthBar.hide()
+
+func connecting(val):
+	val.get_node('Timer2').connect('timeout',self,'hurt',[val.damage])
+	
+func hurt(val):
+	get_node('HealthBar').value -=val
 		
