@@ -18,14 +18,14 @@ func _on_Area2D_area_entered(area):
 			
 		enemy_slow.append(area.get_parent())
 		self.get_node("AudioStreamPlayer2D").play()
-		area.get_parent().Speed = area.get_parent().Speed/2
+		area.get_parent().speed = area.get_parent().speed/2
 	
 		count+=1
 		
 func _on_Area2D_area_exited(area):
 	
 	if area.get_parent() in enemy_slow:
-		area.get_parent().Speed = area.get_parent().Speed*2
+		area.get_parent().speed = area.get_parent().speed*2
 		enemy_slow.erase(area.get_parent())
 	
 	if len(enemy_slow)==0:

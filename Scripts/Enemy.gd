@@ -90,7 +90,6 @@ func _on_HealthBar_value_changed(value):
 				
 		nCoin.global_position =Vector2(self.global_position.x,self.global_position.y)
 		self.get_parent().get_parent().get_node("YSortObjects").add_child(nCoin)
-		print('dead')
 		self.queue_free()
 	
 func _on_Area2D_area_exited(area):

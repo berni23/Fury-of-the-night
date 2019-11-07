@@ -18,7 +18,6 @@ animations = [ {
 [node name="Coin2Sprite" type="AnimatedSprite"]
 scale = Vector2( 0.03, 0.03 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 script = ExtResource( 5 )
 
