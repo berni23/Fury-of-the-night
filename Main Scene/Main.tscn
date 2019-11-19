@@ -23,7 +23,7 @@
 [ext_resource path="res://Objects/Towers/TowerFinIcon.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Objects/Friend.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Objects/Friends/Friend.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Objects/Status/cargando.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/Images/tower_up_unblocked.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Images/tower_final_unblocked.png" type="Texture" id=27]
@@ -36,7 +36,7 @@
 [ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=34]
 [ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=35]
 [ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=36]
-[ext_resource path="res://Main Scene/Area2D.gd" type="Script" id=37]
+[ext_resource path="res://Main Scene/BurnTree.gd" type="Script" id=37]
 [ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=38]
 [ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=39]
 [ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=40]
@@ -483,17 +483,17 @@ text = "Hover"
 [node name="Creep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 36 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="BurnTree" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 892.323, 385.957 )
 script = ExtResource( 37 )
 
-[node name="brokenTree" type="Sprite" parent="Area2D"]
+[node name="brokenTree" type="Sprite" parent="BurnTree"]
 visible = false
 position = Vector2( 4.3197, -3.54242 )
 texture = ExtResource( 38 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurnTree"]
 position = Vector2( 5.99011, -2.47367 )
 scale = Vector2( 1.08173, 2.01559 )
 shape = SubResource( 9 )
@@ -501,7 +501,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="fireTree" type="AnimatedSprite" parent="Area2D"]
+[node name="fireTree" type="AnimatedSprite" parent="BurnTree"]
 visible = false
 position = Vector2( 4.09814, -3.30371 )
 frames = SubResource( 10 )
@@ -524,8 +524,7 @@ __meta__ = {
 [connection signal="pressed" from="PanelControl/Traps/Mud" to="PanelControl" method="_on_Mud_pressed"]
 [connection signal="pressed" from="PanelControl/Traps/Shred" to="PanelControl" method="_on_Shred_pressed"]
 [connection signal="pressed" from="PanelControl/Extras/Upgrade" to="PanelControl" method="_on_Upgrade_pressed"]
-[connection signal="finished" from="PanelControl/Extras/Upgrade/TowerUp_sound" to="PanelControl" method="_on_TowerUp_sound_finished"]
 [connection signal="pressed" from="PanelControl/Extras/HoverCoins" to="PanelControl" method="_on_HoverCoins_pressed"]
 [connection signal="finished" from="Creep" to="." method="_on_Creep_finished"]
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="BurnTree" to="BurnTree" method="_on_BurnTree_area_entered"]
 [connection signal="timeout" from="MagnetDuration" to="." method="_on_MagnetDuration_timeout"]

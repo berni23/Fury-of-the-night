@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Warrior_b1.png-44d0ed815c12a559a725ec1759661380.stex"
+path="res://.import/Warrior_l2.png-ea3c30cad280cd034b293727309a5258.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/warrior/Warrior_b1.png"
-dest_files=[ "res://.import/Warrior_b1.png-44d0ed815c12a559a725ec1759661380.stex" ]
+source_file="res://Assets/Images/warrior/Warrior_l2.png"
+dest_files=[ "res://.import/Warrior_l2.png-ea3c30cad280cd034b293727309a5258.stex" ]
 
 [params]
 
