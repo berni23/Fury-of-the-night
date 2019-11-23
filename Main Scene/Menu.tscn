@@ -17,6 +17,14 @@
 size = 70
 font_data = ExtResource( 4 )
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ],
@@ -25,15 +33,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 70
 font_data = ExtResource( 4 )
 
@@ -56,7 +56,7 @@ margin_bottom = 20.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 862.0
-margin_bottom = 577.0
+margin_bottom = 159.0
 size_flags_horizontal = 4
 custom_constants/separation = 16
 
@@ -91,14 +91,14 @@ stream = ExtResource( 6 )
 [node name="mouse1" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 350, 390 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 frame = 3
 playing = true
 
 [node name="mouse2" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 350, 550 )
-frames = SubResource( 4 )
+frames = SubResource( 3 )
 playing = true
 
 [node name="exit" type="AudioStreamPlayer2D" parent="."]
@@ -121,7 +121,7 @@ margin_left = 399.81
 margin_top = 350.0
 margin_right = 661.81
 margin_bottom = 426.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_hover = Color( 0.109804, 0.831373, 0.772549, 1 )
 text = "Start"
 flat = true
@@ -131,7 +131,7 @@ margin_left = 430.0
 margin_top = 510.0
 margin_right = 612.0
 margin_bottom = 586.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_hover = Color( 0.109804, 0.831373, 0.772549, 1 )
 text = "exit"
 flat = true
