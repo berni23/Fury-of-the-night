@@ -1,7 +1,9 @@
 extends TextureButton
 
 var done = false
-var waitTime = 10
+var waitTime # Has to be set by the parent before _ready is called
+
+signal next_round
 
 func _ready():
 	var sF = $AnimatedCountdown.get_sprite_frames()
@@ -17,7 +19,7 @@ func next_round():
 	# This check is to prevent from calling next_round on the parent 2 times, 
 	# which could happen if click and animation finishing happens simultaneously
 	if not done:
-		self.get_parent().next_round()
+		emit_signal("next_round")
 		done = true
 	self.queue_free()
 
