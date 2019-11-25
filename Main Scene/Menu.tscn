@@ -48,6 +48,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="Sprite2" type="Sprite" parent="."]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 100.0
@@ -92,14 +93,13 @@ stream = ExtResource( 6 )
 visible = false
 position = Vector2( 350, 390 )
 frames = SubResource( 2 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="mouse2" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 350, 550 )
 frames = SubResource( 3 )
-frame = 3
 playing = true
 
 [node name="exit" type="AudioStreamPlayer2D" parent="."]

@@ -3,7 +3,8 @@
 [ext_resource path="res://Objects/Towers/TowerBasic_final.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Towers/Arrow_fire.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Towers/optionUpgrade.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Images/tower_final.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/Towers/tower_final.png" type="Texture" id=4]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 200.0

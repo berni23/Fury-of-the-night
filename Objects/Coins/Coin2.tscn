@@ -19,7 +19,7 @@ animations = [ {
 
 [node name="Coin2Sprite" type="AnimatedSprite"]
 frames = SubResource( 1 )
-frame = 5
+frame = 4
 playing = true
 script = ExtResource( 7 )
 

@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objects/Towers/Bullet.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/fletxa.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/fletxa/fletxa.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sounds/arrow.wav" type="AudioStream" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

@@ -110,6 +110,7 @@ func _on_Timer_timeout():
 	$HealthBar.hide()
 
 func connecting(val):
+
 	val.get_node('Timer2').connect('timeout',self,'hurt',[val.damage])
 #func _on_Timer2_timeout():
 	#reload = true

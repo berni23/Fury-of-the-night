@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Images/aura.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/buttons/aura.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Status/NextRoundIcon.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Images/Menutiles/sword_beta.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/Menutiles/sword6.png" type="Texture" id=4]
 [ext_resource path="res://Objects/Status/cargando.tres" type="SpriteFrames" id=5]
+
 
 [node name="NextRoundIcon" type="TextureButton"]
 margin_left = -80.0

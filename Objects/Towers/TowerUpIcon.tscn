@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Objects/Towers/TowerUpIcon.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Images/tower_upgrade.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/Towers/tower_upgrade.png" type="Texture" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12, 12 )

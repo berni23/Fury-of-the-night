@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Objects/Towers/optionUpgrade.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/tower_up_blocked.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Images/tower_final_blocked.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/Towers/tower_up_blocked.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Towers/tower_final_blocked.png" type="Texture" id=3]
+
+
 
 [node name="Control" type="Node2D" index="0"]
 

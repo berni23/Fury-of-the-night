@@ -4,9 +4,9 @@
 [ext_resource path="res://Objects/Towers/Arrow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Towers/optionUpgrade.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Images/tower_up_unblocked.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Images/tower_up_blocked.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Images/torra.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Towers/tower_up_unblocked.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/Towers/tower_up_blocked.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/Towers/torra.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 200.0

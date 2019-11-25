@@ -18,12 +18,12 @@ export (Image) var ImageT2
 
 var upgrade =0
 var PriceUp1 = 30
-var PriceUp2 = 60
+var PriceUp2 = 50
 var PriceThunder =10
 var PriceMud =2
 var PriceBomb =5
-var PriceShred =5
-var PriceFriend = 7
+var PriceShred =6
+var PriceFriend = 5
 
 func delete_existing_icons():
 	get_tree().call_group(Groups.Icons,"queue_free")
@@ -89,7 +89,7 @@ func _on_Create_TowerStep_pressed():
 func _on_Warrior_pressed():
 	delete_existing_icons()
 	
-	if self.get_parent().Coins>=2:
+	if self.get_parent().Coins>=PriceFriend:
 		get_parent().get_node('WarriorPath').add_child(Friend.instance())
 		get_parent().add([-PriceFriend,"coins"])
 

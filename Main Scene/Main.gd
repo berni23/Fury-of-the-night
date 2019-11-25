@@ -6,10 +6,13 @@ var Mud = 0
 var Thunder = 0
 var Shred = 0
 var Magnet = false
+var Game1 = true
 
 signal Coins_changed
 signal Bomb_changed
 signal Magnet_on
+
+export (PackedScene) var GameOver
 
 """ Recordatori de les collision layers
 Enemics Layer2 Mask1
@@ -29,6 +32,8 @@ tirar llamp ->t
 """
 
 func _ready():
+	
+	print(sin(90))
 	get_node('Creep').play()
 	self.add_Coins(150)
 	self.add_Bomb(5)
@@ -69,8 +74,10 @@ func add_Coins(val):
 	
 func add_Life(val):
 	get_node("Status/VBoxContainer/Life").value += val
-	if get_node("Status/VBoxContainer/Life").value <=0:
-		print('GAME OVER')
-
+	if get_node("Status/VBoxContainer/Life").value <=0 and Game1==true:
+		self.add_child(GameOver.instance())
+		Game1=false
+		#print('GAME OVER')
+		
 func _on_MagnetDuration_timeout():
 	self.Magnet=false

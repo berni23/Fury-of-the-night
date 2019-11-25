@@ -2,12 +2,18 @@
 
 [ext_resource path="res://Objects/Towers/Arrow_fire.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sounds/arrow.wav" type="AudioStream" id=2]
-[ext_resource path="res://Assets/Images/Fletxa_Foc/fletxa_foc1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Images/Fletxa_Foc/fletxa_foc3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Images/Fletxa_Foc/fletxa_foc4.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Images/Fletxa_Foc/fletxa_foc5.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Images/Fletxa_Foc/fletxa_foc6.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Images/Fletxa_Foc/fletxa_foc2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/fletxa/Fletxa_Foc/fletxa_foc1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/fletxa/Fletxa_Foc/fletxa_foc3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/fletxa/Fletxa_Foc/fletxa_foc4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/fletxa/Fletxa_Foc/fletxa_foc5.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/fletxa/Fletxa_Foc/fletxa_foc6.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/fletxa/Fletxa_Foc/fletxa_foc2.png" type="Texture" id=8]
+
+
+
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
