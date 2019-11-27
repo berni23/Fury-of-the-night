@@ -11,18 +11,42 @@ var stormy = [672,111,110,112,107,109,107,113,162,200,277,315,336,332,331,331,32
 
 func _ready():
 	
+	$Particles2D.hide()
+	$Leave.show()
+	$rain.stop()
+	$wind.play()
+	
+
+
+func _on_Timerwind_timeout():
+	
+	$wind.volume_db+=6
+	$Timer.start()
+
+func _on_Timer_timeout():
+	
+	$wind.volume_db-=2
+	#$wind.stop()
+	$Particles2D.show()
+	$rain.play()
 	yield(get_tree().create_timer(3),"timeout")
+	$Leave.hide()
+	$wind.volume_db-=2
+	$rain.volume_db+=4
 	for i in range(0,len(stormx)):
         var bang = thunder.instance()
         bang.set_position(Vector2(stormx[i],stormy[i]))
         get_parent().add_child(bang)
         yield(get_tree().create_timer(0.1),"timeout")
     
-	
+	$wind.volume_db-=2
+	#$rain.volume_db-=4
 	yield(get_tree().create_timer(5),"timeout")
+	
 	self.queue_free()
-		
 
 
-func _on_AudioStreamPlayer2D_finished():
-	$AudioStreamPlayer2D.play()
+func _on_rain_finished():
+		$rain.play()
+
+
