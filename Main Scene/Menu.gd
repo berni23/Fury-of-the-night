@@ -2,7 +2,10 @@ extends Node2D
 
 export (PackedScene) var Main
 
-#func _ready():
+func _ready():
+	
+	var a = get_viewport().size
+	print(a)
 	#$MarginContainer/VBoxContainer/VBoxContainer2/TextureButton.grab_focus()
 
 #func _physics_process(delta):

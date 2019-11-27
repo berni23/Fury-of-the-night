@@ -12,6 +12,7 @@ export (PackedScene) var TowerUp
 export (PackedScene) var getCoins 
 export (PackedScene) var Friend
 export (PackedScene) var Cargando
+export (PackedScene) var Rain
 
 export (Image) var ImageT1
 export (Image) var ImageT2
@@ -24,6 +25,7 @@ var PriceMud =2
 var PriceBomb =5
 var PriceShred =6
 var PriceFriend = 5
+var PriceStorm =50
 
 func delete_existing_icons():
 	get_tree().call_group(Groups.Icons,"queue_free")
@@ -134,4 +136,11 @@ func up(val):
 	$Extras/Upgrade.disabled=false
 	$Extras/Upgrade/TowerUp_sound.play()
 	
-	
+
+func _on_Storm_pressed():
+	delete_existing_icons()
+	if self.get_parent().Coins>=PriceStorm:
+		
+		get_parent().add_child(Rain.instance())	
+		self.get_parent().add_Coins(-PriceStorm)
+		

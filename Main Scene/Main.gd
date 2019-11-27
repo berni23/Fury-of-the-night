@@ -13,7 +13,7 @@ signal Bomb_changed
 signal Magnet_on
 
 export (PackedScene) var GameOver
-
+export (PackedScene) var Rain
 """ Recordatori de les collision layers
 Enemics Layer2 Mask1
 Torres Mask2
@@ -33,10 +33,15 @@ tirar llamp ->t
 
 func _ready():
 	
-	print(sin(90))
+	#self.add_child(Rain.instance())
 	get_node('Creep').play()
 	self.add_Coins(150)
 	self.add_Bomb(5)
+	#self.add_child(Rain.instance())
+	
+
+#func _on_Creep_finished():
+	
 	
 func Magnet_on():
 	self.Magnet = true
@@ -81,3 +86,8 @@ func add_Life(val):
 		
 func _on_MagnetDuration_timeout():
 	self.Magnet=false
+	
+
+#func _input(event):
+#   if event is InputEventMouseButton:
+#       print(event.position)

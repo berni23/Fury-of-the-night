@@ -1,0 +1,52 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Objects/Traps/thunder2.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/thunder/thunder0.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/thunder/thunder2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/thunder/thunder4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/thunder/tile000.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/thunder/tile001.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/thunder/tile002.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/thunder/tile004.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/thunder/tile003.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Images/thunder/tile005.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Images/thunder/tile006.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Images/thunder/tile008.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Images/thunder/tile007.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Images/thunder/tile009.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sounds/thunder.wav" type="AudioStream" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Thunder",
+"speed": 15.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 1, 2 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -150 )
+scale = Vector2( 0.857446, 1 )
+frames = SubResource( 1 )
+animation = "Thunder"
+frame = 7
+playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 8.55618, 1.63409 )
+scale = Vector2( 6.08355, 5.5737 )
+shape = SubResource( 2 )
+
+[node name="BAaang" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="finished" from="BAaang" to="." method="_on_BAaang_finished"]

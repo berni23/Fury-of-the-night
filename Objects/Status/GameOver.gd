@@ -28,7 +28,7 @@ func _process(delta):
 			self.position.y-= speed*delta	
 			if self.scale.y>= 5.75:
 				stop=true
-				print (speed3*delta)
+				#print (speed3*delta)
 
 	c+=speed3*delta
 	self.get_node('Label').add_color_override("font_color", Color(cos(5*c),0.5,sin(5*c)))
