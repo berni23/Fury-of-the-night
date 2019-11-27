@@ -37,7 +37,7 @@ __meta__ = {
 
 [node name="rain" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
-volume_db = 20.0
+volume_db = 12.0
 autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -61,7 +61,12 @@ texture = ExtResource( 6 )
 wait_time = 5.0
 one_shot = true
 autostart = true
-[connection signal="finished" from="rain" to="." method="_on_AudioStreamPlayer2D_finished"]
+
+[node name="TimerFewRain" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 [connection signal="finished" from="rain" to="." method="_on_rain_finished"]
+[connection signal="finished" from="rain" to="." method="_on_AudioStreamPlayer2D_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timerwind" to="." method="_on_Timerwind_timeout"]
+[connection signal="timeout" from="TimerFewRain" to="." method="_on_TimerFewRain_timeout"]

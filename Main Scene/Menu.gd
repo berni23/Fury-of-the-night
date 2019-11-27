@@ -2,10 +2,10 @@ extends Node2D
 
 export (PackedScene) var Main
 
-func _ready():
+#func _ready():
 	
-	var a = get_viewport().size
-	print(a)
+#	var a = get_viewport().size
+	#print(a)
 	#$MarginContainer/VBoxContainer/VBoxContainer2/TextureButton.grab_focus()
 
 #func _physics_process(delta):
@@ -25,7 +25,6 @@ func _on_Button2_pressed():
 func _on_Button2_mouse_entered():
 	$mouse2.show()
 	$mouse1.hide()
-	
 	
 func _on_Button_mouse_entered():
 	$mouse1.show()

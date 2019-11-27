@@ -20,33 +20,40 @@ func _ready():
 
 func _on_Timerwind_timeout():
 	
-	$wind.volume_db+=6
+	$wind.volume_db+=5
+	$Particles2D.show()
+	$Particles2D.amount =200
+	$rain.play()
 	$Timer.start()
 
 func _on_Timer_timeout():
 	
-	$wind.volume_db-=2
-	#$wind.stop()
-	$Particles2D.show()
-	$rain.play()
-	yield(get_tree().create_timer(3),"timeout")
+	$wind.volume_db-=5
+	$Particles2D.amount=2000
+	$rain.volume_db+=10
+	yield(get_tree().create_timer(5),"timeout")
 	$Leave.hide()
 	$wind.volume_db-=2
-	$rain.volume_db+=4
+	
 	for i in range(0,len(stormx)):
         var bang = thunder.instance()
         bang.set_position(Vector2(stormx[i],stormy[i]))
         get_parent().add_child(bang)
         yield(get_tree().create_timer(0.1),"timeout")
     
-	$wind.volume_db-=2
-	#$rain.volume_db-=4
+	$rain.volume_db-=5
+	$wind.volume_db-=4
 	yield(get_tree().create_timer(5),"timeout")
+	$TimerFewRain.start()
+	$wind.volume_db-=4
+	$rain.volume_db-=5
+	$Particles2D.amount =200
 	
-	self.queue_free()
-
-
 func _on_rain_finished():
 		$rain.play()
 
 
+
+
+func _on_TimerFewRain_timeout():
+	self.queue_free()
