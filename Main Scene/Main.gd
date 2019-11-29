@@ -11,6 +11,7 @@ var Game1 = true
 signal Coins_changed
 signal Bomb_changed
 signal Magnet_on
+#signal Chakra_changed
 
 export (PackedScene) var GameOver
 export (PackedScene) var Rain
@@ -33,11 +34,11 @@ tirar llamp ->t
 
 func _ready():
 	
-	#self.add_child(Rain.instance())
+	
+	#self.get_node('PanelControl/Projectiles/Bomb').set_modulate(Color( 1, 0.5, 0.31, 1 ))
 	get_node('Creep').play()
 	self.add_Coins(150)
 	self.add_Bomb(5)
-	#self.add_child(Rain.instance())
 	
 
 #func _on_Creep_finished():
@@ -52,7 +53,9 @@ func add(value_type):
 	match value_type[1]:
 		"coins":	self.add_Coins(value_type[0])
 		"life":		self.add_Life(value_type[0])
-		_:			print("ERROR: Unnexpected value type!")
+		"chakra":	self.add_Chakra(value_type[0])
+		_:			print("ERROR: Unexpected value type!")
+		
 
 func add_Thunder(val):	
 	#With this function we modify the available amounts of traps and projectiles
@@ -67,6 +70,11 @@ func add_Shred(val):
 func add_Bomb(val):
 	self.Bomb+=val
 	emit_signal("Bomb_changed",self.Bomb)
+
+func add_Chakra(val):
+	get_node("Chakra").value+=val
+	#emit_signal("Bomb_changed",self.Bomb)
+		
 		
 func add_Coins(val):
 	# Aquesta funció canvia el valor de les monedes i emet un senyal

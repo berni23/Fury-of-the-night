@@ -14,6 +14,11 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 2 ), null, ExtResource( 3 ), null, ExtResource( 4 ), null, ExtResource( 3 ), null ],
+"loop": true,
+"name": "default2",
+"speed": 8.0
 } ]
 
 [node name="Area2D" type="Area2D"]
@@ -24,9 +29,20 @@ shape = SubResource( 1 )
 
 [node name="MagnetSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
+frame = 2
 playing = true
 
 [node name="tirori" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 15.0
 [connection signal="area_entered" from="." to="." method="_on_Area2D_area_entered"]
 [connection signal="finished" from="tirori" to="." method="_on_tirori_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
