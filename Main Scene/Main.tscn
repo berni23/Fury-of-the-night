@@ -1,74 +1,75 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Status/GameOver.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Traps/rain.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Images/TileMap.tres" type="TileSet" id=4]
-[ext_resource path="res://Objects/Towers/TowerSpot.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Main Scene/EndPath.gd" type="Script" id=6]
-[ext_resource path="res://Main Scene/Status.gd" type="Script" id=7]
-[ext_resource path="res://Assets/seriffic.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://Assets/Images/bomb/bomb_animation/tile001.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Images/coins/coin_1.png" type="Texture" id=10]
-[ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=11]
-[ext_resource path="res://Objects/Traps/ShredIcon.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Objects/Traps/thunderIcon.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Objects/Towers/TowerFinIcon.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Objects/Friends/Friend.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Objects/Status/cargando.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Assets/Images/Towers/tower_up_unblocked.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Images/Towers/tower_final_unblocked.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Images/Towers/torra_unblocked.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Images/bomb/Bomb2.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Images/buttons/sword4.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Images/buttons/MudButton.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=33]
-[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=34]
-[ext_resource path="res://Main Scene/BurnTree.gd" type="Script" id=35]
-[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=36]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=37]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=38]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=39]
-[ext_resource path="res://Main Scene/RoundManager.gd" type="Script" id=40]
-[ext_resource path="res://Objects/Status/NextRoundIcon.tscn" type="PackedScene" id=41]
-[ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=42]
-[ext_resource path="res://Objects/Enemies/dragon.tscn" type="PackedScene" id=43]
-[ext_resource path="res://Objects/Enemies/Warrior.tscn" type="PackedScene" id=44]
-[ext_resource path="res://Objects/Enemies/Spider.tscn" type="PackedScene" id=45]
-[ext_resource path="res://Assets/Images/Chackra/chackra0.png" type="Texture" id=46]
-[ext_resource path="res://Assets/Images/Chackra/chackra3.png" type="Texture" id=47]
-[ext_resource path="res://Main Scene/TextureProgress.gd" type="Script" id=48]
-[ext_resource path="res://Objects/Status/chakra_filled.tscn" type="PackedScene" id=49]
+[ext_resource path="res://Objects/Status/BacktoFuture.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Images/TileMap.tres" type="TileSet" id=5]
+[ext_resource path="res://Objects/Towers/TowerSpot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Main Scene/EndPath.gd" type="Script" id=7]
+[ext_resource path="res://Main Scene/Status.gd" type="Script" id=8]
+[ext_resource path="res://Assets/seriffic.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Assets/Images/bomb/bomb_animation/tile001.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Images/coins/coin_1.png" type="Texture" id=11]
+[ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=12]
+[ext_resource path="res://Objects/Traps/ShredIcon.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Objects/Traps/thunderIcon.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Objects/Towers/TowerFinIcon.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Objects/Friends/Friend.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Objects/Status/cargando.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/Images/Towers/tower_up_unblocked.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Images/Towers/tower_final_unblocked.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Images/Towers/torra_unblocked.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Images/bomb/Bomb2.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Images/buttons/sword4.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Images/buttons/MudButton.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=34]
+[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=35]
+[ext_resource path="res://Main Scene/BurnTree.gd" type="Script" id=36]
+[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=40]
+[ext_resource path="res://Main Scene/RoundManager.gd" type="Script" id=41]
+[ext_resource path="res://Objects/Status/NextRoundIcon.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=43]
+[ext_resource path="res://Objects/Enemies/dragon.tscn" type="PackedScene" id=44]
+[ext_resource path="res://Objects/Enemies/Warrior.tscn" type="PackedScene" id=45]
+[ext_resource path="res://Objects/Enemies/Spider.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Assets/Images/Chackra/chackra0.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Images/Chackra/chackra3.png" type="Texture" id=48]
+[ext_resource path="res://Main Scene/TextureProgress.gd" type="Script" id=49]
+[ext_resource path="res://Objects/Status/chakra_filled.tscn" type="PackedScene" id=50]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -48, 112, 0, 0, 0, 0, 720, 112, 0, 0, 0, 0, 720, 336, 0, 0, 0, 0, 80, 336, 0, 0, 0, 0, 80, 528, 0, 0, 0, 0, 784, 528, 0, 0, 0, 0, 784, 464, 0, 0, 0, 0, 944, 464, 0, 0, 0, 0, 944, 208, 0, 0, 0, 0, 1072, 208 )
+"points": PoolVector2Array( 0, 0, 0, 0, -160, 110, 0, 0, 0, 0, 720, 112, 0, 0, 0, 0, 720, 336, 0, 0, 0, 0, 80, 336, 0, 0, 0, 0, 80, 528, 0, 0, 0, 0, 784, 528, 0, 0, 0, 0, 784, 464, 0, 0, 0, 0, 944, 464, 0, 0, 0, 0, 944, 208, 0, 0, 0, 0, 1072, 208 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
 
 [sub_resource type="DynamicFont" id=3]
 size = 10
-font_data = ExtResource( 8 )
+font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 8
 use_filter = true
-font_data = ExtResource( 8 )
+font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 20
-font_data = ExtResource( 8 )
+font_data = ExtResource( 9 )
 
 [sub_resource type="CanvasItemMaterial" id=6]
 
@@ -86,14 +87,14 @@ font_data = SubResource( 9 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 12
-font_data = ExtResource( 8 )
+font_data = ExtResource( 9 )
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 31.9749, 19.8138 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"frames": [ ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -112,9 +113,10 @@ __meta__ = {
 }
 GameOver = ExtResource( 2 )
 Rain = ExtResource( 3 )
+BackToFuture = ExtResource( 4 )
 
 [node name="Pathway" type="TileMap" parent="."]
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 5
 format = 1
@@ -124,7 +126,8 @@ __meta__ = {
 }
 
 [node name="Decoration" type="TileMap" parent="."]
-tile_set = ExtResource( 4 )
+editor/display_folded = true
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -65515, 4, 0, -65513, 4, 0, -65511, 4, 0, -65509, 4, 0, -65507, 4, 0, -65505, 4, 0, 0, 4, 0, 2, 4, 0, 4, 4, 0, 6, 4, 0, 8, 4, 0, 10, 4, 0, 12, 4, 0, 14, 4, 0, 16, 4, 0, 18, 4, 0, 20, 4, 0, 22, 4, 0, 24, 4, 0, 26, 4, 0, 28, 4, 0, 30, 4, 0, 65561, 4, 0, 65563, 4, 0, 65565, 4, 0, 131096, 38, 0, 131103, 15, 0, 262144, 8, 0, 327684, 15, 0, 327704, 12, 0, 327705, 12, 0, 393219, 13, 0, 393220, 13, 0, 458755, 13, 0, 458756, 13, 0, 458772, 8, 0, 524307, 38, 0, 524312, 12, 0, 524313, 12, 0, 524319, 9, 0, 589855, 10, 0, 655391, 10, 0, 720896, 10, 0, 720921, 53, 0, 720923, 5, 0, 720927, 9, 0, 786432, 10, 0, 786452, 11, 0, 786453, 10, 0, 786463, 10, 0, 851968, 10, 0, 851999, 9, 0, 917504, 10, 0, 917509, 9, 0, 917510, 9, 0, 917513, 33, 0, 917516, 38, 0, 917517, 15, 0, 917518, 38, 0, 917521, 1, 0, 917524, 11, 0, 917535, 10, 0, 983040, 10, 0, 1048576, 10, 0, 1048602, 2, 0, 1114112, 10, 0, 1179648, 10, 0, 1179649, 10, 0, 1179652, 10, 0, 1179654, 2, 0, 1179657, 15, 0, 1179670, 15, 0, 1179675, 10, 0, 1179677, 10, 0, 1245184, 15, 0, 1245194, 1, 0, 1245198, 8, 0, 1245205, 1, 0, 1245209, 10, 0, 1245210, 14, 0, 1245212, 10, 0, 1245213, 8, 0, 1245214, 8, 0, 1245215, 8, 0, 1310720, 38, 0, 1310739, 10, 0, 1310741, 10, 0, 1310742, 39, 0, 1310743, 39, 0, 1310746, 10, 0 )
@@ -137,133 +140,133 @@ tile_data = PoolIntArray( -65515, 4, 0, -65513, 4, 0, -65511, 4, 0, -65509, 4, 0
 editor/display_folded = true
 visible = false
 
-[node name="TowerSpot4" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot4" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 64, 192 )
 
-[node name="TowerSpot" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 64, 256 )
 
-[node name="TowerSpot5" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot5" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 192, 192 )
 
-[node name="TowerSpot2" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot2" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 192, 256 )
 
-[node name="TowerSpot3" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot3" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 256, 192 )
 
-[node name="TowerSpot6" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot6" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 256, 256 )
 
-[node name="TowerSpot7" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot7" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 320, 192 )
 
-[node name="TowerSpot8" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot8" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 320, 256 )
 
-[node name="TowerSpot9" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot9" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 384, 192 )
 
-[node name="TowerSpot10" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot10" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 384, 256 )
 
-[node name="TowerSpot11" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot11" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 448, 192 )
 
-[node name="TowerSpot12" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot12" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 448, 256 )
 
-[node name="TowerSpot13" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot13" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 512, 192 )
 
-[node name="TowerSpot14" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot14" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 512, 256 )
 
-[node name="TowerSpot15" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot15" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 576, 192 )
 
-[node name="TowerSpot16" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot16" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 576, 256 )
 
-[node name="TowerSpot17" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot17" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 640, 192 )
 
-[node name="TowerSpot18" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot18" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 800, 128 )
 
-[node name="TowerSpot19" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot19" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 864, 128 )
 
-[node name="TowerSpot20" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot20" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 928, 128 )
 
-[node name="TowerSpot21" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot21" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 992, 128 )
 
-[node name="TowerSpot22" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot22" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 800, 224 )
 
-[node name="TowerSpot23" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot23" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 864, 192 )
 
-[node name="TowerSpot24" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot24" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 864, 256 )
 
-[node name="TowerSpot26" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot26" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 800, 320 )
 
-[node name="TowerSpot25" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot25" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 864, 320 )
 
-[node name="TowerSpot27" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot27" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 160, 416 )
 
-[node name="TowerSpot28" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot28" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 224, 416 )
 
-[node name="TowerSpot29" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot29" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 288, 416 )
 
-[node name="TowerSpot30" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot30" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 352, 416 )
 
-[node name="TowerSpot31" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot31" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 416, 416 )
 
-[node name="TowerSpot32" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot32" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 480, 416 )
 
-[node name="TowerSpot33" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot33" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 544, 416 )
 
-[node name="TowerSpot34" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot34" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 608, 416 )
 
-[node name="TowerSpot35" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot35" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 704, 448 )
 
-[node name="TowerSpot43" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot43" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 768, 384 )
 
-[node name="TowerSpot36" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot36" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 512, 608 )
 
-[node name="TowerSpot38" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot38" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 576, 608 )
 
-[node name="TowerSpot37" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot37" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 640, 608 )
 
-[node name="TowerSpot39" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot39" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 768, 608 )
 
-[node name="TowerSpot40" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot40" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 896, 544 )
 
-[node name="TowerSpot41" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot41" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 960, 544 )
 
-[node name="TowerSpot42" parent="TowerSpots" instance=ExtResource( 5 )]
+[node name="TowerSpot42" parent="TowerSpots" instance=ExtResource( 6 )]
 position = Vector2( 416, 608 )
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -275,7 +278,7 @@ __meta__ = {
 [node name="EndPath" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 1072, 208 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -285,11 +288,12 @@ scale = Vector2( 1.73077, 3.69231 )
 shape = SubResource( 2 )
 
 [node name="Status" type="Container" parent="."]
+editor/display_folded = true
 margin_left = 684.0
 margin_top = 7.0
 margin_right = 724.0
 margin_bottom = 47.0
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Status"]
 editor/display_folded = true
@@ -348,12 +352,12 @@ text = "Hi"
 [node name="Bomb" type="Sprite" parent="Status/Counters"]
 position = Vector2( 23.499, 37.9779 )
 scale = Vector2( 0.945905, 0.49389 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="Coin" type="Sprite" parent="Status/Counters"]
 position = Vector2( 23.1314, 10.7795 )
 scale = Vector2( 0.693214, 0.574291 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="HpLabel" type="Label" parent="Status"]
 modulate = Color( 0.953125, 0.897278, 0.897278, 1 )
@@ -371,29 +375,30 @@ custom_constants/shadow_as_outline = 0
 text = "HP"
 
 [node name="PanelControl" type="HBoxContainer" parent="."]
+editor/display_folded = true
 margin_top = 599.0
 margin_right = 740.0
 margin_bottom = 669.0
 rect_min_size = Vector2( 720, 70 )
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
-ShredIcon = ExtResource( 12 )
-BombIcon = ExtResource( 13 )
-MudIcon = ExtResource( 14 )
-TowerUpIcon = ExtResource( 15 )
-TowerStepsIcon = ExtResource( 16 )
-ThunderIcon = ExtResource( 17 )
-TowerIcon = ExtResource( 18 )
-TowerFinIcon = ExtResource( 19 )
-TowerUp = ExtResource( 20 )
-getCoins = ExtResource( 21 )
-Friend = ExtResource( 22 )
-Cargando = ExtResource( 23 )
-Rain = ExtResource( 3 )
-ImageT1 = ExtResource( 24 )
-ImageT2 = ExtResource( 25 )
+ShredIcon = ExtResource( 13 )
+BombIcon = ExtResource( 14 )
+MudIcon = ExtResource( 15 )
+TowerUpIcon = ExtResource( 16 )
+TowerStepsIcon = ExtResource( 17 )
+ThunderIcon = ExtResource( 18 )
+TowerIcon = ExtResource( 19 )
+TowerFinIcon = ExtResource( 20 )
+TowerUp = ExtResource( 21 )
+getCoins = ExtResource( 22 )
+Friend = ExtResource( 23 )
+Cargando = ExtResource( 24 )
+Rain = ExtResource( 4 )
+ImageT1 = ExtResource( 25 )
+ImageT2 = ExtResource( 26 )
 
 [node name="Towers" type="Container" parent="PanelControl"]
 editor/display_folded = true
@@ -409,14 +414,14 @@ custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.667969, 0.0652313, 0.0652313, 1 )
 custom_colors/font_color_hover = Color( 0.211118, 0.632812, 0.108765, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-icon = ExtResource( 26 )
+icon = ExtResource( 27 )
 flat = true
 
 [node name="Create TowerStep" type="Button" parent="PanelControl/Towers"]
 margin_left = 72.0
 margin_right = 144.0
 margin_bottom = 70.0
-icon = ExtResource( 27 )
+icon = ExtResource( 28 )
 flat = true
 
 [node name="Projectiles" type="Container" parent="PanelControl"]
@@ -434,7 +439,7 @@ margin_bottom = 35.0
 rect_min_size = Vector2( 48, 35 )
 rect_clip_content = true
 theme = SubResource( 7 )
-icon = ExtResource( 28 )
+icon = ExtResource( 29 )
 flat = true
 
 [node name="Thunder" type="Button" parent="PanelControl/Projectiles"]
@@ -443,7 +448,7 @@ margin_left = 53.0
 margin_right = 101.0
 margin_bottom = 35.0
 size_flags_stretch_ratio = 2.0
-icon = ExtResource( 29 )
+icon = ExtResource( 30 )
 flat = true
 
 [node name="Warrior" type="Button" parent="PanelControl/Projectiles"]
@@ -452,7 +457,7 @@ margin_right = 58.0
 margin_bottom = 78.0
 rect_min_size = Vector2( 58, 41 )
 rect_scale = Vector2( 0.8, 0.8 )
-icon = ExtResource( 30 )
+icon = ExtResource( 31 )
 flat = true
 
 [node name="Storm" type="Button" parent="PanelControl/Projectiles"]
@@ -464,6 +469,7 @@ text = "Storm"
 flat = true
 
 [node name="Traps" type="Container" parent="PanelControl"]
+editor/display_folded = true
 modulate = Color( 0.815686, 0.705882, 0.172549, 1 )
 self_modulate = Color( 0.333333, 0.0705882, 0.0705882, 1 )
 show_behind_parent = true
@@ -481,7 +487,7 @@ margin_right = 72.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 72, 35 )
 shortcut_in_tooltip = false
-icon = ExtResource( 31 )
+icon = ExtResource( 32 )
 flat = true
 clip_text = true
 
@@ -490,10 +496,11 @@ margin_left = 72.0
 margin_right = 144.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 72, 35 )
-icon = ExtResource( 32 )
+icon = ExtResource( 33 )
 flat = true
 
 [node name="Extras" type="Container" parent="PanelControl"]
+editor/display_folded = true
 margin_left = 444.0
 margin_right = 588.0
 margin_bottom = 70.0
@@ -515,7 +522,7 @@ flat = true
 
 [node name="TowerUp_sound" type="AudioStreamPlayer2D" parent="PanelControl/Extras/Upgrade"]
 position = Vector2( -3.05176e-05, 0 )
-stream = ExtResource( 33 )
+stream = ExtResource( 34 )
 
 [node name="HoverCoins" type="Button" parent="PanelControl/Extras"]
 margin_left = 72.0
@@ -531,12 +538,12 @@ text = "Hover"
 flat = true
 
 [node name="Creep" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 34 )
+stream = ExtResource( 35 )
 
 [node name="BurnTree" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 892.323, 385.957 )
-script = ExtResource( 35 )
+script = ExtResource( 36 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -544,7 +551,7 @@ __meta__ = {
 [node name="brokenTree" type="Sprite" parent="BurnTree"]
 visible = false
 position = Vector2( 4.3197, -3.54242 )
-texture = ExtResource( 36 )
+texture = ExtResource( 37 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurnTree"]
 position = Vector2( 5.99011, -2.47367 )
@@ -570,12 +577,12 @@ __meta__ = {
 }
 
 [node name="RoundManager" type="Node" parent="."]
-script = ExtResource( 40 )
-nextIcon = ExtResource( 41 )
-skeleton = ExtResource( 42 )
-dragon = ExtResource( 43 )
-Warrior = ExtResource( 44 )
-Spider = ExtResource( 45 )
+script = ExtResource( 41 )
+nextIcon = ExtResource( 42 )
+skeleton = ExtResource( 43 )
+dragon = ExtResource( 44 )
+Warrior = ExtResource( 45 )
+Spider = ExtResource( 46 )
 
 [node name="VisualTimerPosition" type="Position2D" parent="RoundManager"]
 position = Vector2( 0, 80 )
@@ -586,11 +593,14 @@ margin_top = 20.0
 margin_right = 945.0
 margin_bottom = 85.0
 max_value = 4.0
-texture_under = ExtResource( 46 )
-texture_progress = ExtResource( 47 )
+texture_under = ExtResource( 47 )
+texture_progress = ExtResource( 48 )
 fill_mode = 5
-script = ExtResource( 48 )
-filled = ExtResource( 49 )
+script = ExtResource( 49 )
+filled = ExtResource( 50 )
+
+[node name="TimerFuture" type="Timer" parent="."]
+wait_time = 8.0
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
 [connection signal="pressed" from="PanelControl/Towers/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
 [connection signal="pressed" from="PanelControl/Towers/Create TowerStep" to="PanelControl" method="_on_Create_TowerStep_pressed"]
@@ -606,3 +616,4 @@ filled = ExtResource( 49 )
 [connection signal="area_entered" from="BurnTree" to="BurnTree" method="_on_BurnTree_area_entered"]
 [connection signal="timeout" from="MagnetDuration" to="." method="_on_MagnetDuration_timeout"]
 [connection signal="value_changed" from="Chakra" to="Chakra" method="_on_Chakra_value_changed"]
+[connection signal="timeout" from="TimerFuture" to="." method="_on_TimerFuture_timeout"]

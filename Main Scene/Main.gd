@@ -15,6 +15,9 @@ signal Magnet_on
 
 export (PackedScene) var GameOver
 export (PackedScene) var Rain
+export (PackedScene) var BackToFuture
+
+
 """ Recordatori de les collision layers
 Enemics Layer2 Mask1
 Torres Mask2
@@ -33,11 +36,10 @@ tirar llamp ->t
 """
 
 func _ready():
-	
-	
 	#self.get_node('PanelControl/Projectiles/Bomb').set_modulate(Color( 1, 0.5, 0.31, 1 ))
-	get_node('Creep').play()
-	self.add_Coins(150)
+	#self.add_child(BackToFuture.instance())
+	#get_node('Creep').play()
+	self.add_Coins(3000)
 	self.add_Bomb(5)
 	
 
@@ -95,7 +97,14 @@ func add_Life(val):
 func _on_MagnetDuration_timeout():
 	self.Magnet=false
 	
-
 #func _input(event):
 #   if event is InputEventMouseButton:
 #       print(event.position)
+
+func _on_TimerFuture_timeout():
+	for node in get_node('Path2D').get_children():
+		if node.is_in_group(Groups.Fly):
+			node.speed = 150
+		elif node.is_in_group(Groups.Enemies):
+			node.speed = 100	
+		yield(get_tree().create_timer(0.5),"timeout")

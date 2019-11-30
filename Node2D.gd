@@ -1,14 +1,15 @@
 extends Node2D
 
+export (PackedScene) var power1
+export (PackedScene) var power2
 
 var c =0
 
 func _ready():
+	pass
 	
 	#Nota : relacionar els texturebuttons amb el concepte de 'icon'. quan cliquis a un altre icon o click dret, desapareguin,
 	#i ique també es desconectin
-	 $Label.hide()
-	
 
 
 #	#self.position =Vector2(get_parent().margin_right/2,get_parent().margin_bottom/2)
@@ -31,26 +32,28 @@ func _on_Button_pressed():
 	$TextureButton3.connect("pressed", self, "_on_TextureButton3_pressed")
 	$TextureButton4.connect("pressed", self, "_on_TextureButton4_pressed")
 
+
 func _on_TextureButton_pressed():
-   
-	print('p1')
-	$Label.set_text('Power 1')
-	$Label.show()
+	get_parent().value = 0
+	get_parent().get_parent().add_child(power1.instance())
+	self.queue_free()
+	
 func _on_TextureButton2_pressed():
+	get_parent().value = 0
+	get_parent().get_parent().add_child(power2.instance())
+	self.queue_free()	
 	
-	print('p2')
+#func _on_TextureButton3_pressed():
+#	$Label.set_text('Power 3')
+
+#func _on_TextureButton4_pressed():
+#	$Label.set_text('Power 4')
+
+func _on_TextureButton_mouse_entered():
+		$Label.set_text('Power 1')
+func _on_TextureButton2_mouse_entered():
 	$Label.set_text('Power 2')
-	$Label.show()
-func _on_TextureButton3_pressed():
-	
-	print('p3')
+func _on_TextureButton3_mouse_entered():
 	$Label.set_text('Power 3')
-	$Label.show()
-	
-	
-func _on_TextureButton4_pressed():
-
-	print('p4')
+func _on_TextureButton4_mouse_entered():
 	$Label.set_text('Power 4')
-	$Label.show()
-

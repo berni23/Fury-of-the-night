@@ -20,7 +20,6 @@
 [ext_resource path="res://Assets/Images/lifebar/lifebar1.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Images/lifebar/lifebar3..png" type="Texture" id=19]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],

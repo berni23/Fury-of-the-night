@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/future1.wav-62f5931e05d3113bccbeb7f10516a954.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/future1.wav"
+dest_files=[ "res://.import/future1.wav-62f5931e05d3113bccbeb7f10516a954.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

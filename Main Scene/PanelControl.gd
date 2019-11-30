@@ -137,10 +137,10 @@ func up(val):
 	$Extras/Upgrade/TowerUp_sound.play()
 	
 
-func _on_Storm_pressed():
-	delete_existing_icons()
-	if self.get_parent().Coins>=PriceStorm:
-		
-		get_parent().add_child(Rain.instance())	
-		self.get_parent().add_Coins(-PriceStorm)
-		
+#func _on_Storm_pressed():
+#	delete_existing_icons()
+#	if self.get_parent().Coins>=PriceStorm:
+#
+#		get_parent().add_child(Rain.instance())	
+#		self.get_parent().add_Coins(-PriceStorm)
+#
