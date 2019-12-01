@@ -37,7 +37,7 @@ tirar llamp ->t
 
 func _ready():
 	#self.get_node('PanelControl/Projectiles/Bomb').set_modulate(Color( 1, 0.5, 0.31, 1 ))
-	#self.add_child(BackToFuture.instance())
+	#self.add_child(Rain.instance())
 	#get_node('Creep').play()
 	self.add_Coins(3000)
 	self.add_Bomb(5)
@@ -87,7 +87,7 @@ func add_Coins(val):
 	emit_signal("Coins_changed",self.Coins)
 	
 func add_Life(val):
-	get_node("Status/VBoxContainer/Life").value += val
+	get_node("Status/VBoxContainer/Life").valsue += val
 	if get_node("Status/VBoxContainer/Life").value <=0 and Game1==true:
 		self.add_child(GameOver.instance())
 		Game1=false

@@ -1,6 +1,6 @@
 extends Sprite
 
-var Shoot = preload('res://Objects/Traps/thunder.tscn')
+var Shoot = preload('res://Objects/Traps/thunder_storm.tscn')
 
 #extends "res://Scripts/ShootIcon.gd"
 
@@ -21,6 +21,8 @@ func _input(event):
 		if self.get_parent().Thunder > 0:
 
 				var Scene = Shoot.instance()
-				get_parent().get_node("YSortObjects").add_child(Scene)
+				
+				get_parent().add_child(Scene)
+				#get_parent().get_node("YSortObjects").add_child(Scene)
 				get_parent().add_Thunder(-1)
 #				self.queue_free()

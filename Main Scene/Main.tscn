@@ -69,14 +69,14 @@ size = 8
 use_filter = true
 font_data = ExtResource( 9 )
 
-[sub_resource type="CanvasItemMaterial" id=6]
+[sub_resource type="CanvasItemMaterial" id=5]
 
-[sub_resource type="ShaderMaterial" id=8]
+[sub_resource type="ShaderMaterial" id=6]
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 31.9749, 19.8138 )
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
 "loop": true,
@@ -84,7 +84,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Curve2D" id=14]
+[sub_resource type="Curve2D" id=9]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1020, 210, 0, 0, 0, 0, 910, 210, 0, 0, 0, 0, 850, 320, 0, 0, 0, 0, 770, 330, 0, 0, 0, 0, 600, 520, 0, 0, 0, 0, 80, 530 )
 }
@@ -432,7 +432,7 @@ margin_bottom = 80.0
 
 [node name="Bomb" type="Button" parent="PanelControl/Projectiles/VBoxContainer"]
 show_behind_parent = true
-material = SubResource( 6 )
+material = SubResource( 5 )
 margin_right = 48.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 48, 35 )
@@ -440,7 +440,7 @@ rect_clip_content = true
 icon = ExtResource( 31 )
 
 [node name="Thunder" type="Button" parent="PanelControl/Projectiles/VBoxContainer"]
-material = SubResource( 8 )
+material = SubResource( 6 )
 margin_top = 39.0
 margin_right = 48.0
 margin_bottom = 74.0
@@ -547,7 +547,7 @@ texture = ExtResource( 39 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurnTree"]
 position = Vector2( 5.99011, -2.47367 )
 scale = Vector2( 1.08173, 2.01559 )
-shape = SubResource( 12 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -555,14 +555,14 @@ __meta__ = {
 [node name="fireTree" type="AnimatedSprite" parent="BurnTree"]
 visible = false
 position = Vector2( 4.09814, -3.30371 )
-frames = SubResource( 13 )
+frames = SubResource( 8 )
 
 [node name="MagnetDuration" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
 
 [node name="WarriorPath" type="Path2D" parent="."]
-curve = SubResource( 14 )
+curve = SubResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -593,6 +593,7 @@ filled = ExtResource( 52 )
 
 [node name="TimerFuture" type="Timer" parent="."]
 wait_time = 8.0
+one_shot = true
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
 [connection signal="pressed" from="PanelControl/Towers/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
 [connection signal="pressed" from="PanelControl/Towers/Create TowerStep" to="PanelControl" method="_on_Create_TowerStep_pressed"]
