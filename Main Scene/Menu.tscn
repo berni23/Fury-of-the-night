@@ -1,17 +1,16 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Main Scene/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Main Scene/Main.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Images/Menutiles/background.png" type="Texture" id=3]
 [ext_resource path="res://Assets/pdark.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets/Images/Menutiles/title.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sounds/start.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Images/Esquelet/esquelet_b1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Images/Esquelet/esquelet_b2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Images/Esquelet/esquelet_b3.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sounds/exit.wav" type="AudioStream" id=10]
-[ext_resource path="res://Assets/Images/Menutiles/sword6.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Images/Menutiles/sword_beta.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sounds/start.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Images/Esquelet/esquelet_b1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/Esquelet/esquelet_b2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Esquelet/esquelet_b3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sounds/exit.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Images/Menutiles/sword6.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Images/Menutiles/sword_beta.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -19,7 +18,7 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -27,7 +26,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -51,15 +50,13 @@ centered = false
 visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-editor/display_folded = true
 margin_left = 100.0
 margin_top = 50.0
 margin_bottom = 20.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-editor/display_folded = true
 margin_right = 862.0
-margin_bottom = 159.0
+margin_bottom = 143.0
 size_flags_horizontal = 4
 custom_constants/separation = 16
 
@@ -72,24 +69,8 @@ text = "Fury of the night
 "
 uppercase = true
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-visible = false
-margin_top = 159.0
-margin_right = 862.0
-margin_bottom = 359.0
-texture = ExtResource( 5 )
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_left = 431.0
-margin_top = 159.0
-margin_right = 431.0
-margin_bottom = 159.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_constants/separation = 50
-
 [node name="start" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 
 [node name="mouse1" type="AnimatedSprite" parent="."]
 visible = false
@@ -105,19 +86,19 @@ frames = SubResource( 3 )
 playing = true
 
 [node name="exit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 9 )
 
 [node name="sword_beta" type="Sprite" parent="."]
 position = Vector2( 830, 230 )
 rotation = -1.0472
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
 [node name="sword_beta2" type="Sprite" parent="."]
 position = Vector2( 326, 420 )
 rotation = -5.23598
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = 399.81

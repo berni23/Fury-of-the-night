@@ -57,7 +57,6 @@ func add(value_type):
 		"life":		self.add_Life(value_type[0])
 		"chakra":	self.add_Chakra(value_type[0])
 		_:			print("ERROR: Unexpected value type!")
-		
 
 func add_Thunder(val):	
 	#With this function we modify the available amounts of traps and projectiles
@@ -101,10 +100,10 @@ func _on_MagnetDuration_timeout():
 #   if event is InputEventMouseButton:
 #       print(event.position)
 
-func _on_TimerFuture_timeout():
+func _on_TimerFuture_timeout(): # If pos.offset smaller than treshold (just change the required velocities)
 	for node in get_node('Path2D').get_children():
 		if node.is_in_group(Groups.Fly):
 			node.speed = 150
 		elif node.is_in_group(Groups.Enemies):
-			node.speed = 100	
+			node.speed = 100
 		yield(get_tree().create_timer(0.5),"timeout")

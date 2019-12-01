@@ -13,8 +13,6 @@ export (PackedScene) var Main
 #		$MarginContainer/VBoxContainer/VBoxContainer2/Button.grab_focus()
 #	if $MarginContainer/VBoxContainer/VBoxContainer2/Button2.is_hovered()==true:
 #		$MarginContainer/VBoxContainer/VBoxContainer2/Button2.grab_focus()
-#
-
 
 func _on_Button_pressed():	
 	$start.play()	
