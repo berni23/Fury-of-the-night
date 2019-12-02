@@ -8,11 +8,15 @@ export (PackedScene) var TowerStepsIcon
 export (PackedScene) var ThunderIcon
 export (PackedScene) var TowerIcon
 export (PackedScene) var TowerFinIcon
+export (PackedScene) var TowerCanonIcon
+
 export (PackedScene) var TowerUp
 export (PackedScene) var getCoins 
 export (PackedScene) var Friend
 export (PackedScene) var Cargando
 export (PackedScene) var Rain
+
+
 
 export (Image) var ImageT1
 export (Image) var ImageT2
@@ -25,17 +29,31 @@ var PriceMud =2
 var PriceBomb =5
 var PriceShred =6
 var PriceFriend = 5
-var PriceStorm =50
+var PriceTowerBasic =6
+var PriceTowerSteps =6
+var PriceTowerCanon =6
+var New
 
 func delete_existing_icons():
 	get_tree().call_group(Groups.Icons,"queue_free")
 
-func _on_CreateTower_pressed():
+func _on_CreateTower_pressed():	
 	delete_existing_icons()
+	if upgrade==0:  New = TowerIcon.instance()
+	elif upgrade==1: New = TowerUpIcon.instance()
+	elif upgrade==2: New = TowerFinIcon.instance()
+	self.get_parent().add_child(New)
+
+
+func _on_Create_CanonTower_pressed():
+	delete_existing_icons()
+	New = TowerCanonIcon.instance()
+	self.get_parent().add_child(New)
 	
-	if upgrade==0:     get_parent().add_child(TowerIcon.instance())
-	elif upgrade==1:   get_parent().add_child(TowerUpIcon.instance())	
-	elif upgrade==2:   get_parent().add_child(TowerFinIcon.instance())
+func _on_Create_TowerStep_pressed():
+	delete_existing_icons()
+	New = TowerStepsIcon.instance()
+	self.get_parent().add_child(New)
 	
 func _on_HoverCoins_pressed():
 	delete_existing_icons()
@@ -43,7 +61,6 @@ func _on_HoverCoins_pressed():
 
 func _on_thunder_pressed():
 	delete_existing_icons()
-
 	if self.get_parent().Coins>=PriceThunder:
 		self.get_parent().add_Thunder(1)
 		self.get_parent().add_Coins(-PriceThunder)
@@ -84,20 +101,14 @@ func _on_Upgrade_pressed():
 		self.get_node("Extras/Upgrade").add_child(wait)
 		wait.connect('animation_finished',self,'up',[2])
 
-func _on_Create_TowerStep_pressed():
-	delete_existing_icons()
-	self.get_parent().add_child(TowerStepsIcon.instance())
-
 func _on_Warrior_pressed():
 	delete_existing_icons()
-	
 	if self.get_parent().Coins>=PriceFriend:
 		get_parent().get_node('WarriorPath').add_child(Friend.instance())
 		get_parent().add([-PriceFriend,"coins"])
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
-	
 		if event.scancode == KEY_T:
 			delete_existing_icons()
 			self.get_parent().add_child(ThunderIcon.instance())

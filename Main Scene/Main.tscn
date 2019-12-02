@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Status/GameOver.tscn" type="PackedScene" id=2]
@@ -21,37 +21,39 @@
 [ext_resource path="res://Objects/Traps/thunderIcon.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Objects/Towers/TowerFinIcon.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Objects/Friends/Friend.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Objects/Status/cargando.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Assets/Images/Towers/tower_up_unblocked.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Images/Towers/tower_final_unblocked.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Images/Menutiles/background_panelControl.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Images/Towers/torra_unblocked.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Images/bomb/Bomb2.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Images/buttons/sword4.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Images/buttons/MudButton.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=36]
-[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=37]
-[ext_resource path="res://Main Scene/BurnTree.gd" type="Script" id=38]
-[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=39]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=40]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=42]
-[ext_resource path="res://Main Scene/RoundManager.gd" type="Script" id=43]
-[ext_resource path="res://Objects/Status/NextRoundIcon.tscn" type="PackedScene" id=44]
-[ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=45]
-[ext_resource path="res://Objects/Enemies/dragon.tscn" type="PackedScene" id=46]
-[ext_resource path="res://Objects/Enemies/Warrior.tscn" type="PackedScene" id=47]
-[ext_resource path="res://Objects/Enemies/Spider.tscn" type="PackedScene" id=48]
-[ext_resource path="res://Assets/Images/Chackra/chackra0.png" type="Texture" id=49]
-[ext_resource path="res://Assets/Images/Chackra/chackra3.png" type="Texture" id=50]
-[ext_resource path="res://Main Scene/TextureProgress.gd" type="Script" id=51]
-[ext_resource path="res://Objects/Status/chakra_filled.tscn" type="PackedScene" id=52]
+[ext_resource path="res://Objects/Towers/TowerCanonIcon.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Objects/Friends/Friend.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Objects/Status/cargando.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Assets/Images/Towers/tower_up_unblocked.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Images/Towers/tower_final_unblocked.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Images/Menutiles/background_panelControl.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Images/Towers/torra_unblocked.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Images/Towers/towerbeta/tower_beta_icon.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Images/bomb/Bomb2.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Images/buttons/sword4.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Images/buttons/MudButton.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=38]
+[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=39]
+[ext_resource path="res://Main Scene/BurnTree.gd" type="Script" id=40]
+[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=44]
+[ext_resource path="res://Main Scene/RoundManager.gd" type="Script" id=45]
+[ext_resource path="res://Objects/Status/NextRoundIcon.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Objects/Enemies/dragon.tscn" type="PackedScene" id=48]
+[ext_resource path="res://Objects/Enemies/Warrior.tscn" type="PackedScene" id=49]
+[ext_resource path="res://Objects/Enemies/Spider.tscn" type="PackedScene" id=50]
+[ext_resource path="res://Assets/Images/Chackra/chackra0.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Images/Chackra/chackra3.png" type="Texture" id=52]
+[ext_resource path="res://Main Scene/TextureProgress.gd" type="Script" id=53]
+[ext_resource path="res://Objects/Status/chakra_filled.tscn" type="PackedScene" id=54]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -78,7 +80,7 @@ extents = Vector2( 31.9749, 19.8138 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
+"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -375,58 +377,59 @@ TowerStepsIcon = ExtResource( 18 )
 ThunderIcon = ExtResource( 19 )
 TowerIcon = ExtResource( 20 )
 TowerFinIcon = ExtResource( 21 )
-TowerUp = ExtResource( 22 )
-getCoins = ExtResource( 23 )
-Friend = ExtResource( 24 )
-Cargando = ExtResource( 25 )
+TowerCanonIcon = ExtResource( 22 )
+TowerUp = ExtResource( 23 )
+getCoins = ExtResource( 24 )
+Friend = ExtResource( 25 )
+Cargando = ExtResource( 26 )
 Rain = ExtResource( 4 )
-ImageT1 = ExtResource( 26 )
-ImageT2 = ExtResource( 27 )
+ImageT1 = ExtResource( 27 )
+ImageT2 = ExtResource( 28 )
 
 [node name="background_panelControl" type="Sprite" parent="PanelControl"]
 modulate = Color( 0.160784, 0.380392, 0.45098, 0.556863 )
-position = Vector2( 257.5, 40 )
-scale = Vector2( 0.722973, 1.25 )
-texture = ExtResource( 28 )
+position = Vector2( 291, 40 )
+scale = Vector2( 0.813513, 1.25 )
+texture = ExtResource( 29 )
 
 [node name="Towers" type="HBoxContainer" parent="PanelControl"]
-editor/display_folded = true
-margin_right = 148.0
+margin_right = 224.0
 margin_bottom = 80.0
 
 [node name="CreateTower" type="Button" parent="PanelControl/Towers"]
 margin_right = 72.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 72, 72 )
-icon = ExtResource( 29 )
+icon = ExtResource( 30 )
 
 [node name="Create TowerStep" type="Button" parent="PanelControl/Towers"]
 margin_left = 76.0
 margin_right = 148.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 72, 72 )
-icon = ExtResource( 30 )
+icon = ExtResource( 31 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelControl"]
+[node name="Create CanonTower" type="Button" parent="PanelControl/Towers"]
 margin_left = 152.0
-margin_right = 152.0
+margin_right = 224.0
 margin_bottom = 80.0
+rect_min_size = Vector2( 72, 72 )
+shortcut_in_tooltip = false
+icon = ExtResource( 32 )
+align = 2
 
 [node name="VSeparator2" type="VSeparator" parent="PanelControl"]
-visible = false
-modulate = Color( 0.196078, 0.0431373, 0.258824, 1 )
-margin_left = 156.0
-margin_right = 160.0
+modulate = Color( 0.823529, 0.619608, 0.133333, 1 )
+margin_left = 228.0
+margin_right = 232.0
 margin_bottom = 80.0
 
 [node name="Projectiles" type="HBoxContainer" parent="PanelControl"]
-editor/display_folded = true
-margin_left = 156.0
-margin_right = 256.0
+margin_left = 236.0
+margin_right = 336.0
 margin_bottom = 80.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelControl/Projectiles"]
-editor/display_folded = true
 margin_right = 48.0
 margin_bottom = 80.0
 
@@ -437,7 +440,7 @@ margin_right = 48.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 48, 35 )
 rect_clip_content = true
-icon = ExtResource( 31 )
+icon = ExtResource( 33 )
 
 [node name="Thunder" type="Button" parent="PanelControl/Projectiles/VBoxContainer"]
 material = SubResource( 6 )
@@ -446,10 +449,9 @@ margin_right = 48.0
 margin_bottom = 74.0
 rect_min_size = Vector2( 48, 35 )
 size_flags_stretch_ratio = 2.0
-icon = ExtResource( 32 )
+icon = ExtResource( 34 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelControl/Projectiles"]
-editor/display_folded = true
 margin_left = 52.0
 margin_right = 100.0
 margin_bottom = 80.0
@@ -458,19 +460,18 @@ margin_bottom = 80.0
 margin_right = 48.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 48, 70 )
-icon = ExtResource( 33 )
+icon = ExtResource( 35 )
 
 [node name="VSeparator" type="VSeparator" parent="PanelControl"]
-visible = false
-modulate = Color( 0.196078, 0.0431373, 0.258824, 1 )
-margin_left = 260.0
-margin_right = 264.0
+modulate = Color( 0.823529, 0.619608, 0.133333, 1 )
+margin_left = 340.0
+margin_right = 344.0
 margin_bottom = 80.0
 
 [node name="Traps" type="VBoxContainer" parent="PanelControl"]
 editor/display_folded = true
-margin_left = 260.0
-margin_right = 332.0
+margin_left = 348.0
+margin_right = 420.0
 margin_bottom = 80.0
 
 [node name="Mud" type="Button" parent="PanelControl/Traps"]
@@ -479,7 +480,7 @@ margin_right = 72.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 72, 35 )
 shortcut_in_tooltip = false
-icon = ExtResource( 34 )
+icon = ExtResource( 36 )
 clip_text = true
 
 [node name="Shred" type="Button" parent="PanelControl/Traps"]
@@ -487,19 +488,18 @@ margin_top = 39.0
 margin_right = 72.0
 margin_bottom = 74.0
 rect_min_size = Vector2( 72, 35 )
-icon = ExtResource( 35 )
+icon = ExtResource( 37 )
 align = 2
 
 [node name="VSeparator3" type="VSeparator" parent="PanelControl"]
-visible = false
-modulate = Color( 0.196078, 0.0431373, 0.258824, 1 )
-margin_left = 336.0
-margin_right = 340.0
+modulate = Color( 0.823529, 0.619608, 0.133333, 1 )
+margin_left = 424.0
+margin_right = 428.0
 margin_bottom = 80.0
 
 [node name="Extras" type="HBoxContainer" parent="PanelControl"]
-margin_left = 336.0
-margin_right = 484.0
+margin_left = 432.0
+margin_right = 580.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 144, 70 )
 
@@ -512,7 +512,7 @@ text = "Upgrade"
 
 [node name="TowerUp_sound" type="AudioStreamPlayer2D" parent="PanelControl/Extras/Upgrade"]
 position = Vector2( -3.05176e-05, 0 )
-stream = ExtResource( 36 )
+stream = ExtResource( 38 )
 
 [node name="HoverCoins" type="Button" parent="PanelControl/Extras"]
 margin_left = 76.0
@@ -529,12 +529,12 @@ margin_right = 156.0
 margin_bottom = 80.0
 
 [node name="Creep" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 37 )
+stream = ExtResource( 39 )
 
 [node name="BurnTree" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 892.323, 385.957 )
-script = ExtResource( 38 )
+script = ExtResource( 40 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -542,7 +542,7 @@ __meta__ = {
 [node name="brokenTree" type="Sprite" parent="BurnTree"]
 visible = false
 position = Vector2( 4.3197, -3.54242 )
-texture = ExtResource( 39 )
+texture = ExtResource( 41 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurnTree"]
 position = Vector2( 5.99011, -2.47367 )
@@ -569,12 +569,12 @@ __meta__ = {
 
 [node name="RoundManager" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 43 )
-nextIcon = ExtResource( 44 )
-skeleton = ExtResource( 45 )
-dragon = ExtResource( 46 )
-Warrior = ExtResource( 47 )
-Spider = ExtResource( 48 )
+script = ExtResource( 45 )
+nextIcon = ExtResource( 46 )
+skeleton = ExtResource( 47 )
+dragon = ExtResource( 48 )
+Warrior = ExtResource( 49 )
+Spider = ExtResource( 50 )
 
 [node name="VisualTimerPosition" type="Position2D" parent="RoundManager"]
 position = Vector2( 0, 80 )
@@ -585,11 +585,11 @@ margin_top = 20.0
 margin_right = 945.0
 margin_bottom = 85.0
 max_value = 4.0
-texture_under = ExtResource( 49 )
-texture_progress = ExtResource( 50 )
+texture_under = ExtResource( 51 )
+texture_progress = ExtResource( 52 )
 fill_mode = 5
-script = ExtResource( 51 )
-filled = ExtResource( 52 )
+script = ExtResource( 53 )
+filled = ExtResource( 54 )
 
 [node name="TimerFuture" type="Timer" parent="."]
 wait_time = 8.0
@@ -597,6 +597,7 @@ one_shot = true
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
 [connection signal="pressed" from="PanelControl/Towers/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
 [connection signal="pressed" from="PanelControl/Towers/Create TowerStep" to="PanelControl" method="_on_Create_TowerStep_pressed"]
+[connection signal="pressed" from="PanelControl/Towers/Create CanonTower" to="PanelControl" method="_on_Create_CanonTower_pressed"]
 [connection signal="pressed" from="PanelControl/Projectiles/VBoxContainer/Bomb" to="PanelControl" method="_on_Bomb_pressed"]
 [connection signal="pressed" from="PanelControl/Projectiles/VBoxContainer/Thunder" to="PanelControl" method="_on_thunder_pressed"]
 [connection signal="pressed" from="PanelControl/Projectiles/VBoxContainer2/Warrior" to="PanelControl" method="_on_Warrior_pressed"]

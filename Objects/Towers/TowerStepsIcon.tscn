@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Objects/Towers/TowerIcon.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Towers/TowerStepsIcon.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Towers/TowerSteps.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Images/TowerSteps/TowerStep9.png" type="Texture" id=3]
 
@@ -11,9 +11,6 @@ extents = Vector2( 12, 12 )
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 towerScene = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

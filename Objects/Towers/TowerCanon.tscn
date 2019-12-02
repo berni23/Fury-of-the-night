@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/Towers/TowerCanon.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Traps/canonBall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Images/Towers/towerbeta/tower_beta.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 200.0
+
+[node name="TowerCanon" type="Area2D"]
+gravity_point = true
+gravity_vec = Vector2( 0, 0 )
+priority = 1.0
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+bala = ExtResource( 2 )
+
+[node name="ReloadTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.2, 1 )
+texture = ExtResource( 3 )
+[connection signal="area_entered" from="." to="." method="_on_TowerCanon_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_TowerCanon_area_exited"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]

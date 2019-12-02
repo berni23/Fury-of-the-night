@@ -1,13 +1,12 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Objects/Towers/TowerUpIcon.gd" type="Script" id=1]
-[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Images/Towers/tower_upgrade.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Towers/TowerIcon.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Towers/TowerCanon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Images/Towers/towerbeta/tower_beta.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 12 )
 
-[node name="TowerUpIcon" type="Area2D"]
+[node name="TowerIcon" type="Area2D"]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 1 )
@@ -17,7 +16,7 @@ __meta__ = {
 towerScene = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.45, 0.45 )
+scale = Vector2( 1.2, 1 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

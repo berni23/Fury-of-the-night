@@ -25,10 +25,6 @@ Bales Layer1
 
 IconaTorres Layer3
 RajolaTorres Mask3
-"""
-
-"""
-
 tirar bombes -> b
 col.locar fang -> m
 tirar llamp ->t
@@ -87,7 +83,7 @@ func add_Coins(val):
 	emit_signal("Coins_changed",self.Coins)
 	
 func add_Life(val):
-	get_node("Status/VBoxContainer/Life").valsue += val
+	get_node("Status/VBoxContainer/Life").value += val
 	if get_node("Status/VBoxContainer/Life").value <=0 and Game1==true:
 		self.add_child(GameOver.instance())
 		Game1=false

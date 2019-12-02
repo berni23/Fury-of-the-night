@@ -5,5 +5,6 @@ func _ready():
 	add_to_group(Groups.Icons)
 	able_to_build(false)
 	grid = get_tree().get_root().get_node("GameMaster/Pathway")
-	towerPrice = get_parent().get_node('PanelControl').PriceTowerBasic
+	towerPrice = get_parent().get_node('PanelControl').PriceTowerSteps
+	
 
