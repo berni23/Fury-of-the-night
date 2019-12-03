@@ -19,20 +19,6 @@
 [ext_resource path="res://Assets/Images/bomb/bomb_animation/tile012.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Sounds/bomb.wav" type="AudioStream" id=18]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, -128, 0, 0, 0, 0, 0, 0 )

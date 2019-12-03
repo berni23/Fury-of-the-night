@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Status/GameOver.tscn" type="PackedScene" id=2]
@@ -54,6 +54,8 @@
 [ext_resource path="res://Assets/Images/Chackra/chackra3.png" type="Texture" id=52]
 [ext_resource path="res://Main Scene/TextureProgress.gd" type="Script" id=53]
 [ext_resource path="res://Objects/Status/chakra_filled.tscn" type="PackedScene" id=54]
+[ext_resource path="res://Assets/Sounds/challenge_completed.wav" type="AudioStream" id=55]
+[ext_resource path="res://Assets/pdark.ttf" type="DynamicFontData" id=56]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -90,6 +92,10 @@ animations = [ {
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1020, 210, 0, 0, 0, 0, 910, 210, 0, 0, 0, 0, 850, 320, 0, 0, 0, 0, 770, 330, 0, 0, 0, 0, 600, 520, 0, 0, 0, 0, 80, 530 )
 }
+
+[sub_resource type="DynamicFont" id=10]
+size = 20
+font_data = ExtResource( 56 )
 
 [node name="GameMaster" type="Node"]
 script = ExtResource( 1 )
@@ -393,6 +399,7 @@ scale = Vector2( 0.813513, 1.25 )
 texture = ExtResource( 29 )
 
 [node name="Towers" type="HBoxContainer" parent="PanelControl"]
+editor/display_folded = true
 margin_right = 224.0
 margin_bottom = 80.0
 
@@ -591,6 +598,29 @@ fill_mode = 5
 script = ExtResource( 53 )
 filled = ExtResource( 54 )
 
+[node name="Completed" type="AudioStreamPlayer" parent="Chakra"]
+stream = ExtResource( 55 )
+
+[node name="Label" type="Label" parent="Chakra"]
+margin_left = -670.0
+margin_top = -10.0
+margin_right = -630.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.478431, 0.823529, 0.929412, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Hi
+
+"
+percent_visible = 0.0
+
+[node name="TimerChallenge" type="Timer" parent="Chakra"]
+wait_time = 7.0
+
+[node name="TimerLetters" type="Timer" parent="Chakra"]
+wait_time = 0.08
+
 [node name="TimerFuture" type="Timer" parent="."]
 wait_time = 8.0
 one_shot = true
@@ -609,4 +639,6 @@ one_shot = true
 [connection signal="area_entered" from="BurnTree" to="BurnTree" method="_on_BurnTree_area_entered"]
 [connection signal="timeout" from="MagnetDuration" to="." method="_on_MagnetDuration_timeout"]
 [connection signal="value_changed" from="Chakra" to="Chakra" method="_on_Chakra_value_changed"]
+[connection signal="timeout" from="Chakra/TimerChallenge" to="Chakra" method="_on_TimerChallenge_timeout"]
+[connection signal="timeout" from="Chakra/TimerLetters" to="Chakra" method="_on_TimerLetters_timeout"]
 [connection signal="timeout" from="TimerFuture" to="." method="_on_TimerFuture_timeout"]

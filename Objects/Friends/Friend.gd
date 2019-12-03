@@ -13,6 +13,7 @@ var first = true
 var newEnemy
 
 func _ready():
+	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Friend")
 	self.add_to_group(Groups.Friends)	
 	
 func _process(delta):

@@ -17,7 +17,6 @@ export (PackedScene) var Cargando
 export (PackedScene) var Rain
 
 
-
 export (Image) var ImageT1
 export (Image) var ImageT2
 

@@ -1,5 +1,7 @@
 extends Area2D
 
+
+export (PackedScene) var bala
 var step1 = preload('res://Assets/Images/TowerSteps/TowerStep1.png')
 var step2 = preload('res://Assets/Images/TowerSteps/TowerStep2.png')
 var step3 = preload('res://Assets/Images/TowerSteps/TowerStep3.png')
@@ -10,38 +12,27 @@ var step7 = preload('res://Assets/Images/TowerSteps/TowerStep7.png')
 var step8 = preload('res://Assets/Images/TowerSteps/TowerStep8.png')
 var step9 = preload('res://Assets/Images/TowerSteps/TowerStep9.png')
 var final = preload('res://Assets/Images/TowerSteps/TowerFinal.png')
-
+var reload = true
+var speed_bala = 400
 var Steps = [step2,step3,step4,step5,step6,step7,step8,step9,final]
+var build = false
+var enemy_range = []
 var s =0
 
-
-export(PackedScene) var bala
-var speed_bala = 400
-var reload = true
-var enemy_range = []
-var MenuUpgrade  = false
-var build = false
-var Up =[false,false]
-
 func _ready():
+	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Tower2")
 	add_to_group(Groups.Towers)
 	$hammer.play()
-	
 
+	
 func _on_Timer_timeout():
-	
 	s =s+1
-	
 	if s==8:
-		
 		$Timer.stop()
 		$hammer.stop()
 		build =true
-		
-	
 	get_node('Sprite').set_texture(Steps[s])
 	
-
 
 func  _process(delta):
 	# If there is an enemy and tower is reloaded shoot
@@ -61,23 +52,18 @@ func shoot(enemy):
 
 
 func _on_hammer_finished():
-	
 	$hammer.play()
 	
 func _on_TowerSteps_area_entered(area):
-	
-	
 		if area.get_parent().is_in_group(Groups.Enemies) and build==true:
 			enemy_range.append(area.get_parent())
 
 func _on_TowerSteps_area_exited(area):
-	
 	if area.get_parent().is_in_group(Groups.Enemies) and build ==true:
 		enemy_range.erase(area.get_parent())
 
 
 func _on_ReloadTimer_timeout():
-	
 		reload = true
 		$ReloadTimer.stop()
 	

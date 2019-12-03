@@ -31,6 +31,5 @@ func _on_Button_mouse_entered():
 func _on_start_finished():
 	get_tree().change_scene("res://Main Scene/Main.tscn")
 
-
 func _on_exit_finished():
 	get_tree().quit()

@@ -4,12 +4,16 @@ var enemy_slow = []
 var enemies_affected = 3
 var count = 0
 
+
+func _ready():
+	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Mud")
+
+	
 func _on_Area2D_area_entered(area):
 	if area.get_parent().is_in_group(Groups.Fly):
 		return
 		
 	elif count ==enemies_affected:
-		
 		return
 
 	elif area.get_parent().is_in_group(Groups.Enemies):

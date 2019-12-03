@@ -61,7 +61,6 @@ func _on_Area2D_area_entered(area):
 			#$Timer2.start()
 			#area.get_parent().first==false
 		friendList.append(area.get_parent())
-	
 	if area.is_in_group(Groups.Bullets):
 		$HealthBar.value -=  area.damage	
 		area.queue_free()
@@ -90,6 +89,7 @@ func _on_HealthBar_value_changed(value):
 				
 		nCoin.global_position =Vector2(self.global_position.x,self.global_position.y)
 		self.get_parent().get_parent().get_node("YSortObjects").add_child(nCoin)
+		self.get_parent().get_parent().enemies_dead(1)
 		self.queue_free()
 	
 func _on_Area2D_area_exited(area):
@@ -110,7 +110,6 @@ func _on_Timer_timeout():
 	$HealthBar.hide()
 
 func connecting(val):
-
 	val.get_node('Timer2').connect('timeout',self,'hurt',[val.damage])
 #func _on_Timer2_timeout():
 	#reload = true

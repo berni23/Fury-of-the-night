@@ -5,6 +5,10 @@ var anim1 = true
 var enemy_past =0
 var first = false
 
+
+func _ready():
+	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Shred")
+
 func _on_Area2D_area_entered(area):
 	
 	if area.get_parent().is_in_group(Groups.Fly):
@@ -17,7 +21,6 @@ func _on_Area2D_area_entered(area):
 			self.get_node("AudioStreamPlayer2D").play()
 		
 		if first==false:
-	
 			$turn_damage.start()
 			$finish.start()
 			first =true
