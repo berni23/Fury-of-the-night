@@ -609,16 +609,15 @@ margin_bottom = 59.0
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.478431, 0.823529, 0.929412, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Hi
+text = "HeyouuuBIiitch
 
 "
 percent_visible = 0.0
 
-[node name="TimerChallenge" type="Timer" parent="Chakra"]
-wait_time = 7.0
-
 [node name="TimerLetters" type="Timer" parent="Chakra"]
+wait_time = 0.08
+
+[node name="TimerLetters2" type="Timer" parent="Chakra"]
 wait_time = 0.08
 
 [node name="TimerFuture" type="Timer" parent="."]
@@ -639,6 +638,6 @@ one_shot = true
 [connection signal="area_entered" from="BurnTree" to="BurnTree" method="_on_BurnTree_area_entered"]
 [connection signal="timeout" from="MagnetDuration" to="." method="_on_MagnetDuration_timeout"]
 [connection signal="value_changed" from="Chakra" to="Chakra" method="_on_Chakra_value_changed"]
-[connection signal="timeout" from="Chakra/TimerChallenge" to="Chakra" method="_on_TimerChallenge_timeout"]
 [connection signal="timeout" from="Chakra/TimerLetters" to="Chakra" method="_on_TimerLetters_timeout"]
+[connection signal="timeout" from="Chakra/TimerLetters2" to="Chakra" method="_on_TimerLetters2_timeout"]
 [connection signal="timeout" from="TimerFuture" to="." method="_on_TimerFuture_timeout"]
