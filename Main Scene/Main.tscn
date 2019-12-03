@@ -622,7 +622,7 @@ wait_time = 7.0
 wait_time = 0.08
 
 [node name="TimerFuture" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 7.0
 one_shot = true
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
 [connection signal="pressed" from="PanelControl/Towers/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]

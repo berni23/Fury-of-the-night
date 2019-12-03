@@ -1,25 +1,18 @@
 extends Node2D
 
 export (PackedScene) var Main
+var first = true
 
-#func _ready():
-	
-#	var a = get_viewport().size
-	#print(a)
-	#$MarginContainer/VBoxContainer/VBoxContainer2/TextureButton.grab_focus()
+func _on_Button_pressed():
+	if first ==true:
+		$start.play()
+		first = false
 
-#func _physics_process(delta):
-#	if $MarginContainer/VBoxContainer/VBoxContainer2/Button.is_hovered()==true:
-#		$MarginContainer/VBoxContainer/VBoxContainer2/Button.grab_focus()
-#	if $MarginContainer/VBoxContainer/VBoxContainer2/Button2.is_hovered()==true:
-#		$MarginContainer/VBoxContainer/VBoxContainer2/Button2.grab_focus()
+func _on_Button2_pressed():
+	if first ==true:
+		$exit.play()
+		first = false
 
-func _on_Button_pressed():	
-	$start.play()	
-	
-func _on_Button2_pressed():	
-	$exit.play()
-	
 func _on_Button2_mouse_entered():
 	$mouse2.show()
 	$mouse1.hide()
