@@ -1,0 +1,116 @@
+[gd_scene load_steps=49 format=2]
+
+[ext_resource path="res://Objects/Coins/charkra_powerUp.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/coins/chakra2/chakra_aura.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile000.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile001.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile002.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile003.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile004.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile007.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile005.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile006.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile008.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile009.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile010.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile011.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile012.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile013.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile014.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile015.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile016.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile017.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile018.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile019.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile020.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile021.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile022.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile023.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile024.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile025.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile026.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile027.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile028.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile030.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile029.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile031.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile032.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile033.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile034.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile035.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile036.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile037.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Images/coins/chakra2/tile038.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Images/coins/chakra2/light.jpeg" type="Texture" id=42]
+[ext_resource path="res://Assets/Sounds/Magic.wav" type="AudioStream" id=43]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 9.99996
+height = 40.0
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0, 0, 0, 2.8026e-45 )
+colors = PoolColorArray( 0, 1, 0, 1, 0.0228311, 0.847131, 0.00794123, 1, 0.042735, 0.713861, 0.0148644, 1, 0.0666667, 0.553623, 0.0231884, 1, 0.0901961, 0.396078, 0.0313726, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+trail_color_modifier = SubResource( 3 )
+emission_shape = 2
+emission_box_extents = Vector3( 40, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="ChakraPowerUp" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = -1.57079
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+modulate = Color( 0.380392, 0.776471, 0.403922, 1 )
+rotation = -3.14159
+amount = 20
+process_material = SubResource( 4 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+modulate = Color( 0.133333, 0.854902, 0.0745098, 0.592157 )
+rotation = -3.14159
+amount = 20
+lifetime = 2.0
+process_material = SubResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 0.176471, 0.67451, 0.109804, 1 )
+position = Vector2( 0, -10 )
+frames = SubResource( 1 )
+frame = 12
+playing = true
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 15, -80 )
+rotation = 3.14159
+texture = ExtResource( 42 )
+energy = 0.5
+
+[node name="cling" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 43 )
+volume_db = 8.0
+[connection signal="area_entered" from="." to="." method="_on_ChakraPowerUp_area_entered"]
+[connection signal="finished" from="cling" to="." method="_on_cling_finished"]

@@ -1,14 +1,22 @@
 extends TextureProgress
 
+
+
+
+
+export (PackedScene) var filled
+export (PackedScene) var powerUp
+
 var challengeFifty = false
 var challengeTwoHundred = false
 var challengeItems = false
 #var i =0
 var c=0
 var items = ["Mud","Friend","Tower1","Tower2","Tower3","Bomb","Shred"]
-
-export (PackedScene) var filled
 var message = 'hi'
+
+
+
 func _ready():
 	get_node("/root/GameMaster").connect("Dead_enemy",self,"_on_enemy_dead")
 	
@@ -23,14 +31,14 @@ func _on_enemy_dead(num):
 		$Completed.play()
 		$TimerLetters.start()
 		challengeFifty = true
-		self.value+=1 	
+		self.add_child(powerUp.instance())
 	elif num>=200 and challengeTwoHundred==false:
 		message = '200 enemy challenge completed!'
 		$Label.text = message
 		$Completed.play()
 		$TimerLetters.start()
 		challengeTwoHundred = true
-		self.value +=1
+		self.add_child(powerUp.instance())
 func _on_TimerLetters_timeout():
 	$Label.visible_characters+=1
 	if $Label.visible_characters==len(message):
@@ -60,8 +68,7 @@ func item_used(item):
 			$Completed.play()
 			message = 'Items challenge completed!'
 			$Label.text = message
-			$TimerChallenge.start()
 			$TimerLetters.start()
 			challengeItems =true
-			self.value+=1
+			self.add_child(powerUp.instance())
 		else: return  
