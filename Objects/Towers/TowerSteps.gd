@@ -18,6 +18,8 @@ var Steps = [step2,step3,step4,step5,step6,step7,step8,step9,final]
 var build = false
 var enemy_range = []
 var s =0
+var MenuUpgrade  = false
+var next ='NO' # = U,F,NO stands for Up, Final, or No upgrade option
 
 func _ready():
 	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Tower2")
