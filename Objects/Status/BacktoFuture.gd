@@ -13,11 +13,13 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	var list = get_parent().get_node('Path2D').get_children()
-	for node in list:
-			if node.is_in_group(Groups.Enemies):
-					node.offset = 0
-					node.speed = 0
-					self.queue_free()
+	if len(list)>0:
+		for node in list:
+				if node.is_in_group(Groups.Enemies):
+						node.offset = 0
+						node.speed = 0
+						
+	self.queue_free()
 	get_parent().get_node('TimerFuture').start()
 	
 func _on_Timer2_timeout():

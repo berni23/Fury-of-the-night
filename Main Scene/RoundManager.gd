@@ -29,18 +29,14 @@ func _ready():
 	
 	rounds = [
 		[ # Round 1
-		{"Enemy":skeleton,"N_ene":5,"t_ene":1,"N_block":1,"t_block":1},
+		{"Enemy":skeleton,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1},
 		{"Enemy":Warrior,"N_ene":2,"t_ene":1,"N_block":1,"t_block":1},
 		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1}
 		],
 		[ # Round 2
-		{"Enemy":skeleton,"N_ene":50,"t_ene":2,"N_block":1,"t_block":1},
-		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1},
-		{"Enemy":Warrior,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1},
 		{"Enemy":skeleton,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1},
-		{"Enemy":skeleton,"N_ene":2,"t_ene":1,"N_block":1,"t_block":1},
-		{"Enemy":skeleton,"N_ene":5,"t_ene":0.7,"N_block":2,"t_block":0.1},
-		{"Enemy":dragon,"N_ene":10,"t_ene":1,"N_block":1,"t_block":1}
+		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1},
+
 		]
 	]
 	count_down_next_round(5)

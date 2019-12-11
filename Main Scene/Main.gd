@@ -96,9 +96,9 @@ func _on_TimerFuture_timeout(): # If pos.offset smaller than treshold (just chan
 			node.speed = 150
 		elif node.is_in_group(Groups.Enemies):
 			node.speed = 100
+		else: return
+	
 		yield(get_tree().create_timer(0.5),"timeout")
-		
-		
-func _input(event):
-	if event is InputEventMouseButton:
-       print("Mouse Click/Unclick at: ", event.position)
+#func _input(event):
+#	if event is InputEventMouseButton:
+#       print("Mouse Click/Unclick at: ", event.position)
