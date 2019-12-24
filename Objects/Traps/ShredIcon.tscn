@@ -4,10 +4,7 @@
 [ext_resource path="res://Objects/Traps/ShredIcon.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Traps/Shred.tscn" type="PackedScene" id=3]
 
-[node name="Sprite" type="Sprite" index="0"]
-
+[node name="Sprite" type="Sprite"]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 Scene = ExtResource( 3 )
-
-

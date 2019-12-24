@@ -1,7 +1,6 @@
 extends Node
 
 export (PackedScene) var nextIcon
-
 export (PackedScene) var skeleton
 export (PackedScene) var dragon
 export (PackedScene) var Warrior
@@ -29,7 +28,7 @@ func _ready():
 	
 	rounds = [
 		[ # Round 1
-		{"Enemy":skeleton,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1},
+		{"Enemy":skeleton,"N_ene":50,"t_ene":2,"N_block":1,"t_block":1},
 		{"Enemy":Warrior,"N_ene":2,"t_ene":1,"N_block":1,"t_block":1},
 		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1}
 		],
