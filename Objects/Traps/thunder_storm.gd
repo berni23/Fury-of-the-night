@@ -4,9 +4,8 @@ var damage = 10
 var cloud = false
 var c = 0
 func _ready():
-	
 	add_to_group(Groups.Projectiles)
-	self.position = self.get_global_mouse_position()	
+	self.position = self.get_global_mouse_position()
 	#self.get_node('BAaang').play()
 
 
@@ -15,7 +14,6 @@ func _process(delta):
 	if cloud==false:
 		c+=0.15*delta
 		$Sprite.modulate = Color(1-c,1-c,1-c,2*c)
-	
 	
 #func _on_AnimatedSprite_animation_finished():	
 #	self.queue_free()

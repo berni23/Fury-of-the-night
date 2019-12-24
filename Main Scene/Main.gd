@@ -9,6 +9,7 @@ var Enemies_dead = 0
 var Magnet = false
 var Game1 = true
 
+
 signal Coins_changed
 signal Bomb_changed
 signal Magnet_on
@@ -97,8 +98,12 @@ func _on_TimerFuture_timeout(): # If pos.offset smaller than treshold (just chan
 		elif node.is_in_group(Groups.Enemies):
 			node.speed = 100
 		else: return
-	
 		yield(get_tree().create_timer(0.5),"timeout")
+
+func Check_perfect(val):
+	if val ==true:
+		print('Logro')
+
 #func _input(event):
 #	if event is InputEventMouseButton:
 #       print("Mouse Click/Unclick at: ", event.position)

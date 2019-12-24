@@ -30,7 +30,7 @@ shape = SubResource( 1 )
 
 [node name="SpriteCoin" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

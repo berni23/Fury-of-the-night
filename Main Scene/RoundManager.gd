@@ -8,6 +8,11 @@ export (PackedScene) var Spider
 
 var rounds
 var currentRound = 0
+var k =0
+var j =true
+var perfect = false
+
+signal check_perfect
 
 func _ready():
 	""" 
@@ -24,8 +29,6 @@ func _ready():
 #		]
 #
 #	]
-
-	
 	rounds = [
 		[ # Round 1
 		{"Enemy":skeleton,"N_ene":50,"t_ene":2,"N_block":1,"t_block":1},
@@ -40,15 +43,18 @@ func _ready():
 	]
 	count_down_next_round(5)
 	
+
 func count_down_next_round(waitTime):
 	var visualTimer = nextIcon.instance()
 	visualTimer.waitTime = waitTime
 	visualTimer.connect("next_round", self, "send_next_round")
 	visualTimer.set_position($VisualTimerPosition.position)
 	visualTimer.set_scale(Vector2(0.4,0.4))
+	
 	add_child(visualTimer)
 	
 func send_next_round():
+	
 	# For now we just send all the waves in the round
 	# Later we can introduce delays or similar
 	for wave in rounds[currentRound]:
@@ -59,6 +65,11 @@ func send_next_round():
 		count_down_next_round(5) # For now this is fixed, but can be changed for each round if one would introduce it as a variable in round
 
 func send_wave(wave):
+	k = len(get_parent().Path2D.get_children())
+	if k==0 and j==true:
+		perfect =true
+		get_parent().Check_Perfect(perfect)
+	
 	"""
 	Retorna  N_block conjunts de Enemy, amb N_ene unitats
 	per conjunt, cada unitat separada un interval t_ene 
