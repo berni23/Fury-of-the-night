@@ -20,7 +20,7 @@ func _input(event):
 		
 		if self.get_parent().Mud >0:
 		# If it is far form the path, don't do anything
-			if CustomFunc.distance_to_path(position,path) > 0:
+			if CustomFunc.distance_to_path(position,path) > 1:
 				return
 		# Else, create a Mud instance at current position and disappear
 			var MudScene = Mud.instance()

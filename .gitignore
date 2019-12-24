@@ -1,2 +1,3 @@
 # Ignorar la carpeta import que Godot crea automaticament
 .import/
+.DS_Store

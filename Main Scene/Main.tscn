@@ -60,7 +60,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -160, 110, 0, 0, 0, 0, 720, 112, 0, 0, 0, 0, 720, 336, 0, 0, 0, 0, 80, 336, 0, 0, 0, 0, 80, 528, 0, 0, 0, 0, 784, 528, 0, 0, 0, 0, 784, 464, 0, 0, 0, 0, 944, 464, 0, 0, 0, 0, 944, 208, 0, 0, 0, 0, 1072, 208 )
+"points": PoolVector2Array( 0, 0, 0, 0, -160, 112, 0, 0, 0, 0, 720, 112, 0, 0, 0, 0, 720, 336, 0, 0, 0, 0, 80, 336, 0, 0, 0, 0, 80, 528, 0, 0, 0, 0, 784, 528, 0, 0, 0, 0, 784, 464, 0, 0, 0, 0, 944, 464, 0, 0, 0, 0, 944, 208, 0, 0, 0, 0, 1072, 208 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -368,6 +368,7 @@ custom_constants/shadow_as_outline = 0
 text = "HP"
 
 [node name="PanelControl" type="HBoxContainer" parent="."]
+editor/display_folded = true
 show_behind_parent = true
 margin_left = 10.0
 margin_top = 580.0
