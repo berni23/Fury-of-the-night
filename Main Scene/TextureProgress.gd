@@ -1,9 +1,6 @@
 extends TextureProgress
 
 
-
-
-
 export (PackedScene) var filled
 export (PackedScene) var powerUp
 

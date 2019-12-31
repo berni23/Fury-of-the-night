@@ -6,6 +6,7 @@ var TreshCoin
 var speed_bala = 100
 var reload = true
 var enemy_range = []
+var next = 'NO'
 
 func _ready():
 	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Tower3")

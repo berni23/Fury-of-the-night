@@ -65,7 +65,7 @@ func send_next_round():
 		count_down_next_round(5) # For now this is fixed, but can be changed for each round if one would introduce it as a variable in round
 
 func send_wave(wave):
-	k = len(get_parent().Path2D.get_children())
+	k = len(get_parent().get_node('Path2D').get_children())
 	if k==0 and j==true:
 		perfect =true
 		get_parent().Check_Perfect(perfect)
