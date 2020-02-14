@@ -7,8 +7,7 @@ var count = 0
 
 func _ready():
 	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Mud")
-
-	
+	self.add_to_group(Groups.Mud)
 func _on_Area2D_area_entered(area):
 	if area.get_parent().is_in_group(Groups.Fly):
 		return
