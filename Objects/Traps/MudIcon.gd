@@ -2,6 +2,8 @@ extends Sprite
 
 var Mud = preload('res://Objects/Traps/Mud.tscn')
 var path
+var makeMud = true
+var mudCounter=0
 
 func _ready():
 	self.add_to_group(Groups.Icons)
@@ -22,9 +24,18 @@ func _input(event):
 		# If it is far form the path, don't do anything
 			if CustomFunc.distance_to_path(position,path) > 1:
 				return
-		# Else, create a Mud instance at current position and disappear
-			var MudScene = Mud.instance()
-			get_parent().get_node("YSortObjects").add_child(MudScene)
-			MudScene.global_position = self.global_position
-			get_parent().add_Mud(-1)
+				
+			elif mudCounter==0:# Else, create a Mud instance at current position and disappear
+				var MudScene = Mud.instance()
+				get_parent().get_node("YSortObjects").add_child(MudScene)
+				MudScene.global_position = self.global_position
+				get_parent().add_Mud(-1)
+			
 	
+func _on_Area2D_area_entered(area):
+	if area.is_in_group(Groups.Mud):
+		mudCounter+=1
+
+func _on_Area2D_area_exited(area):
+	if area.is_in_group(Groups.Mud):
+		mudCounter-=1
