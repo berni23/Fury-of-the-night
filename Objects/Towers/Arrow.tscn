@@ -4,57 +4,26 @@
 [ext_resource path="res://Assets/Images/fletxa/fletxa.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sounds/arrow.wav" type="AudioStream" id=3]
 
-
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
 extents = Vector2( 10, 34.9016 )
 
 [node name="Arrow" type="Area2D"]
-
 rotation = 1.5708
 scale = Vector2( 0.2, 0.2 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 collision_mask = 0
-audio_bus_override = false
-audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.653808, -53.3086 )
 scale = Vector2( 1.23243, 0.834758 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="LifeTimer" type="Timer" parent="." index="2"]
-
-process_mode = 1
-wait_time = 1.0
+[node name="LifeTimer" type="Timer" parent="."]
 one_shot = true
-autostart = false
 
-[node name="fu" type="AudioStreamPlayer2D" parent="." index="3"]
-
+[node name="fu" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-
 [connection signal="timeout" from="LifeTimer" to="." method="queue_free"]
-
-

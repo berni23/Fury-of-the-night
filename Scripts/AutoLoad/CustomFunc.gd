@@ -25,10 +25,17 @@ static func distance_to_segment(p,p1,p2):
 	# Now t gives the closest point to p that is in the segment
 	var closest = p1 + t*(p2-p1)
 	return (p-closest).length()
-	
+
 static func snap_to_grid(p,grid_vector,offset_vector=Vector2(0,0)):
 	""" Aquesta funcio fa el mateix que Vector2D.snapped, pero permet
 	afegir un parametre de offset """
 	var x = round((p.x-offset_vector.x)/grid_vector.x)*grid_vector.x
 	var y = round((p.y-offset_vector.y)/grid_vector.y)*grid_vector.y
 	return Vector2(x,y) + offset_vector
+
+static func project_to_2d(vector,beta=0):
+	""" Aquesta funcio projecta un vector 3d a un espai isometric 2d. Asumeix nomes rotacio (donada per beta)
+	al voltant del eix X. Per acceptar dues rotacions s'hauria de generalitzar.
+	De fet pero, no es una rotacio exactament, pero esta modificat per millors visuals. """
+	return Vector2(vector[0],vector[1] #*cos(beta)
+								-vector[2]*sin(beta))
