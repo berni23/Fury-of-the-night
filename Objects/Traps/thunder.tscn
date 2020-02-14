@@ -34,7 +34,7 @@ position = Vector2( 0, -150 )
 scale = Vector2( 0.857446, 1 )
 frames = SubResource( 1 )
 animation = "Thunder"
-frame = 4
+frame = 11
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

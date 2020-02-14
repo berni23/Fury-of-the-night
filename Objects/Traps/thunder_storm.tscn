@@ -42,19 +42,16 @@ frames = SubResource( 1 )
 animation = "Thunder"
 frame = 8
 
-[node name="Area2D" type="Area2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Area2D" type="Area2D" parent="AnimatedSprite"]
+visible = false
+position = Vector2( 14.6883, 180.958 )
+scale = Vector2( 1.31974, 4.22381 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
+visible = false
 position = Vector2( 8.55618, 1.63409 )
 scale = Vector2( 6.08355, 5.5737 )
 shape = SubResource( 2 )
-disabled = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="BAaang" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
@@ -64,6 +61,6 @@ wait_time = 4.0
 one_shot = true
 autostart = true
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="finished" from="BAaang" to="." method="_on_BAaang_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

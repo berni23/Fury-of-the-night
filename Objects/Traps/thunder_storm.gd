@@ -22,6 +22,10 @@ func _process(delta):
 func _on_Area2D_area_entered(area):
 	if area.get_parent().is_in_group(Groups.Enemies):
 		area.get_parent().get_node('HealthBar').value -= self.damage
+		
+	elif area.is_in_group(Groups.BrokenStuff):
+		print('yewo1')
+		area.brokenstuff()
 	
 
 func _on_BAaang_finished():
@@ -32,5 +36,7 @@ func _on_Timer_timeout():
 	$BAaang.play()
 	$AnimatedSprite.show()
 	$AnimatedSprite.play()
-	$Area2D/CollisionShape2D.disabled = false
+	$AnimatedSprite/Area2D.show()
+	$AnimatedSprite/Area2D/CollisionShape2D.show()
+	#$Area2D/CollisionShape2D.disabled = false
 	

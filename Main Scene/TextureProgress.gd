@@ -1,6 +1,4 @@
 extends TextureProgress
-
-
 export (PackedScene) var filled
 export (PackedScene) var powerUp
 
@@ -11,8 +9,6 @@ var challengeItems = false
 var c=0
 var items = ["Mud","Friend","Tower1","Tower2","Tower3","Bomb","Shred"]
 var message = 'hi'
-
-
 
 func _ready():
 	get_node("/root/GameMaster").connect("Dead_enemy",self,"_on_enemy_dead")
