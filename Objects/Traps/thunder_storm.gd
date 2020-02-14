@@ -37,3 +37,9 @@ func _on_Timer_timeout():
 	
 	for stuff in broken_list:
 		stuff.brokenstuff()
+
+func _on_Area2D_area_exited(area):
+
+	if area.get_parent().is_in_group(Groups.Enemies):
+		enemy_list.erase(area.get_parent())
+
