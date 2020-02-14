@@ -14,6 +14,10 @@ var h = 80
 # These are used in the internal computations
 var threeDspeed
 var threeDposition
+# These are used to resize the shadow
+var shadow_factor
+var original_shadow_scale
+var shadow_on_land = 0.3
 
 func _ready():
 	# Assing itself to Bullets group
@@ -26,6 +30,7 @@ func _ready():
 	threeDspeed = initial_speed*Vector3(cos(initial_alpha)*cos(initial_beta),
 										cos(initial_alpha)*sin(initial_beta),
 										sin(initial_alpha))
+	original_shadow_scale = 0.45*$Shadow.scale
 
 func _process(delta):
 	print(threeDposition)
@@ -38,3 +43,6 @@ func _process(delta):
 	threeDposition += threeDspeed*delta
 	# Project movement to 2d
 	self.global_position = CustomFunc.project_to_2d(threeDposition,20)
+	$Shadow.global_position = Vector2(threeDposition[0],threeDposition[1])
+	shadow_factor = shadow_on_land + (1-shadow_on_land)*threeDposition[2]/h 
+	$Shadow.scale = shadow_factor*original_shadow_scale
