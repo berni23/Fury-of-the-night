@@ -5,12 +5,15 @@ var can_build = false
 export (PackedScene) var towerScene
 var towerPrice
 
+func _ready():
+	$Sprite.position.y = -40
+
 func _process(delta):
 	# Follow the mouse snapping to grid
 	position = get_global_mouse_position().snapped(Vector2(32,32))
 	
 func _input(event):
-	if Input.is_action_pressed("left_click"):
+	if Input.is_action_just_pressed("left_click"):
 		if not can_build:
 			return
 		if get_parent().Coins >= towerPrice:
@@ -26,7 +29,7 @@ func _input(event):
 			get_parent().add_Coins(-towerPrice)
 			#self.queue_free()
 		
-	elif Input.is_action_pressed("right_click"):
+	elif Input.is_action_just_pressed("right_click"):
 		self.queue_free()
 
 func able_to_build(flag):
