@@ -1,7 +1,9 @@
 extends Sprite
 
 export (PackedScene) var Scene
+
 var path
+var shredCounter=0
 func _ready():
 	self.add_to_group(Groups.Icons)
 	path = get_parent().get_node("Path2D")
@@ -17,8 +19,20 @@ func _input(event):
 		# If it is far form the path, don't do anything
 			if CustomFunc.distance_to_path(position,path) > 1:
 				return
-		# Else, create a shred instance at current position and disappear
-			var ShredScene = Scene.instance()
-			get_parent().get_node("YSortObjects").add_child(ShredScene)
-			ShredScene.global_position = self.global_position
-			get_parent().add_Shred(-1)
+
+			elif shredCounter==0:
+				var ShredScene = Scene.instance()
+				get_parent().get_node("YSortObjects").add_child(ShredScene)
+				ShredScene.global_position = self.global_position
+				get_parent().add_Shred(-1)
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group(Groups.Shred):
+		shredCounter+=1
+func _on_Area2D_area_exited(area):
+	if area.is_in_group(Groups.Shred):
+		shredCounter-=1
+		
+		
+		
+		

@@ -32,9 +32,6 @@ func _on_Area2D_area_exited(area):
 		enemy_slow.erase(area.get_parent())
 	
 	if len(enemy_slow)==0:
-		
 		$AnimatedSprite.stop()
-		
 		if count ==enemies_affected :
-		
 			self.queue_free()
