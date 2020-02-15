@@ -9,7 +9,6 @@ var Enemies_dead = 0
 var Magnet = false
 var Game1 = true
 
-
 signal Coins_changed
 signal Bomb_changed
 signal Magnet_on

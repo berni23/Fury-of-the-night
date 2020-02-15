@@ -102,10 +102,21 @@ func _on_Upgrade_pressed():
 
 func _on_Warrior_pressed():
 	delete_existing_icons()
+	
 	if self.get_parent().Coins>=PriceFriend:
+		
+		self.get_node('Projectiles/VBoxContainer2/Warrior').disabled=true
 		get_parent().get_node('WarriorPath').add_child(Friend.instance())
 		get_parent().add([-PriceFriend,"coins"])
+		var wait2 = Cargando.instance()
+		wait2.waitTime = 3
+		wait2.connect('animation_finished',self,"enable_warrior")
+		self.get_node("Projectiles/VBoxContainer2/Warrior").add_child(wait2)
 
+func enable_warrior():
+	
+	self.get_node('Projectiles/VBoxContainer2/Warrior').disabled = false
+	
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.scancode == KEY_T:
