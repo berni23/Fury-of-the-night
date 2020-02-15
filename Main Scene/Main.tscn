@@ -69,12 +69,12 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=2]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 8
 use_filter = true
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 10
 font_data = ExtResource( 9 )
 
@@ -285,6 +285,7 @@ scale = Vector2( 1.73077, 3.69231 )
 shape = SubResource( 2 )
 
 [node name="Status" type="Container" parent="."]
+editor/display_folded = true
 margin_left = 684.0
 margin_top = 7.0
 margin_right = 724.0
@@ -297,7 +298,7 @@ margin_left = 7.0
 margin_top = 1.0
 margin_right = 268.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.953125, 0.897278, 0.897278, 1 )
 custom_colors/font_color_shadow = Color( 0.953125, 0.897278, 0.897278, 1 )
 custom_constants/shadow_offset_x = 0
@@ -343,7 +344,7 @@ margin_top = 3.0
 margin_right = 79.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 40, 15 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.929688, 0.876348, 0.0762634, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "HI"
@@ -354,6 +355,7 @@ scale = Vector2( 0.693214, 0.574291 )
 texture = ExtResource( 10 )
 
 [node name="PanelControl" type="HBoxContainer" parent="."]
+editor/display_folded = true
 show_behind_parent = true
 margin_left = 10.0
 margin_top = 580.0
@@ -494,6 +496,7 @@ margin_right = 428.0
 margin_bottom = 80.0
 
 [node name="Extras" type="HBoxContainer" parent="PanelControl"]
+editor/display_folded = true
 margin_left = 432.0
 margin_right = 580.0
 margin_bottom = 80.0
@@ -625,6 +628,7 @@ wait_time = 7.0
 one_shot = true
 
 [node name="TrapStatus" type="HBoxContainer" parent="."]
+editor/display_folded = true
 margin_left = 620.0
 margin_top = 590.0
 margin_right = 660.0

@@ -1,12 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/Towers/canonBall.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/buttons/aura.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Towers/towerbeta/canonBall.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Towers/canonBall.tres" type="Gradient" id=4]
+
+[sub_resource type="GradientTexture" id=4]
+gradient = ExtResource( 4 )
+width = 3000
 
 [sub_resource type="ParticlesMaterial" id=1]
-emission_shape = 2
-emission_box_extents = Vector3( 30, 30, 1 )
+render_priority = 1
+trail_color_modifier = SubResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 13.68
 flag_disable_z = true
 gravity = Vector3( 0, 98, 0 )
 angular_velocity = 6.30584e-44
@@ -31,8 +38,11 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 3 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
-amount = 20
-lifetime = 2.0
+modulate = Color( 0.0431373, 0.0431373, 0.0392157, 1 )
+show_behind_parent = true
+position = Vector2( 0, 10 )
+amount = 30
+visibility_rect = Rect2( -50, -100, 100, 200 )
 process_material = SubResource( 1 )
 
 [node name="LifeTimer" type="Timer" parent="."]
