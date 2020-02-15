@@ -14,6 +14,9 @@ var firstClick=true
 	
 func _ready():
 	add_to_group(Groups.Towers)
+	reload = false
+	yield(get_tree().create_timer(2),"timeout")
+	reload = true
 
 func _on_TowerBasic_area_entered(area):
 	if area.get_parent().is_in_group(Groups.Enemies):

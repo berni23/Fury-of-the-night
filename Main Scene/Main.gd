@@ -104,11 +104,7 @@ func _on_TimerFuture_timeout(): # If pos.offset smaller than treshold (just chan
 		elif node.is_in_group(Groups.Enemies):
 			node.speed = 100
 		else: return
-		yield(get_tree().create_timer(0.5),"timeout")
-
-func Check_Perfect(val):
-	if val ==true:
-		print('Logro')
+	#	yield(get_tree().create_timer(0.5),"timeout")
 
 #func _input(event):
 #	if event is InputEventMouseButton:

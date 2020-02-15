@@ -7,30 +7,25 @@ export (PackedScene) var Warrior
 export (PackedScene) var Spider
 
 var currentRound = 0
-var k = 0
-var j = true
-var perfect = false
-
 var currentChapter
 
 var Chapter1 
 var Chapter2
 var Chapter3
 
-signal check_perfect
+var waitTime = 5  # Time for the visual timer delay
 
 func _ready():
 	
 	Chapter1 = [
 	[ # Round 1
-	
-		{"Enemy":skeleton,"N_ene":50,"t_ene":2,"N_block":2,"t_block":1,"t_delay":0},
+		{"Enemy":skeleton,"N_ene":5,"t_ene":2,"N_block":1,"t_block":1,"t_delay":0},
 		{"Enemy":Warrior,"N_ene":2,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
 		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0}
 	],
 	[ # Round 2
 		{"Enemy":skeleton,"N_ene":3,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
-		{"Enemy":dragon,"N_ene":10,"t_ene":2,"N_block":1,"t_block":1,"t_delay":0}
+		{"Enemy":dragon,"N_ene":1,"t_ene":2,"N_block":1,"t_block":1,"t_delay":0}
 	]]
 
 	Chapter2 = [
@@ -40,8 +35,8 @@ func _ready():
 		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0}
 	],
 	[ # Round 2
-		{"Enemy":skeleton,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
-		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0}
+		{"Enemy":skeleton,"N_ene":3,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
+		{"Enemy":dragon,"N_ene":2,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0}
 	]]
 
 	Chapter3 = [
@@ -57,24 +52,19 @@ func _ready():
 	]]
 
 	currentChapter = Chapter1
-	count_down_next_round(5)
+	count_down_next_round()
 	
 func timeWave(wave):
-	
-	var temps
-	temps = (wave["N_ene"]-1)*wave["t_ene"]*wave["N_block"] + (wave["N_block"]-1)*wave["t_block"]+wave["t_delay"]
-	
-	return temps
-	
+	return (wave["N_ene"]-1)*wave["t_ene"]*wave["N_block"] + (wave["N_block"]-1)*wave["t_block"]+wave["t_delay"]
 	
 func timeRound(ronda):
 	var temps =0
-	for i in len(ronda):
-		temps = max(temps,timeWave(ronda[i]))
+	for wave in ronda:
+		temps = max(temps,timeWave(wave))
 	return temps
 
 
-func count_down_next_round(waitTime):
+func count_down_next_round():
 	var visualTimer = nextIcon.instance()
 	visualTimer.waitTime = waitTime
 	visualTimer.connect("next_round", self, "send_next_round")
@@ -83,22 +73,40 @@ func count_down_next_round(waitTime):
 	add_child(visualTimer)
 	
 func send_next_round():
-	# For now we just send all the waves in the round
-	# Later we can introduce delays or similar
 	for wave in currentChapter[currentRound]:
 		send_wave(wave)
 		
+	var timeRound = timeRound(currentChapter[currentRound])
 	currentRound -=- 1
+	
 	if currentRound < len(currentChapter):
-		var timeRound = timeRound(currentChapter[currentRound])
+	
 		yield(get_tree().create_timer(timeRound),"timeout")
-		count_down_next_round(5) # For now this is fixed, but can be changed for each round if one would introduce it as a variable in round
+		count_down_next_round() # This is the time for the next round icon
+
+	else:
+		if currentChapter == Chapter1:
+			while len(get_parent().get_node("Path2D").get_children()) != 0:
+				yield(get_tree().create_timer(10),"timeout")
+			get_parent().get_node('Chakra').check_perfect()
+			currentChapter = Chapter2
+			currentRound = 0
+			count_down_next_round()
+		elif currentChapter == Chapter2:
+			while len(get_parent().get_node("Path2D").get_children()) != 0:
+				yield(get_tree().create_timer(10),"timeout")
+			get_parent().get_node('Chakra').check_perfect()
+			currentChapter = Chapter3
+			currentRound = 0
+			count_down_next_round()
+		else:
+			while len(get_parent().get_node("Path2D").get_children()) != 0:
+				yield(get_tree().create_timer(10),"timeout")
+			print("YOU WIN")
+
 
 func send_wave(wave):
-	k = len(get_parent().get_node('Path2D').get_children())
-	if k==0 and j==true:
-		perfect =true
-		get_parent().Check_Perfect(perfect)
+
 	"""
 	Retorna  N_block conjunts de Enemy, amb N_ene unitats
 	per conjunt, cada unitat separada un interval t_ene 
@@ -117,6 +125,7 @@ func send_wave(wave):
 			get_node("../Path2D").add_child(Enemy.instance())
 			yield(get_tree().create_timer(t_ene),"timeout")
 		yield(get_tree().create_timer(t_block),"timeout")
-	
+
+
 
 

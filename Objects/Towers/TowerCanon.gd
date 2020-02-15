@@ -9,10 +9,12 @@ var enemy_range = []
 var next = 'NO'
 
 func _ready():
-	var chakra = get_tree().get_root().get_node("GameMaster/Chakra")
-	if chakra:
-		chakra.item_used("Tower3")
+	
+	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Tower3")
 	add_to_group(Groups.Towers)
+	reload = false
+	yield(get_tree().create_timer(2),"timeout")
+	reload = true
 
 func _on_TowerCanon_area_entered(area):
 	if area.get_parent().is_in_group(Groups.Enemies):

@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	self.global_position = Vector2(898,546)
+	self.global_position = Vector2(858,596)
 
 func _on_ChakraPowerUp_area_entered(area):
 	if area.is_in_group(Groups.Hover):

@@ -20,18 +20,44 @@ func _on_Chakra_value_changed(value):
 func _on_enemy_dead(num):
 	if num>=50 and challengeFifty==false:
 		message = '50 enemy challenge completed!'
-		$Label.text = message
-		$Completed.play()
-		$TimerLetters.start()
+		completed(message)
 		challengeFifty = true
-		self.add_child(powerUp.instance())
+
 	elif num>=200 and challengeTwoHundred==false:
 		message = '200 enemy challenge completed!'
-		$Label.text = message
-		$Completed.play()
-		$TimerLetters.start()
+		completed(message)
 		challengeTwoHundred = true
-		self.add_child(powerUp.instance())
+
+func item_used(item):
+	if challengeItems ==false:
+		items.erase(item)
+		if len(items)==0:
+			message = 'Items challenge completed!'
+			completed(message)
+			challengeItems =true
+			
+		else: return  
+	
+func check_perfect():
+	var life = get_parent().get_node("Status/VBoxContainer/Life").value 
+	if life >=100:
+		message = 'Perfect Round Completed!'
+		completed(message)
+		
+func completed(message):
+	
+			$Completed.play()
+			$Label.text = message
+			$TimerLetters.start()
+			self.add_child(powerUp.instance())
+			
+		    #$Label.text[i]=' '
+			#	i+=1
+			#	if i==len(message):
+			#		i=0
+			#		$Label.visible_characters=0
+			#		$TimerLetters2.stop()
+
 func _on_TimerLetters_timeout():
 	$Label.visible_characters+=1
 	if $Label.visible_characters==len(message):
@@ -48,20 +74,4 @@ func _on_TimerLetters2_timeout():
 		self.get_node('Label').add_color_override("font_outline_modulate", Color(0.478,0.8235,0.929,1))
 		$Label.visible_characters=0
 		c=0
-#	$Label.text[i]=' '
-#	i+=1
-#	if i==len(message):
-#		i=0
-#		$Label.visible_characters=0
-#		$TimerLetters2.stop()
-func item_used(item):
-	if challengeItems ==false:
-		items.erase(item)
-		if len(items)==0:
-			$Completed.play()
-			message = 'Items challenge completed!'
-			$Label.text = message
-			$TimerLetters.start()
-			challengeItems =true
-			self.add_child(powerUp.instance())
-		else: return  
+	
