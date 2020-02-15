@@ -36,6 +36,6 @@ static func snap_to_grid(p,grid_vector,offset_vector=Vector2(0,0)):
 static func project_to_2d(vector,beta=0):
 	""" Aquesta funcio projecta un vector 3d a un espai isometric 2d. Asumeix nomes rotacio (donada per beta)
 	al voltant del eix X. Per acceptar dues rotacions s'hauria de generalitzar.
-	De fet pero, no es una rotacio exactament, pero esta modificat per millors visuals. """
-	return Vector2(vector[0],vector[1] #*cos(beta)
-								-vector[2]*sin(beta))
+	De fet pero, no es una rotacio exactament, sino que esta modificat per millors visuals.
+	Es com una rotacio on l'eix esta triat de manera que la posicio y no importa?? """
+	return Vector2(vector[0],vector[1]-vector[2]*sin(beta))

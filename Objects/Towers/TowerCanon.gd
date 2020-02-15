@@ -3,7 +3,7 @@ extends Area2D
 export (PackedScene) var bala
 
 var TreshCoin 
-var speed_bala = 100
+var speed_bala = 75
 var reload = true
 var enemy_range = []
 var next = 'NO'
@@ -31,9 +31,8 @@ func shoot(enemy):
 	Nbala.initial_pos = self.global_position
 	var enemy_vector = enemy.global_position-self.global_position
 	# These part might need to be modified for better visuals
-	Nbala.initial_speed = 200
-	Nbala.initial_alpha = deg2rad(60)
-	Nbala.initial_beta = enemy_vector.angle()
+	Nbala.initial_horizontal_speed = speed_bala
+	Nbala.enemy_vector = enemy_vector
 	self.add_child(Nbala)
 	reload = false
 	$ReloadTimer.start()
