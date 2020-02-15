@@ -11,6 +11,7 @@ var speed2d= 200
 var value_type 
 
 func _ready():
+	self.z_index = 1
 	self.animation="default"
 	VectorCoins= Vector2(pos_final.x-self.global_position.x,pos_final.y-self.global_position.y).normalized()
 	Angle = VectorCoins.angle()
