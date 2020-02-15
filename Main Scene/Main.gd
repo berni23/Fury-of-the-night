@@ -11,6 +11,10 @@ var Game1 = true
 
 signal Coins_changed
 signal Bomb_changed
+signal Thunder_changed
+signal Shred_changed
+signal Mud_changed
+
 signal Magnet_on
 signal Dead_enemy
 #signal Chakra_changed
@@ -52,14 +56,16 @@ func add(value_type):
 		_:			print("ERROR: Unexpected value type!")
 
 func add_Thunder(val):	
-	#With this function we modify the available amounts of traps and projectiles
 	self.Thunder+=val
+	emit_signal("Thunder_changed",self.Thunder)
 	
 func add_Mud(val):
 	self.Mud+=val
+	emit_signal("Mud_changed",self.Mud)
 	
 func add_Shred(val):
 	self.Shred+=val
+	emit_signal("Shred_changed",self.Shred)
 	
 func add_Bomb(val):
 	self.Bomb+=val
@@ -90,6 +96,7 @@ func add_Life(val):
 
 func _on_MagnetDuration_timeout():
 	self.Magnet=false
+	
 func _on_TimerFuture_timeout(): # If pos.offset smaller than treshold (just change the required velocities)
 	for node in get_node('Path2D').get_children():
 		if node.is_in_group(Groups.Fly):

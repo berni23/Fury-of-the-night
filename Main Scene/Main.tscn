@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Status/GameOver.tscn" type="PackedScene" id=2]
@@ -9,54 +9,58 @@
 [ext_resource path="res://Main Scene/EndPath.gd" type="Script" id=7]
 [ext_resource path="res://Main Scene/Status.gd" type="Script" id=8]
 [ext_resource path="res://Assets/seriffic.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Assets/Images/bomb/bomb_animation/tile001.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Images/coins/coin_1.png" type="Texture" id=11]
-[ext_resource path="res://Assets/test_theme.tres" type="Theme" id=12]
-[ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=13]
-[ext_resource path="res://Objects/Traps/ShredIcon.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Objects/Traps/thunderIcon.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Objects/Towers/TowerFinIcon.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Objects/Towers/TowerCanonIcon.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Objects/Friends/Friend.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Objects/Status/cargando.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Assets/Images/Towers/tower_up_unblocked.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Images/Towers/tower_final_unblocked.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Images/Menutiles/background_panelControl.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Images/Towers/torra_unblocked.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Images/Towers/towerbeta/tower_beta_icon.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Images/bomb/Bomb2.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Images/buttons/sword4.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Images/buttons/MudButton.png" type="Texture" id=36]
-[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=37]
-[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=38]
-[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=39]
-[ext_resource path="res://Main Scene/BurnTree.gd" type="Script" id=40]
-[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=42]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=43]
-[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=44]
-[ext_resource path="res://Main Scene/RoundManager.gd" type="Script" id=45]
-[ext_resource path="res://Objects/Status/NextRoundIcon.tscn" type="PackedScene" id=46]
-[ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=47]
-[ext_resource path="res://Objects/Enemies/dragon.tscn" type="PackedScene" id=48]
-[ext_resource path="res://Objects/Enemies/Warrior.tscn" type="PackedScene" id=49]
-[ext_resource path="res://Objects/Enemies/Spider.tscn" type="PackedScene" id=50]
-[ext_resource path="res://Assets/Images/Chackra/chackra0.png" type="Texture" id=51]
-[ext_resource path="res://Assets/Images/Chackra/chackra3.png" type="Texture" id=52]
-[ext_resource path="res://Main Scene/TextureProgress.gd" type="Script" id=53]
-[ext_resource path="res://Objects/Status/chakra_filled.tscn" type="PackedScene" id=54]
-[ext_resource path="res://Objects/Coins/charkra_powerUp.tscn" type="PackedScene" id=55]
-[ext_resource path="res://Assets/Sounds/challenge_completed.wav" type="AudioStream" id=56]
-[ext_resource path="res://Assets/pdark.ttf" type="DynamicFontData" id=57]
+[ext_resource path="res://Assets/Images/coins/coin_1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/test_theme.tres" type="Theme" id=11]
+[ext_resource path="res://Main Scene/PanelControl.gd" type="Script" id=12]
+[ext_resource path="res://Objects/Traps/ShredIcon.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Traps/Bomb/BombIcon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Traps/MudIcon.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/Towers/TowerUpIcon.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Towers/TowerStepsIcon.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Objects/Traps/thunderIcon.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Objects/Towers/TowerIcon.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Objects/Towers/TowerFinIcon.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Objects/Towers/TowerCanonIcon.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Objects/Towers/TowerBasic_up.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Objects/Coins/getCoins.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Objects/Friends/Friend.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Objects/Status/cargando.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/Images/Towers/tower_up_unblocked.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Images/Towers/tower_final_unblocked.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Images/Menutiles/background_panelControl.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Images/Towers/torra_unblocked.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Images/TowerSteps/TowerStep_unblocked.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Images/Towers/towerbeta/tower_beta_icon.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Images/bomb/Bomb2.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Images/thunder/thunderIcon.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Images/buttons/sword4.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Images/buttons/MudButton.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Images/buttons/ShredButton.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Sounds/up_tower.wav" type="AudioStream" id=37]
+[ext_resource path="res://Assets/Sounds/Creepy.wav" type="AudioStream" id=38]
+[ext_resource path="res://Main Scene/BurnTree.gd" type="Script" id=39]
+[ext_resource path="res://Assets/Images/Tilemaps/burned_three2.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire1.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire2.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Images/Tilemaps/three_fire3.png" type="Texture" id=43]
+[ext_resource path="res://Main Scene/RoundManager.gd" type="Script" id=44]
+[ext_resource path="res://Objects/Status/NextRoundIcon.tscn" type="PackedScene" id=45]
+[ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Objects/Enemies/dragon.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Objects/Enemies/Warrior.tscn" type="PackedScene" id=48]
+[ext_resource path="res://Objects/Enemies/Spider.tscn" type="PackedScene" id=49]
+[ext_resource path="res://Assets/Images/Chackra/chackra0.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Images/Chackra/chackra3.png" type="Texture" id=51]
+[ext_resource path="res://Main Scene/TextureProgress.gd" type="Script" id=52]
+[ext_resource path="res://Objects/Status/chakra_filled.tscn" type="PackedScene" id=53]
+[ext_resource path="res://Objects/Coins/charkra_powerUp.tscn" type="PackedScene" id=54]
+[ext_resource path="res://Assets/Sounds/challenge_completed.wav" type="AudioStream" id=55]
+[ext_resource path="res://Assets/pdark.ttf" type="DynamicFontData" id=56]
+[ext_resource path="res://Assets/theme_labels.tres" type="Theme" id=57]
+[ext_resource path="res://Main Scene/TrapStatus.gd" type="Script" id=58]
+[ext_resource path="res://Assets/Images/bomb/bomb_animation/tile001.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Images/Shred/trap13.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Images/Icons/MudIcon.png" type="Texture" id=61]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -65,13 +69,13 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=2]
 
-[sub_resource type="DynamicFont" id=3]
-size = 10
-font_data = ExtResource( 9 )
-
 [sub_resource type="DynamicFont" id=4]
 size = 8
 use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
 font_data = ExtResource( 9 )
 
 [sub_resource type="CanvasItemMaterial" id=5]
@@ -83,7 +87,7 @@ extents = Vector2( 31.9749, 19.8138 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ) ],
+"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -96,7 +100,7 @@ _data = {
 
 [sub_resource type="DynamicFont" id=10]
 size = 20
-font_data = ExtResource( 57 )
+font_data = ExtResource( 56 )
 
 [node name="GameMaster" type="Node"]
 script = ExtResource( 1 )
@@ -287,6 +291,21 @@ margin_right = 724.0
 margin_bottom = 47.0
 script = ExtResource( 8 )
 
+[node name="HpLabel" type="Label" parent="Status"]
+modulate = Color( 0.953125, 0.897278, 0.897278, 1 )
+margin_left = 7.0
+margin_top = 1.0
+margin_right = 268.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.953125, 0.897278, 0.897278, 1 )
+custom_colors/font_color_shadow = Color( 0.953125, 0.897278, 0.897278, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 0
+custom_constants/shadow_as_outline = 0
+text = "HP"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Status"]
 editor/display_folded = true
 margin_left = -2.0
@@ -314,7 +333,6 @@ margin_right = 271.0
 margin_bottom = 19.0
 
 [node name="Counters" type="Container" parent="Status"]
-editor/display_folded = true
 margin_left = 271.0
 margin_right = 311.0
 margin_bottom = 40.0
@@ -330,45 +348,10 @@ custom_colors/font_color = Color( 0.929688, 0.876348, 0.0762634, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "HI"
 
-[node name="BombsLabel" type="Label" parent="Status/Counters"]
-margin_left = 41.0
-margin_top = 36.0
-margin_right = 81.0
-margin_bottom = 55.0
-rect_min_size = Vector2( 40, 15 )
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.929688, 0.876348, 0.0762634, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Hi"
-
-[node name="Bomb" type="Sprite" parent="Status/Counters"]
-position = Vector2( 23.499, 37.9779 )
-scale = Vector2( 0.945905, 0.49389 )
-texture = ExtResource( 10 )
-
 [node name="Coin" type="Sprite" parent="Status/Counters"]
 position = Vector2( 23.1314, 10.7795 )
 scale = Vector2( 0.693214, 0.574291 )
-texture = ExtResource( 11 )
-
-[node name="HpLabel" type="Label" parent="Status"]
-modulate = Color( 0.953125, 0.897278, 0.897278, 1 )
-margin_left = 7.0
-margin_top = 1.0
-margin_right = 268.0
-margin_bottom = 14.0
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0.953125, 0.897278, 0.897278, 1 )
-custom_colors/font_color_shadow = Color( 0.953125, 0.897278, 0.897278, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/line_spacing = 0
-custom_constants/shadow_offset_y = 0
-custom_constants/shadow_as_outline = 0
-text = "HP"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Status"]
-margin_right = 40.0
-margin_bottom = 40.0
+texture = ExtResource( 10 )
 
 [node name="PanelControl" type="HBoxContainer" parent="."]
 show_behind_parent = true
@@ -377,30 +360,30 @@ margin_top = 580.0
 margin_right = 750.0
 margin_bottom = 660.0
 rect_min_size = Vector2( 72, 75 )
-theme = ExtResource( 12 )
-script = ExtResource( 13 )
-ShredIcon = ExtResource( 14 )
-BombIcon = ExtResource( 15 )
-MudIcon = ExtResource( 16 )
-TowerUpIcon = ExtResource( 17 )
-TowerStepsIcon = ExtResource( 18 )
-ThunderIcon = ExtResource( 19 )
-TowerIcon = ExtResource( 20 )
-TowerFinIcon = ExtResource( 21 )
-TowerCanonIcon = ExtResource( 22 )
-TowerUp = ExtResource( 23 )
-getCoins = ExtResource( 24 )
-Friend = ExtResource( 25 )
-Cargando = ExtResource( 26 )
+theme = ExtResource( 11 )
+script = ExtResource( 12 )
+ShredIcon = ExtResource( 13 )
+BombIcon = ExtResource( 14 )
+MudIcon = ExtResource( 15 )
+TowerUpIcon = ExtResource( 16 )
+TowerStepsIcon = ExtResource( 17 )
+ThunderIcon = ExtResource( 18 )
+TowerIcon = ExtResource( 19 )
+TowerFinIcon = ExtResource( 20 )
+TowerCanonIcon = ExtResource( 21 )
+TowerUp = ExtResource( 22 )
+getCoins = ExtResource( 23 )
+Friend = ExtResource( 24 )
+Cargando = ExtResource( 25 )
 Rain = ExtResource( 4 )
-ImageT1 = ExtResource( 27 )
-ImageT2 = ExtResource( 28 )
+ImageT1 = ExtResource( 26 )
+ImageT2 = ExtResource( 27 )
 
 [node name="background_panelControl" type="Sprite" parent="PanelControl"]
 modulate = Color( 0.160784, 0.380392, 0.45098, 0.556863 )
 position = Vector2( 291, 40 )
 scale = Vector2( 0.813513, 1.25 )
-texture = ExtResource( 29 )
+texture = ExtResource( 28 )
 
 [node name="Towers" type="HBoxContainer" parent="PanelControl"]
 editor/display_folded = true
@@ -411,14 +394,14 @@ margin_bottom = 80.0
 margin_right = 72.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 72, 72 )
-icon = ExtResource( 30 )
+icon = ExtResource( 29 )
 
 [node name="Create TowerStep" type="Button" parent="PanelControl/Towers"]
 margin_left = 76.0
 margin_right = 148.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 72, 72 )
-icon = ExtResource( 31 )
+icon = ExtResource( 30 )
 
 [node name="Create CanonTower" type="Button" parent="PanelControl/Towers"]
 margin_left = 152.0
@@ -426,7 +409,7 @@ margin_right = 224.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 72, 72 )
 shortcut_in_tooltip = false
-icon = ExtResource( 32 )
+icon = ExtResource( 31 )
 align = 2
 
 [node name="VSeparator2" type="VSeparator" parent="PanelControl"]
@@ -441,6 +424,7 @@ margin_right = 336.0
 margin_bottom = 80.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelControl/Projectiles"]
+editor/display_folded = true
 margin_right = 48.0
 margin_bottom = 80.0
 
@@ -451,7 +435,7 @@ margin_right = 48.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 48, 35 )
 rect_clip_content = true
-icon = ExtResource( 33 )
+icon = ExtResource( 32 )
 
 [node name="Thunder" type="Button" parent="PanelControl/Projectiles/VBoxContainer"]
 material = SubResource( 6 )
@@ -460,9 +444,10 @@ margin_right = 48.0
 margin_bottom = 74.0
 rect_min_size = Vector2( 48, 35 )
 size_flags_stretch_ratio = 2.0
-icon = ExtResource( 34 )
+icon = ExtResource( 33 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelControl/Projectiles"]
+editor/display_folded = true
 margin_left = 52.0
 margin_right = 100.0
 margin_bottom = 80.0
@@ -471,7 +456,7 @@ margin_bottom = 80.0
 margin_right = 48.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 48, 70 )
-icon = ExtResource( 35 )
+icon = ExtResource( 34 )
 
 [node name="VSeparator" type="VSeparator" parent="PanelControl"]
 modulate = Color( 0.823529, 0.619608, 0.133333, 1 )
@@ -491,7 +476,7 @@ margin_right = 72.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 72, 35 )
 shortcut_in_tooltip = false
-icon = ExtResource( 36 )
+icon = ExtResource( 35 )
 clip_text = true
 
 [node name="Shred" type="Button" parent="PanelControl/Traps"]
@@ -499,7 +484,7 @@ margin_top = 39.0
 margin_right = 72.0
 margin_bottom = 74.0
 rect_min_size = Vector2( 72, 35 )
-icon = ExtResource( 37 )
+icon = ExtResource( 36 )
 align = 2
 
 [node name="VSeparator3" type="VSeparator" parent="PanelControl"]
@@ -515,6 +500,7 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 144, 70 )
 
 [node name="Upgrade" type="Button" parent="PanelControl/Extras"]
+editor/display_folded = true
 margin_right = 72.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 72, 70 )
@@ -523,7 +509,7 @@ text = "Upgrade"
 
 [node name="TowerUp_sound" type="AudioStreamPlayer2D" parent="PanelControl/Extras/Upgrade"]
 position = Vector2( -3.05176e-05, 0 )
-stream = ExtResource( 38 )
+stream = ExtResource( 37 )
 
 [node name="HoverCoins" type="Button" parent="PanelControl/Extras"]
 margin_left = 76.0
@@ -539,13 +525,19 @@ margin_left = 152.0
 margin_right = 156.0
 margin_bottom = 80.0
 
+[node name="Label" type="Label" parent="PanelControl"]
+margin_left = 584.0
+margin_top = 34.0
+margin_right = 584.0
+margin_bottom = 45.0
+
 [node name="Creep" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 39 )
+stream = ExtResource( 38 )
 
 [node name="BurnTree" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 892.323, 385.957 )
-script = ExtResource( 40 )
+script = ExtResource( 39 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -553,7 +545,7 @@ __meta__ = {
 [node name="brokenTree" type="Sprite" parent="BurnTree"]
 visible = false
 position = Vector2( 4.3197, -3.54242 )
-texture = ExtResource( 41 )
+texture = ExtResource( 40 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurnTree"]
 position = Vector2( 5.99011, -2.47367 )
@@ -580,17 +572,18 @@ __meta__ = {
 
 [node name="RoundManager" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 45 )
-nextIcon = ExtResource( 46 )
-skeleton = ExtResource( 47 )
-dragon = ExtResource( 48 )
-Warrior = ExtResource( 49 )
-Spider = ExtResource( 50 )
+script = ExtResource( 44 )
+nextIcon = ExtResource( 45 )
+skeleton = ExtResource( 46 )
+dragon = ExtResource( 47 )
+Warrior = ExtResource( 48 )
+Spider = ExtResource( 49 )
 
 [node name="VisualTimerPosition" type="Position2D" parent="RoundManager"]
 position = Vector2( 0, 80 )
 
 [node name="Chakra" type="TextureProgress" parent="."]
+editor/display_folded = true
 margin_left = 880.0
 margin_top = 20.0
 margin_right = 945.0
@@ -598,21 +591,21 @@ margin_bottom = 85.0
 rect_scale = Vector2( 1.00557, 0.753483 )
 max_value = 4.0
 value = 3.0
-texture_under = ExtResource( 51 )
-texture_progress = ExtResource( 52 )
+texture_under = ExtResource( 50 )
+texture_progress = ExtResource( 51 )
 fill_mode = 5
-script = ExtResource( 53 )
-filled = ExtResource( 54 )
-powerUp = ExtResource( 55 )
+script = ExtResource( 52 )
+filled = ExtResource( 53 )
+powerUp = ExtResource( 54 )
 
 [node name="Completed" type="AudioStreamPlayer" parent="Chakra"]
-stream = ExtResource( 56 )
+stream = ExtResource( 55 )
 
 [node name="Label" type="Label" parent="Chakra"]
-margin_left = -670.0
-margin_top = -10.0
-margin_right = -630.0
-margin_bottom = 59.0
+margin_left = -259.0
+margin_top = 743.0
+margin_right = -40.0
+margin_bottom = 852.0
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.478431, 0.823529, 0.929412, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -630,6 +623,92 @@ wait_time = 0.08
 [node name="TimerFuture" type="Timer" parent="."]
 wait_time = 7.0
 one_shot = true
+
+[node name="TrapStatus" type="HBoxContainer" parent="."]
+margin_left = 620.0
+margin_top = 590.0
+margin_right = 660.0
+margin_bottom = 630.0
+rect_scale = Vector2( 2.1812, 1.13673 )
+theme = ExtResource( 57 )
+script = ExtResource( 58 )
+
+[node name="background_panelControl2" type="Sprite" parent="TrapStatus"]
+modulate = Color( 0.160784, 0.380392, 0.45098, 0.521569 )
+position = Vector2( 32.0925, 25.5118 )
+scale = Vector2( 0.102685, 1.04033 )
+texture = ExtResource( 28 )
+
+[node name="Traps1" type="VBoxContainer" parent="TrapStatus"]
+margin_right = 8.0
+margin_bottom = 40.0
+grow_vertical = 0
+
+[node name="Bomb" type="HBoxContainer" parent="TrapStatus/Traps1"]
+margin_right = 8.0
+margin_bottom = 18.0
+
+[node name="BombCounter" type="Label" parent="TrapStatus/Traps1/Bomb"]
+margin_right = 8.0
+margin_bottom = 18.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "0"
+
+[node name="Sprite" type="Sprite" parent="TrapStatus/Traps1/Bomb"]
+position = Vector2( 16.5232, 0 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 59 )
+
+[node name="Thunder" type="HBoxContainer" parent="TrapStatus/Traps1"]
+margin_top = 22.0
+margin_right = 8.0
+margin_bottom = 40.0
+
+[node name="ThunderCounter" type="Label" parent="TrapStatus/Traps1/Thunder"]
+margin_right = 8.0
+margin_bottom = 18.0
+text = "0"
+
+[node name="Sprite" type="Sprite" parent="TrapStatus/Traps1/Thunder"]
+position = Vector2( 18.3385, 7.51178 )
+scale = Vector2( 0.8, 0.7 )
+texture = ExtResource( 33 )
+
+[node name="Traps2" type="VBoxContainer" parent="TrapStatus"]
+editor/display_folded = true
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 40.0
+grow_vertical = 0
+
+[node name="Shred" type="HBoxContainer" parent="TrapStatus/Traps2"]
+margin_right = 8.0
+margin_bottom = 18.0
+
+[node name="ShredCounter" type="Label" parent="TrapStatus/Traps2/Shred"]
+margin_right = 8.0
+margin_bottom = 18.0
+text = "0"
+
+[node name="Sprite" type="Sprite" parent="TrapStatus/Traps2/Shred"]
+position = Vector2( 20, 4.791 )
+scale = Vector2( 0.225406, 0.228126 )
+texture = ExtResource( 60 )
+
+[node name="Mud" type="HBoxContainer" parent="TrapStatus/Traps2"]
+margin_top = 22.0
+margin_right = 8.0
+margin_bottom = 40.0
+
+[node name="MudCounter" type="Label" parent="TrapStatus/Traps2/Mud"]
+margin_right = 8.0
+margin_bottom = 18.0
+text = "0"
+
+[node name="Sprite" type="Sprite" parent="TrapStatus/Traps2/Mud"]
+position = Vector2( 20, 3.993 )
+scale = Vector2( 0.158162, 0.232993 )
+texture = ExtResource( 61 )
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
 [connection signal="pressed" from="PanelControl/Towers/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
 [connection signal="pressed" from="PanelControl/Towers/Create TowerStep" to="PanelControl" method="_on_Create_TowerStep_pressed"]
