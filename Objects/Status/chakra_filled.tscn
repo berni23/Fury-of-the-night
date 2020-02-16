@@ -1,22 +1,24 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Node2D.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Status/Chakra_filled.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Status/BacktoFuture.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Traps/rain.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Images/Chackra/chackra3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Images/Chackra/chakra_powers.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Images/Chackra/chackra_powers_hover.png" type="Texture" id=6]
+[ext_resource path="res://Objects/Status/TowerFrenzy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Images/Chackra/chackra3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/Chackra/chakra_powers.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/Chackra/chackra_powers_hover.png" type="Texture" id=7]
 
 [node name="Chakra_filled" type="Node2D"]
 position = Vector2( -5.5, -6.5 )
 script = ExtResource( 1 )
 power1 = ExtResource( 2 )
 power2 = ExtResource( 3 )
+power3 = ExtResource( 4 )
 
 [node name="Button" type="Button" parent="."]
 margin_right = 80.0
 margin_bottom = 80.0
-icon = ExtResource( 4 )
+icon = ExtResource( 5 )
 flat = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -24,8 +26,8 @@ visible = false
 margin_top = 6.5
 margin_right = 40.0
 margin_bottom = 46.5
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 
 [node name="TextureButton2" type="TextureButton" parent="."]
 visible = false
@@ -34,8 +36,8 @@ margin_top = 6.5
 margin_right = 115.0
 margin_bottom = 46.5
 rect_rotation = 90.0
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 
 [node name="TextureButton3" type="TextureButton" parent="."]
 visible = false
@@ -44,8 +46,8 @@ margin_top = 76.5
 margin_right = 115.5
 margin_bottom = 116.5
 rect_rotation = 180.0
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 
 [node name="TextureButton4" type="TextureButton" parent="."]
 visible = false
@@ -53,8 +55,8 @@ margin_top = 76.5
 margin_right = 40.0
 margin_bottom = 116.5
 rect_rotation = 270.0
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 6 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 15.5

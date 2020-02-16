@@ -2,6 +2,7 @@ extends Node2D
 
 export (PackedScene) var power1
 export (PackedScene) var power2
+export (PackedScene) var power3
 
 var c =0
 
@@ -41,16 +42,18 @@ func _on_TextureButton_pressed():
 func _on_TextureButton2_pressed():
 	get_parent().value = 0
 	get_parent().get_parent().add_child(power2.instance())
-	self.queue_free()	
+	self.queue_free()
 	
-#func _on_TextureButton3_pressed():
-#	$Label.set_text('Power 3')
+func _on_TextureButton3_pressed():
+	get_parent().value = 0
+	get_parent().get_parent().add_child(power3.instance())
+	self.queue_free()
 
 #func _on_TextureButton4_pressed():
 #	$Label.set_text('Power 4')
 
 func _on_TextureButton_mouse_entered():
-		$Label.set_text('Power 1')
+	$Label.set_text('Power 1')
 func _on_TextureButton2_mouse_entered():
 	$Label.set_text('Power 2')
 func _on_TextureButton3_mouse_entered():

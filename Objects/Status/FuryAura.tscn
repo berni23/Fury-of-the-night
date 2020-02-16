@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Images/Aura/aura.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Basic"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 4, 0, 204, 217 ), Rect2( 224, 0, 204, 217 ), Rect2( 422, 0, 204, 217 ), Rect2( 620, 0, 204, 217 ) ]
+}
+
+[node name="FuryAura" type="Sprite"]
+self_modulate = Color( 1, 0.329412, 0.329412, 1 )
+scale = Vector2( 0.75, 0.85 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -80 )
+region_enabled = true
+region_rect = Rect2( 620, 0, 204, 217 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Basic"
+anims/Basic = SubResource( 1 )
