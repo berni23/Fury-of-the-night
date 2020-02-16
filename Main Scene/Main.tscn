@@ -419,7 +419,6 @@ margin_right = 336.0
 margin_bottom = 80.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelControl/Projectiles"]
-editor/display_folded = true
 margin_right = 48.0
 margin_bottom = 80.0
 
@@ -442,7 +441,6 @@ size_flags_stretch_ratio = 2.0
 icon = ExtResource( 33 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelControl/Projectiles"]
-editor/display_folded = true
 margin_left = 52.0
 margin_right = 100.0
 margin_bottom = 80.0
@@ -460,7 +458,6 @@ margin_right = 344.0
 margin_bottom = 80.0
 
 [node name="Traps" type="VBoxContainer" parent="PanelControl"]
-editor/display_folded = true
 margin_left = 348.0
 margin_right = 420.0
 margin_bottom = 80.0
@@ -489,7 +486,6 @@ margin_right = 428.0
 margin_bottom = 80.0
 
 [node name="Extras" type="HBoxContainer" parent="PanelControl"]
-editor/display_folded = true
 margin_left = 432.0
 margin_right = 580.0
 margin_bottom = 80.0
@@ -520,12 +516,6 @@ modulate = Color( 0.196078, 0.0431373, 0.258824, 1 )
 margin_left = 152.0
 margin_right = 156.0
 margin_bottom = 80.0
-
-[node name="Label" type="Label" parent="PanelControl"]
-margin_left = 584.0
-margin_top = 34.0
-margin_right = 584.0
-margin_bottom = 45.0
 
 [node name="Creep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 38 )
@@ -705,16 +695,114 @@ text = "0"
 position = Vector2( 20, 3.993 )
 scale = Vector2( 0.158162, 0.232993 )
 texture = ExtResource( 61 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TowerInfo" type="Label" parent="Control"]
+visible = false
+margin_left = 110.0
+margin_top = 550.0
+margin_right = 397.0
+margin_bottom = 581.0
+text = "Select a tower an press a location in the map
+"
+
+[node name="BombInfo" type="Label" parent="Control"]
+visible = false
+margin_left = 128.0
+margin_top = 550.0
+margin_right = 566.0
+margin_bottom = 598.0
+text = "Click bomb to buy, click B to activate and click on the map  to throw.
+
+"
+
+[node name="FriendInfo" type="Label" parent="Control"]
+visible = false
+margin_left = 242.0
+margin_top = 550.0
+margin_right = 455.0
+margin_bottom = 581.0
+text = "click on the swords to call a Knigt
+"
+
+[node name="ThunderInfo" type="Label" parent="Control"]
+visible = false
+margin_left = 110.0
+margin_top = 550.0
+margin_right = 580.0
+margin_bottom = 581.0
+text = "Click a thunder to buy, press T to activate and  click on the map to throw .
+"
+
+[node name="MudInfo" type="Label" parent="Control"]
+visible = false
+margin_left = 224.0
+margin_top = 550.0
+margin_right = 665.0
+margin_bottom = 598.0
+text = "Click on the mud to buy , M to activate and click on the map to throw
+
+"
+
+[node name="ShredInfo" type="Label" parent="Control"]
+visible = false
+margin_left = 220.0
+margin_top = 550.0
+margin_right = 613.0
+margin_bottom = 581.0
+text = "Click to buy, press S to activate and click on the map to throw
+"
+
+[node name="UpgradeInfo" type="Label" parent="Control"]
+visible = false
+margin_left = 410.0
+margin_top = 550.0
+margin_right = 595.0
+margin_bottom = 564.0
+text = "Click to upgrade your towers!"
+
+[node name="HoverInfo" type="Label" parent="Control"]
+visible = false
+margin_left = 410.0
+margin_top = 550.0
+margin_right = 666.0
+margin_bottom = 564.0
+text = "Select Hover to pick objects on the map"
 [connection signal="area_entered" from="EndPath" to="EndPath" method="_on_EndPath_area_entered"]
+[connection signal="focus_entered" from="PanelControl/Towers" to="PanelControl" method="_on_Towers_focus_entered"]
+[connection signal="focus_exited" from="PanelControl/Towers" to="PanelControl" method="_on_Towers_focus_exited"]
+[connection signal="mouse_entered" from="PanelControl/Towers/CreateTower" to="Control/TowerInfo" method="show"]
+[connection signal="mouse_exited" from="PanelControl/Towers/CreateTower" to="Control/TowerInfo" method="hide"]
 [connection signal="pressed" from="PanelControl/Towers/CreateTower" to="PanelControl" method="_on_CreateTower_pressed"]
+[connection signal="mouse_entered" from="PanelControl/Towers/Create TowerStep" to="Control/TowerInfo" method="show"]
+[connection signal="mouse_exited" from="PanelControl/Towers/Create TowerStep" to="Control/TowerInfo" method="hide"]
 [connection signal="pressed" from="PanelControl/Towers/Create TowerStep" to="PanelControl" method="_on_Create_TowerStep_pressed"]
+[connection signal="mouse_entered" from="PanelControl/Towers/Create CanonTower" to="Control/TowerInfo" method="show"]
+[connection signal="mouse_exited" from="PanelControl/Towers/Create CanonTower" to="Control/TowerInfo" method="hide"]
 [connection signal="pressed" from="PanelControl/Towers/Create CanonTower" to="PanelControl" method="_on_Create_CanonTower_pressed"]
+[connection signal="mouse_entered" from="PanelControl/Projectiles/VBoxContainer/Bomb" to="Control/BombInfo" method="show"]
+[connection signal="mouse_exited" from="PanelControl/Projectiles/VBoxContainer/Bomb" to="Control/BombInfo" method="hide"]
 [connection signal="pressed" from="PanelControl/Projectiles/VBoxContainer/Bomb" to="PanelControl" method="_on_Bomb_pressed"]
+[connection signal="mouse_entered" from="PanelControl/Projectiles/VBoxContainer/Thunder" to="Control/ThunderInfo" method="show"]
+[connection signal="mouse_exited" from="PanelControl/Projectiles/VBoxContainer/Thunder" to="Control/ThunderInfo" method="hide"]
 [connection signal="pressed" from="PanelControl/Projectiles/VBoxContainer/Thunder" to="PanelControl" method="_on_thunder_pressed"]
+[connection signal="mouse_entered" from="PanelControl/Projectiles/VBoxContainer2/Warrior" to="Control/FriendInfo" method="show"]
+[connection signal="mouse_exited" from="PanelControl/Projectiles/VBoxContainer2/Warrior" to="Control/FriendInfo" method="hide"]
 [connection signal="pressed" from="PanelControl/Projectiles/VBoxContainer2/Warrior" to="PanelControl" method="_on_Warrior_pressed"]
+[connection signal="mouse_entered" from="PanelControl/Traps/Mud" to="Control/MudInfo" method="show"]
+[connection signal="mouse_exited" from="PanelControl/Traps/Mud" to="Control/MudInfo" method="hide"]
 [connection signal="pressed" from="PanelControl/Traps/Mud" to="PanelControl" method="_on_Mud_pressed"]
+[connection signal="mouse_entered" from="PanelControl/Traps/Shred" to="Control/ShredInfo" method="show"]
+[connection signal="mouse_exited" from="PanelControl/Traps/Shred" to="Control/ShredInfo" method="hide"]
 [connection signal="pressed" from="PanelControl/Traps/Shred" to="PanelControl" method="_on_Shred_pressed"]
+[connection signal="mouse_entered" from="PanelControl/Extras/Upgrade" to="Control/UpgradeInfo" method="show"]
+[connection signal="mouse_exited" from="PanelControl/Extras/Upgrade" to="Control/UpgradeInfo" method="hide"]
 [connection signal="pressed" from="PanelControl/Extras/Upgrade" to="PanelControl" method="_on_Upgrade_pressed"]
+[connection signal="mouse_entered" from="PanelControl/Extras/HoverCoins" to="Control/HoverInfo" method="show"]
+[connection signal="mouse_exited" from="PanelControl/Extras/HoverCoins" to="Control/HoverInfo" method="hide"]
 [connection signal="pressed" from="PanelControl/Extras/HoverCoins" to="PanelControl" method="_on_HoverCoins_pressed"]
 [connection signal="finished" from="Creep" to="." method="_on_Creep_finished"]
 [connection signal="area_entered" from="BurnTree" to="BurnTree" method="_on_BurnTree_area_entered"]

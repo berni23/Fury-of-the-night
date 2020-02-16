@@ -1,17 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Objects/Towers/canonBall.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/buttons/aura.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Towers/towerbeta/canonBall.png" type="Texture" id=3]
-[ext_resource path="res://Objects/Towers/canonBall.tres" type="Gradient" id=4]
+[ext_resource path="res://Assets/Sounds/catapult2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Images/Towers/cloud2.png" type="Texture" id=5]
 
-[sub_resource type="GradientTexture" id=4]
-gradient = ExtResource( 4 )
-width = 3000
-
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticlesMaterial" id=2]
 render_priority = 1
-trail_color_modifier = SubResource( 4 )
 emission_shape = 1
 emission_sphere_radius = 13.68
 flag_disable_z = true
@@ -20,8 +16,17 @@ angular_velocity = 6.30584e-44
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=3]
 radius = 22.3607
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 15.0
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+angular_velocity = 8.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
 
 [node name="Node2D" type="Area2D"]
 script = ExtResource( 1 )
@@ -38,19 +43,33 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 3 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
-modulate = Color( 0.0431373, 0.0431373, 0.0392157, 1 )
+modulate = Color( 0.2, 0.2, 0.160784, 1 )
 show_behind_parent = true
 position = Vector2( 0, 10 )
-amount = 30
+amount = 100
 visibility_rect = Rect2( -50, -100, 100, 200 )
-process_material = SubResource( 1 )
+process_material = SubResource( 2 )
 
 [node name="LifeTimer" type="Timer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 scale = Vector2( 3, 3 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
+
+[node name="Sound2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+modulate = Color( 0.603922, 0.54902, 0.54902, 1 )
+position = Vector2( 0, 20 )
+emitting = false
+amount = 20
+lifetime = 1.3
+randomness = 1.0
+process_material = SubResource( 4 )
+texture = ExtResource( 5 )
 [connection signal="area_entered" from="." to="." method="_on_Node2D_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Node2D_area_exited"]
 [connection signal="timeout" from="LifeTimer" to="." method="queue_free"]
+[connection signal="finished" from="Sound2" to="." method="_on_Sound2_finished"]

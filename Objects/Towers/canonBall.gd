@@ -1,6 +1,7 @@
 extends Area2D
 
 var damage = 5
+var exploded = false
 # These are provided by the shooting tower on creation
 var initial_pos
 var initial_horizontal_speed 
@@ -8,6 +9,7 @@ var enemy_vector
 # These might need tuning
 var g = 98  # "Gravity"
 var h = 80  # Initial "3D" height"
+var c=0
 # These are used in the internal computations
 var threeDspeed
 var threeDposition
@@ -31,13 +33,24 @@ func _ready():
 	# Rotate particle emission
 	$Particles2D.rotation_degrees = 90+rad2deg(beta)
 
+	
 func _process(delta):
+	
 	# Compute new speed in 3d
 	threeDspeed -= Vector3(0,0,g*delta)
 	# Move in 3d according to speed
+	
 	threeDposition += threeDspeed*delta
 	if(threeDposition[2]<=0):
-		self.explode()
+		if not exploded:
+			self.explode()
+			
+		elif 0.3*c <250:
+			
+		#	$Particles2D2.amount-=1
+			c+= delta  
+			$Particles2D2.set_modulate(Color(0.604,0.549,0.549,1-c))
+			
 		return
 	# Project movement to 2d
 	self.global_position = CustomFunc.project_to_2d(threeDposition,20)
@@ -45,6 +58,7 @@ func _process(delta):
 	# Resize the shadow according to height
 	shadow_factor = shadow_on_land + (1-shadow_on_land)*threeDposition[2]/h 
 	$Shadow.scale = shadow_factor*original_shadow_scale
+	
 	
 func _on_Node2D_area_entered(area):
 	if area.get_parent().is_in_group(Groups.Enemies):
@@ -55,6 +69,18 @@ func _on_Node2D_area_exited(area):
 		enemy_list.erase(area.get_parent())
 
 func explode():
+	
+	exploded =true
 	for enemy in enemy_list:
+		
 		enemy.get_node('HealthBar').value -= self.damage
+	$Sound2.play()
+	$Sprite.hide()
+	
+	
+	$Particles2D.emitting=false
+	$Particles2D2.emitting=true
+
+func _on_Sound2_finished():
+
 	self.queue_free()
