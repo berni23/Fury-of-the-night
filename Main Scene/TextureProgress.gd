@@ -5,9 +5,8 @@ export (PackedScene) var powerUp
 var challengeFifty = false
 var challengeTwoHundred = false
 var challengeItems = false
-#var i =0
 var c=0
-var items = ["Mud","Friend","Tower1","Tower2","Tower3","Bomb","Shred"]
+var items = ["Mud","Friend","Tower1","Tower2","Tower3","Bomb","Shred","Thunder"]
 var message = 'hi'
 
 func _ready():
@@ -34,8 +33,7 @@ func item_used(item):
 		if len(items)==0:
 			message = 'Items challenge completed!'
 			completed(message)
-			challengeItems =true
-			
+			challengeItems =true	
 		else: return  
 	
 func check_perfect():
@@ -45,18 +43,10 @@ func check_perfect():
 		completed(message)
 		
 func completed(message):
-	
 			$Completed.play()
 			$Label.text = message
 			$TimerLetters.start()
 			self.add_child(powerUp.instance())
-			
-		    #$Label.text[i]=' '
-			#	i+=1
-			#	if i==len(message):
-			#		i=0
-			#		$Label.visible_characters=0
-			#		$TimerLetters2.stop()
 
 func _on_TimerLetters_timeout():
 	$Label.visible_characters+=1

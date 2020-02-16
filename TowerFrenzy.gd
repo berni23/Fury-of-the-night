@@ -5,6 +5,8 @@ export (PackedScene) var FrenzyAura
 var FrenziedTowers = []
 
 func _ready():
+	
+	yield(get_tree().create_timer(1),"timeout")
 	# First put a frenzy aura on each existing tower, while sound is playing
 	# Here we also take note of which towers will be frenzied
 	var aura

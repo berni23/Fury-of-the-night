@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SAYANS.wav-d279df2db073c12c2bda1968bbc4e628.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SAYANS.wav"
+dest_files=[ "res://.import/SAYANS.wav-d279df2db073c12c2bda1968bbc4e628.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

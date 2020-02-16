@@ -6,9 +6,9 @@ var broken_list =[]
 var cloud = false
 var c = 0
 func _ready():
-	add_to_group(Groups.Projectiles)
+
+	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Thunder")
 	self.position = self.get_global_mouse_position()
-	#self.get_node('BAaang').play()
 
 func _process(delta):
 	if cloud==false:
