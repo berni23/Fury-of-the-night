@@ -8,17 +8,18 @@ func _ready():
 	# First put a frenzy aura on each existing tower, while sound is playing
 	# Here we also take note of which towers will be frenzied
 	var aura
-	for object in get_parent().get_node("TowerSpots"):
-		if object.is_in_group(Groups.Towers):
-			aura = FrenzyAura.instance()
-			aura.add_to_group(Groups.FrenzyAura)
-			object.add_child(aura)
-			FrenziedTowers.append(object)
+	for tower in get_tree().get_nodes_in_group(Groups.Towers):
+		aura = FrenzyAura.instance()
+		aura.add_to_group(Groups.FrenzyAura)
+		tower.add_child(aura)
+		FrenziedTowers.append(tower)
 
 func _on_FrenzyBuildupTimer_timeout():
 	# Make all frenzied towers shoot like crazy
 	for tower in FrenziedTowers:
-		tower.crazy_shot()
+		if tower.has_method("crazy_shot"):
+			tower.crazy_shot()
+	yield(get_tree().create_timer(6),"timeout") # Wait for crazy shot to finish??
 	# Finally emove all the auras
 	for aura in get_tree().get_nodes_in_group(Groups.FrenzyAura):
 		aura.queue_free()

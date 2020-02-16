@@ -1,15 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://TowerFrenzy.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Status/FrenzyAura.tscn" type="PackedScene" id=2]
 
 [node name="TowerFrenzy" type="Node2D"]
 script = ExtResource( 1 )
+FrenzyAura = ExtResource( 2 )
 
 [node name="AuraSound" type="AudioStreamPlayer" parent="."]
 autoplay = true
 
 [node name="FrenzyBuildupTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 autostart = true
 [connection signal="timeout" from="FrenzyBuildupTimer" to="." method="_on_FrenzyBuildupTimer_timeout"]

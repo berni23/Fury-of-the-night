@@ -32,23 +32,32 @@ func  _process(delta):
 		self.shoot(enemy_range[0])
 		
 func shoot(enemy):
-	# Crear una nova bala i assignar-li totes les propietats
-	var Nbala = bala.instance()
 	var vector_bala = (enemy.global_position-self.global_position).normalized()
-	Nbala.speed = vector_bala*speed_bala
-	Nbala.t_life= $CollisionShape2D.shape.radius/speed_bala
-	self.add_child(Nbala)	
+	# Crear una nova bala i assignar-li totes les propietats
+	self.create_bullet(vector_bala)
 	reload = false
 	$ReloadTimer.start()
+	
+func create_bullet(vector):
+	var Nbala = bala.instance()
+	Nbala.speed = vector*speed_bala
+	Nbala.t_life = $CollisionShape2D.shape.radius/speed_bala
+	self.add_child(Nbala)
 
 func _on_ReloadTimer_timeout():
 	reload = true
 	$ReloadTimer.stop()
+	
+func crazy_shot():
+	var angles = range(0,360,6)
+	for angle in angles:
+		yield(get_tree().create_timer(0.1),"timeout")
+		self.create_bullet(Vector2(cos(deg2rad(angle)),sin(deg2rad(angle))))
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	#Volem evitar que el menu aparegui quan creem la torra
-	if firstClick==true:
-		firstClick=false
+	if firstClick:
+		firstClick = false
 		return
 	
 	if event is InputEventMouseButton and next!='NO':
@@ -61,18 +70,3 @@ func Upgrade():
 		NewTower.global_position = self.global_position
 		get_parent().add_child(NewTower)
 		self.queue_free()
-
-	#if Up ==false:
-	
-		#return
-		
-		
-		
-		
-	
-	
-	
-	
-	
-	
-	

@@ -19,7 +19,7 @@ tracks/0/keys = {
 "values": [ Rect2( 4, 0, 204, 217 ), Rect2( 224, 0, 204, 217 ), Rect2( 422, 0, 204, 217 ), Rect2( 620, 0, 204, 217 ) ]
 }
 
-[node name="FuryAura" type="Sprite"]
+[node name="FrenzyAura" type="Sprite"]
 self_modulate = Color( 1, 0.329412, 0.329412, 1 )
 scale = Vector2( 0.75, 0.85 )
 texture = ExtResource( 1 )
@@ -29,4 +29,5 @@ region_rect = Rect2( 620, 0, 204, 217 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Basic"
+playback_speed = 2.0
 anims/Basic = SubResource( 1 )
