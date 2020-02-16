@@ -17,17 +17,19 @@ func _input(event):
 		if not can_build:
 			return
 		if get_parent().Coins >= towerPrice:
-		# Else, create a new tower
-			var NewTower = towerScene.instance()
-			NewTower.global_position = global_position
-			get_parent().get_node("YSortObjects").add_child(NewTower)
-			# aditionally, one should delete the tower spot
+			# Pay the price
+			get_parent().add_Coins(-towerPrice)
+			# Find and delete the corresponding Tower Spot
+			var spot_position
 			for spot in get_parent().get_node("TowerSpots").get_children():
 				if (spot.global_position-self.global_position).length()<1:
-					spot.queue_free(); break
-		
-			get_parent().add_Coins(-towerPrice)
-			#self.queue_free()
+					spot_position = spot.global_position
+					spot.queue_free()
+					break
+			# Place the tower in the Spot position
+			var NewTower = towerScene.instance()
+			NewTower.global_position = spot_position
+			get_parent().get_node("YSortObjects").add_child(NewTower)
 		
 	elif Input.is_action_just_pressed("right_click"):
 		self.queue_free()
