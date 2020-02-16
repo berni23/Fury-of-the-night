@@ -5,7 +5,6 @@ var coin = true
 var value_type
 
 func _ready():
-	self.z_index = 1
 	get_node("/root/GameMaster").connect("Magnet_on",self,"_on_Magnet_on")
 	self.add_to_group(Groups.PowerUps)
 

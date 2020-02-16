@@ -2,16 +2,16 @@ extends Area2D
 
 export (PackedScene) var bala
 export (PackedScene) var Tup
-export (PackedScene) var  optionUpgrade
+export (PackedScene) var optionUpgrade
 
 var TreshCoin 
 var speed_bala = 1200
-var reload = true
+var reload
 var enemy_range = []
-var MenuUpgrade  = false
-var next ='NO' # = U,F,NO stands for Up, Final, or No upgrade option
-var firstClick=true
-	
+var MenuUpgrade = false
+var next = 'NO' # = U,F,NO stands for Up, Final, or No upgrade option
+var firstClick = true
+
 func _ready():
 	add_to_group(Groups.Towers)
 	reload = false

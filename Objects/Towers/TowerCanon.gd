@@ -9,7 +9,6 @@ var enemy_range = []
 var next = 'NO'
 
 func _ready():
-	
 	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Tower3")
 	add_to_group(Groups.Towers)
 	reload = false

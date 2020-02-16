@@ -32,8 +32,8 @@ stream = ExtResource( 4 )
 volume_db = 1.0
 
 [node name="ReloadTimer" type="Timer" parent="."]
-[connection signal="area_entered" from="." to="." method="_on_TowerSteps_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_TowerSteps_area_exited"]
+[connection signal="area_entered" from="." to="." method="_on_TowerBasic_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_TowerBasic_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="finished" from="hammer" to="." method="_on_hammer_finished"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]
