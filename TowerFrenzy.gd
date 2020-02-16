@@ -21,7 +21,7 @@ func _on_FrenzyBuildupTimer_timeout():
 	for tower in FrenziedTowers:
 		if tower.has_method("crazy_shot"):
 			tower.crazy_shot()
-	yield(get_tree().create_timer(6),"timeout") # Wait for crazy shot to finish??
+	yield(get_tree().create_timer(8),"timeout") # Wait for crazy shot to finish??
 	# Finally emove all the auras
 	for aura in get_tree().get_nodes_in_group(Groups.FrenzyAura):
 		aura.queue_free()

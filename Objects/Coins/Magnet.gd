@@ -2,9 +2,6 @@ extends Area2D
 
 var ShowMagnet = true
 
-func _ready():
-	self.z_index = 1
-
 func _on_Area2D_area_entered(area):
 	if area.is_in_group(Groups.Hover):
 		if ShowMagnet ==true:

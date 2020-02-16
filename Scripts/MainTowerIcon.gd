@@ -17,8 +17,6 @@ func _input(event):
 		if not can_build:
 			return
 		if get_parent().Coins >= towerPrice:
-			# Pay the price
-			get_parent().add_Coins(-towerPrice)
 			# Find and delete the corresponding Tower Spot
 			var spot_position
 			for spot in get_parent().get_node("TowerSpots").get_children():
@@ -26,10 +24,14 @@ func _input(event):
 					spot_position = spot.global_position
 					spot.queue_free()
 					break
+			if not spot_position:
+				return
 			# Place the tower in the Spot position
 			var NewTower = towerScene.instance()
 			NewTower.global_position = spot_position
-			get_parent().get_node("YSortObjects").add_child(NewTower)
+			get_parent().get_node("YSortTowers").add_child(NewTower)
+			# Pay the price
+			get_parent().add_Coins(-towerPrice)
 		
 	elif Input.is_action_just_pressed("right_click"):
 		self.queue_free()
