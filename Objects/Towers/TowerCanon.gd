@@ -29,6 +29,8 @@ func  _process(delta):
 		self.shoot(enemy_range[0])
 		
 func shoot(enemy):
+	
+	$Sound1.play()
 	var Nbala = bala.instance()
 	Nbala.initial_pos = self.global_position
 	var enemy_vector = enemy.global_position-self.global_position
