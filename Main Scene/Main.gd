@@ -8,6 +8,7 @@ var Shred = 0
 var Enemies_dead = 0
 var Magnet = false
 var Game1 = true
+var Message ='String'
 
 signal Coins_changed
 signal Bomb_changed
@@ -19,8 +20,6 @@ signal Magnet_on
 signal Dead_enemy
 #signal Chakra_changed
 export (PackedScene) var GameOver
-export (PackedScene) var Rain
-export (PackedScene) var BackToFuture
 
 """
  Recordatori de les collision layers
@@ -36,8 +35,7 @@ tirar llamp ->t
 """
 
 func _ready():
-	
-	
+	get_node("RoundManager").connect("Win",self,"Disconnect_panel",[str('CONGRATS!!')])
 	#get_node("Status/VBoxContainer/Life").value = 1
 	#self.get_node('PanelControl/Projectiles/Bomb').set_modulate(Color( 1, 0.5, 0.31, 1 ))
 	#self.add_child(Rain.instance())
@@ -95,17 +93,16 @@ func add_Coins(val):
 func add_Life(val):
 	get_node("Status/VBoxContainer/Life").value += val
 	if get_node("Status/VBoxContainer/Life").value <=0 and Game1==true:
-		
-		var GO = GameOver.instance()
-		GO.connect("gameOver",self,"Disconnect_panel")
-		self.add_child(GO)
-		
+		Disconnect_panel('GAME OVER')
 		Game1=false
 
 func _on_MagnetDuration_timeout():
 	self.Magnet=false
 	
-func _on_TimerFuture_timeout(): # If pos.offset smaller than treshold (just change the required velocities)
+func _on_TimerFuture_timeout(): 
+
+# If pos.offset smaller than treshold (just change the required velocities)
+
 	for node in get_node('Path2D').get_children():
 		if node.is_in_group(Groups.Fly):
 			node.speed = 150
@@ -113,14 +110,17 @@ func _on_TimerFuture_timeout(): # If pos.offset smaller than treshold (just chan
 			node.speed = 100
 		else: return
 
-func Disconnect_panel():
+
+func Disconnect_panel(hi):
+	Message  = hi
 	
-	print("Panel disconnected")
+	var Final = GameOver.instance()
+	self.add_child(Final)
 	
 	get_node("PanelControl").delete_existing_icons()
 	get_node("PanelControl").queue_free()
 	get_node("TrapStatus").hide()
-
-func _input(event):
-	if event is InputEventMouseButton:
-       print("Mouse Click/Unclick at: ", event.position)
+	
+#func _input(event):
+#	if event is InputEventMouseButton:
+#       print("Mouse Click/Unclick at: ", event.position)

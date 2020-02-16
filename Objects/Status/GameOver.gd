@@ -11,10 +11,9 @@ var stop =false
 
 export (PackedScene) var MenuOver
 
-signal gameOver
-
 func _ready():
-	emit_signal("gameOver")
+	
+	self.get_node('Label').text = self.get_parent().Message
 	self.position.x=1000
 	
 func _process(delta):

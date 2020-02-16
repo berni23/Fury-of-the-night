@@ -13,6 +13,7 @@ var Chapter1
 var Chapter2
 var Chapter3
 
+signal Win
 var waitTime = 5  # Time for the visual timer delay
 
 func _ready():
@@ -89,6 +90,7 @@ func send_next_round():
 			while len(get_parent().get_node("Path2D").get_children()) != 0:
 				yield(get_tree().create_timer(10),"timeout")
 			get_parent().get_node('Chakra').check_perfect()
+			#emit_signal("Win")
 			currentChapter = Chapter2
 			currentRound = 0
 			count_down_next_round()
@@ -102,11 +104,13 @@ func send_next_round():
 		else:
 			while len(get_parent().get_node("Path2D").get_children()) != 0:
 				yield(get_tree().create_timer(10),"timeout")
-			print("YOU WIN")
-
+			
+			if get_parent().get_node("Status/VBoxContainer/Life").value >0 and get_parent().Game1==true:
+				emit_signal("Win")
+				get_parent().Game1=false
+			
 
 func send_wave(wave):
-
 	"""
 	Retorna  N_block conjunts de Enemy, amb N_ene unitats
 	per conjunt, cada unitat separada un interval t_ene 

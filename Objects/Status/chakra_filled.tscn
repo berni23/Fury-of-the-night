@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Objects/Status/Chakra_filled.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Status/BacktoFuture.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Objects/Traps/rain.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Status/rain.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Status/TowerFrenzy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Images/Chackra/chackra3.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/Chackra/chakra_powers.png" type="Texture" id=6]

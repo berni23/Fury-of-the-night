@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Objects/Traps/thunder2.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Status/thunder2.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/thunder/thunder0.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/thunder/thunder2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/thunder/thunder4.png" type="Texture" id=4]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Images/thunder/tile007.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Images/thunder/tile009.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Sounds/thunder.wav" type="AudioStream" id=15]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
