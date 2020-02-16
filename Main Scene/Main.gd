@@ -36,9 +36,13 @@ tirar llamp ->t
 """
 
 func _ready():
+	
+	
+	#get_node("Status/VBoxContainer/Life").value = 1
 	#self.get_node('PanelControl/Projectiles/Bomb').set_modulate(Color( 1, 0.5, 0.31, 1 ))
 	#self.add_child(Rain.instance())
 	#get_node('Creep').play()
+	
 	self.add_Coins(3000)
 	self.add_Bomb(5)
 	
@@ -91,7 +95,11 @@ func add_Coins(val):
 func add_Life(val):
 	get_node("Status/VBoxContainer/Life").value += val
 	if get_node("Status/VBoxContainer/Life").value <=0 and Game1==true:
-		self.add_child(GameOver.instance())
+		
+		var GO = GameOver.instance()
+		GO.connect("gameOver",self,"Disconnect_panel")
+		self.add_child(GO)
+		
 		Game1=false
 
 func _on_MagnetDuration_timeout():
@@ -104,8 +112,15 @@ func _on_TimerFuture_timeout(): # If pos.offset smaller than treshold (just chan
 		elif node.is_in_group(Groups.Enemies):
 			node.speed = 100
 		else: return
-	#	yield(get_tree().create_timer(0.5),"timeout")
 
-#func _input(event):
-#	if event is InputEventMouseButton:
-#       print("Mouse Click/Unclick at: ", event.position)
+func Disconnect_panel():
+	
+	print("Panel disconnected")
+	
+	get_node("PanelControl").delete_existing_icons()
+	get_node("PanelControl").queue_free()
+	get_node("TrapStatus").hide()
+
+func _input(event):
+	if event is InputEventMouseButton:
+       print("Mouse Click/Unclick at: ", event.position)

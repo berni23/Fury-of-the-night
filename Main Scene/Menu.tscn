@@ -75,14 +75,13 @@ stream = ExtResource( 5 )
 visible = false
 position = Vector2( 350, 390 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="mouse2" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 350, 550 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="exit" type="AudioStreamPlayer2D" parent="."]

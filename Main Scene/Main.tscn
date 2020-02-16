@@ -279,7 +279,6 @@ scale = Vector2( 1.73077, 3.69231 )
 shape = SubResource( 2 )
 
 [node name="Status" type="Container" parent="."]
-editor/display_folded = true
 margin_left = 684.0
 margin_top = 7.0
 margin_right = 724.0
@@ -348,7 +347,6 @@ scale = Vector2( 0.693214, 0.574291 )
 texture = ExtResource( 10 )
 
 [node name="PanelControl" type="HBoxContainer" parent="."]
-editor/display_folded = true
 show_behind_parent = true
 margin_left = 10.0
 margin_top = 580.0
@@ -381,7 +379,6 @@ scale = Vector2( 0.813513, 1.25 )
 texture = ExtResource( 28 )
 
 [node name="Towers" type="HBoxContainer" parent="PanelControl"]
-editor/display_folded = true
 margin_right = 224.0
 margin_bottom = 80.0
 
@@ -576,7 +573,6 @@ margin_right = 945.0
 margin_bottom = 85.0
 rect_scale = Vector2( 1.00557, 0.753483 )
 max_value = 4.0
-value = 3.0
 texture_under = ExtResource( 50 )
 texture_progress = ExtResource( 51 )
 fill_mode = 5
