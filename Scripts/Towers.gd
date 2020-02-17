@@ -74,16 +74,11 @@ func Upgrade():
 		self.queue_free()
 
 func hurt(val):
-	
 	self.life -=val
 	if self.life <=0:
 		self.queue_free()
-	print('inside hurt')
-	print(life)
-		
 
 func connecting(goblin):
-	print('connected')
 	goblin.get_node('Timer2').connect('timeout',self,'hurt',[goblin.damage])
 	
 

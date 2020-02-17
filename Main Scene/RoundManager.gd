@@ -21,13 +21,15 @@ func _ready():
 	
 	Chapter1 = [
 	[ # Round 1
-		{"Enemy":Goblin,"N_ene":5,"t_ene":2,"N_block":1,"t_block":1,"t_delay":0},
+		{"Enemy":skeleton,"N_ene":5,"t_ene":2,"N_block":1,"t_block":1,"t_delay":0},
 		{"Enemy":Warrior,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
 		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0}
 	],
 	[ # Round 2
 		{"Enemy":skeleton,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
-		{"Enemy":Ogro,"N_ene":2,"t_ene":5,"N_block":1,"t_block":1,"t_delay":10}
+		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
+		{"Enemy":Ogro,"N_ene":2,"t_ene":5,"N_block":1,"t_block":1,"t_delay":10},
+		{"Enemy":Goblin,"N_ene":10,"t_ene":1,"N_block":2,"t_block":5,"t_delay":20}
 	]]
 
 	Chapter2 = [
@@ -65,7 +67,6 @@ func timeRound(ronda):
 		temps = max(temps,timeWave(wave))
 	return temps
 
-
 func count_down_next_round():
 	var visualTimer = nextIcon.instance()
 	visualTimer.waitTime = waitTime
@@ -81,9 +82,9 @@ func send_next_round():
 	var timeRound = timeRound(currentChapter[currentRound])
 	currentRound -=- 1
 	
+	yield(get_tree().create_timer(timeRound),"timeout")
 	if currentRound < len(currentChapter):
-	
-		yield(get_tree().create_timer(timeRound),"timeout")
+
 		count_down_next_round() # This is the time for the next round icon
 
 	else:
@@ -91,10 +92,11 @@ func send_next_round():
 			while len(get_parent().get_node("Path2D").get_children()) != 0:
 				yield(get_tree().create_timer(10),"timeout")
 			get_parent().get_node('Chakra').check_perfect()
-			#emit_signal("Win")
+			
 			currentChapter = Chapter2
 			currentRound = 0
 			count_down_next_round()
+			emit_signal("Win")
 		elif currentChapter == Chapter2:
 			while len(get_parent().get_node("Path2D").get_children()) != 0:
 				yield(get_tree().create_timer(10),"timeout")
@@ -127,13 +129,15 @@ func send_wave(wave):
 	var t_block = wave["t_block"]	# temps entre bloc
 	var t_delay = wave["t_delay"]   # delay oleada sencera
 	
+	yield(get_tree().create_timer(t_delay),"timeout")
+	
 	for i in range(0,N_block):
 		for j in range(0,N_ene):
 			get_node("../Path2D").add_child(Enemy.instance())
 			yield(get_tree().create_timer(t_ene),"timeout")
 		yield(get_tree().create_timer(t_block),"timeout")
 	
-	yield(get_tree().create_timer(t_delay),"timeout")
+	
 
 
 

@@ -21,7 +21,10 @@ func _process(delta):
 		self.offset+=speed*delta
 	
 func _on_Area2D_area_entered(area):
-	if area.get_parent().is_in_group(Groups.Enemies) and area.get_parent().is_not_in_group(Groups.Goblins):
+	if area.get_parent().is_in_group(Groups.Goblins):
+			return
+	if area.get_parent().is_in_group(Groups.Enemies): 
+
 		if len(enemy_list)==0:
 			$AnimatedSprite.animation = "Attack"
 			#$Timer2.start()
@@ -32,7 +35,9 @@ func _on_Area2D_area_entered(area):
 		enemy_list.append(area.get_parent())
 
 func _on_Area2D_area_exited(area):
-	if area.get_parent().is_in_group(Groups.Enemies) and area.get_parent().is_not_in_group(Groups.Goblins):
+	if area.get_parent().is_in_group(Groups.Goblins):
+		return
+	if area.get_parent().is_in_group(Groups.Enemies):
 		if area.get_parent()==enemy_list[0]:
 			if len(enemy_list)>1:	
 				newEnemy = enemy_list[1]
