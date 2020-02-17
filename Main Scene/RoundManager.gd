@@ -90,7 +90,7 @@ func send_next_round():
 			while len(get_parent().get_node("Path2D").get_children()) != 0:
 				yield(get_tree().create_timer(10),"timeout")
 			get_parent().get_node('Chakra').check_perfect()
-			#emit_signal("Win")
+			emit_signal("Win")
 			currentChapter = Chapter2
 			currentRound = 0
 			count_down_next_round()
@@ -108,6 +108,7 @@ func send_next_round():
 			if get_parent().get_node("Status/VBoxContainer/Life").value >0 and get_parent().Game1==true:
 				emit_signal("Win")
 				get_parent().Game1=false
+				
 			
 
 func send_wave(wave):

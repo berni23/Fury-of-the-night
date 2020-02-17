@@ -20,6 +20,7 @@ signal Magnet_on
 signal Dead_enemy
 #signal Chakra_changed
 export (PackedScene) var GameOver
+export (PackedScene) var Congrats
 
 """
  Recordatori de les collision layers
@@ -35,7 +36,9 @@ tirar llamp ->t
 """
 
 func _ready():
-	get_node("RoundManager").connect("Win",self,"Disconnect_panel",[str('CONGRATS!!')])
+	get_node("RoundManager").connect("Win",self,"Disconnect_panel",['CONGRATS!!'])
+	get_node("RoundManager").connect("Win",self,"Applause")
+	
 	#get_node("Status/VBoxContainer/Life").value = 1
 	#self.get_node('PanelControl/Projectiles/Bomb').set_modulate(Color( 1, 0.5, 0.31, 1 ))
 	#self.add_child(Rain.instance())
@@ -110,9 +113,8 @@ func _on_TimerFuture_timeout():
 			node.speed = 100
 		else: return
 
-
 func Disconnect_panel(hi):
-	Message  = hi
+	Message = hi
 	
 	var Final = GameOver.instance()
 	self.add_child(Final)
@@ -120,6 +122,11 @@ func Disconnect_panel(hi):
 	get_node("PanelControl").delete_existing_icons()
 	get_node("PanelControl").queue_free()
 	get_node("TrapStatus").hide()
+	get_node("EndPath").queue_free()
+	
+func Applause():
+	var Winner = Congrats.instance()
+	self.add_child(Winner)
 	
 #func _input(event):
 #	if event is InputEventMouseButton:
