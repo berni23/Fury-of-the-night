@@ -7,10 +7,12 @@ var speed_bala = 75
 var reload = true
 var enemy_range = []
 var next = 'NO'
+var life = 10
 
 func _ready():
 	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Tower3")
-	add_to_group(Groups.Towers)
+	self.add_to_group(Groups.Towers)
+	get_node("Area2D").add_to_group(Groups.TargetGoblins)
 	reload = false
 	yield(get_tree().create_timer(2),"timeout")
 	reload = true
@@ -43,3 +45,11 @@ func shoot(enemy):
 func _on_ReloadTimer_timeout():
 	reload = true
 	$ReloadTimer.stop()
+	
+func hurt(val):
+	self.life -=val
+	if self.life <=0:
+		self.queue_free()
+
+func connecting(goblin):
+	goblin.get_node('Timer2').connect('timeout',self,'hurt',[goblin.damage])

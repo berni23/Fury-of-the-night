@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://Main Scene/Main.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Status/GameOver.tscn" type="PackedScene" id=2]
@@ -61,6 +61,7 @@
 [ext_resource path="res://Objects/Enemies/dragon.tscn" type="PackedScene" id=59]
 [ext_resource path="res://Objects/Enemies/Warrior.tscn" type="PackedScene" id=60]
 [ext_resource path="res://Objects/Enemies/ogro.tscn" type="PackedScene" id=61]
+[ext_resource path="res://Objects/Enemies/Goblin.tscn" type="PackedScene" id=62]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -689,6 +690,7 @@ skeleton = ExtResource( 58 )
 dragon = ExtResource( 59 )
 Warrior = ExtResource( 60 )
 Ogro = ExtResource( 61 )
+Goblin = ExtResource( 62 )
 
 [node name="VisualTimerPosition" type="Position2D" parent="RoundManager"]
 position = Vector2( 0, 80 )

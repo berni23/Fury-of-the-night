@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objects/Towers/TowerCanon.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Towers/canonBall.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 200.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20, 60 )
 
 [node name="TowerCanon" type="Area2D"]
 gravity_point = true
@@ -36,6 +39,14 @@ texture = ExtResource( 3 )
 
 [node name="Sound1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -30 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="area_entered" from="." to="." method="_on_TowerCanon_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_TowerCanon_area_exited"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]

@@ -11,8 +11,10 @@ var enemy_range = []
 var MenuUpgrade = false
 var next = 'NO' # = U,F,NO stands for Up, Final, or No upgrade option
 var firstClick = true
+var life = 10
 
 func _ready():
+	get_node("Area2D").add_to_group(Groups.TargetGoblins)
 	add_to_group(Groups.Towers)
 	reload = false
 	yield(get_tree().create_timer(2),"timeout")
@@ -70,3 +72,18 @@ func Upgrade():
 		NewTower.global_position = self.global_position
 		get_parent().add_child(NewTower)
 		self.queue_free()
+
+func hurt(val):
+	
+	self.life -=val
+	if self.life <=0:
+		self.queue_free()
+	print('inside hurt')
+	print(life)
+		
+
+func connecting(goblin):
+	print('connected')
+	goblin.get_node('Timer2').connect('timeout',self,'hurt',[goblin.damage])
+	
+
