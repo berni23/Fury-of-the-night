@@ -4,7 +4,7 @@ export (PackedScene) var nextIcon
 export (PackedScene) var skeleton
 export (PackedScene) var dragon
 export (PackedScene) var Warrior
-export (PackedScene) var Spider
+export (PackedScene) var Ogro
 
 var currentRound = 0
 var currentChapter
@@ -25,8 +25,8 @@ func _ready():
 		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0}
 	],
 	[ # Round 2
-		{"Enemy":skeleton,"N_ene":3,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
-		{"Enemy":dragon,"N_ene":1,"t_ene":2,"N_block":1,"t_block":1,"t_delay":0}
+		{"Enemy":skeleton,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
+		{"Enemy":Ogro,"N_ene":2,"t_ene":5,"N_block":1,"t_block":1,"t_delay":10}
 	]]
 
 	Chapter2 = [
@@ -90,7 +90,7 @@ func send_next_round():
 			while len(get_parent().get_node("Path2D").get_children()) != 0:
 				yield(get_tree().create_timer(10),"timeout")
 			get_parent().get_node('Chakra').check_perfect()
-			emit_signal("Win")
+			#emit_signal("Win")
 			currentChapter = Chapter2
 			currentRound = 0
 			count_down_next_round()
@@ -120,16 +120,19 @@ func send_wave(wave):
 	Argument: Un diccionari amb els seguents elements
 	"""
 	var Enemy = wave["Enemy"]		# escena la qual conté l'enemic 
-	var N_ene = wave["N_ene"]		# nombre d'enemics que es vol per oleada
+	var N_ene = wave["N_ene"]		# nombre d'enemics que es vol per bloc
 	var t_ene = wave["t_ene"]		# temps concorregut entre cada enemic (segons)
-	var N_block = wave["N_block"]	# Nombre d'oleadas
-	var t_block = wave["t_block"]	# temps entre oleada
+	var N_block = wave["N_block"]	# Nombre de blocs
+	var t_block = wave["t_block"]	# temps entre bloc
+	var t_delay = wave["t_delay"]   # delay oleada sencera
 	
 	for i in range(0,N_block):
 		for j in range(0,N_ene):
 			get_node("../Path2D").add_child(Enemy.instance())
 			yield(get_tree().create_timer(t_ene),"timeout")
 		yield(get_tree().create_timer(t_block),"timeout")
+	
+	yield(get_tree().create_timer(t_delay),"timeout")
 
 
 

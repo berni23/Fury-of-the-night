@@ -16,6 +16,7 @@ var diamond2 = preload("res://Objects/Coins/Diamond2.tscn")
 var magnet = preload("res://Objects/Coins/Magnet.tscn")
 var heart1 = preload("res://Objects/Coins/heart.tscn")
 var heart2 = preload("res://Objects/Coins/heart2.tscn")
+var chakra = preload("res://Objects/Coins/charkra_powerUp.tscn")
 var oldPosition = Vector2(0,0)
 var nCoin
 var prob
@@ -74,7 +75,13 @@ func _on_HealthBar_value_changed(value):
 		$HealthBar.tint_progress = danger_color
 	
 	if $HealthBar.value <=0:
-		if get_parent().get_parent().Magnet==false:
+		
+		if self.is_in_group(Groups.Ogro):
+			
+			get_parent().get_parent().get_node('Chakra/Completed').play()
+			nCoin = chakra.instance()
+			
+		elif get_parent().get_parent().Magnet==false:
 			
 			if prob>95:		 nCoin = heart1.instance()
 			elif prob>=90:	 nCoin = magnet.instance()
