@@ -11,8 +11,7 @@ func _ready():
 	
 	#Nota : relacionar els texturebuttons amb el concepte de 'icon'. quan cliquis a un altre icon o click dret, desapareguin,
 	#i ique també es desconectin
-
-
+	
 #	#self.position =Vector2(get_parent().margin_right/2,get_parent().margin_bottom/2)
 #	#self.position = Vector2(get_parent().position.x,get_parent().position.y)
 	#$TextureButton.disabled
@@ -53,10 +52,10 @@ func _on_TextureButton3_pressed():
 #	$Label.set_text('Power 4')
 
 func _on_TextureButton_mouse_entered():
-	$Label.set_text('Power 1')
+	$Label.set_text('Future')
 func _on_TextureButton2_mouse_entered():
-	$Label.set_text('Power 2')
+	$Label.set_text('Storm')
 func _on_TextureButton3_mouse_entered():
-	$Label.set_text('Power 3')
+	$Label.set_text('Sayan')
 func _on_TextureButton4_mouse_entered():
-	$Label.set_text('Power 4')
+	$Label.set_text('??')

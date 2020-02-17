@@ -14,11 +14,11 @@ func _on_TimerAudio_timeout():
 	self.get_node('AudioStreamPlayer2D').play()
 	
 func _on_Area2D_area_entered(area):
-	if area.get_parent().is_in_group(Groups.Enemies):
+	if area.get_parent().is_in_group(Groups.Enemies) or area.get_parent().is_in_group(Groups.Friends):
 		explosion_range.append(area.get_parent())
 
 func _on_Area2D_area_exited(area):
-	if area.get_parent().is_in_group(Groups.Enemies):
+	if area.get_parent().is_in_group(Groups.Enemies) or area.get_parent().is_in_group(Groups.Friends):
 		explosion_range.erase(area.get_parent())
 
 func _on_TimerExplosion_timeout():

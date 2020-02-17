@@ -16,7 +16,7 @@ func _process(delta):
 		$Sprite.modulate = Color(1-c,1-c,1-c,2*c)
 
 func _on_Area2D_area_entered(area):
-	if area.get_parent().is_in_group(Groups.Enemies):
+	if area.get_parent().is_in_group(Groups.Enemies) or area.get_parent().is_in_group(Groups.Friends) :
 		enemy_list.append(area.get_parent())
 	elif area.is_in_group(Groups.BrokenStuff):
 		broken_list.append(area)
@@ -39,6 +39,6 @@ func _on_Timer_timeout():
 		stuff.brokenstuff()
 
 func _on_Area2D_area_exited(area):
-	if area.get_parent().is_in_group(Groups.Enemies):
+	if area.get_parent().is_in_group(Groups.Enemies) or area.get_parent().is_in_group(Groups.Friends):
 		enemy_list.erase(area.get_parent())
 
