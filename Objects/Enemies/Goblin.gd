@@ -10,6 +10,7 @@ var damage = 2
 var towerList =[]
 var first = true
 var newTower
+var dead = false
 
 func _ready():
 	self.add_to_group(Groups.Enemies)
@@ -17,25 +18,25 @@ func _ready():
 
 func _process(delta):
 	""" Function que mou els enemics al llarg del camí """
-	if len(towerList)==0:
+	if len(towerList)==0 and dead==false:
 		self.offset += speed*delta
 		var alpha = rad2deg((self.position - oldPosition).angle())
 		var new_animation
 		if alpha < -135:
 			new_animation = "left"
-			$Towerhit.global_rotation_degrees= 0
+			$Node2D/Towerhit.global_rotation_degrees= 0
 		elif alpha < -45:
 			new_animation = "top"
-			$Towerhit.global_rotation_degrees= 90
+			$Node2D/Towerhit.global_rotation_degrees= 90
 		elif alpha < 45:
 			new_animation = "right"
-			$Towerhit.global_rotation_degrees= 0
+			$Node2D/Towerhit.global_rotation_degrees= 0
 		elif alpha <135:
 			new_animation = "bottom"
-			$Towerhit.global_rotation_degrees= 90
+			$Node2D/Towerhit.global_rotation_degrees= 90
 		else:
 			new_animation = "left"
-			$Towerhit.global_rotation_degrees= 0
+			$Node2D/Towerhit.global_rotation_degrees= 0
 		
 		if $AnimatedSprite.animation != new_animation:	
 			$AnimatedSprite.animation = new_animation
@@ -63,9 +64,6 @@ func _on_Towerhit_area_entered(area):
 					elif  newTower.global_position.x < self.global_position.x:
 							$AnimatedSprite.animation = "attackleft"
 				
-	if area.is_in_group(Groups.Bullets):
-		$HealthBar.value -=  area.damage	
-		area.queue_free()
 
 func _on_Towerhit_area_exited(area):
 	if area.is_in_group(Groups.TargetGoblins):
@@ -81,10 +79,23 @@ func _on_HealthBar_value_changed(value):
 		$HealthBar.tint_progress = danger_color
 	
 	if $HealthBar.value <=0:
-		self.get_parent().get_parent().enemies_dead(1)
-		self.queue_free()
-	
+		$AnimatedSprite.animation ="dead"
+
+		get_node('AnimatedSprite').connect("animation_finished",self,"queue_free")
+		dead = true
+		$Area2D.queue_free()
+		$Node2D.queue_free()
+		
 func _on_Timer_timeout():
 	$HealthBar.hide()
 
+func _on_TimerDead_timeout():
+	self.get_parent().get_parent().enemies_dead(1)
+	self.queue_free()
+	
+
+func _on_Area2D_area_entered(area):
+		if area.is_in_group(Groups.Bullets):
+			$HealthBar.value -=  area.damage	
+			area.queue_free()
 

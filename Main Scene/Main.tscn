@@ -697,6 +697,7 @@ Goblin = ExtResource( 62 )
 position = Vector2( 0, 80 )
 
 [node name="Control" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 

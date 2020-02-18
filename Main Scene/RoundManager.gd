@@ -22,14 +22,14 @@ func _ready():
 	Chapter1 = [
 	[ # Round 1
 		{"Enemy":skeleton,"N_ene":5,"t_ene":2,"N_block":1,"t_block":1,"t_delay":0},
-		{"Enemy":Warrior,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
-		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0}
+		{"Enemy":Warrior,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":10},
+		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":10}
 	],
 	[ # Round 2
 		{"Enemy":skeleton,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
 		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
 		{"Enemy":Ogro,"N_ene":2,"t_ene":5,"N_block":1,"t_block":1,"t_delay":10},
-		{"Enemy":Goblin,"N_ene":10,"t_ene":1,"N_block":2,"t_block":5,"t_delay":20}
+		{"Enemy":Goblin,"N_ene":1,"t_ene":1,"N_block":2,"t_block":5,"t_delay":20}
 	]]
 
 	Chapter2 = [
