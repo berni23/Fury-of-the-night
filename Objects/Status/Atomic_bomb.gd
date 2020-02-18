@@ -3,10 +3,13 @@ extends Node2D
 
 var Siren=true 
 var c = 0
+
+export (PackedScene) var miniExp
+
+
 func _ready():
 	$SoundSiren.play()
 	
-
 func _process(delta):
 	
 	if Siren == true:
@@ -17,6 +20,7 @@ func _process(delta):
 	
 func _on_AnimatedSprite_animation_finished():
 	
+	var explosion
 	var list1 = get_parent().get_node('Path2D').get_children()
 	var list2 = get_parent().get_node('YSortTowers').get_children()
 	var list3 = get_parent().get_node('YSortObjects').get_children()
@@ -24,11 +28,21 @@ func _on_AnimatedSprite_animation_finished():
 	
 	if len(list1) !=0:
 	
-		for thing in list1: thing.queue_free()
+		for thing in list1: 
+	
+			explosion = miniExp.instance()
+			explosion.global_position = thing.global_position
+			get_parent().add_child(explosion)
+			thing.queue_free()
 	
 	if len(list2) !=0:
 		
-		for otherThing in list2: otherThing.queue_free()
+		for otherThing in list2: 
+
+			explosion = miniExp.instance()
+			explosion.global_position = otherThing.global_position
+			get_parent().add_child(explosion)
+			otherThing.queue_free()
 	
 	if len(list3) !=0:
 	
@@ -36,7 +50,11 @@ func _on_AnimatedSprite_animation_finished():
 		
 	if len(list4)!=0:
 		
-		for people in list4: people.queue_free()
+		for people in list4:
+			explosion = miniExp.instance()
+			explosion.global_position = people.global_position
+			get_parent().add_child(explosion)
+			people.queue_free()
 		
 	self.queue_free()
 
