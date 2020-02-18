@@ -21,6 +21,7 @@ signal Dead_enemy
 #signal Chakra_changed
 export (PackedScene) var GameOver
 export (PackedScene) var Congrats
+export (PackedScene) var AtomBomb
 
 """
  Recordatori de les collision layers
@@ -38,6 +39,8 @@ tirar llamp ->t
 func _ready():
 	get_node("RoundManager").connect("Win",self,"Disconnect_panel",['CONGRATS!!'])
 	get_node("RoundManager").connect("Win",self,"Applause")
+#	var Bomb = AtomBomb.instance()
+#	self.add_child(Bomb)
 	
 	#get_node("Status/VBoxContainer/Life").value = 1
 	#self.get_node('PanelControl/Projectiles/Bomb').set_modulate(Color( 1, 0.5, 0.31, 1 ))

@@ -3,12 +3,9 @@ extends Node2D
 export (PackedScene) var power1
 export (PackedScene) var power2
 export (PackedScene) var power3
-
+export (PackedScene) var power4
 var c =0
 
-func _ready():
-	pass
-	
 	#Nota : relacionar els texturebuttons amb el concepte de 'icon'. quan cliquis a un altre icon o click dret, desapareguin,
 	#i ique també es desconectin
 	
@@ -48,8 +45,12 @@ func _on_TextureButton3_pressed():
 	get_parent().get_parent().add_child(power3.instance())
 	self.queue_free()
 
-#func _on_TextureButton4_pressed():
-#	$Label.set_text('Power 4')
+func _on_TextureButton4_pressed():
+	get_parent().value = 0
+	get_parent().get_parent().add_child(power4.instance())
+	self.queue_free()
+
+
 
 func _on_TextureButton_mouse_entered():
 	$Label.set_text('Future')

@@ -1,0 +1,92 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://Objects/Status/Atomic_bomb.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Status/FollowNuke.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Images/Atom_Bomb/nuke2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile000.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile001.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile002.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile003.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile004.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile005.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile006.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile007.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile008.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile009.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile010.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile011.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile012.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile013.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile014.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile015.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile016.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile017.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile018.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile019.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile020.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile021.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile022.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile023.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Images/Atom_Bomb/tile024.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Sounds/siren.wav" type="AudioStream" id=29]
+[ext_resource path="res://Assets/Sounds/Explosion.wav" type="AudioStream" id=30]
+[ext_resource path="res://Assets/Images/Atom_Bomb/Radio.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Sounds/fiu.wav" type="AudioStream" id=32]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 470, 0, 0, 0, 0, 0, 470, 200, 0, 0, 0, 0, 470, 500 )
+}
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="FollowNuke" type="PathFollow2D" parent="Path2D"]
+visible = false
+position = Vector2( 470, 0 )
+rotation = 1.5708
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Path2D/FollowNuke"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 500, 290 )
+scale = Vector2( 2, 3 )
+frames = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="SoundSiren" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 29 )
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 30 )
+autoplay = true
+
+[node name="Node" type="Node2D" parent="."]
+position = Vector2( 490, 310 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 490, 310 )
+texture = ExtResource( 31 )
+
+[node name="fiu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 32 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

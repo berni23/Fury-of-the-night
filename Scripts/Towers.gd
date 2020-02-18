@@ -6,7 +6,7 @@ export (PackedScene) var optionUpgrade
 
 var TreshCoin 
 var speed_bala = 1200
-var reload
+var reload = false
 var enemy_range = []
 var MenuUpgrade = false
 var next = 'NO' # = U,F,NO stands for Up, Final, or No upgrade option
@@ -16,9 +16,7 @@ var life = 10
 func _ready():
 	get_node("Area2D").add_to_group(Groups.TargetGoblins)
 	add_to_group(Groups.Towers)
-	reload = false
-	yield(get_tree().create_timer(2),"timeout")
-	reload = true
+
 
 func _on_TowerBasic_area_entered(area):
 	if area.get_parent().is_in_group(Groups.Enemies):
