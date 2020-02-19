@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 Groups="*res://Scripts/AutoLoad/Groups.gd"
 MyColors="*res://Scripts/AutoLoad/MyColors.gd"
 CustomFunc="*res://Scripts/AutoLoad/CustomFunc.gd"
+SavedVars="*res://SavedVars.tscn"
 
 [debug]
 

@@ -352,6 +352,7 @@ scale = Vector2( 0.693214, 0.574291 )
 texture = ExtResource( 10 )
 
 [node name="PanelControl" type="HBoxContainer" parent="."]
+editor/display_folded = true
 show_behind_parent = true
 margin_left = 10.0
 margin_top = 580.0
@@ -559,6 +560,7 @@ __meta__ = {
 }
 
 [node name="Chakra" type="TextureProgress" parent="."]
+editor/display_folded = true
 margin_left = 880.0
 margin_top = 20.0
 margin_right = 945.0

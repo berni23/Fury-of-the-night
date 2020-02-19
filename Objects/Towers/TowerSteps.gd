@@ -15,6 +15,7 @@ var Steps = [step2,step3,step4,step5,step6,step7,step8,step9,final]
 var s = 0
 
 func _ready():
+	
 	get_tree().get_root().get_node("GameMaster/Chakra").item_used("Tower2")
 	speed_bala = 400
 	reload = false

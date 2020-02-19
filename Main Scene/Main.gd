@@ -18,10 +18,11 @@ signal Mud_changed
 
 signal Magnet_on
 signal Dead_enemy
-#signal Chakra_changed
+
 export (PackedScene) var GameOver
 export (PackedScene) var Congrats
 export (PackedScene) var AtomBomb
+
 
 """
  Recordatori de les collision layers
@@ -39,6 +40,8 @@ tirar llamp ->t
 func _ready():
 	get_node("RoundManager").connect("Win",self,"Disconnect_panel",['CONGRATS!!'])
 	get_node("RoundManager").connect("Win",self,"Applause")
+	
+	self.add_Coins(get_node("/root/SavedVars").coins)
 #	var Bomb = AtomBomb.instance()
 #	self.add_child(Bomb)
 	
@@ -47,8 +50,7 @@ func _ready():
 	#self.add_child(Rain.instance())
 	#get_node('Creep').play()
 	
-	self.add_Coins(3000)
-	self.add_Bomb(5)
+	
 	
 #func _on_Creep_finished():
 func Magnet_on():

@@ -19,13 +19,16 @@ var waitTime = 5  # Time for the visual timer delay
 
 func _ready():
 	
-	Chapter1 = [
+#	var wave1 = get_node("/root/SavedVars").wave1
+#	var wave2 = get_node("/root/SavedVars").wave2
+	Chapter1 =[
+
 	[ # Round 1
 		{"Enemy":skeleton,"N_ene":5,"t_ene":2,"N_block":1,"t_block":1,"t_delay":0},
 		{"Enemy":Warrior,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":10},
 		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":10}
 	],
-	[ # Round 2
+	[  #Round 2
 		{"Enemy":skeleton,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
 		{"Enemy":dragon,"N_ene":1,"t_ene":1,"N_block":1,"t_block":1,"t_delay":0},
 		{"Enemy":Ogro,"N_ene":2,"t_ene":5,"N_block":1,"t_block":1,"t_delay":10},
@@ -137,8 +140,6 @@ func send_wave(wave):
 			yield(get_tree().create_timer(t_ene),"timeout")
 		yield(get_tree().create_timer(t_block),"timeout")
 	
-	
-
 
 
 
