@@ -1,0 +1,21 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Main Scene/Manager1.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Status/NextRoundIcon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Enemies/Skeleton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Enemies/dragon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Enemies/Warrior.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Enemies/ogro.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Enemies/Goblin.tscn" type="PackedScene" id=7]
+
+[node name="RoundManager" type="Node2D"]
+script = ExtResource( 1 )
+nextIcon = ExtResource( 2 )
+skeleton = ExtResource( 3 )
+dragon = ExtResource( 4 )
+Warrior = ExtResource( 5 )
+Ogro = ExtResource( 6 )
+Goblin = ExtResource( 7 )
+
+[node name="VisualTimerPosition" type="Position2D" parent="."]
+position = Vector2( 0, 80 )

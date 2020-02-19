@@ -1,5 +1,6 @@
-extends Node
-#
+extends Node2D
+
+
 export (PackedScene) var nextIcon
 export (PackedScene) var skeleton
 export (PackedScene) var dragon
@@ -22,8 +23,6 @@ var waitTime = 5  # Time for the visual timer delay
 func _ready():
 	
 	
-#	var wave1 = get_node("/root/SavedVars").wave1
-#	var wave2 = get_node("/root/SavedVars").wave2
 	Chapter1 =[
 
 	[ # Round 1
@@ -142,7 +141,3 @@ func send_wave(wave):
 			get_node("../Path2D").add_child(Enemy.instance())
 			yield(get_tree().create_timer(t_ene),"timeout")
 		yield(get_tree().create_timer(t_block),"timeout")
-	
-
-
-

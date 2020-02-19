@@ -23,6 +23,9 @@ export (PackedScene) var GameOver
 export (PackedScene) var Congrats
 export (PackedScene) var AtomBomb
 
+export (PackedScene) var Manager1
+export (PackedScene) var Manager2
+
 
 """
  Recordatori de les collision layers
@@ -38,10 +41,15 @@ tirar llamp ->t
 """
 
 func _ready():
-	get_node("RoundManager").connect("Win",self,"Disconnect_panel",['CONGRATS!!'])
-	get_node("RoundManager").connect("Win",self,"Applause")
 	
 	self.add_Coins(get_node("/root/SavedVars").coins)
+	
+	Set_Vars(0)
+	get_node("RoundManager").connect("Win",self,"Disconnect_panel",['CONGRATS!!'])
+	get_node("RoundManager").connect("Win",self,"Applause")
+#	self.get_node('RoundManager').set_script(load("res://Main Scene/Chapters.gd"))
+	
+	
 #	var Bomb = AtomBomb.instance()
 #	self.add_child(Bomb)
 	
@@ -132,6 +140,17 @@ func Disconnect_panel(hi):
 func Applause():
 	var Winner = Congrats.instance()
 	self.add_child(Winner)
+
+func Set_Vars(N):
+	
+	var RoundManager
+	
+	if N==0: RoundManager = Manager1.instance()
+	
+	else: RoundManager = Manager2.instance()
+	
+	self.add_child(RoundManager)
+	
 	
 #func _input(event):
 #	if event is InputEventMouseButton:
