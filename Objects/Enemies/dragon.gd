@@ -7,7 +7,9 @@ func _ready():
 	speed = 150
 	damage = 5
 	
-	$HealthBar.value = get_node("/root/SavedVars").life_dragon
+	$HealthBar.max_value= get_parent().get_parent().life_dragon
+	$HealthBar.value = $HealthBar.max_value
+	#$HealthBar.value = get_node("/root/SavedVars").life_dragon
 	# Variable to detect animation change for scream
 	old_animation = $AnimatedSprite.animation
 

@@ -26,6 +26,17 @@ export (PackedScene) var AtomBomb
 export (PackedScene) var Manager1
 export (PackedScene) var Manager2
 
+export (PackedScene) var Vars
+
+
+
+
+var life_skeleton
+var life_dragon
+var coins
+
+
+
 
 """
  Recordatori de les collision layers
@@ -42,9 +53,10 @@ tirar llamp ->t
 
 func _ready():
 	
-	self.add_Coins(get_node("/root/SavedVars").coins)
+	
 	
 	Set_Vars(0)
+	
 	get_node("RoundManager").connect("Win",self,"Disconnect_panel",['CONGRATS!!'])
 	get_node("RoundManager").connect("Win",self,"Applause")
 #	self.get_node('RoundManager').set_script(load("res://Main Scene/Chapters.gd"))
@@ -140,17 +152,41 @@ func Disconnect_panel(hi):
 func Applause():
 	var Winner = Congrats.instance()
 	self.add_child(Winner)
+	
+	
+	
+	
+	
+	
+
 
 func Set_Vars(N):
 	
 	var RoundManager
+	var Vars
 	
-	if N==0: RoundManager = Manager1.instance()
+	if N==0: 
 	
-	else: RoundManager = Manager2.instance()
+		RoundManager = Manager1.instance()
+		Vars= "res://vars_1.cfg"
+	
+	else: 
+	
+		RoundManager = Manager2.instance()
+		Vars= "res://vars_2.cfg"
 	
 	self.add_child(RoundManager)
+
 	
+	var config = ConfigFile.new()
+	var load_response = config.load(Vars)
+	
+	life_skeleton =  config.get_value("Enemy","life_skeleton",life_skeleton)
+	life_dragon   =  config.get_value("Enemy","life_dragon",life_dragon)
+	
+	self.add_Coins(config.get_value("Initial_objects","coins",coins))
+	
+
 	
 #func _input(event):
 #	if event is InputEventMouseButton:
